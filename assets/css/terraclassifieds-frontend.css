@@ -1,0 +1,3072 @@
+.clearfix:before, .clearfix:after {
+    content: ' ';
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.terraclassifieds-clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.terraclassifieds-small-btn{
+    background: #118444;
+    color: #fff;
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.terraclassifieds-small-btn:hover,
+.terraclassifieds-small-btn:focus{
+	text-decoration: none;
+	background: #3ea36b;
+}
+
+.terraclassifieds-container {
+    margin: 30px auto; 
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 890px;
+}
+
+.terraclassifieds-favourite-ads .terraclassifieds-container {
+	padding:0;
+}
+
+.terraclassifieds-favourite-ads .terraclassifieds-container .terraclassifieds-category a{
+	text-decoration: none;
+}
+
+.terraclassifieds-favourite-ads .terraclassifieds-container .terraclassifieds-category a:hover,
+.terraclassifieds-favourite-ads .terraclassifieds-container .terraclassifieds-category a:focus{
+	text-decoration: underline;
+}
+
+/* global */
+
+.terraclassifieds-notice {
+    padding: 30px;
+    margin: 0 0 30px;
+    background: #fff;
+    color: #757575;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+/* Archive */
+
+.terraclassifieds-search {
+    margin: 0 0 30px;
+}
+
+.terraclassifieds-categories {
+    margin: 0 0 30px;
+}
+
+.terraclassifieds-categories {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.terraclassifieds-category-image {
+	flex-shrink: 0;
+	padding-right: 30px;
+}
+
+.terraclassifieds-categories h1 {
+	margin: 0 0 10px;
+}
+
+.terraclassifieds-category-desc{
+    margin: 0 0 10px;
+}
+
+.terraclassifieds-category-content ul.subcategory-list li{
+	margin: 0 10px 0 0;
+	display: inline-block;
+}
+
+.terraclassifieds-archive .type-classified {
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+    color: #757575;
+}
+
+.terraclassifieds-archive .type-classified + .type-classified {
+    margin-top: 10px;
+}
+
+.terraclassifieds-archive .terraclassifieds-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*align-items: center;*/
+}
+
+.terraclassifieds-archive .status-publish .terraclassifieds-actions .renew-ad{
+	display: none;
+}
+
+/*.terraclassifieds-archive .status-archived .terraclassifieds-actions .edit-ad,
+.terraclassifieds-archive .status-archived .terraclassifieds-actions .archive-ad{
+	display: none;
+}*/
+
+.terraclassifieds-archive .status-archived .terraclassifieds-title a{
+	color: inherit;
+	text-decoration:none;
+	pointer-events: none;
+	cursor: default;
+}
+
+.terraclassifieds-archive .terraclassifieds-image {
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    width: auto;
+    text-align: center;
+	position: relative;
+}
+
+.terraclassifieds-archive .terraclassifieds-fav{
+    display: inline-block;
+    color: #fff !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 500;
+}
+.terraclassifieds-archive .terraclassifieds-fav span.fav-it:before,
+.terraclassifieds-archive .terraclassifieds-fav span.liked:before{
+    border-top-color: #ccc;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 40px solid #ccc;
+    border-left: 40px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    opacity: 1;
+    transition: none;
+    -webkit-transform: none;
+    transform: none;
+    left: auto;
+    border-radius: 0;
+    background: none;
+}
+span.fav-it:hover:after,
+span.liked:hover:after{
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.terraclassifieds-archive .terraclassifieds-fav span.fav-it:after,
+.terraclassifieds-archive .terraclassifieds-fav span.liked:after{
+	content: "\f004";
+    display: inline-block;
+    font: 900 normal normal 12px/1 "Font Awesome 5 Free";
+    padding: 5px 6px 0 0;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.terraclassifieds-archive .terraclassifieds-fav span.fav-it,
+.terraclassifieds-archive .terraclassifieds-fav span.liked{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 999;
+    color: #fff;
+}
+.terraclassifieds-archive .terraclassifieds-fav span.liked:before{
+    border-top-color: #e74c3c;
+}
+.terraclassifieds-archive .terraclassifieds-fav .love-count{
+	display: none;
+}
+
+.terraclassifieds-archive .terraclassifieds-image .terraclassifieds-gallery{
+    display: table;
+    width: 100%;
+}
+
+.terraclassifieds-archive .terraclassifieds-image .terraclassifieds-gallery .terraclassifieds-gallery-element{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.terraclassifieds-archive .terraclassifieds-image .terraclassifieds-gallery .terraclassifieds-gallery-element-in{
+    display: inline-block;
+}
+
+.terraclassifieds-archive .terraclassifieds-image a {
+    display: block;
+}
+
+.terraclassifieds-archive .terraclassifieds-content {
+    padding: 15px 30px;
+    font-size: 14px;
+}
+
+.terraclassifieds-archive .terraclassifieds-title {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.terraclassifieds-archive .terraclassifieds-types{
+	margin: 0 0 2px;
+}
+
+.terraclassifieds-archive .terraclassifieds-title a {
+    color: #039ad2;
+    text-decoration: none;
+}
+
+.terraclassifieds-archive .terraclassifieds-title a:hover,
+.terraclassifieds-archive .terraclassifieds-title a:focus {
+    text-decoration: underline;
+}
+
+.terraclassifieds-archive .terraclassifieds-category {
+    margin: 5px 5px 0 0;
+    color: #757575;
+    display: inline-block;
+}
+
+.terraclassifieds-archive .terraclassifieds-location {
+    margin: 5px 0 0;
+    color: #757575;
+    display: inline-block;
+}
+
+.terraclassifieds-archive .terraclassifieds-location a{
+    display: inline-block;
+    padding: 0 3px 0 0;
+}
+
+.terraclassifieds-archive .terraclassifieds-location a:last-of-type{
+	padding-right:0;
+}
+
+.terraclassifieds-archive .terraclassifieds-location a:after{
+    content: ",";
+}
+
+.terraclassifieds-archive .terraclassifieds-location a:last-of-type:after{
+	display: none;
+}
+
+.terraclassifieds-archive .terraclassifieds-category a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.terraclassifieds-archive .terraclassifieds-category a:hover,
+.terraclassifieds-archive .terraclassifieds-category a:focus {
+    text-decoration: underline;
+}
+
+.terraclassifieds-archive .terraclassifieds-desc {
+    margin: 15px 0 0;
+}
+
+.terraclassifieds-archive .terraclassifieds-details {
+    margin-left: auto;
+    flex-shrink: 0;
+    padding: 15px 30px 15px 0;
+    text-align: right;
+    font-size: 14px;
+}
+
+.terraclassifieds-archive .status-archived .terraclassifieds-details .terraclassifieds-expiration{
+	display: none;
+}
+
+.terraclassifieds-archive .terraclassifieds-details a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.terraclassifieds-archive .terraclassifieds-details a:hover,
+.terraclassifieds-archive .terraclassifieds-details a:focus {
+    text-decoration: underline;
+}
+
+.terraclassifieds-archive .terraclassifieds-details .terraclassifieds-status .fa-check-square{
+	color:#26b56a;
+}
+
+.terraclassifieds-archive .terraclassifieds-details .terraclassifieds-status .fa-dot-circle-o{
+	color:#ec5050;
+}
+
+.terraclassifieds-archive .terraclassifieds-details .terraclassifieds-status .fa-pencil-ruler{
+	color:#7307ab;
+}
+
+.terraclassifieds-archive .terraclassifieds-details .terraclassifieds-status .fa-check-circle{
+	color:#26b56a;
+}
+
+.terraclassifieds-archive .terraclassifieds-details .terraclassifieds-status .fa-ban{
+	color:#ec5050;
+}
+
+.terraclassifieds-archive .terraclassifieds-price {
+    color: #039ad2;
+    font-size: 20px;
+	line-height: 1.2;
+	word-wrap: break-word;
+}
+
+.terraclassifieds-archive .terraclassifieds-hits i{
+	vertical-align: middle;
+}
+
+/* pagination */
+
+.terraclassifieds-pagination {
+    margin: 25px 0 0;
+    text-align: center;
+}
+
+.terraclassifieds-pagination li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.terraclassifieds-pagination li a,
+.terraclassifieds-pagination li span,
+.terraclassifieds-pagination ul > span {
+    display: block;
+    line-height: 36px;
+    display: inline-block;
+    padding: 0 13px;
+    margin: 5px 3px 0;
+    min-width: 10px;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #151515;
+    border-radius: 5px;
+}
+
+.terraclassifieds-pagination li a:hover,
+.terraclassifieds-pagination li a:focus {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.terraclassifieds-pagination li span {
+    color: #f7f7f7;
+    background: #039ad2;
+}
+
+/* single */
+.classified.status-archived .terraclassifieds-contact-form,
+.classified.status-archived .terraclassifieds-location,
+.classified.status-archived .terraclassifieds-website,
+.classified.status-archived .terraclassifieds-author,
+.classified.status-archived .terraclassifieds-author,
+.classified.status-archived .terraclassifieds-contact-form abuse-form{
+	display: none;
+}
+
+.terraclassifieds-single .terraclassifieds-top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.terraclassifieds-single .terraclassifieds-content {
+    width: calc(100% - 280px);
+}
+
+.terraclassifieds-single .terraclassifieds-image {
+    overflow: hidden;
+    position: relative;
+    background: #ececec;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+
+.terraclassifieds-single .terraclassifieds-fav{
+    display: inline-block;
+    color: #fff !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 500;
+}
+.terraclassifieds-single .terraclassifieds-fav span.fav-it:before,
+.terraclassifieds-single .terraclassifieds-fav span.liked:before{
+    border-top-color: #ccc;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 40px solid #ccc;
+    border-left: 40px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    opacity: 1;
+    transition: none;
+    -webkit-transform: none;
+    transform: none;
+    left: auto;
+    border-radius: 0;
+    background: none;
+}
+.terraclassifieds-single .terraclassifieds-fav span.fav-it:after,
+.terraclassifieds-single .terraclassifieds-fav span.liked:after{
+	content: "\f004";
+    display: inline-block;
+    font: 900 normal normal 12px/1 "Font Awesome 5 Free";
+    padding: 5px 6px 0 0;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.terraclassifieds-single .terraclassifieds-favspan.fav-it,
+.terraclassifieds-single .terraclassifieds-fav span.liked{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 999;
+    color: #fff;
+}
+.terraclassifieds-single .terraclassifieds-fav span.liked:before,
+.terraclassifieds-single .terraclassifieds-fav span.liked:before{
+    border-top-color: #e74c3c;
+}
+.terraclassifieds-single .terraclassifieds-fav .love-count{
+	display: none;
+}
+
+.terraclassifieds-single .terraclassifieds-page-header .terraclassifieds-fav{
+    position: relative;
+    height: 18px;
+    width: 18px;
+    background: none;
+    vertical-align: middle;
+}
+
+.terraclassifieds-single .terraclassifieds-page-header .terraclassifieds-fav > span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 999;
+    color: #fff;
+}
+
+.terraclassifieds-single .terraclassifieds-page-header .terraclassifieds-fav span.fav-it:before, 
+.terraclassifieds-single .terraclassifieds-page-header .terraclassifieds-fav span.liked:before{
+	display: none;
+}
+
+.terraclassifieds-single .terraclassifieds-page-header .terraclassifieds-fav span.fav-it:after, 
+.terraclassifieds-single .terraclassifieds-page-header .terraclassifieds-fav span.liked:after{
+	padding: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    line-height: 18px;
+    color: #ccc;
+}
+
+.terraclassifieds-single .terraclassifieds-page-header .terraclassifieds-fav span.liked:after{
+	color: #e74c3c;
+}
+
+.terraclassifieds-archive .terraclassifieds-header .terraclassifieds-fav{
+	position: relative;
+    height: 18px;
+    width: 18px;
+    background: none;
+    vertical-align: middle;
+}
+
+.terraclassifieds-archive .terraclassifieds-header .terraclassifieds-fav span.fav-it:after, 
+.terraclassifieds-archive .terraclassifieds-header .terraclassifieds-fav span.liked:after{
+    padding: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    line-height: 18px;
+    color: #ccc;
+}
+
+.terraclassifieds-archive .terraclassifieds-header .terraclassifieds-fav span.liked:after{
+	color: #e74c3c;
+}
+
+.terraclassifieds-archive .terraclassifieds-header .terraclassifieds-fav span.fav-it:before, 
+.terraclassifieds-archive .terraclassifieds-header .terraclassifieds-fav span.liked:before{
+	display: none;
+}
+
+.terraclassifieds-single .terraclassifieds-main-title {
+    margin: 0 0 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.terraclassifieds-single .terraclassifieds-page-header .edit-btn{
+	float: right;
+    margin: 4px 0 0 5px;
+    border-radius: 2px;
+}
+
+.terraclassifieds-single .terraclassifieds-page-header {
+    margin: 0 0 30px;
+}
+
+.terraclassifieds-single .terraclassifieds-publish-time,
+.terraclassifieds-single .terraclassifieds-hits,
+.terraclassifieds-single .terraclassifieds-ad-id,
+.terraclassifieds-single .terraclassifieds-single-separator {
+    color: #bcbcbc;
+    font-size: 12px;
+    display: inline;
+}
+
+.terraclassifieds-negotiable-price{
+    color: #bcbcbc;
+    font-size: 12px;
+}
+
+.terraclassifieds-single .terraclassifieds-desc {
+    font-size: 16px;
+	color: #757575;
+	line-height: 1.86;
+}
+
+.terraclassifieds-single .terraclassifieds-content-in {
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.terraclassifieds-single .terraclassifieds-content + .terraclassifieds-details {
+    margin-left: 30px;
+}
+
+.terraclassifieds-single .terraclassifieds-details {
+    flex-shrink: 0;
+    width: 250px;
+}
+
+.terraclassifieds-single .terraclassifieds-price {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+    padding: 25px;
+	margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 26px;
+	font-weight: 400;
+    line-height: 1.2;
+    color: #039ad2;
+}
+
+.terraclassifieds-single .terraclassifieds-price .terraclassifieds-label,
+.terraclassifieds-single .terraclassifieds-phone .terraclassifieds-label,
+.terraclassifieds-single .terraclassifieds-website .terraclassifieds-label,
+.terraclassifieds-single .terraclassifieds-author .terraclassifieds-label,
+.terraclassifieds-single .terraclassifieds-location .terraclassifieds-label {
+    font-size: 17px;
+	font-weight: 600;
+	color: #212121;
+}
+
+.terraclassifieds-single .terraclassifieds-phone .terraclassifieds-label,
+.terraclassifieds-single .terraclassifieds-website .terraclassifieds-label,
+.terraclassifieds-single .terraclassifieds-author .terraclassifieds-label,
+.terraclassifieds-single .terraclassifieds-location .terraclassifieds-label {
+    display: block;
+    margin: 0 0 10px;
+}
+
+.terraclassifieds-single .terraclassifieds-phone,
+.terraclassifieds-single .terraclassifieds-website,
+.terraclassifieds-single .terraclassifieds-author,
+.terraclassifieds-single .terraclassifieds-location {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+    padding: 25px;
+	margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+	color: #757575;
+}
+
+.terraclassifieds-single .terraclassifieds-author .terraclassifieds-author-in .terraclassifieds-author-avatar{
+    display: block;
+    text-align: center;
+    padding: 0 0 10px;
+}
+
+.terraclassifieds-single .terraclassifieds-author .terraclassifieds-author-in .terraclassifieds-author-name{
+    display: block;
+    text-align: center;
+}
+
+.terraclassifieds-phone .terraclassifieds-value{
+    width: 40px;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.terraclassifieds-phone .terraclassifieds-value.expanded{
+	width: auto;
+}
+
+.terraclassifieds-phone-more{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.terraclassifieds-contact-form {
+    margin-bottom: 15px;
+}
+
+.terraclassifieds-contact-form.abuse-form .terraclassifieds-btn.terraclassifieds-contact-advertiser{
+    background: url(../img/report-abuse.png) no-repeat 0 center;
+    text-align: left;
+    color: #de7566;
+    font-size: 12px;
+    padding: 4px 0 4px 20px;
+    border: none;
+}
+
+.terraclassifieds-contact-form.abuse-form .terraclassifieds-btn.terraclassifieds-contact-advertiser:hover,
+.terraclassifieds-contact-form.abuse-form .terraclassifieds-btn.terraclassifieds-contact-advertiser:focus{
+	color: inherit;
+}
+
+.terraclassifieds-contact-form .terraclassifieds-form-submit .terraclassifieds-btn{
+	width: auto;
+}
+
+.terraclassifieds-contact-form form {
+    display: none;
+    margin: 15px 0 0;
+}
+
+.terraclassifieds-contact-form form .gdpr-checkboxes{
+    margin: 0;
+    padding: 0;
+}
+
+.terraclassifieds-contact-form .agreement-terms-and-conditions, 
+.terraclassifieds-contact-form .agreement-privacy-policy, 
+.terraclassifieds-contact-form .agreement-gdpr{
+	text-align: left;
+}
+
+.terraclassifieds-contact-form .agreement-terms-and-conditions input[type="checkbox"], 
+.terraclassifieds-contact-form .agreement-privacy-policy input[type="checkbox"], 
+.terraclassifieds-contact-form .agreement-gdpr input[type="checkbox"]{
+    width: auto;
+}
+
+.terraclassifieds-contact-form .agreement-terms-and-conditions label, 
+.terraclassifieds-contact-form .agreement-privacy-policy label, 
+.terraclassifieds-contact-form .agreement-gdpr label{
+    display: inline;
+}
+
+.terraclassifieds-contact-form .agreement-terms-and-conditions .error + label, 
+.terraclassifieds-contact-form .agreement-privacy-policy .error + label, 
+.terraclassifieds-contact-form .agreement-gdpr .error + label{
+	color: #ec5050;
+}
+
+.terraclassifieds-contact-form form label {
+    display: block;
+	margin-bottom: 5px;
+	color: #212121;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.terraclassifieds-contact-form form input,
+.terraclassifieds-contact-form form textarea {
+    width: 100%;
+    max-width: 400px;
+}
+
+.terraclassifieds-contact-form form input.error,
+.terraclassifieds-contact-form form textarea.error{
+	border-color: #ec5050;
+}
+
+.terraclassifieds-contact-form form .terraclassifieds-btn {
+    margin: 15px 0 0;
+}
+
+.terraclassifieds-author .terraclassifieds-author-avatar {
+    display: inline-block;
+    padding-right: 15px;
+    vertical-align: middle;
+}
+
+.terraclassifieds-author .terraclassifieds-author-avatar img {
+    /*border-radius: 50%;*/
+    margin: 0;
+}
+
+.terraclassifieds-author .terraclassifieds-author-name {
+    text-decoration: none;
+}
+
+.terraclassifieds-author a.terraclassifieds-author-name {
+    color: #039ad2;
+}
+
+.terraclassifieds-author a.terraclassifieds-author-name:hover,
+.terraclassifieds-author a.terraclassifieds-author-name:focus {
+    text-decoration: underline;
+}
+
+/* author */
+.terraclassifieds-author-info{
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+    color: #757575;
+    padding: 30px;
+    margin: 0 0 30px;
+}
+
+.terraclassifieds-author-info .terraclassifieds-author-info-avatar{
+    float: left;
+    margin: 0 15px 15px 0;
+}
+
+
+/* User Menu */
+ul.terraclassifieds-usermenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.terraclassifieds-usermenu > .menu-item {
+    float: left;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+ul.terraclassifieds-usermenu > .menu-item > a,
+ul.terraclassifieds-usermenu > .menu-item > span {
+    display: block;
+    padding: 11px 10px 12px;
+    margin: 0 5px;
+    line-height: 1;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    text-decoration: none;
+}
+
+ul.terraclassifieds-usermenu > .menu-item.my-account > a,
+ul.terraclassifieds-usermenu > .menu-item.my-account > span {
+    background: url(../img/male.png) no-repeat 0 5px;
+    padding-left: 30px;
+    padding-right: 14px;
+    cursor: pointer;
+}
+
+ul.terraclassifieds-usermenu > .menu-item > a:after,
+ul.terraclassifieds-usermenu > .menu-item > span:after {
+    content: '\f107';
+    position: absolute;
+    top: 11px;
+    right: -1px;
+    font-size: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "Font Awesome 5 Free";
+    line-height:1;
+    font-weight: 900;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+ul.terraclassifieds-usermenu .nav-dropdown {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: auto;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    z-index: 300;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s linear 0.25s, opacity 0.25s linear, border 0.2s ease-in;
+    transition: visibility 0s linear 0.25s, opacity 0.25s linear, border 0.2s ease-in;
+}
+
+ul.terraclassifieds-usermenu > .menu-item > .nav-dropdown.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+ul.terraclassifieds-usermenu .nav-dropdown .nav-dropdown-in {
+    margin: 0;
+    padding: 8px 0;
+    background: #ffffff;
+    box-shadow: 1px 1px 1px 0.3px rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.terraclassifieds-usermenu .nav-dropdown .menu-item {
+    position: relative;
+    padding: 0;
+    margin-bottom: 1px;
+}
+
+ul.terraclassifieds-usermenu .nav-dropdown .menu-item a,
+ul.terraclassifieds-usermenu .nav-dropdown .menu-item span {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+    padding: 6px 16px;
+    text-transform: none;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+ul.terraclassifieds-usermenu .nav-dropdown .menu-item.menu-separator > span {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: default;
+}
+
+ul.terraclassifieds-usermenu .nav-dropdown .menu-item.menu-separator:first-of-type > span {
+    border-top: none;
+}
+
+/* add advert */
+
+form#ad_options{
+    margin: 0 0 20px;
+}
+
+.cmb2-wrap .cmb-th label{
+	padding: 0 0 5px;	
+}
+
+.cmb2-wrap input[type=checkbox], .cmb2-wrap input[type=radio]{
+	display: inline-block;	
+}
+
+.cmb2-wrap input[type=checkbox] + label, .cmb2-wrap input[type=radio] + label{
+	display: inline-block;	
+}
+
+.tcf-title-characters-limit,
+.tcf-desc-characters-limit{
+    color: #bcbcbc;
+    font-size: 12px;
+}
+
+.media-modal.wp-core-ui{
+	top: 20%;
+	bottom: 20%;
+	left: 20%;
+	right: 20%;
+}
+
+.cmb2-metabox-description{
+    visibility: hidden;
+    position: absolute;
+    min-width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    top: 10px;
+    left: 520px;
+    width: auto;
+}
+
+.cmb2-id--tc-sell-type,
+.cmb2-id--tc-price,
+.cmb2-id--tc-negotiable{
+    float: left;
+    padding: 0 10px 0 0;
+}
+
+.cmb-form .cmb2-id--tc-sell-type .cmb-th,
+.cmb-form .cmb2-id--tc-price .cmb-th,
+.cmb-form .cmb2-id--tc-negotiable .cmb-th{
+    width: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.cmb-form .cmb2-id--tc-sell-type .cmb-th{
+	width: 200px;
+}
+
+.cmb-form .cmb2-id--tc-sell-type .cmb-td,
+.cmb-form .cmb2-id--tc-price .cmb-td,
+.cmb-form .cmb2-id--tc-negotiable .cmb-td{
+    float: none;
+    display: inline-block;
+    width: auto;
+}
+
+.cmb-form .cmb2-id--tc-price .cmb-th,
+.cmb-form .cmb2-id--tc-negotiable .cmb-th{
+	display: none;
+}
+
+.cmb-form input.input-focus{
+	border-color: #0cbbfc !important;
+}
+
+.cmb-form input:disabled{
+	background:#eee;
+}
+
+.cmb-form .cmb2-id--tc-sell-type .cmb-td ul li{
+	margin: 5px 0;
+	list-style: none;
+}
+
+.cmb2-id--tc-gallery,
+.cmb2-id--tc-locations{
+	clear: both;
+}
+
+.cmb2-id--tc-gallery.hidden,
+.cmb2-id--tc-types.hidden{
+	display: none;
+}
+
+.tcf-gallery-after-label{
+    display: block;
+    padding: 0 0 15px;
+}
+
+.cmb2-id--tc-gallery .cmb2-metabox-description{
+	left: 205px;
+}
+
+.cmb2-id--tc-negotiable .cmb2-metabox-description{
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    background: none;
+    padding: 0;
+}
+
+.cmb-form .cmb-th{
+    padding: 10px 0;
+    width: 200px;
+}
+
+.cmb-th.error label{
+	color: #ec5050;
+}
+
+.cmb-form .cmb-td{
+    position: relative;
+    padding: 10px 0;
+    width: calc(100% - 200px);
+}
+
+.cmb2-id--tc-draft-status label{
+	font-weight: normal;
+}
+
+.cmb2-id--tc-draft-status label span{
+	font-weight: bold;
+}
+
+.cmb2-id--tc-draft-status{
+	max-width: 60%;
+    float: left;
+    margin: 20px 0 0;
+    display: flex;
+}
+
+.cmb2-id--tc-draft-status .cmb-th{
+	order: 2;
+}
+
+.cmb2-id--tc-draft-status .cmb-td{
+	order: 1;
+}
+
+.cmb2-id--tc-draft-status .cmb-td input{
+    margin: 6px 0 0;
+}
+
+.cmb2-id--tc-draft-status .cmb-th,
+.cmb2-id--tc-draft-status .cmb-td{
+	width: auto;
+    float: none !important;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px 0 0;
+}
+
+.cmb-form .cmb-td textarea,
+.cmb-form .cmb-td #_tc_post_title,
+.cmb-form .cmb-td #_tc_location_address,
+.cmb-form .cmb-td #_tc_location_post_code{
+	min-width: 500px;
+	padding: 5px;
+	font-size: 14px;
+}
+
+.cmb-form .cmb2-wrap{
+    border-bottom: 1px solid;
+    padding: 0 0 20px;
+}
+
+.cmb-form .agreements{
+    padding: 20px 0 0;
+}
+
+.cmb-form .agreements p{
+	margin:0 0 10px;
+}
+
+.cmb2-id--tc-validate-message,
+.cmb2-id--tc-too-short-description{
+    display: none;
+}
+
+.cmb2-id--tc-validate-message .cmb-td,
+.cmb2-id--tc-too-short-description .cmb-td{
+	width: 100%;
+}
+
+.cmb2-id--tc-validate-message .cmb2-metabox-title,
+.cmb2-id--tc-too-short-description .cmb2-metabox-title{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin: 1.5em 0;
+    border-top: 1px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    color: #ec5050;
+    background: #F2DEDE;
+    border-color: #ec5050;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.cmb2-wrap input, .cmb2-wrap textarea,
+.cmb2-wrap .btn{
+	border-width: 1px;	
+	border-style: solid;
+}
+
+.cmb2-wrap input.error, .cmb2-wrap textarea.error,
+.cmb2-wrap .btn.error{
+	border-color: #ec5050 !important;
+}
+
+.cmb2-wrap input + label.error, .cmb2-wrap textarea + label.error{
+	display:none !important;
+}
+
+.cmb-form .cmb-td .cmb2-metabox-description.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cmb-form input[type="submit"]{
+	margin-top: 20px;
+	float: right;
+}
+
+.cmb-form .tcf-cancel-button{
+    margin-top: 20px;
+    float: right;
+    margin-right: 20px;
+    background: #454545;
+}
+
+.cmb-form input[type="checkbox"]{
+	vertical-align: middle;
+}
+
+.cmb2-id--tc-category .tcf-change-category-button{
+    display: none;
+    cursor: pointer;
+}
+
+.cmb2-id--tc-category.tcf-some-category-selected .tcf-add-category-button{
+	display:none;
+}
+
+.cmb2-id--tc-category:not(.tcf-some-category-selected) .tcf-add-category-button{
+	display: inline-block;
+	cursor: pointer;
+}
+
+.cmb2-id--tc-category.tcf-some-category-selected .tcf-change-category-button{
+	display: inline-block;
+}
+
+.cmb2-id--tc-category.tcf-categories-down .tcf-change-category-button,
+.cmb2-id--tc-category.tcf-categories-down .tcf-add-category-button{
+	display: none;
+}
+
+.cmb2-id--tc-category.tcf-categories-down:not(.tcf-some-category-selected) .tcf-add-category-done{
+	display: none !important;
+}
+
+.cmb2-id--tc-category ul.cmb2-list{
+    position: relative;
+    display: none;
+    margin: 20px 0 0;
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.cmb2-id--tc-category ul.cmb2-list li span label{
+    display: table;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 5px;
+    position: relative;
+}
+
+.cmb2-id--tc-category ul.cmb2-list li ul.cmb2-indented-hierarchy span label{
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.tcf-add-category-done.btn{
+	display:none;
+	float: left;
+	cursor: pointer;
+}
+
+.cmb2-id--tc-category ul.cmb2-list li span label:after{
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    line-height:1;
+    font-weight: 900;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 14px;
+    font-size: 14px;
+    margin: 0 0 0 5px;
+    color: #26b56a;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cmb2-id--tc-category ul.cmb2-list li span label.active,
+.cmb2-id--tc-category ul.cmb2-list li span input[type=radio]:checked + label{
+	border: 2px solid #ec5050;
+}
+
+.cmb2-id--tc-category ul.cmb2-list li span label.active:after,
+.cmb2-id--tc-category ul.cmb2-list li span input[type=radio]:checked + label:after{
+    content: "\f00c";
+}
+
+.cmb2-id--tc-category ul.cmb2-list li span label img{
+    margin: 0 5px 0 0;
+    display: table-cell;
+    vertical-align: middle;
+    min-width: 46px;
+}
+.cmb2-id--tc-category ul.cmb2-list li span label img + span{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cmb2-id--tc-category ul.cmb2-list li span input[type=radio]{
+	display:none;
+}
+
+.cmb2-id--tc-category ul.cmb2-list li:before{
+	display:none;
+}
+	
+.cmb2-id--tc-category ul.cmb2-list > li{
+    float: left;
+    width: 25%;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body:not(.admin-on-board) .media-modal-content .attachments-browser .media-toolbar{
+	display: none;
+}
+
+
+#cmb2-metabox-ad_options .cmb2-id--tc-expire-date,
+#cmb2-metabox-ad_options .cmb2-id--tc-expire-soon-notification-done{
+	display:none;
+}
+
+/*.cmb2-id--tc-category ul.cmb2-list > li:first-child{
+	display:none;
+}*/
+
+.cmb2-id--tc-category ul.cmb2-list li > span{
+    display: block;
+    padding: 0;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > li ul.cmb2-indented-hierarchy{
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    left: 0;
+    /*top: 0;*/
+    background: #fff;
+    z-index: 999;
+	padding: 10px 10px 5px;
+    margin: 0;
+}
+
+/*.cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy{
+	padding-top: 17px;
+}*/
+
+.cmb2-id--tc-category ul.cmb2-list > li ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy{
+	padding-left: 20px;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > li ul.cmb2-indented-hierarchy > li > ul.cmb2-indented-hierarchy{
+	background: #e4e3e3;
+}
+
+/*.cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy > li.parent > span > label.active:before,
+.cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy > li.parent > span > input[type=radio]:checked + label:before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 5px 0 5px;
+    border-color: #ddd transparent transparent transparent;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    bottom: -12px;
+    z-index: 5;
+}*/
+
+.cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy > li > ul.cmb2-indented-hierarchy{
+	margin-top: 10px;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > li ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy li{
+	position: relative;
+}
+.cmb2-id--tc-category ul.cmb2-list > li ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy{
+    padding-left: 10px;
+    position: relative;
+    float: left;
+    width: 100%;
+    box-shadow: none;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > li ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy{
+	padding-left: 20px;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > li ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy{
+	padding-left: 30px;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > li ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy li{
+	width: 100%;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+    float: left;
+    margin: 0px 0 5px;
+}
+
+.subcategories-1 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 100%;
+}
+
+.subcategories-2 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 50%;
+}
+
+.subcategories-3 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 33.33%;
+}
+
+.subcategories-4 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 25%;
+}
+
+.subcategories-5 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 20%;
+}
+
+.subcategories-6 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 16.66%;
+}
+
+.subcategories-7 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 14.28%;
+}
+
+.subcategories-8 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 12.5%;
+}
+
+.subcategories-9 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 11.11%;
+}
+
+.subcategories-10 .cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy li{
+	width: 20%;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > ul.cmb2-indented-hierarchy ul.cmb2-indented-hierarchy{
+	width: 100%;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > ul.cmb2-indented-hierarchy li{
+    float: left;
+    text-align: center;
+    padding: 0 10px 0 0;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > ul.cmb2-indented-hierarchy > li > label{
+    text-align: left;
+    display: inline-block;
+}
+
+.cmb2-id--tc-category ul.cmb2-list ul.cmb2-indented-hierarchy{
+	display:none;
+}
+
+.tcf-categories-breadcrumb{
+    display: block;
+}
+
+.tcf-categories-breadcrumb span{
+    margin: 0 5px 15px 0;
+    display: inline-block;
+}
+
+.tcf-images-left{
+	padding: 10px 0 0;
+    color: #bcbcbc;
+    font-size: 12px;
+}
+
+.tcf-categories-breadcrumb .tcf-categories-breadcrumb-separator:first-of-type{
+	display: none;
+}
+
+.tcf-categories-breadcrumb{
+    display: block;
+}
+
+.cmb2-id--tc-category ul.cmb2-list > li > ul.cmb2-indented-hierarchy .tcf-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#_tc_price{
+    width: 150px;
+    font-size: 14px;
+}
+
+#_tc_price.error{
+	border-color: #ec5050 !important;
+    border-style: solid;
+}
+
+select#_tc_locations{
+    height: 30px;
+    line-height: normal;
+    padding: 0 5px;
+    width: 150px;
+}
+
+select#_tc_locations.error{
+	border-color: #ec5050;
+}
+
+.cmb2-id--tc-locations .cmb-td ul > li ~ ul.cmb2-indented-hierarchy{
+	display: none;
+}
+
+.cmb2-id--tc-locations ul.cmb2-list{
+	list-style: none;
+	padding-left:0;
+}
+
+.cmb2-id--tc-locations ul.cmb2-indented-hierarchy{
+	list-style: none;
+}
+
+.cmb2-id--tc-locations .cmb-td ul  li label{
+  pointer-events: none;
+}
+
+.cmb2-wrap .tcf-clear-locations{
+    margin: 0 0 15px;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cmb2-id--tc-price .regular-text{
+	padding: 5px;
+}
+
+.cmb2-id--tc-locations  ul li input{
+    position: absolute;
+    visibility: hidden !important;
+	display: none;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.cmb2-id--tc-locations label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding: 0 0 0 35px;
+}
+
+.cmb2-id--tc-locations input[type="radio"] + label:before,
+.cmb2-id--tc-locations input[type="radio"] + label:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -7.5px;
+    box-sizing: border-box;
+}
+
+.cmb2-id--tc-locations input[type="radio"] + label:before {
+    width: 30px;
+    height: 15px;
+    left: 0px;
+    background: #fff;
+    border: 1px solid #e4e3e1;
+    border-radius: 15px;
+}
+
+.cmb2-id--tc-locations input[type="radio"] + label:after {
+    width: 15px;
+    height: 15px;
+    left: 0;
+    background: #BDBDBD;
+    border-radius: 50%;
+    transition: all 200ms ease-out;
+}
+
+.cmb2-id--tc-locations input[type="radio"]:checked + label:after {
+    left: 14px;
+    background: #FF9800;
+}
+
+
+
+
+
+
+
+
+
+
+.cmb2-id--tc-types .cmb-td ul > li ~ ul.cmb2-indented-hierarchy{
+	display: none;
+}
+
+.cmb2-wrap .tcf-clear-locations{
+    margin: 0 0 15px;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cmb2-id--tc-types select{
+	padding: 4px;
+}
+
+.cmb2-id--tc-types  ul li input{
+    position: absolute;
+    visibility: hidden !important;
+	display: none;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.cmb2-id--tc-types label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding: 0 0 0 35px;
+}
+
+.cmb2-id--tc-types input[type="radio"] + label:before,
+.cmb2-id--tc-types input[type="radio"] + label:after,
+.cmb2-id--tc-types input[type="checkbox"] + label:before,
+.cmb2-id--tc-types input[type="checkbox"] + label:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -7.5px;
+    box-sizing: border-box;
+}
+
+.cmb2-id--tc-types input[type="radio"] + label:before,
+.cmb2-id--tc-types input[type="checkbox"] + label:before {
+    width: 30px;
+    height: 15px;
+    left: 0px;
+    background: #fff;
+    border: 1px solid #e4e3e1;
+    border-radius: 15px;
+}
+
+.cmb2-id--tc-types input[type="radio"] + label:after,
+.cmb2-id--tc-types input[type="checkbox"] + label:after {
+    width: 15px;
+    height: 15px;
+    left: 0;
+    background: #BDBDBD;
+    border-radius: 50%;
+    transition: all 200ms ease-out;
+}
+
+.cmb2-id--tc-types input[type="radio"]:checked + label:after,
+.cmb2-id--tc-types input[type="checkbox"]:checked + label:after {
+    left: 14px;
+    background: #FF9800;
+}
+
+.cmb2-id--tc-price .cmb2-metabox-description{
+	left: 170px;
+}
+
+#ad_options .show {
+    display: block !important;
+}
+
+#ad_options .hide {
+    display: none !important;
+}
+
+/* my submissions */
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action{
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 0 0 7px;
+}
+
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action input[type="submit"],
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action a.button{
+	font-weight: bold;
+}
+
+.terraclassifieds-my-submissions .terraclassifieds-item a{
+	text-decoration: none !important;
+}
+
+.terraclassifieds-my-submissions .terraclassifieds-item a:hover,
+.terraclassifieds-my-submissions .terraclassifieds-item a:focus,
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action input[type="submit"]:hover,
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action input[type="submit"]:focus{
+	text-decoration: underline !important;
+}
+
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action input[type="submit"],
+.terraclassifieds-archive .terraclassifieds-details .terraclassifieds-action a{
+	border: none;
+    font-size: 12px;
+    background: #118444;
+    color: #fff;
+    display: inline-block;
+    padding: 0 5px;
+    line-height: 20px;
+}
+
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action input[type="submit"]:hover,
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action input[type="submit"]:focus,
+.terraclassifieds-archive .terraclassifieds-details a:not(.terraclassifieds-author-link):hover,
+.terraclassifieds-archive .terraclassifieds-details a:not(.terraclassifieds-author-link):focus{
+	text-decoration: none !important;
+	background: #3ea36b;
+}
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action a.button.disabled{
+    background: #aaa;
+    cursor: default;
+}
+
+.terraclassifieds-my-submissions .status-publish .terraclassifieds-actions .terraclassifieds-action .terraclassifieds-edit-ad-button,
+.terraclassifieds-my-submissions .status-draft .terraclassifieds-actions .terraclassifieds-action .terraclassifieds-edit-ad-button{
+	display: block;
+}
+
+.terraclassifieds-my-submissions .status-publish .terraclassifieds-actions .terraclassifieds-action .terraclassifieds-edit-ad-button-disabled,
+.terraclassifieds-my-submissions .status-draft .terraclassifieds-actions .terraclassifieds-action .terraclassifieds-edit-ad-button-disabled{
+	display: none;
+}
+
+.terraclassifieds-my-submissions .status-pending .terraclassifieds-actions .terraclassifieds-action .terraclassifieds-edit-ad-button,
+.terraclassifieds-my-submissions .status-archived .terraclassifieds-actions .terraclassifieds-action .terraclassifieds-edit-ad-button{
+	display: none;
+}
+.terraclassifieds-my-submissions .status-pending .terraclassifieds-actions .terraclassifieds-action .terraclassifieds-edit-ad-button-disabled,
+.terraclassifieds-my-submissions .status-archived .terraclassifieds-actions .terraclassifieds-action .terraclassifieds-edit-ad-button-disabled{
+	display: block;
+}
+
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action.archive-ad,
+.terraclassifieds-my-submissions .terraclassifieds-actions .terraclassifieds-action.renew-ad{
+	display: none;
+}
+
+.terraclassifieds-my-submissions .status-publish .terraclassifieds-actions .terraclassifieds-action.archive-ad{
+	display: inline-block;
+}
+
+.terraclassifieds-my-submissions .status-archived .terraclassifieds-actions .terraclassifieds-action.renew-ad{
+	display: inline-block;
+}
+
+
+/* messages */
+.terraclassifieds-message{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin: 1.5em 0;
+    border-top: 1px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    color: #31708f;
+    background: #d9edf7;
+    border-color: #3a87ad;
+}
+
+.terraclassifieds-message.archived-messsage{
+	display: none;
+    margin-top: 0;
+}
+
+.terraclassifieds-message.just-edited-advert{
+    margin-top: 0;
+}
+
+.status-archived .terraclassifieds-message.archived-messsage{
+	display: block;
+}
+
+.terraclassifieds-message.error{
+	border-color: #ec5050;
+    color: #ec5050;
+    background: #F2DEDE;
+}
+
+.terraclassifieds-message h3{
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* categories */
+
+ul.terraclassifieds-categories-list.horizontal li {
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+ul.terraclassifieds-categories-list.horizontal a {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+ul.terraclassifieds-categories-list.horizontal li a:after {
+    content:',';
+}
+
+ul.terraclassifieds-categories-list.horizontal li:last-child a:after {
+    content: '';
+}
+
+.terraclassifieds-categories-list.horizontal ul {
+    display: inline-block;
+    margin: 0 0 0 5px;
+}
+
+.terraclassifieds-categories-list.vertical.columns-2,
+.terraclassifieds-categories-list.vertical.columns-3,
+.terraclassifieds-categories-list.vertical.columns-4,
+.terraclassifieds-categories-list.vertical.columns-5,
+.terraclassifieds-categories-list.vertical.columns-6,
+.terraclassifieds-categories-list.vertical.columns-7,
+.terraclassifieds-categories-list.vertical.columns-8 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    list-style: none;
+    padding-left: 0;
+}
+
+.terraclassifieds-categories-list.vertical {
+    margin: -20px -15px 0;
+}
+
+.terraclassifieds-categories-list.vertical > li {
+   padding: 20px 15px 0;
+}
+
+.terraclassifieds-categories-list.vertical.columns-2 > li {
+    width: 50%;
+}
+.terraclassifieds-categories-list.vertical.columns-3 > li {
+    width: 33%;
+}
+.terraclassifieds-categories-list.vertical.columns-4 > li {
+    width: 25%;
+}
+.terraclassifieds-categories-list.vertical.columns-5 > li {
+    width: 20%;
+}
+.terraclassifieds-categories-list.vertical.columns-6 > li {
+    width: 16.66%;
+}
+.terraclassifieds-categories-list.vertical.columns-7 > li {
+    width: 14.28%;
+}
+.terraclassifieds-categories-list.vertical.columns-8 > li {
+    width: 15.5%;
+}
+
+ul.terraclassifieds-categories-list li a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.terraclassifieds-categories-list .cat-image {
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.terraclassifieds-categories-list .cat-image img{
+	vertical-align: middle;
+}
+
+.terraclassifieds-categories-list.vertical ul {
+    margin: 0 0 0 20px;
+}
+
+.terraclassifieds-categories-list.vertical ul li {
+    padding: 10px 0 0;
+}
+
+/* latest ads */
+
+.terraclassifieds-latest-ads-list.columns-2,
+.terraclassifieds-latest-ads-list.columns-3,
+.terraclassifieds-latest-ads-list.columns-4,
+.terraclassifieds-latest-ads-list.columns-5,
+.terraclassifieds-latest-ads-list.columns-6,
+.terraclassifieds-latest-ads-list.columns-7,
+.terraclassifieds-latest-ads-list.columns-8 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: -15px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.terraclassifieds-latest-ads-list.columns-2 li,
+.terraclassifieds-latest-ads-list.columns-3 li,
+.terraclassifieds-latest-ads-list.columns-4 li,
+.terraclassifieds-latest-ads-list.columns-5 li,
+.terraclassifieds-latest-ads-list.columns-6 li,
+.terraclassifieds-latest-ads-list.columns-7 li,
+.terraclassifieds-latest-ads-list.columns-8 li {
+    padding: 15px;
+}
+
+.terraclassifieds-latest-ads-list.columns-2 li {
+    width: 50%;
+}
+.terraclassifieds-latest-ads-list.columns-3 li {
+    width: 33%;
+}
+.terraclassifieds-latest-ads-list.columns-4 li {
+    width: 25%;
+}
+.terraclassifieds-latest-ads-list.columns-5 li {
+    width: 20%;
+}
+.terraclassifieds-latest-ads-list.columns-6 li {
+    width: 16.66%;
+}
+.terraclassifieds-latest-ads-list.columns-7 li {
+    width: 14.28%;
+}
+.terraclassifieds-latest-ads-list.columns-8 li {
+    width: 15.5%;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-ad-in {
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-image {
+    background: rgba(0, 0, 0, 0.03);
+    text-align: center;
+    position: relative;
+    display: table;
+    width: 100%;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-image a{
+	display: table-cell;
+    vertical-align: middle;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-gallery{
+	display: table-cell;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav{
+    display: inline-block;
+    color: #fff !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 500;
+}
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav span.fav-it:before,
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav span.liked:before{
+    border-top-color: #ccc;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 40px solid #ccc;
+    border-left: 40px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    opacity: 1;
+    transition: none;
+    -webkit-transform: none;
+    transform: none;
+    left: auto;
+    border-radius: 0;
+    background: none;
+}
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav span.fav-it:after,
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav span.liked:after{
+	content: "\f004";
+    display: inline-block;
+    font: 900 normal normal 12px/1 "Font Awesome 5 Free";
+    padding: 5px 6px 0 0;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav span.fav-it,
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav span.liked{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 999;
+    color: #fff;
+}
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav a.liked:before,
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav span.liked:before{
+    border-top-color: #e74c3c;
+}
+.terraclassifieds-latest-ads .terraclassifieds-image .terraclassifieds-fav .love-count{
+	display: none;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-desc {
+    padding: 7px;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-types{
+	margin-bottom: 10px;	
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-types .terraclassifieds-type:first-of-type{
+	margin-left:0;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 0 8px;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-text {
+    margin: 0 0 15px;
+}
+
+.terraclassifieds-latest-ads .terraclassifieds-price {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.terraclassifieds-latest-ads .columns-1 .terraclassifieds-ad-in {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.terraclassifieds-latest-ads-list.columns-1 li + li {
+    padding-top: 10px;
+}
+
+/* search */
+
+.terraclassifieds-search {
+    text-align: center;
+}
+
+.terraclassifieds-search form {
+    background: #9bb83c;
+    padding: 10px 18px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    margin: 0;
+    width: 100%;
+}
+
+.terraclassifieds-search form.terraclassifieds-more-fields{
+    padding: 0;
+    background: none;
+    border-radius: 0;
+}
+
+.terraclassifieds-search form .terraclassifieds-search-more-wrapper{
+    display: block;
+    padding: 0 18px;
+}
+
+.terraclassifieds-search form.terraclassifieds-more-fields .terraclassifieds-search-fields{
+    background: #f7f7f7;
+    padding: 10px 18px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    margin: 0;
+    width: 100%;
+}
+
+.terraclassifieds-search form > div {
+    display: inline-block;
+    padding: 0 8px;
+}
+
+.terraclassifieds-search form input,
+.terraclassifieds-search form select {
+    vertical-align: middle;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 44px;
+    line-height: normal;
+    min-height: 44px;
+    color: #454545;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.terraclassifieds-search form .select2-container{
+    vertical-align: middle;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 44px;
+    line-height: normal;
+    min-height: 44px;
+    color: #454545;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 8px 0;
+    width: 100% !important;
+}
+
+.terraclassifieds-search form .select2-container .select2-selection{
+    height: 100%;
+}
+
+.terraclassifieds-search .select2-container .select2-selection--single .select2-selection__rendered{
+    line-height: 42px;
+    padding: 0;
+    text-align: left;
+}
+
+/*.terraclassifieds-search form .select2-container{
+	margin-left: 5px;
+}*/
+
+.terraclassifieds-search form .select2-container .select2-selection{
+    border: none;
+}
+
+.terraclassifieds-search .select2-container--default .select2-selection--single .select2-selection__arrow{
+	top: 8px;
+}
+
+.terraclassifieds-search .select2-container--default .select2-selection--single .select2-selection__arrow b{
+    border-color: #454545 transparent transparent transparent;
+    border-width: 6px 3px 0 3px;
+}
+
+.terraclassifieds-search .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{
+    border-color: transparent transparent #454545 transparent;
+    border-width: 0 3px 6px 3px;
+}
+
+/*.terraclassifieds-search form #terraclassifieds-product-search-location-field,
+.terraclassifieds-search form #ad_location{
+	margin-left: 5px;
+}*/
+
+.terraclassifieds-search .terraclassifieds-location-more-characters,
+.terraclassifieds-search .terraclassifieds-location-no-location{
+    display: none;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1em;
+    text-align: left;
+    position: absolute;
+    left: 5px;
+    bottom: -8px;
+}
+.terraclassifieds-search .terraclassifieds-location-more-characters.show,
+.terraclassifieds-search .terraclassifieds-location-no-location.show{
+	display: block;
+}
+
+.terraclassifieds-search .terraclassifieds-search-type{
+    display: none;
+    text-align: left;
+    clear: both;
+}
+
+.terraclassifieds-search .terraclassifieds-search-type .terraclassifieds-type-val{
+	margin-right: 10px;
+	margin-left:0;
+	cursor: pointer;
+}
+
+.terraclassifieds-search .terraclassifieds-search-type .terraclassifieds-type-val:not(.on){
+  background: #454545 !important;
+  border-color: #454545 !important;
+  color: #fff !important;
+}
+
+.terraclassifieds-search .terraclassifieds-search-filter-price{
+	margin-top: 8px;
+}
+
+.terraclassifieds-search .terraclassifieds-search-filter-price .terraclassifieds-search-filter-price-label{
+    display: block;
+}
+
+.terraclassifieds-search .terraclassifieds-search-filter-price input{
+	font-size: 14px;
+    padding: 5px;
+    height: auto;
+    min-height: 1px;
+}
+
+.terraclassifieds-clear-button{
+    padding: 0;
+    cursor: pointer;
+    line-height: 44px;
+    box-sizing: border-box;
+}
+
+.terraclassifieds-clear-button i{
+	margin-right: 5px;
+}
+
+.terraclassifieds-search .terraclassifieds-more-fields{
+    text-align: right;
+    padding-bottom: 18px;
+}
+
+.terraclassifieds-clear-area{
+	vertical-align: middle;
+}
+
+.terraclassifieds-search .terraclassifieds-more-fields .terraclassifieds-btn{
+    float: none;
+    margin: 0 18px 0 0 !important;
+}
+
+.terraclassifieds-search .terraclassifieds-more-fields .terraclassifieds-search-fields{
+	width: 100%;
+}
+
+.terraclassifieds-search .terraclassifieds-search-type.type-open{
+	display: block;
+}
+
+.terraclassifieds-search form button {
+    margin: 8px 0 8px 10px;
+    width: 120px;
+    padding-left: 2px;
+    padding-right: 2px;
+    vertical-align: middle;
+    height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    float: left;
+}
+
+.terraclassifieds-search form .terraclassifieds-more{
+    margin: 0;
+    width: auto;
+    vertical-align: middle;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    padding: 0 15px 0 0;
+}
+
+.terraclassifieds-search form .terraclassifieds-more:after{
+    content: '\f107';
+    position: absolute;
+    top: 8px;
+    right: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "Font Awesome 5 Free";
+    line-height: 1;
+    font-weight: 900;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.terraclassifieds-search form .terraclassifieds-more.more-open:after{
+    content: "\f106";
+}
+
+.terraclassifieds-search .terraclassifieds-search-fields{
+    float: left;
+    width: calc(100% - 130px);
+    padding: 0;
+}
+
+/*** jQuery UI ***/
+/* Component containers
+----------------------------------*/
+.ui-widget {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+.ui-widget.ui-widget-content {
+	border: 1px solid #c5c5c5;
+}
+.ui-widget-content {
+	border: 1px solid #dddddd;
+	background: #ffffff;
+	color: #333333;
+}
+.ui-widget-content a {
+	color: #333333;
+}
+.ui-widget-header {
+	border: 1px solid #dddddd;
+	background: #e9e9e9;
+	color: #333333;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #333333;
+}
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+
+/* We use html here because we need a greater specificity to make sure disabled
+works properly when clicked or hovered */
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+	border: 1px solid #c5c5c5;
+	background: #f6f6f6;
+	font-weight: normal;
+	color: #454545;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited,
+a.ui-button,
+a:link.ui-button,
+a:visited.ui-button,
+.ui-button {
+	color: #454545;
+	text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+	border: 1px solid #cccccc;
+	background: #ededed;
+	font-weight: normal;
+	color: #2b2b2b;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited,
+a.ui-button:hover,
+a.ui-button:focus {
+	color: #2b2b2b;
+	text-decoration: none;
+}
+
+.ui-visual-focus {
+	box-shadow: 0 0 3px 1px rgb(94, 158, 214);
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #003eff;
+	background: #007fff;
+	font-weight: normal;
+	color: #ffffff;
+}
+.ui-icon-background,
+.ui-state-active .ui-icon-background {
+	border: #003eff;
+	background-color: #ffffff;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #ffffff;
+	text-decoration: none;
+}
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.ui-accordion .ui-accordion-header {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	margin: 2px 0 0 0;
+	padding: .5em .5em .5em .7em;
+	font-size: 100%;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 1em 2.2em;
+	border-top: 0;
+	overflow: auto;
+}
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+}
+.ui-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	outline: 0;
+}
+.ui-menu .ui-menu {
+	position: absolute;
+}
+.ui-menu .ui-menu-item {
+	margin: 0;
+	padding: 0 0 0 15px;
+	cursor: pointer;
+	/* support: IE10, see #8844 */
+	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+.ui-menu .ui-menu-item-wrapper {
+	position: relative;
+	padding: 3px 1em 3px .4em;
+}
+.ui-menu .ui-menu-divider {
+	margin: 5px 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: 1px 0 0 0;
+}
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+	margin: -1px;
+}
+
+/* registration */
+.terraclassifieds-register{
+    max-width: 600px;
+    padding: 19px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+}
+
+.gdpr-checkboxes{
+    clear: both;
+    margin-left: 180px;
+    padding: 0 0 15px;
+}
+
+#terraclassifieds-login form .gdpr-checkboxes p{
+    margin-bottom: 5px;
+    float: none;
+    display: block;
+    clear: both;
+}
+
+#terraclassifieds-login form .gdpr-checkboxes p label{
+    float: none;
+    width: auto;
+    text-align: left;
+    font-weight: 400;
+}
+
+#terraclassifieds-login form .gdpr-checkboxes p a label{
+    display: none !important;
+}
+
+#terraclassifieds-login form .gdpr-checkboxes p label input{
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+.terraclassifieds-registration-content form p.error label{
+	color: #ec5050 !important;
+}
+
+.terraclassifieds-registration-content form p.error input,
+.terraclassifieds-registration-content form p.error textarea{
+	border-color: #ec5050 !important;
+}
+
+.terraclassifieds-registration-content form p.error .status{
+    display: block;
+    clear: both;
+    text-align: right;
+}
+
+.terraclassifieds-registration-content form p.error .status label{
+    float: none;
+    width: auto;
+}
+
+.terraclassifieds-registration-content p,
+.terraclassifieds-registration-content p.register-username.error,
+.terraclassifieds-registration-content p.register-email.error,
+.terraclassifieds-registration-content p.register-password.error{
+    margin: 0 0 10px;
+    float: left;
+    width: 100%;
+}
+
+.terraclassifieds-registration-content p.agreement-terms-and-conditions,
+.terraclassifieds-registration-content p.agreement-privacy-policy,
+.terraclassifieds-registration-content p.agreement-gdpr,
+.terraclassifieds-registration-content p:not(.error),
+.terraclassifieds-registration-content p.error{
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.terraclassifieds-registration-content p label{
+    float: left;
+    width: 200px;
+    padding: 3px 0;
+    font-weight: 600;
+}
+
+.terraclassifieds-registration-content p input[type="text"],
+.terraclassifieds-registration-content p input[type="password"],
+.terraclassifieds-registration-content p textarea{
+    float: left;
+    width: calc(100% - 200px);
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.terraclassifieds-registration-content p textarea{
+	min-height: 100px;
+}
+
+.terraclassifieds-registration-content hr{
+    clear: both;
+    border: none;
+    height: 1px;
+    margin: 0 0 20px;
+}
+
+.terraclassifieds-registration-content p input[type="submit"]{
+    margin-left: 180px;
+    line-height: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 4px 20px;
+}
+
+/* login */
+#terraclassifieds-login{
+    max-width: 600px;
+    padding: 19px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+}
+
+#terraclassifieds-login:before,
+#terraclassifieds-login:after{
+    content: ' ';
+    display: table;
+}
+
+#terraclassifieds-login:after{
+	clear: both;
+}
+
+#terraclassifieds-login form p{
+    margin: 0 0 20px;
+    float: left;
+    width: 100%;
+}
+
+#terraclassifieds-login form p label{
+    float: left;
+    width: 160px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 3px 0;
+}
+
+#terraclassifieds-login form p input[type="text"],
+#terraclassifieds-login form p input[type="password"]{
+    margin-left: 20px;
+    width: calc(100% - 200px);
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#terraclassifieds-login form p #rememberme{
+    float: right;
+    margin: 4px 0 0 5px;
+}
+
+#terraclassifieds-login form p.login-submit{
+	clear: both;
+}
+
+#terraclassifieds-login form p.login-submit input[type="submit"]{
+	margin-left: 180px;
+	line-height: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 4px 20px;
+}
+
+#terraclassifieds-login form p.login-remember label{
+	width: 193px;
+}
+
+#terraclassifieds-login + .terraclassifieds-register-link-outer{
+	text-align: center;
+}
+
+/* forgot password */
+.terraclassifieds-forgot-password{
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    color: #454545;
+    box-shadow: 1px 1px 1px 0.3px rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+}
+
+.terraclassifieds-forgot-password form p label{
+    float: left;
+    width: 160px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 3px 0;
+}
+
+.terraclassifieds-forgot-password form p input[type="text"]{
+    margin-left: 20px;
+    width: auto;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.terraclassifieds-forgot-password .forgot-submit{
+    margin-left: 180px;
+}
+
+.terraclassifieds-forgot-password p{
+	margin: 0 0 20px;
+}
+
+.terraclassifieds-forgot-password .forgot-submit input[type="submit"]{
+    line-height: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 4px 20px;
+    margin: 0;
+}
+
+/* EDIT PROFILE */
+/* registration */
+.terraclassifieds-edit-profile form p.error label{
+	color: #ec5050 !important;
+}
+
+.terraclassifieds-edit-profile form p.error input,
+.terraclassifieds-edit-profile form p.error textarea{
+	border-color: #ec5050 !important;
+}
+
+.terraclassifieds-edit-profile p{
+    margin: 0 0 20px;
+    float: left;
+    width: 100%;
+}
+
+.terraclassifieds-edit-profile p label{
+    float: left;
+    width: 200px;
+    padding: 3px 0;
+    font-weight: 600;
+}
+
+.terraclassifieds-edit-profile p label.remove-avatar-label{
+    width: auto;
+    margin: 0 10px 0 0;
+    float: none;
+}
+
+.terraclassifieds-edit-profile input#remove-avatar{
+	vertical-align: middle;
+}
+
+.terraclassifieds-edit-profile p input[type="text"],
+.terraclassifieds-edit-profile p input[type="password"],
+.terraclassifieds-edit-profile p textarea{
+    float: left;
+    width: calc(100% - 200px);
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.terraclassifieds-edit-profile p textarea{
+	min-height: 100px;
+}
+
+.terraclassifieds-edit-profile hr{
+    clear: both;
+    border: none;
+    height: 1px;
+    margin: 0 0 20px;
+}
+
+.terraclassifieds-edit-profile .register-submit{
+	text-align: right;
+}
+
+.terraclassifieds-edit-profile p input[type="submit"]{
+	    width: auto;
+}
+
+.terraclassifieds-edit-profile #wpua-images-existing p{
+    width: auto;
+    margin: 0 10px 10px 0;
+}
+
+.terraclassifieds-user-avatar{
+    max-width: 100px;
+    height: auto;
+    margin: 0 15px 0 0;
+}
+
+/* TYPES */
+.terraclassifieds-types{
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0 5px;
+}
+.terraclassifieds-type,
+.terraclassifieds-type-val{
+    display: inline-block;
+    border-style: solid;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    padding: 0 10px;
+    border-radius: 2px;
+    vertical-align: middle;
+    letter-spacing: 1px;
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    margin-left: 10px;
+    border-width: 1px;
+    box-sizing: border-box;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    z-index: 9999;
+}
+/* Modal Header */
+.modal-header {
+    padding: 0 15px;
+    background-color: #039ad2;
+    color: white;
+    text-align: right;
+}
+
+.modal .close{
+    cursor: pointer;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    display: inline-block;
+    line-height: 30px;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 15px;
+}
+
+.modal-body p{
+    width: auto;
+    float: none;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/* agreements */
+.agreement-terms-and-conditions label,
+.agreement-privacy-policy label,
+.agreement-gdpr label{
+    width: auto !important;
+    float: none !important;
+    font-weight: 600;
+}
+
+.agreement-terms-and-conditions input[type="checkbox"],
+.agreement-privacy-policy input[type="checkbox"],
+.agreement-gdpr input[type="checkbox"]{
+	vertical-align: middle;
+}
+
+.agreement-terms-and-conditions input[type="checkbox"].error + label,
+.agreement-privacy-policy input[type="checkbox"].error + label,
+.agreement-gdpr input[type="checkbox"].error + label{
+	    color: #ec5050;
+}
+
+/* Breadcrumb */
+.terraclassifieds-breadcrumb{
+    margin-bottom: 18px;
+    border-bottom: 1px solid #d2d7da;
+    padding-bottom: 12px;
+    font-size: 14px;
+}
+.archive .terraclassifieds-breadcrumb .terraclassifieds-breadcrumb-separator:last-of-type{
+	display: none;
+}
+.archive .terraclassifieds-breadcrumb > a:last-of-type{
+    color: inherit;
+    pointer-events: none;
+    cursor: default;
+}
+
+/*** RWD ***/
+@media( max-width: 991px ) {
+	.cmb-form .cmb-th,
+	.cmb-form .cmb-td{
+		width: 100%;
+	}
+	.cmb2-id--tc-draft-status .cmb-th, .cmb2-id--tc-draft-status .cmb-td{
+		width: auto;
+	}
+}
+
+@media( max-width: 767px ) {
+	.cmb-form .cmb-td textarea,
+	.cmb-form .cmb-td #_tc_post_title,
+	.cmb-form .cmb-td #_tc_location_address,
+	.cmb-form .cmb-td #_tc_location_post_code{
+		min-width: 1px;
+		width: 100%;
+	}
+	.cmb2-metabox-description{
+		top: -35px;
+		left: auto;
+		right:0;
+	}
+	.cmb2-id--tc-price .cmb2-metabox-description{
+		left: auto;
+	}
+	.cmb2-id--tc-gallery .cmb-td{
+		width: auto;
+	}
+	.cmb2-id--tc-gallery .cmb2-metabox-description {
+	    left: auto;
+	}
+	.cmb2-id--tc-sell-type, .cmb2-id--tc-price, .cmb2-id--tc-negotiable{
+		float:none;
+		padding:0;
+	}
+	.cmb-form .cmb2-id--tc-price .cmb-th, .cmb-form .cmb2-id--tc-negotiable .cmb-th{
+		display: block;
+	}
+	.cmb-form .cmb2-id--tc-sell-type .cmb-th, .cmb-form .cmb2-id--tc-price .cmb-th, .cmb-form .cmb2-id--tc-negotiable .cmb-th{
+		width: 100%;
+		padding-right:0;
+		display: block;
+	}
+	.cmb-form .cmb-th{
+		font-size: inherit;
+	}
+	.cmb2-id--tc-category ul.cmb2-list > li{
+		width: 50%;
+	}
+	.cmb2-id--tc-draft-status{
+		max-width: none;
+	    float: none;
+	    margin: 0;
+	}
+    .terraclassifieds-archive .terraclassifieds-item {
+        display: block;
+    }
+    .terraclassifieds-archive .terraclassifieds-image {
+        text-align: center;
+    }
+    .terraclassifieds-archive .terraclassifieds-details {
+        padding-left: 30px;
+    }
+    .terraclassifieds-archive .terraclassifieds-item > div{
+	    display: block;
+	    width: auto;
+	    text-align: center;
+	    min-width: 1px;
+	    width: 100% !important;
+    }
+    .terraclassifieds-single .terraclassifieds-top {
+        display: block;
+    }
+    .terraclassifieds-single .terraclassifieds-content + .terraclassifieds-details {
+        margin: 30px 0 0;
+    }
+    .terraclassifieds-single .terraclassifieds-content,
+    .terraclassifieds-single .terraclassifieds-content + .terraclassifieds-details{
+    	width: 100%;
+    }
+    .terraclassifieds-categories-list.vertical.columns-2 > li,
+    .terraclassifieds-categories-list.vertical.columns-3 > li,
+    .terraclassifieds-categories-list.vertical.columns-4 > li,
+    .terraclassifieds-categories-list.vertical.columns-5 > li,
+    .terraclassifieds-categories-list.vertical.columns-6 > li,
+    .terraclassifieds-categories-list.vertical.columns-7 > li,
+    .terraclassifieds-categories-list.vertical.columns-8 > li {
+        width: 50%;
+    }
+	.terraclassifieds-search .terraclassifieds-search-fields{
+    	width: 100%;
+	}
+	.terraclassifieds-search form button{
+		margin-left:0;
+	}
+    .terraclassifieds-latest-ads-list.columns-2 li,
+    .terraclassifieds-latest-ads-list.columns-3 li,
+    .terraclassifieds-latest-ads-list.columns-4 li,
+    .terraclassifieds-latest-ads-list.columns-5 li,
+    .terraclassifieds-latest-ads-list.columns-6 li,
+    .terraclassifieds-latest-ads-list.columns-7 li,
+    .terraclassifieds-latest-ads-list.columns-8 li {
+        width: 50%;
+    }
+}
+
+@media( max-width: 480px ) {
+    .terraclassifieds-categories-list.vertical.columns-2 > li,
+    .terraclassifieds-categories-list.vertical.columns-3 > li,
+    .terraclassifieds-categories-list.vertical.columns-4 > li,
+    .terraclassifieds-categories-list.vertical.columns-5 > li,
+    .terraclassifieds-categories-list.vertical.columns-6 > li,
+    .terraclassifieds-categories-list.vertical.columns-7 > li,
+    .terraclassifieds-categories-list.vertical.columns-8 > li {
+        width: 100%;
+    }
+	.cmb2-id--tc-draft-status .cmb-th{
+	    width: 80%;
+	    padding: 0 5px 0 0;
+	    margin: 0;
+	    box-sizing: border-box;
+	    float: left !important;
+	}
+	.cmb2-id--tc-draft-status .cmb-th + .cmb-td{
+	    width: 20%;
+	    padding: 0;
+	    margin: 0;
+	    box-sizing: border-box;
+	    float: left !important;
+	}
+	.cmb2-id--tc-draft-status .cmb-th + .cmb-td input{
+		margin-top: 10px;
+	}
+    .terraclassifieds-latest-ads-list.columns-2 li,
+    .terraclassifieds-latest-ads-list.columns-3 li,
+    .terraclassifieds-latest-ads-list.columns-4 li,
+    .terraclassifieds-latest-ads-list.columns-5 li,
+    .terraclassifieds-latest-ads-list.columns-6 li,
+    .terraclassifieds-latest-ads-list.columns-7 li,
+    .terraclassifieds-latest-ads-list.columns-8 li {
+        width: 100%;
+    }
+	.terraclassifieds-registration-content p label,
+	.terraclassifieds-registration-content p input[type="text"], 
+	.terraclassifieds-registration-content p textarea{
+		width: 100%;
+	}
+	.gdpr-checkboxes{
+		margin-left:0;
+	}
+	#terraclassifieds-login form p label,
+	#terraclassifieds-login form p input[type="text"], 
+	#terraclassifieds-login form p input[type="password"]{
+	    width: 100%;
+	    text-align: left;
+	    margin: 0;
+	}
+	#terraclassifieds-login form p #rememberme{
+	    float: none;
+	    margin: 0px 5px 0 0;
+	    vertical-align: middle;
+	}
+	#terraclassifieds-login form p.login-submit input[type="submit"]{
+	    margin-left: 0;
+	}
+	#terraclassifieds-login a.terraclassifieds-forgot-password-link{
+		padding-left:0;
+		padding-right:0;
+	}
+}
