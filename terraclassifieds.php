@@ -226,8 +226,8 @@ if ( ! class_exists( 'Terraclassifieds' ) ) {
 				    'addAdvertSubmitButtonPublish' => __( 'Add advert', 'terraclassifieds' ),
 				    'addAdvertSubmitButtonSaveChanges' => __( 'Save changes', 'terraclassifieds' ),
 				    'addAdvertSubmitButtonDraft' => __( 'Save as draft', 'terraclassifieds' ),
-				    'priceFilterInputFrom' => __( 'From', 'terraclassifieds' ),
-				    'priceFilterInputTo' => __( 'To', 'terraclassifieds' ),
+				    'priceFilterInputFrom' => esc_html_x( "From", "search price", "terraclassifieds" ),
+				    'priceFilterInputTo' => esc_html_x( "To", "search price", "terraclassifieds" ),
 				);
 				wp_localize_script( self::$plugin . '-plugin-js', 'php_vars', $dataToBePassed );
 			}

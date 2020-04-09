@@ -294,13 +294,13 @@ if ( ! function_exists( 'terraclassifiedsSearchForm' ) ) {
 					    $form .= '<div class="terraclassifieds-search-filter-price">';
 					       $form .= '<div class="row">';
 					    
-					           $form .= '<label class="terraclassifieds-search-filter-price-label col-lg-12 col-md-12 col-sm-12 col-xs-12">' . __( "Price", "search price", "terraclassifieds" ) . '</label>';
+					           $form .= '<label class="terraclassifieds-search-filter-price-label col-lg-12 col-md-12 col-sm-12 col-xs-12">' . esc_html_x( "Price", "search price", "terraclassifieds" ) . '</label>';
     					       $form .= '<div class="terraclassifieds-search-filter-price-field col-lg-'.$price_size1.' col-md-'.$price_size2.' col-sm-'.$price_size3.' col-xs-'.$price_size4 . '">';
-        					       $form .= '<input type="number" placeholder="' . __( "From", "search price", "terraclassifieds" ) . '" name="price-min" min="0" value="' . $price_min . '">';
+        					       $form .= '<input type="number" placeholder="' . esc_html_x( "From", "search price", "terraclassifieds" ) . '" name="price-min" min="0" value="' . $price_min . '">';
     					       $form .= '</div>';
     					       
     					       $form .= '<div class="terraclassifieds-search-filter-price-field col-lg-'.$price_size1.' col-md-'.$price_size2.' col-sm-'.$price_size3.' col-xs-'.$price_size4 . '">';
-    					           $form .= '<input type="number" placeholder="' . __( "To", "search price", "terraclassifieds" ) . '" name="price-max" min="0" value="' . $price_max . '">';
+    					           $form .= '<input type="number" placeholder="' . esc_html_x( "To", "search price", "terraclassifieds" ) . '" name="price-max" min="0" value="' . $price_max . '">';
     					       $form .= '</div>';
 					       
 					       $form .= '</div>';

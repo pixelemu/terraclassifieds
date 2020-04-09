@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: BUG-EMAIL-ADDR <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: yyyy-mm-dd hh:mm+0000\n"
-"PO-Revision-Date: 2020-03-31 13:41+0100\n"
+"PO-Revision-Date: 2020-04-09 09:32+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -70,11 +70,11 @@ msgstr ""
 msgid "Save as draft"
 msgstr ""
 
-#: terraclassifieds.php:229 inc/functions/base-functions.php:299
+#: terraclassifieds.php:229
 msgid "From"
 msgstr ""
 
-#: terraclassifieds.php:230 inc/functions/base-functions.php:303
+#: terraclassifieds.php:230
 msgid "To"
 msgstr ""
 
@@ -1590,8 +1590,19 @@ msgctxt "search more"
 msgid "More"
 msgstr ""
 
-#: inc/functions/base-functions.php:297 inc/functions/settings.php:1033
+#: inc/functions/base-functions.php:297
+msgctxt "search price"
 msgid "Price"
+msgstr ""
+
+#: inc/functions/base-functions.php:299
+msgctxt "search price"
+msgid "From"
+msgstr ""
+
+#: inc/functions/base-functions.php:303
+msgctxt "search price"
+msgid "To"
 msgstr ""
 
 #: inc/functions/base-functions.php:324
@@ -2564,6 +2575,10 @@ msgstr ""
 
 #: inc/functions/settings.php:1029
 msgid "Selling types"
+msgstr ""
+
+#: inc/functions/settings.php:1033
+msgid "Price"
 msgstr ""
 
 #: inc/functions/settings.php:1034
