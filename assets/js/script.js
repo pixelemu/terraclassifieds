@@ -738,7 +738,7 @@
 		        messages: {
 					user_password: {
 						required: "",
-						minlength: jQuery.validator.format("Enter at least {0} characters")
+						minlength: jQuery.validator.format(php_vars.registrationPasswordMinimumCharacters1 + " {0} " + php_vars.registrationPasswordMinimumCharacters2)
 					},
 					tc_terms_and_conditions: '',
 					tc_privacy_policy: '',

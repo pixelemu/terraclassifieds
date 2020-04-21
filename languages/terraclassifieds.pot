@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: BUG-EMAIL-ADDR <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: yyyy-mm-dd hh:mm+0000\n"
-"PO-Revision-Date: 2020-04-09 09:32+0100\n"
+"PO-Revision-Date: 2020-04-21 08:48+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Enter min"
 msgstr ""
 
-#: terraclassifieds.php:217
+#: terraclassifieds.php:217 terraclassifieds.php:232
 msgid "characters"
 msgstr ""
 
@@ -70,12 +70,18 @@ msgstr ""
 msgid "Save as draft"
 msgstr ""
 
-#: terraclassifieds.php:229
+#: terraclassifieds.php:229 inc/functions/base-functions.php:299
+msgctxt "search price"
 msgid "From"
 msgstr ""
 
-#: terraclassifieds.php:230
+#: terraclassifieds.php:230 inc/functions/base-functions.php:303
+msgctxt "search price"
 msgid "To"
+msgstr ""
+
+#: terraclassifieds.php:231
+msgid "Enter at least"
 msgstr ""
 
 #: inc/cmb2.php:134 inc/cmb2/cmb2/example-functions.php:753
@@ -1593,16 +1599,6 @@ msgstr ""
 #: inc/functions/base-functions.php:297
 msgctxt "search price"
 msgid "Price"
-msgstr ""
-
-#: inc/functions/base-functions.php:299
-msgctxt "search price"
-msgid "From"
-msgstr ""
-
-#: inc/functions/base-functions.php:303
-msgctxt "search price"
-msgid "To"
 msgstr ""
 
 #: inc/functions/base-functions.php:324
