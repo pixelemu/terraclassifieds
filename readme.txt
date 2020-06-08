@@ -3,7 +3,7 @@ Contributors: PixelEmu
 Tags: classifieds, classified ads, classifieds plugin, advertising
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 1.8
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,16 @@ General
 3. Click Activate to activate the plugin.
 
 == Changelog ==
+
+= 1.9 =
+* Added option to sort categories in the 'TerraClassifieds Categories' widget by name and ID
+* Added option to sort categories in the 'TerraClassifieds Categories' widget ascending and descending
+* Added option to translate string "Enter at least XXX characters" in the 'Add Advert' view
+* Fixed translation issue for strings in the 'TerraClassifieds Search' widget
+* Fixed padding issue for inputs and selects in the search form for some themes
+* Fixed not visible buttons 'Upload Files' and 'Media Library' in the Media Manager modal (Add advert view)
+* Fixed error "Invalid Post Type" in the dashboard while searching posts
+* Added option to filter adverts by selling type in the search form
 
 = 1.8 =
 * Added button 'Cancel' for add/edit form

@@ -902,6 +902,10 @@ ul.terraclassifieds-usermenu .nav-dropdown .menu-item.menu-separator:first-of-ty
 
 /* add advert */
 
+.media-router .media-menu-item{
+    color: #000;
+}
+
 form#ad_options{
     margin: 0 0 20px;
 }
@@ -2087,6 +2091,7 @@ ul.terraclassifieds-categories-list li a {
     min-height: 44px;
     color: #454545;
     background: #fff;
+    box-sizing: border-box;
     border-radius: 5px;
     font-size: 15px;
     padding-top: 10px;
@@ -2183,6 +2188,7 @@ ul.terraclassifieds-categories-list li a {
   color: #fff !important;
 }
 
+.terraclassifieds-search .terraclassifieds-search-filter-selling-type,
 .terraclassifieds-search .terraclassifieds-search-filter-price{
 	margin-top: 8px;
 }
@@ -2191,7 +2197,8 @@ ul.terraclassifieds-categories-list li a {
     display: block;
 }
 
-.terraclassifieds-search .terraclassifieds-search-filter-price input{
+.terraclassifieds-search .terraclassifieds-search-filter-price input,
+.terraclassifieds-search .terraclassifieds-search-filter-selling-type select#sell_type{
 	font-size: 14px;
     padding: 5px;
     height: auto;

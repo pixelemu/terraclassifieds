@@ -893,11 +893,19 @@
 		    }
 		});
 		// type select -> type buttons - END
+
+
+		// selling types search - BEGIN
+		if($.urlParam('sell_type') != 0){
+			$('select#sell_type option[value="' + $.urlParam('sell_type') + '"]').attr("selected","selected");
+		}
+		// selling types search - END
 		
 		$('.terraclassifieds-clear-button').click(function() {
 			$('.terraclassifieds-product-search-field').attr('value','');
 			$('.terraclassifieds-search-filter-price input').attr('value','');
 			$("select#ad_category").val(0);
+			$("select#sell_type").val(0);
 			$("select#ad_location").val('').trigger('change');
 			$("#select2-ad_location-container").text(php_vars.allLocations);
 			$(".terraclassifieds-search-type input").val('');
