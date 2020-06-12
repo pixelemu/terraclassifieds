@@ -285,28 +285,32 @@ if (!function_exists('terraclassifiedsSearchForm')) {
 			}
 
 			// selling type - BEGIN
-			$sellingTypes = terraclassifieds_get_option('_tc_selling_types', array('price', 'for-free', 'exchange', 'nothing'));
-			if (in_array('price', $sellingTypes) || in_array('for-free', $sellingTypes) || in_array('exchange', $sellingTypes)) {
-				$form .= '<div class="terraclassifieds-search-filter-selling-type">';
-				$form .= '<label for="sell_type">' . __('Selling Type:', 'terraclassifieds') . '</label>';
-				$form .= '<select name="sell_type" id="sell_type">';
-				$form .= '<option value="0">' . __('Select', 'terraclassifieds') . '</option>';
+			$selling_type_filter = terraclassifieds_get_option_base_functions('_tc_archive_search_use_selling_type_filter', '0');
+			if ($selling_type_filter) {
+				$sellingTypes = terraclassifieds_get_option('_tc_selling_types', array('price', 'for-free', 'exchange', 'nothing'));
+				if (in_array('price', $sellingTypes) || in_array('for-free', $sellingTypes) || in_array('exchange', $sellingTypes)) {
+					$form .= '<div class="terraclassifieds-search-filter-selling-type">';
+					$form .= '<label for="sell_type">' . __('Selling Type:', 'terraclassifieds') . '</label>';
+					$form .= '<select name="sell_type" id="sell_type">';
+					$form .= '<option value="0">' . __('Select', 'terraclassifieds') . '</option>';
 
-				if (in_array('price', $sellingTypes)) {
-					$form .= '<option value="price">' . __('Price', 'terraclassifieds') . '</option>';
+					if (in_array('price', $sellingTypes)) {
+						$form .= '<option value="price">' . __('Price', 'terraclassifieds') . '</option>';
+					}
+
+					if (in_array('for-free', $sellingTypes)) {
+						$form .= '<option value="for_free">' . __('For free', 'terraclassifieds') . '</option>';
+					}
+
+					if (in_array('exchange', $sellingTypes)) {
+						$form .= '<option value="exchange">' . __('Exchange', 'terraclassifieds') . '</option>';
+					}
+
+					$form .= '</select>';
+					$form .= '</div>';
 				}
-
-				if (in_array('for-free', $sellingTypes)) {
-					$form .= '<option value="for_free">' . __('For free', 'terraclassifieds') . '</option>';
-				}
-
-				if (in_array('exchange', $sellingTypes)) {
-					$form .= '<option value="exchange">' . __('Exchange', 'terraclassifieds') . '</option>';
-				}
-
-				$form .= '</select>';
-				$form .= '</div>';
 			}
+
 
 			// selling type - END
 

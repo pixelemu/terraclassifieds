@@ -178,11 +178,12 @@ if ( !function_exists('terraclassifieds_new_user_notification') ) :
 		$headers = array("Content-Type: text/html; charset=UTF-8");
 		$email_notification_administrators = terraclassifieds_get_option_base_functions( '_tc_email_notifications_administrators', '' );
 		if(!empty($email_notification_administrators)){
-		    $email_notification_administrators_array = explode(",", $email_notification_administrators);
+			$email_notification_administrators_array = explode(",", $email_notification_administrators);
+			foreach($email_notification_administrators_array as $email_notification_administrators_item){
+				$headers[] = 'Cc: '.$email_notification_administrators_item;
+			}
 		}
-		foreach($email_notification_administrators_array as $email_notification_administrators_item){
-		    $headers[] = 'Cc: '.$email_notification_administrators_item;
-		}
+
 		
 	    // The blogname option is escaped with esc_html on the way into the database in sanitize_option
 	    // we want to reverse this for the plain text arena of emails.
@@ -443,4 +444,3 @@ if ( ! function_exists( 'terraclassifieds_sendmail_update_status2' ) ) {
 	add_action( 'publish_to_archived', 'terraclassifieds_sendmail_update_status2' );
 	add_action( 'archived_to_publish', 'terraclassifieds_sendmail_update_status2' );
 }
-?>

@@ -123,6 +123,7 @@ General
 * Fixed not visible buttons 'Upload Files' and 'Media Library' in the Media Manager modal (Add advert view)
 * Fixed error "Invalid Post Type" in the dashboard while searching posts
 * Added option to filter adverts by selling type in the search form
+* Fixed PHP warning after user registration when field "E-mail notifications for administrators" is empty
 
 = 1.8 =
 * Added button 'Cancel' for add/edit form
