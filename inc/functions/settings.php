@@ -70,73 +70,79 @@ if (!function_exists('terraclassifieds_register_fields')) {
 		$missing_page_but_conditional_description_registration =  $missing_page_but_conditional_description_part1 . get_the_title($page_registration_default_id) . $missing_page_but_conditional_description_part2;
 		$missing_page_but_conditional_description_my_submissions =  $missing_page_but_conditional_description_part1 . get_the_title($page_my_submissions_default_id) . $missing_page_but_conditional_description_part2;
 
+		// check for permalinks structire
+		if (get_option('permalink_structure') == '/%postname%/') {
+			$permalinks_postname = true;
+		} else {
+			$permalinks_postname = false;
+		}
 		// errors for Add advert
-		if (terraclassifieds_post_by_slug($page_add_advert_slug, 'page') && ($page_add_advert_id != $page_add_advert_default_id)) {
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_add_advert_slug, 'page') && ($page_add_advert_id != $page_add_advert_default_id)) {
 			$page_add_advert_more = $missing_page_but_conditional_description_add_advert;
-		} else if (!terraclassifieds_post_by_slug($page_add_advert_slug, 'page')) {
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_add_advert_slug, 'page')) {
 			$page_add_advert_more = $missing_page_description;
 		} else {
 			$page_add_advert_more = '';
 		}
 
 		// errors for Edit advert
-		if (terraclassifieds_post_by_slug($page_edit_advert_slug, 'page') && ($page_edit_advert_id != $page_edit_advert_default_id)) {
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_edit_advert_slug, 'page') && ($page_edit_advert_id != $page_edit_advert_default_id)) {
 			$page_edit_advert_more = $missing_page_but_conditional_description_edit_advert;
-		} else if (!terraclassifieds_post_by_slug($page_edit_advert_slug, 'page')) {
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_edit_advert_slug, 'page')) {
 			$page_edit_advert_more = $missing_page_description;
 		} else {
 			$page_edit_advert_more = '';
 		}
 
 		// errors for Edit profile
-		if (terraclassifieds_post_by_slug($page_edit_profile_slug, 'page') && ($page_edit_profile_id != $page_edit_profile_default_id)) {
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_edit_profile_slug, 'page') && ($page_edit_profile_id != $page_edit_profile_default_id)) {
 			$page_edit_profile_more = $missing_page_but_conditional_description_edit_profile;
-		} else if (!terraclassifieds_post_by_slug($page_edit_profile_slug, 'page')) {
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_edit_profile_slug, 'page')) {
 			$page_edit_profile_more = $missing_page_description;
 		} else {
 			$page_edit_profile_more = '';
 		}
 
 		// errors for Favourite ads
-		if (terraclassifieds_post_by_slug($page_favourite_ads_slug, 'page') && ($page_favourite_ads_id != $page_favourite_ads_default_id)) {
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_favourite_ads_slug, 'page') && ($page_favourite_ads_id != $page_favourite_ads_default_id)) {
 			$page_favourite_ads_more = $missing_page_but_conditional_description_favourite_ads;
-		} else if (!terraclassifieds_post_by_slug($page_favourite_ads_slug, 'page')) {
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_favourite_ads_slug, 'page')) {
 			$page_favourite_ads_more = $missing_page_description;
 		} else {
 			$page_favourite_ads_more = '';
 		}
 
 		// errors for Forgot password
-		if (terraclassifieds_post_by_slug($page_forgot_password_slug, 'page') && ($page_forgot_password_id != $page_forgot_password_default_id)) {
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_forgot_password_slug, 'page') && ($page_forgot_password_id != $page_forgot_password_default_id)) {
 			$page_forgot_password_more = $missing_page_but_conditional_description_forgot_password;
-		} else if (!terraclassifieds_post_by_slug($page_forgot_password_slug, 'page')) {
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_forgot_password_slug, 'page')) {
 			$page_forgot_password_more = $missing_page_description;
 		} else {
 			$page_forgot_password_more = '';
 		}
 
 		// errors for Login
-		if (terraclassifieds_post_by_slug($page_login_slug, 'page') && ($page_login_id != $page_login_default_id)) {
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_login_slug, 'page') && ($page_login_id != $page_login_default_id)) {
 			$page_login_more = $missing_page_but_conditional_description_login;
-		} else if (!terraclassifieds_post_by_slug($page_login_slug, 'page')) {
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_login_slug, 'page')) {
 			$page_login_more = $missing_page_description;
 		} else {
 			$page_login_more = '';
 		}
 
 		// errors for Registration
-		if (terraclassifieds_post_by_slug($page_registration_slug, 'page') && ($page_registration_id != $page_registration_default_id)) {
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_registration_slug, 'page') && ($page_registration_id != $page_registration_default_id)) {
 			$page_registration_more = $missing_page_but_conditional_description_registration;
-		} else if (!terraclassifieds_post_by_slug($page_registration_slug, 'page')) {
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_registration_slug, 'page')) {
 			$page_registration_more = $missing_page_description;
 		} else {
 			$page_registration_more = '';
 		}
 
 		// errors for My submissions
-		if (terraclassifieds_post_by_slug($page_my_submissions_slug, 'page') && ($page_my_submissions_id != $page_my_submissions_default_id)) {
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_my_submissions_slug, 'page') && ($page_my_submissions_id != $page_my_submissions_default_id)) {
 			$page_my_submissions_more = $missing_page_but_conditional_description_my_submissions;
-		} else if (!terraclassifieds_post_by_slug($page_my_submissions_slug, 'page')) {
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_my_submissions_slug, 'page')) {
 			$page_my_submissions_more = $missing_page_description;
 		} else {
 			$page_my_submissions_more = '';
@@ -759,7 +765,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					),
 					'default' => '0',
 				),
-				
+
 				array(
 					'name'             => __('Use price filter', 'terraclassifieds'),
 					'id'               => '_tc_archive_search_use_price_filter',

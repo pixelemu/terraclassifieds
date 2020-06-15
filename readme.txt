@@ -124,6 +124,7 @@ General
 * Fixed error "Invalid Post Type" in the dashboard while searching posts
 * Added option to filter adverts by selling type in the search form
 * Fixed PHP warning after user registration when field "E-mail notifications for administrators" is empty
+* Fixed unnecessary warnings in the SEO tab about missing pages when Permalink structure in Wordpress is set to 'Plain'
 
 = 1.8 =
 * Added button 'Cancel' for add/edit form
