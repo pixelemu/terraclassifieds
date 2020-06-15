@@ -918,13 +918,25 @@ if (!function_exists('terraclassifieds_custom_login_failed')) {
 
 // login - stop redirect to wp-login.php when login or password is empty
 if (!function_exists('terraclassifieds_custom_authenticate_username_password')) {
-	add_filter('authenticate', 'terraclassifieds_custom_authenticate_username_password', 30, 3);
-	function terraclassifieds_custom_authenticate_username_password($user, $username, $password)
+	function terraclassifieds_custom_authenticate_username_password()
 	{
-		if (is_a($user, 'WP_User')) {
-			return $user;
+		// check for permalinks structire
+		if (get_option('permalink_structure') == '/%postname%/') {
+			$permalinks_postname = true;
+		} else {
+			$permalinks_postname = false;
 		}
+		$page_login_slug = terraclassifieds_get_option('_tc_slug_login', 'login');
+		$page_login = get_page_link(get_page_by_path($page_login_slug));
+		if ($permalinks_postname) {
+			$connector = '?';
+		} else {
+			$connector = '&';
+		}
+		return header('Location: ' . $page_login . $connector . 'login=failed');
+		exit;
 	}
+	add_filter('login_errors', 'terraclassifieds_custom_authenticate_username_password');
 }
 
 // override posts per page for category
