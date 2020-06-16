@@ -117,12 +117,12 @@ General
 = 1.9 =
 * Added option to sort categories in the 'TerraClassifieds Categories' widget by name and ID
 * Added option to sort categories in the 'TerraClassifieds Categories' widget ascending and descending
+* Added option to filter adverts by selling type in the search form
 * Added option to translate string "Enter at least XXX characters" in the 'Registration' view
 * Fixed translation issue for strings in the 'TerraClassifieds Search' widget
 * Fixed padding issue for inputs and selects in the search form for some themes
 * Fixed not visible buttons 'Upload Files' and 'Media Library' in the Media Manager modal (Add advert view)
 * Fixed error "Invalid Post Type" in the dashboard while searching posts
-* Added option to filter adverts by selling type in the search form
 * Fixed PHP warning after user registration when field "E-mail notifications for administrators" is empty
 * Fixed unnecessary warnings in the SEO tab about missing pages when 'Permalink structure' in Wordpress is set to 'Plain'
 * Fixed not showing warnings when pages in the SEO tab are not selected
