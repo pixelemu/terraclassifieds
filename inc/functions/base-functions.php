@@ -435,16 +435,16 @@ if (!function_exists('terraclassifiedsSearchFormInit')) {
 	}
 }
 
-// add custom post type to search
+// add adverts to global search
 if (!is_admin()) {
 	add_filter('pre_get_posts', 'terraclassifieds_search_widget', 9999);
 	function terraclassifieds_search_widget($query)
 	{
-
-		if (is_search() && $query->is_search) {
-			$query->set('post_type', array('classified', 'post'));
+		if ( is_search() && $query->is_search && is_main_query() ) {
+			$current = (array) get_query_var( 'post_type', 'post' );
+			$cpt = array('classified');
+			$query->set('post_type', array_merge($current, $cpt));
 		}
-
 		return $query;
 	}
 }
@@ -456,7 +456,7 @@ if (!is_admin() && !function_exists('terraclassifiedsSearch')) {
 	function terraclassifiedsSearch($query)
 	{
 		if (isset($_GET['post_type']) && $_GET['post_type'] == 'classified') {
-			if ($query->is_search) {
+			if ( is_search() && $query->is_search && is_main_query() ) {
 				$query->set('post_type', array('classified'));
 			}
 			return $query;
@@ -469,7 +469,7 @@ if (!function_exists('terraclassifiedsSearchFilterPrice')) {
 	add_action('pre_get_posts', 'terraclassifiedsSearchFilterPrice', 9999);
 	function terraclassifiedsSearchFilterPrice($query)
 	{
-		if (is_search() && $query->is_search() && (!empty($_GET['price-min']) || !empty($_GET['price-max']))) {
+		if (is_search() && $query->is_search() && is_main_query() && (!empty($_GET['price-min']) || !empty($_GET['price-max']))) {
 
 			//Collect user input from $_GET
 			$user_input_min_value = $_GET['price-min'];
@@ -519,7 +519,7 @@ if (!function_exists('terraclassifiedsSearchFilterSellingType')) {
 	add_action('pre_get_posts', 'terraclassifiedsSearchFilterSellingType', 9999);
 	function terraclassifiedsSearchFilterSellingType($query)
 	{
-		if (is_search() && $query->is_search() && !empty($_GET['sell_type'])) {
+		if (is_search() && $query->is_search() && is_main_query() && !empty($_GET['sell_type'])) {
 
 			//Collect user input from $_GET
 			$user_input_selling_type = $_GET['sell_type'];

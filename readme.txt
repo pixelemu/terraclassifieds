@@ -128,6 +128,7 @@ General
 * Fixed not showing warnings when pages in the SEO tab are not selected
 * Fixed error 'Wrong username, email or password' in the URL: www.yourdomain.com/wp-login.php
 * Fixed problem with too high permissions for the role 'TerraClassifieds user' that allowed editing posts from the frontend (deactivation and reactivation of the plugin required)
+* Fixed mixed post types and wrong pagination on URL www.yourdomain.com/classified
 
 = 1.8 =
 * Added button 'Cancel' for add/edit form
