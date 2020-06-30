@@ -906,6 +906,16 @@ ul.terraclassifieds-usermenu .nav-dropdown .menu-item.menu-separator:first-of-ty
     color: #000;
 }
 
+@media only screen and (max-width: 640px), screen and (max-height: 400px){
+    .supports-drag-drop .media-sidebar {
+        bottom: auto;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
 form#ad_options{
     margin: 0 0 20px;
 }
@@ -933,6 +943,13 @@ form#ad_options{
 	bottom: 20%;
 	left: 20%;
 	right: 20%;
+}
+
+@media only screen and (max-width: 480px){
+    .media-modal.wp-core-ui{
+        left: 5%;
+        right: 5%;
+    }
 }
 
 .cmb2-metabox-description{

@@ -129,6 +129,7 @@ General
 * Fixed error 'Wrong username, email or password' in the URL: www.yourdomain.com/wp-login.php
 * Fixed problem with too high permissions for the role 'TerraClassifieds user' that allowed editing posts from the frontend (deactivation and reactivation of the plugin required)
 * Fixed mixed post types and wrong pagination on URL www.yourdomain.com/classified
+* Fixed not visible error about too big image size and image dimensions on mobiles
 
 = 1.8 =
 * Added button 'Cancel' for add/edit form
