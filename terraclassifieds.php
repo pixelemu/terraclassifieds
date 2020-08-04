@@ -30,7 +30,7 @@ if (!class_exists('Terraclassifieds')) {
 			//$this->addFunctions();
 
 			register_activation_hook(__FILE__, array($this, 'pluginActivation'));
-			register_deactivation_hook(__FILE__, 'flush_rewrite_rules');
+			register_deactivation_hook(__FILE__, array($this, 'pluginDeactivation'));
 
 			add_action('plugins_loaded', array($this, 'loadTextDomain'));
 			add_action('init', array($this, 'cmb2'));
@@ -164,6 +164,16 @@ if (!class_exists('Terraclassifieds')) {
 			include self::$path . 'inc/user/user.php';
 		}
 
+		public function userActivation()
+		{
+			include self::$path . 'inc/user/add-role.php';
+		}
+
+		public function userDeactivation()
+		{
+			include self::$path . 'inc/user/remove-role.php';
+		}
+
 		/**
 		 * Plugin activation hook
 		 */
@@ -171,6 +181,17 @@ if (!class_exists('Terraclassifieds')) {
 		{
 			$this->addCustomPosts();
 			$this->addCustomPages();
+			$this->userActivation();
+
+			flush_rewrite_rules();
+		}
+
+		/**
+		 * Plugin deactivation hook
+		 */
+		public function pluginDeactivation()
+		{
+			$this->userDeactivation();
 
 			flush_rewrite_rules();
 		}
