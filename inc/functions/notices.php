@@ -106,7 +106,7 @@ if ( !class_exists( 'TerraclassifiedsNotices' ) ) {
 									});
 								});
 							})(jQuery);";
-			wp_add_inline_script( 'jquery-migrate', $code );
+			wp_add_inline_script( 'jquery', $code );
 		}
 
 	}
@@ -122,5 +122,3 @@ if( !function_exists('terraclassifieds_ajax_notice_handler') ) {
 		update_option( 'terraclassifieds-update-dismissed', true );
 	}
 }
-
-?>

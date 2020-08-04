@@ -2,8 +2,8 @@
 Contributors: PixelEmu
 Tags: classifieds, classified ads, classifieds plugin, advertising
 Requires at least: 4.0
-Tested up to: 5.4
-Stable tag: 1.9
+Tested up to: 5.5
+Stable tag: 1.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,9 @@ General
 3. Click Activate to activate the plugin.
 
 == Changelog ==
+
+= 1.9.1 =
+* Fixed always shown banner with 'PE Terraclassic' theme in the dashboard on Wordpress 5.5
 
 = 1.9 =
 * Added option to sort categories in the 'TerraClassifieds Categories' widget by name and ID
