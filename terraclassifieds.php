@@ -5,7 +5,7 @@ defined('ABSPATH') or die('No script kiddies please!');
  * Plugin Name: TerraClassifieds - Simple Classifieds Plugin
  * Plugin URI: https://www.pixelemu.com/wordpress-plugins/i/245-terraclassifieds
  * Description: Create a classifieds website with WordPress. To save time use dedicated theme TerraClassic available on <a href="https://www.pixelemu.com/">pixelemu.com</a>
- * Version: 1.9.1
+ * Version: 2.0
  * Author: pixelemu.com
  * Author URI: https://pixelemu.com
  * Text Domain: terraclassifieds
@@ -58,6 +58,8 @@ if (!class_exists('Terraclassifieds')) {
 			add_action('admin_enqueue_scripts', array($this, 'adminStyles'));
 
 			include self::$path . 'inc/functions/cron-functions.php';
+
+			require_once(self::$path . 'captcha/autoload.php'); // recaptcha
 		}
 
 		// get CM2 options

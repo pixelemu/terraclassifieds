@@ -1444,6 +1444,23 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'default' => '0',
 				),
 
+				array(
+					'name' => __('Captcha', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_captcha'
+				),
+				array(
+					'name'    => __('reCAPTCHA Site key', 'terraclassifieds'),
+					'id'      => '_tc_recaptcha_site_key',
+					'type'    => 'text',
+					'default' => '',
+				),
+				array(
+					'name'    => __('reCAPTCHA Secret key', 'terraclassifieds'),
+					'id'      => '_tc_recaptcha_secret_key',
+					'type'    => 'text',
+					'default' => '',
+				),
 			)
 		);
 
