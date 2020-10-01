@@ -1,160 +1,204 @@
-.menu-icon-classified .dashicons-before:before{
-	content: "\f488";
+.menu-icon-classified .dashicons-before:before {
+    content: "\f488";
 }
-.cmb-row .cmb-th label{
-	padding-top:0;
+
+.cmb-row .cmb-th label {
+    padding-top: 0;
 }
-.terraclassifieds-search-label{
-    font-weight: bold;
+
+.terraclassifieds-search-label {
+    font-weight  : bold;
     margin-bottom: 0;
-    float: left;
-    width: 100%;
+    float        : left;
+    width        : 100%;
 }
-.terraclassifieds-screen-size{
-    float: left;
-    width: 50%;
-    padding: 0 2px;
+
+.terraclassifieds-screen-size {
+    float     : left;
+    width     : 50%;
+    padding   : 0 2px;
     box-sizing: border-box;
-    margin: 0;
+    margin    : 0;
 }
+
 /* hide some CMB2 fields */
 .cmb2-id--tc-post-title,
 .cmb2-id--tc-post-content,
 .cmb2-id--tc-validate-message,
 .cmb2-id--tc-expire-soon-notification-done,
 .cmb2-id--tc-draft-status,
-#ad_categorydiv{
-	display:none;
+.cmb2-id--tc-too-short-description,
+#ad_categorydiv {
+    display: none;
 }
 
-.cmb-type-tabs .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active a{
-    background: #2ea2cc;
-    color: #fff;
-    border: none;
-    border-right-color: #2ea2cc;
-    border-left: 3px solid #2ea2cc;
-    margin: 0 -1px 0 0;
-    z-index: 50 !important;	
+.cmb-type-tabs .ui-tabs-vertical .ui-tabs-nav li {
+    white-space: normal;
 }
-.cmb-type-tabs > .cmb-td{
-    padding-top: 0;
+
+.cmb-type-tabs .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active a {
+    background        : #2ea2cc;
+    color             : #fff;
+    border            : none;
+    border-right-color: #2ea2cc;
+    border-left       : 3px solid #2ea2cc;
+    margin            : 0 -1px 0 0;
+    z-index           : 50 !important;
+}
+
+.cmb-type-tabs .cmb-th {
+    width     : 200px;
+    box-sizing: border-box;
+    float     : left;
+}
+
+.cmb-type-tabs .cmb-td .cmb-td {
+    padding-bottom: 1em;
+    width         : calc(100% - 200px);
+    box-sizing    : border-box;
+}
+
+.cmb-type-tabs .cmb2-id--tc-add-advert-description-minimum-length .cmb-td,
+.cmb-type-tabs .cmb2-id--tc-add-advert-description-characters-limit .cmb-td {
+    width: auto;
+}
+
+.cmb-type-tabs>.cmb-td {
+    padding-top   : 0;
     padding-bottom: 0;
 }
+
 .cmb2-id--tc-seo-expired-ad-redirect-url,
 .cmb2-id--tc-selling-types,
-.cmb-row.location-fields{
-	display: none;
+.cmb-row.location-fields {
+    display: none;
 }
-.tcf-gallery-after-label{
-	display:none;
+
+.tcf-gallery-after-label {
+    display: none;
 }
-.cmb2-id--tc-category img{
+
+.cmb2-id--tc-category img {
     vertical-align: middle;
-    margin: 0 5px 0 0;
-    max-height: 50px;
+    margin        : 0 5px 0 0;
+    max-height    : 50px;
 }
+
 .tcf-add-category-done,
 .tcf-change-category-button,
-.tcf-add-category-button{
-	display:none !important;
+.tcf-add-category-button {
+    display: none !important;
 }
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-type-title{
+
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-type-title {
     background: no-repeat;
-    padding: 0;
+    padding   : 0;
 }
-#wpbody-content .cmb2-options-page .cmb-type-title .cmb-td .cmb2-metabox-title{
+
+#wpbody-content .cmb2-options-page .cmb-type-title .cmb-td .cmb2-metabox-title {
     padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 10px;
-    background: #f7f7f7;
-    border-left: 3px solid #2ea2cc;
-    border-bottom: none;
-    border-top: none;
+    padding-top   : 10px;
+    padding-left  : 10px;
+    background    : #f7f7f7;
+    border-left   : 3px solid #2ea2cc;
+    border-bottom : none;
+    border-top    : none;
 }
 
-#wpbody-content .cmb2-options-page .cmb-type-title .cmb-td .cmb2-metabox-title + .cmb2-metabox-description{
-	margin-top: 15px;
+#wpbody-content .cmb2-options-page .cmb-type-title .cmb-td .cmb2-metabox-title+.cmb2-metabox-description {
+    margin-top: 15px;
 }
 
-#wpbody-content .cmb2-options-page .cmb2-wrap  [class*="-af"] .cmb2-metabox-title,
-#wpbody-content .cmb2-options-page .cmb2-wrap  [class*="-size"] .cmb2-metabox-title,
-#wpbody-content .cmb2-options-page .cmb2-wrap  [class*="-description-characters-limit-label"] .cmb2-metabox-title{
-    border: none;
+#wpbody-content .cmb2-options-page .cmb2-wrap [class*="-af"] .cmb2-metabox-title,
+#wpbody-content .cmb2-options-page .cmb2-wrap [class*="-size"] .cmb2-metabox-title,
+#wpbody-content .cmb2-options-page .cmb2-wrap [class*="-description-characters-limit-label"] .cmb2-metabox-title {
+    border        : none;
     text-transform: none;
-    font-size: 14px;
-    padding: 0;
+    font-size     : 14px;
+    padding       : 0;
+    background    : none;
+}
+
+#wpbody-content .cmb2-options-page .cmb-type-title .cmb-td h3.cmb2-metabox-title#-tc-description-characters-limit-label {
     background: none;
 }
-#wpbody-content .cmb2-options-page .cmb-type-title .cmb-td h3.cmb2-metabox-title#-tc-description-characters-limit-label{
-	background: none;
-}
-#wpbody-content .cmb2-options-page .cmb2-wrap  [class*="-description-characters-limit-label"]{
-	width: 200px;
-    display: inline-block;
-    margin: 0;
+
+#wpbody-content .cmb2-options-page .cmb2-wrap [class*="-description-characters-limit-label"] {
+    width         : 200px;
+    display       : inline-block;
+    margin        : 0;
     vertical-align: middle;
-    padding: 12px 10px 0 0;
+    padding       : 12px 10px 0 0;
 }
 
 .cmb2-id--tc-add-advert-description-minimum-length,
-.cmb2-id--tc-add-advert-description-characters-limit{
-	display: inline-block;
+.cmb2-id--tc-add-advert-description-characters-limit {
+    display       : inline-block;
     vertical-align: middle;
-    width: 170px;
-    padding: 0 0 26px 10px;
+    width         : 170px;
+    padding       : 0 0 26px 10px;
 }
+
 .cmb2-id--tc-add-advert-description-minimum-length .cmb-th,
-.cmb2-id--tc-add-advert-description-characters-limit .cmb-th{
-	width: 100%;
+.cmb2-id--tc-add-advert-description-characters-limit .cmb-th {
+    width  : 100%;
     padding: 0;
 }
+
 .cmb2-id--tc-add-advert-description-minimum-length .cmb-td,
-.cmb2-id--tc-add-advert-description-characters-limit .cmb-td{
-	width: 100%;
+.cmb2-id--tc-add-advert-description-characters-limit .cmb-td {
+    width  : 100%;
     padding: 0 !important;
-    margin: 0;
+    margin : 0;
 }
+
 #wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row .cmb2-id--tc-search-size.cmb-type-title,
 #wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row .cmb2-id--tc-category-size.cmb-type-title,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row .cmb2-id--tc-location-size.cmb-type-title{
-    width: 100%;
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row .cmb2-id--tc-location-size.cmb-type-title {
+    width  : 100%;
     padding: 0;
 }
+
 #wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row .cmb2-id--tc-search-size.cmb-type-title .cmb-td,
 #wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row .cmb2-id--tc-category-size.cmb-type-title .cmb-td,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row .cmb2-id--tc-location-size.cmb-type-title .cmb-td{
-	padding-bottom: 10px;
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row .cmb2-id--tc-location-size.cmb-type-title .cmb-td {
+    padding-bottom: 10px;
 }
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size1"],
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size2"],
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size3"],
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size4"]{
-    float: left;
-    width: 25%;
-    padding: 0 5px 0 0;
+
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size1"],
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size2"],
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size3"],
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size4"] {
+    float     : left;
+    width     : 25%;
+    padding   : 0 5px 0 0;
     box-sizing: border-box;
 }
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size1"] label,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size2"] label,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size3"] label,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size4"] label{
+
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size1"] label,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size2"] label,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size3"] label,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size4"] label {
     font-weight: normal;
-    font-size: 0.8em;
+    font-size  : 0.8em;
 }
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size1"] .cmb-th,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size2"] .cmb-th,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size3"] .cmb-th,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size4"] .cmb-th{
-    width: 100%;
+
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size1"] .cmb-th,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size2"] .cmb-th,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size3"] .cmb-th,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size4"] .cmb-th {
+    width  : 100%;
     padding: 0;
 }
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size1"] .cmb-td,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size2"] .cmb-td,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size3"] .cmb-td,
-#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row  [class*="-size4"] .cmb-td{
-    width: 100%;
+
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size1"] .cmb-td,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size2"] .cmb-td,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size3"] .cmb-td,
+#wpbody-content .cmb2-options-page .cmb2-wrap .cmb-row [class*="-size4"] .cmb-td {
+    width  : 100%;
     padding: 0;
 }
+
 .cmb2-id--tc-gdpr-plugin,
 .cmb2-id--tc-terms-and-conditions,
 .cmb2-id--tc-terms-and-conditions-page,
@@ -162,97 +206,124 @@
 .cmb2-id--tc-privacy-policy-page,
 .cmb2-id--tc-gdpr,
 .cmb2-id--tc-gdpr-information {
-    display:none;
+    display: none;
 }
-.ui-tabs.ui-tabs-vertical .ui-tabs-panel{
-	min-height: 500px;
+
+.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+    min-height: 500px;
 }
-.dashicons-warning{
-	color: red;
+
+.dashicons-warning {
+    color: red;
 }
-.dashicons-yes{
-	color: green;
+
+.dashicons-yes {
+    color: green;
 }
-#wpbody-content > .terraclassifieds-notice{
-	display: none;
+
+#wpbody-content>.terraclassifieds-notice {
+    display: none;
 }
-.terraclassifieds-notice .dashicons{
+
+.terraclassifieds-notice .dashicons {
     vertical-align: middle;
-    line-height: 16px;
-    margin-right: 10px;
+    line-height   : 16px;
+    margin-right  : 10px;
 }
-.terraclassifieds-notice.current-version + .cmb-row{
-	display: none;
+
+.terraclassifieds-notice.current-version+.cmb-row {
+    display: none;
 }
-.cmb2-id--tc-locations .cmb-td ul > li ~ ul.cmb2-indented-hierarchy{
-	display: none;
+
+.cmb2-id--tc-locations .cmb-td ul>li~ul.cmb2-indented-hierarchy {
+    display: none;
 }
-.cmb2-id--tc-locations .cmb-td ul  li label{
-  pointer-events: none;
+
+.cmb2-id--tc-locations .cmb-td ul li label {
+    pointer-events: none;
 }
-.cmb2-wrap .tcf-clear-locations{
-    margin: 0 0 15px;
-    display: block;
-    cursor: pointer;
+
+.cmb2-wrap .tcf-clear-locations {
+    margin   : 0 0 15px;
+    display  : block;
+    cursor   : pointer;
     font-size: 14px;
 }
 
 .cmb2-id--tc-archive-search-location-show,
 .cmb2-id--tc-archive-search-category-show,
 .cmb2-id--tc-archive-search-use-type-filter,
-.cmb2-id--tc-archive-search-use-price-filter{
-	position: relative;
-    clear: both;
+.cmb2-id--tc-archive-search-use-price-filter {
+    position   : relative;
+    clear      : both;
     padding-top: 27px;
 }
 
 .cmb2-id--tc-archive-search-location-show:before,
 .cmb2-id--tc-archive-search-category-show:before,
 .cmb2-id--tc-archive-search-use-type-filter:before,
-.cmb2-id--tc-archive-search-use-price-filter:before{
-    content: '';
-    height: 1px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 22px;
+.cmb2-id--tc-archive-search-use-price-filter:before {
+    content   : '';
+    height    : 1px;
+    width     : 100%;
+    position  : absolute;
+    left      : 0;
+    top       : 22px;
     background: #e1e1e1;
 }
-.cmb2-id--tc-search-size{
-	padding-top: 5px !important;
+
+.cmb2-id--tc-search-size {
+    padding-top: 5px !important;
 }
-.cmb2-id--tc-location-size{
-	padding-top: 5px !important;
+
+.cmb2-id--tc-location-size {
+    padding-top: 5px !important;
 }
-.cmb2-id--tc-category-size{
-	padding-top: 5px !important;
+
+.cmb2-id--tc-category-size {
+    padding-top: 5px !important;
 }
-.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] .cmb-td{
-	width: 25em;
+
+.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] .cmb-td {
+    width: 25em;
 }
-.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] .post-titles-container{
-	width: calc(100% - 95px);
+
+.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] .post-titles-container {
+    width: calc(100% - 95px);
 }
-.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] .cmb2-post-search-button{
-	width: 85px;
+
+.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] .cmb2-post-search-button {
+    width: 85px;
     float: right;
 }
-.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] input{
-	height: 30px;
-    width: 100%;
+
+.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] input {
+    height: 30px;
+    width : 100%;
 }
-.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] input.error{
-	border-color: red;
+
+.cmb2-wrap .cmb-row[data-fieldtype="post_search_text"] input.error {
+    border-color: red;
 }
-.terraclassifieds-post-tile-more-info{
-	color: red;
+
+.terraclassifieds-post-tile-more-info {
+    color: red;
 }
-.terraclassifieds-update-notice{
+
+.terraclassifieds-update-notice {
     display: inline-block;
-    border: none;
+    border : none;
 }
-.terraclassifieds-update-notice + h2 + .subsubsub{
-    clear: both;
+
+.terraclassifieds-update-notice+h2+.subsubsub {
+    clear  : both;
     display: block;
-    width: 100%;
+    width  : 100%;
+}
+
+/*** RWD ***/
+@media(max-width: 767px) {
+    .cmb-type-tabs .cmb-td .cmb-td {
+        width: auto;
+    }
 }

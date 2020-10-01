@@ -618,6 +618,7 @@ function terraclassifieds_registration($atts)
 					$page_login = get_page_link(get_page_by_path($page_login_slug));
 					$password_registration = terraclassifieds_get_option('_tc_password_registration', 0);
 					$gdpr_method = terraclassifieds_get_option('_tc_gdpr_method', 0);
+					$recaptcha = terraclassifieds_get_option('_tc_recaptcha', 0);
 					$recaptcha_site_key = terraclassifieds_get_option('_tc_recaptcha_site_key', '');
 					$recaptcha_secret_key = terraclassifieds_get_option('_tc_recaptcha_secret_key', '');
 					$captcha_ok = false;
@@ -629,7 +630,7 @@ function terraclassifieds_registration($atts)
 						}
 						$user_id = username_exists($user_name);
 						if (!$user_id and email_exists($user_email) == false) {
-							if ($recaptcha_site_key && $recaptcha_secret_key && isset($_POST['g-recaptcha-response'])) {
+							if ($recaptcha && $recaptcha_site_key && $recaptcha_secret_key && isset($_POST['g-recaptcha-response'])) {
 
 								$secret    = $recaptcha_secret_key;
 								$recaptcha = new \ReCaptcha\ReCaptcha($secret);
@@ -655,7 +656,7 @@ function terraclassifieds_registration($atts)
 									</div>
 								<?php }
 							}
-							if ($captcha_ok || !($recaptcha_site_key && $recaptcha_secret_key)) {
+							if (!$recaptcha || ($captcha_ok || !($recaptcha_site_key && $recaptcha_secret_key))) {
 								if ($password_registration == 0) {
 									$password = wp_generate_password($length = 12, $include_standard_special_chars = false);
 								}
@@ -712,7 +713,7 @@ function terraclassifieds_registration($atts)
 							<!--<hr />-->
 
 							<?php
-							if ($recaptcha_site_key && $recaptcha_secret_key) {
+							if ($recaptcha && $recaptcha_site_key && $recaptcha_secret_key) {
 								echo '<div class="tcf-captcha">';
 								echo '<div class="g-recaptcha" data-sitekey="' . $recaptcha_site_key . '"></div>';
 								echo '<script type="text/javascript" src="https://www.google.com/recaptcha/api.js" async defer></script>';

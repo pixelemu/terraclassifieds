@@ -7,9 +7,9 @@ msgstr ""
 "Project-Id-Version: TerraClassifieds - Simple Classifieds Plugin\n"
 "Report-Msgid-Bugs-To: BUG-EMAIL-ADDR <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: yyyy-mm-dd hh:mm+0000\n"
-"PO-Revision-Date: 2020-09-21 11:22+0000\n"
+"PO-Revision-Date: 2020-10-01 10:01+0000\n"
 "Last-Translator: \n"
-"Language-Team: Polish\n"
+"Language-Team: Polski\n"
 "Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Thank you %s, your new post has been saved as Draft."
 msgstr "Dziękujemy %s, Twój nowy wpis został zapisany jako szkic."
 
-#: inc/shortcodes.php:180 inc/shortcodes.php:358 inc/shortcodes.php:1166
+#: inc/shortcodes.php:180 inc/shortcodes.php:358 inc/shortcodes.php:1167
 msgid "Please login"
 msgstr "Proszę się zalogować"
 
@@ -154,7 +154,7 @@ msgstr "Proszę się zalogować"
 msgid "Thank you %s, your ad has been updated."
 msgstr "Dziękujemy %s, Twoje ogłoszenie zostało zaktualizowane."
 
-#: inc/shortcodes.php:471 inc/shortcodes.php:1134
+#: inc/shortcodes.php:471 inc/shortcodes.php:1135
 #: inc/custom-posts/ad-post-type.php:298 inc/custom-posts/ad-post-type.php:305
 #: inc/custom-posts/ad-post-type.php:311 inc/custom-posts/ad-post-type.php:322
 #: inc/custom-posts/ad-post-type.php:329 inc/custom-posts/ad-post-type.php:338
@@ -165,7 +165,7 @@ msgstr "Dziękujemy %s, Twoje ogłoszenie zostało zaktualizowane."
 msgid "For Free"
 msgstr "Za darmo"
 
-#: inc/shortcodes.php:473 inc/shortcodes.php:1136
+#: inc/shortcodes.php:473 inc/shortcodes.php:1137
 #: inc/custom-posts/ad-post-type.php:299 inc/custom-posts/ad-post-type.php:306
 #: inc/custom-posts/ad-post-type.php:317 inc/custom-posts/ad-post-type.php:323
 #: inc/custom-posts/ad-post-type.php:334 inc/custom-posts/ad-post-type.php:339
@@ -190,9 +190,9 @@ msgstr "Wygaśnięcie:"
 msgid "Published"
 msgstr "Opublikowany"
 
-#: inc/shortcodes.php:512
+#: inc/shortcodes.php:512 inc/functions/custom-post-status-rejected.php:108
 msgid "Rejected"
-msgstr "Odrzucony"
+msgstr "Odrzucone"
 
 #: inc/shortcodes.php:514 inc/functions/settings.php:1068
 msgid "Pending"
@@ -203,6 +203,7 @@ msgid "Draft"
 msgstr "Szkic"
 
 #: inc/shortcodes.php:518 inc/functions/base-functions.php:777
+#: inc/functions/custom-post-status-archived.php:134
 msgid "Archived"
 msgstr "Zarchiwizowane"
 
@@ -245,11 +246,11 @@ msgstr "Zaloguj sie"
 msgid "to see your submissions."
 msgstr "aby zobaczyć swoje zgłoszenia."
 
-#: inc/shortcodes.php:601 inc/shortcodes.php:758
+#: inc/shortcodes.php:601 inc/shortcodes.php:759
 msgid "You are already logged in."
 msgstr "Jesteś już zalogowany."
 
-#: inc/shortcodes.php:603 inc/shortcodes.php:760 inc/widgets/terra-menu.php:80
+#: inc/shortcodes.php:603 inc/shortcodes.php:761 inc/widgets/terra-menu.php:80
 msgid "Logout"
 msgstr "Wyloguj się"
 
@@ -257,55 +258,55 @@ msgstr "Wyloguj się"
 msgid "User registration is disabled."
 msgstr "Rejestracja użytkownika jest wyłączona."
 
-#: inc/shortcodes.php:654
+#: inc/shortcodes.php:655
 msgid "Captcha error."
 msgstr "Błąd Captcha."
 
-#: inc/shortcodes.php:673
+#: inc/shortcodes.php:674
 msgid "Registration complete. Check Your inbox for username and password to"
 msgstr ""
 "Rejestracja zakończona. Sprawdź swoją skrzynkę odbiorczą i zobacz nazwę "
 "użytkownika i hasła do"
 
-#: inc/shortcodes.php:673
+#: inc/shortcodes.php:674
 msgid "login"
 msgstr "Zaloguj sie"
 
-#: inc/shortcodes.php:678
+#: inc/shortcodes.php:679
 msgid "Username or email already exists."
 msgstr "Nazwa użytkownika lub adres e-mail już istnieje."
 
-#: inc/shortcodes.php:687 inc/shortcodes.php:779 inc/functions/settings.php:272
+#: inc/shortcodes.php:688 inc/shortcodes.php:780 inc/functions/settings.php:272
 msgid "Username"
 msgstr "Nazwa użytkownika"
 
-#: inc/shortcodes.php:692
+#: inc/shortcodes.php:693
 msgid "Email"
 msgstr "Email"
 
-#: inc/shortcodes.php:697 inc/shortcodes.php:982
+#: inc/shortcodes.php:698 inc/shortcodes.php:983
 msgid "Password"
 msgstr "Hasło"
 
-#: inc/shortcodes.php:723
+#: inc/shortcodes.php:724
 msgid "Register"
 msgstr "Rejestracja"
 
-#: inc/shortcodes.php:767
+#: inc/shortcodes.php:768
 msgid "Login failed. Username/password is wrong or empty."
 msgstr ""
 "Logowanie nie powiodło się. Nazwa użytkownika / hasło jest nieprawidłowe lub "
 "puste."
 
-#: inc/shortcodes.php:785
+#: inc/shortcodes.php:786
 msgid "Forgot your password?"
 msgstr "Zapomniałeś hasła?"
 
-#: inc/shortcodes.php:789
+#: inc/shortcodes.php:790
 msgid "Don't have an account?"
 msgstr "Nie masz konta?"
 
-#: inc/shortcodes.php:808
+#: inc/shortcodes.php:809
 msgid ""
 "Please enter your username or email address for your account. A verification "
 "e-mail will be sent to you and you will be able to reset your password."
@@ -313,73 +314,73 @@ msgstr ""
 "Wprowadź swoją nazwę użytkownika lub adres e-mail dla swojego konta. "
 "Otrzymasz e-mail weryfikacyjny i będziesz mógł zresetować hasło."
 
-#: inc/shortcodes.php:811
+#: inc/shortcodes.php:812
 msgid "Username or Email"
 msgstr "Nazwa użykownika lub email"
 
-#: inc/shortcodes.php:816
+#: inc/shortcodes.php:817
 msgid "Submit"
 msgstr "Wyślij"
 
-#: inc/shortcodes.php:851
+#: inc/shortcodes.php:852
 msgid "The passwords you entered do not match.  Your password was not updated."
 msgstr ""
 "Hasła, które wpisałeś nie są zgodne. Twoje hasło nie zostało zaktualizowane."
 
-#: inc/shortcodes.php:859
+#: inc/shortcodes.php:860
 msgid "The Email you entered is not valid.  please try again."
 msgstr "Podany adres e-mail jest nieprawidłowy. proszę spróbuj ponownie."
 
-#: inc/shortcodes.php:861
+#: inc/shortcodes.php:862
 msgid "This email is already used by another user.  try a different one."
 msgstr ""
 "Ten adres e-mail jest już używany przez innego użytkownika. spróbuj innego."
 
-#: inc/shortcodes.php:940
+#: inc/shortcodes.php:941
 msgid "Profile has been updated."
 msgstr "Profil został zaktualizowany."
 
-#: inc/shortcodes.php:946
+#: inc/shortcodes.php:947
 msgid "You must be logged in to edit your profile."
 msgstr "Musisz być zalogowany, aby edytować swój profil."
 
-#: inc/shortcodes.php:962
+#: inc/shortcodes.php:963
 msgid "First name"
 msgstr "Imię"
 
-#: inc/shortcodes.php:966
+#: inc/shortcodes.php:967
 msgid "Last name"
 msgstr "Nazwisko"
 
-#: inc/shortcodes.php:970
+#: inc/shortcodes.php:971
 msgid "E-mail"
 msgstr "E-mail"
 
-#: inc/shortcodes.php:974
+#: inc/shortcodes.php:975
 msgid "Website"
 msgstr "Witryna internetowa"
 
-#: inc/shortcodes.php:978 inc/user/user.php:96 templates/author.php:57
+#: inc/shortcodes.php:979 inc/user/user.php:96 templates/author.php:57
 msgid "Phone"
 msgstr "Telefon"
 
-#: inc/shortcodes.php:986
+#: inc/shortcodes.php:987
 msgid "Repeat password"
 msgstr "Powtórz hasło"
 
-#: inc/shortcodes.php:990
+#: inc/shortcodes.php:991
 msgid "About me"
 msgstr "O mnie"
 
-#: inc/shortcodes.php:998 inc/cmb2/cmb2/example-functions.php:590
+#: inc/shortcodes.php:999 inc/cmb2/cmb2/example-functions.php:590
 msgid "Avatar"
 msgstr "Awatara"
 
-#: inc/shortcodes.php:1002
+#: inc/shortcodes.php:1003
 msgid "Remove avatar"
 msgstr "Usuń awatara"
 
-#: inc/shortcodes.php:1005
+#: inc/shortcodes.php:1006
 msgid "Update"
 msgstr "Aktualizuj"
 
@@ -1578,8 +1579,8 @@ msgstr "Użyj w wyszukiwarce"
 #: inc/functions/settings.php:1125 inc/functions/settings.php:1138
 #: inc/functions/settings.php:1152 inc/functions/settings.php:1166
 #: inc/functions/settings.php:1188 inc/functions/settings.php:1223
-#: inc/functions/settings.php:1417 inc/widgets/terra-search.php:121
-#: inc/widgets/terra-search.php:145
+#: inc/functions/settings.php:1417 inc/functions/settings.php:1459
+#: inc/widgets/terra-search.php:121 inc/widgets/terra-search.php:145
 msgid "Yes"
 msgstr "Tak"
 
@@ -1594,8 +1595,8 @@ msgstr "Tak"
 #: inc/functions/settings.php:1151 inc/functions/settings.php:1165
 #: inc/functions/settings.php:1187 inc/functions/settings.php:1222
 #: inc/functions/settings.php:1372 inc/functions/settings.php:1394
-#: inc/functions/settings.php:1416 inc/widgets/terra-search.php:120
-#: inc/widgets/terra-search.php:144
+#: inc/functions/settings.php:1416 inc/functions/settings.php:1458
+#: inc/widgets/terra-search.php:120 inc/widgets/terra-search.php:144
 msgid "No"
 msgstr "Nie"
 
@@ -1792,7 +1793,7 @@ msgid ""
 "<strong>Favourite ads</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brak strony <strong> Ulubione reklamy </strong> lub jej uproszczona nazwa "
+"Brak strony <strong> Ulubione ogłoszenia </strong> lub jej uproszczona nazwa "
 "została zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1396
@@ -1854,8 +1855,8 @@ msgstr "Co 15 sekund"
 msgid "Every 3611 seconds"
 msgstr "Co 3611 sekund"
 
-#: inc/functions/custom-post-status-archived.php:89
-#: inc/functions/custom-post-status-rejected.php:65
+#: inc/functions/custom-post-status-archived.php:93
+#: inc/functions/custom-post-status-rejected.php:67
 #, php-format
 msgid " <span class=\"count\">(%s)</span>"
 msgid_plural " <span class=\"count\">(%s)</span>"
@@ -1863,12 +1864,16 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: inc/functions/custom-post-status-archived.php:157
+#: inc/functions/custom-post-status-archived.php:135
+msgid "Save Archived"
+msgstr "Zapisz jako zarchiwizowane"
+
+#: inc/functions/custom-post-status-archived.php:166
 msgctxt "terraclassifieds"
 msgid "Archived"
-msgstr "Zarchiwizowany"
+msgstr ""
 
-#: inc/functions/custom-post-status-archived.php:159
+#: inc/functions/custom-post-status-archived.php:168
 #, php-format
 msgid " Archived <span class=\"count\">(%s)</span>"
 msgid_plural " Archived <span class=\"count\">(%s)</span>"
@@ -1876,12 +1881,16 @@ msgstr[0] "Zarchiwizowano <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 msgstr[2] ""
 
-#: inc/functions/custom-post-status-rejected.php:133
+#: inc/functions/custom-post-status-rejected.php:109
+msgid "Save Rejected"
+msgstr "Zapisz jako odrzucone"
+
+#: inc/functions/custom-post-status-rejected.php:140
 msgctxt "terraclassifieds"
 msgid "Rejected"
-msgstr "Odrzucony"
+msgstr "Odrzucone"
 
-#: inc/functions/custom-post-status-rejected.php:135
+#: inc/functions/custom-post-status-rejected.php:142
 #, php-format
 msgid " Rejected <span class=\"count\">(%s)</span>"
 msgid_plural " Rejected <span class=\"count\">(%s)</span>"
@@ -2040,7 +2049,7 @@ msgid "Show"
 msgstr "Pokaż"
 
 #: inc/functions/settings.php:285 inc/functions/settings.php:1269
-#: inc/functions/settings.php:1964
+#: inc/functions/settings.php:1978
 msgid "Other settings"
 msgstr "Inne ustawienia"
 
@@ -2696,7 +2705,7 @@ msgid ""
 "Select if status of newly created ad should be <strong>pending</strong> or "
 "<strong>published</strong>."
 msgstr ""
-"Wybierz, czy status nowo utworzonej reklamy ma być <strong> oczekujący "
+"Wybierz, czy status nowo utworzonego ogloszenia ma być <strong> oczekujący "
 "</strong> czy <strong> opublikowany </strong>."
 
 #: inc/functions/settings.php:1075
@@ -2705,7 +2714,9 @@ msgstr "Wymagane obrazy ogłoszenia"
 
 #: inc/functions/settings.php:1083
 msgid "Select if adding at least one ad's image should be required."
-msgstr "Wybierz, jeśli chcesz dodać co najmniej jeden obraz reklamy."
+msgstr ""
+"Wybierz, czy użytkownik powinien załączyć co najmniej jeden obraz do "
+"ogłoszenia"
 
 #: inc/functions/settings.php:1087
 msgid "Ad location required"
@@ -2721,7 +2732,7 @@ msgstr ""
 
 #: inc/functions/settings.php:1099
 msgid "Ad type required"
-msgstr "Wymagany typ reklamy"
+msgstr "Wymagany typ ogłoszenia"
 
 #: inc/functions/settings.php:1108
 msgid ""
@@ -2942,27 +2953,39 @@ msgstr "Pozwól użytkownikowi wybrać hasło podczas rejestracji"
 msgid "Captcha"
 msgstr "Captcha"
 
-#: inc/functions/settings.php:1453
+#: inc/functions/settings.php:1454
+msgid "Google reCaptcha API"
+msgstr ""
+
+#: inc/functions/settings.php:1463
+msgid ""
+"Enable/disable loading Google reCaptcha API (required for spam protection on "
+"the \"Registration\" page)"
+msgstr ""
+"Włącz / wyłącz ładowanie Google reCaptcha API (wymagane do ochrony przed "
+"spamem na stronie „Rejestracja”)"
+
+#: inc/functions/settings.php:1467
 msgid "reCAPTCHA Site key"
 msgstr "reCAPTCHA klucz witryny"
 
-#: inc/functions/settings.php:1459
+#: inc/functions/settings.php:1473
 msgid "reCAPTCHA Secret key"
 msgstr "reCAPTCHA klucz prywatny"
 
-#: inc/functions/settings.php:1469
+#: inc/functions/settings.php:1483
 msgid "Email templates"
 msgstr "Szablony wiadomości"
 
-#: inc/functions/settings.php:1473
+#: inc/functions/settings.php:1487
 msgid "Reply-to e-mail address"
 msgstr "Adres zwrotny e-mail"
 
-#: inc/functions/settings.php:1479
+#: inc/functions/settings.php:1493
 msgid "E-mail address"
 msgstr "Adres e-mail"
 
-#: inc/functions/settings.php:1482
+#: inc/functions/settings.php:1496
 msgid ""
 "Add email address that will be used as \"reply-to\" for all user "
 "notification messages (except contact form).<br /><strong>NOTE:</strong> "
@@ -2977,23 +3000,23 @@ msgstr ""
 "PHP Mail <br /> (najczęstszy przypadek), e-maile będą wysyłane z adresu: "
 "wordpress@twoja_domena."
 
-#: inc/functions/settings.php:1487
+#: inc/functions/settings.php:1501
 msgid "Registration - administrator notification"
 msgstr "Rejestracja - powiadomienie administratora"
 
-#: inc/functions/settings.php:1493
+#: inc/functions/settings.php:1507
 msgid "Registration - administrator (subject)"
 msgstr "Rejestracja - administrator (temat)"
 
-#: inc/functions/settings.php:1496
+#: inc/functions/settings.php:1510
 msgid "[[[website_name]]] New User Registration"
 msgstr "[[[website_name]]] Nowa rejestracja użytkownika"
 
-#: inc/functions/settings.php:1500
+#: inc/functions/settings.php:1514
 msgid "Registration - administrator (message)"
 msgstr "Rejestracja - administrator (wiadomość)"
 
-#: inc/functions/settings.php:1503
+#: inc/functions/settings.php:1517
 msgid ""
 "\n"
 "\t<p>New user registration on your site [[website_name]]:</p>\n"
@@ -3005,14 +3028,14 @@ msgstr ""
 "\t<p>Nazwa użytkownika: [[user_login]]</p>\n"
 "\t<p>E-mail: [[user_email]]</p>"
 
-#: inc/functions/settings.php:1510 inc/functions/settings.php:1540
-#: inc/functions/settings.php:1574 inc/functions/settings.php:1606
-#: inc/functions/settings.php:1641 inc/functions/settings.php:1679
-#: inc/functions/settings.php:1713 inc/functions/settings.php:1747
+#: inc/functions/settings.php:1524 inc/functions/settings.php:1554
+#: inc/functions/settings.php:1588 inc/functions/settings.php:1620
+#: inc/functions/settings.php:1655 inc/functions/settings.php:1693
+#: inc/functions/settings.php:1727 inc/functions/settings.php:1761
 msgid "Available tags"
 msgstr "Dostępne tagi"
 
-#: inc/functions/settings.php:1513
+#: inc/functions/settings.php:1527
 msgid ""
 "[[website_name]] - Name of your website<br />[[user_login]] - New user login "
 "name<br />[[user_email]] - New user email"
@@ -3020,23 +3043,23 @@ msgstr ""
 "[[website_name]] - Nazwa Twojej witryny<br />[[user_login]] - Nazwa nowego "
 "użytkownika<br />[[user_email]] - Adres e-mail nowego użytkownika"
 
-#: inc/functions/settings.php:1517
+#: inc/functions/settings.php:1531
 msgid "Registration - user notification"
 msgstr "Rejestracja - powiadomienie użytkownika"
 
-#: inc/functions/settings.php:1523
+#: inc/functions/settings.php:1537
 msgid "Registration - user (subject)"
 msgstr "Rejestracja - użytkownik (temat)"
 
-#: inc/functions/settings.php:1526
+#: inc/functions/settings.php:1540
 msgid "[[[website_name]]] Your username and password"
 msgstr "[[[website_name]]] Twoja nazwa użytkownika i hasło"
 
-#: inc/functions/settings.php:1530
+#: inc/functions/settings.php:1544
 msgid "Registration - user (message)"
 msgstr "Rejestracja - użytkownik (wiadomość)"
 
-#: inc/functions/settings.php:1533
+#: inc/functions/settings.php:1547
 msgid ""
 "\n"
 "\t<p>Welcome on site [[website_name]]:</p>\n"
@@ -3048,7 +3071,7 @@ msgstr ""
 "\t<p>Twoja nazwa użytkownika: [[user_login]]</p>\n"
 "\t<p>Twoje hasło: [[user_passwordl]]</p>"
 
-#: inc/functions/settings.php:1543
+#: inc/functions/settings.php:1557
 msgid ""
 "[[website_name]] - Name of your website<br />[[user_login]] - New user login "
 "name<br />[[user_passwordl]] - New user password"
@@ -3056,23 +3079,23 @@ msgstr ""
 "[[website_name]] - Nazwa Twojej witryny<br />[[user_login]] - Nazwa nowego "
 "użytkownika<br />[[user_passwordl]] - Nowe hasło użytkownika"
 
-#: inc/functions/settings.php:1548
+#: inc/functions/settings.php:1562
 msgid "New advert - administrator notification"
 msgstr "Nowe ogłoszenie - powiadomienie administratora"
 
-#: inc/functions/settings.php:1554
+#: inc/functions/settings.php:1568
 msgid "New advert - administrator (subject)"
 msgstr "Nowe ogłoszenie - administrator (temat)"
 
-#: inc/functions/settings.php:1557 inc/functions/settings.php:1590
+#: inc/functions/settings.php:1571 inc/functions/settings.php:1604
 msgid "New advert"
 msgstr "Dodaj nowe ogłoszenie"
 
-#: inc/functions/settings.php:1561
+#: inc/functions/settings.php:1575
 msgid "New advert - administrator (message)"
 msgstr "Nowe ogłoszenie - administrator (wiadomość)"
 
-#: inc/functions/settings.php:1564
+#: inc/functions/settings.php:1578
 msgid ""
 "\n"
 "\t<p>Hello,</p>\n"
@@ -3090,7 +3113,7 @@ msgstr ""
 "\t<p>Email autora: [[advert_author_email]]</p>\n"
 "\t<p>Opis: [[advert_desc]]</p>"
 
-#: inc/functions/settings.php:1577
+#: inc/functions/settings.php:1591
 msgid ""
 "[[advert_title_link]] - Linked advert title (shortcode is available only if "
 "option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart "
@@ -3107,19 +3130,19 @@ msgstr ""
 "Opis ogłoszenia<br />[[advert_author_login]] - Login autora ogłoszenia<br />"
 "[[advert_author_email]] - Email autora ogłoszenia"
 
-#: inc/functions/settings.php:1581
+#: inc/functions/settings.php:1595
 msgid "New advert - user notification"
 msgstr "Nowe ogłoszenie - powiadomienie użytkownika"
 
-#: inc/functions/settings.php:1587
+#: inc/functions/settings.php:1601
 msgid "New advert - user (subject)"
 msgstr "Nowe ogłoszenie - użytkownik (temat)"
 
-#: inc/functions/settings.php:1594
+#: inc/functions/settings.php:1608
 msgid "New advert - user (message)"
 msgstr "Nowe ogłoszenie - użytkownik (wiadomość)"
 
-#: inc/functions/settings.php:1597
+#: inc/functions/settings.php:1611
 msgid ""
 "\n"
 "\t<p>Hello,</p>\n"
@@ -3135,7 +3158,7 @@ msgstr ""
 "\t<p></p><p>Status: [[advert_status]]</p>\n"
 "\t<p>Opis: [[advert_desc]]</p>"
 
-#: inc/functions/settings.php:1609
+#: inc/functions/settings.php:1623
 msgid ""
 "[[advert_category]] - Advert category<br />[[advert_status]] - Advert "
 "status<br />[[advert_desc]] - Advert description"
@@ -3143,23 +3166,23 @@ msgstr ""
 "[[advert_category]] - Kategoria ogłoszenia<br />[[advert_status]] - Status "
 "ogłoszenia<br />[[advert_desc]] - Opis ogłoszenia"
 
-#: inc/functions/settings.php:1614
+#: inc/functions/settings.php:1628
 msgid "Contact form - user notification"
 msgstr "Formularz kontaktowy - powiadomienie użytkownika"
 
-#: inc/functions/settings.php:1620
+#: inc/functions/settings.php:1634
 msgid "Contact form in advert (subject)"
 msgstr "Formularz kontaktowy w ogłoszeniu (temat)"
 
-#: inc/functions/settings.php:1623
+#: inc/functions/settings.php:1637
 msgid "Your advertisement enquiry"
 msgstr "Twoje zapytanie o ogłoszenie"
 
-#: inc/functions/settings.php:1627
+#: inc/functions/settings.php:1641
 msgid "Contact form in advert (message)"
 msgstr "Formularz kontaktowy w ogłoszeniu (wiadomość)"
 
-#: inc/functions/settings.php:1630
+#: inc/functions/settings.php:1644
 msgid ""
 "\n"
 "\t<p>Hello [[user_name]],</p>\n"
@@ -3178,7 +3201,7 @@ msgstr ""
 "\t<p></p>\n"
 "\t[[contact_message]]"
 
-#: inc/functions/settings.php:1644 inc/functions/settings.php:1682
+#: inc/functions/settings.php:1658 inc/functions/settings.php:1696
 msgid ""
 "[[user_name]] - Advert author login<br />[[contact_author_name]] - Author "
 "name<br />[[contact_author_email]] - Author email<br />[[advert_title_link]] "
@@ -3193,23 +3216,23 @@ msgstr ""
 "Opublikuj </strong> w zakładce<strong> Widok doawania ogłoszenia </strong>)"
 "<br />[[contact_message]] - Wiadomość autora"
 
-#: inc/functions/settings.php:1649
+#: inc/functions/settings.php:1663
 msgid "Abuse form - user notification"
 msgstr "Formularz nadużycia - powiadomienie użytkownika"
 
-#: inc/functions/settings.php:1655
+#: inc/functions/settings.php:1669
 msgid "Abuse form in theadvert (subject)"
 msgstr "Formularz nadużycia w ogłoszeniu (temat)"
 
-#: inc/functions/settings.php:1658
+#: inc/functions/settings.php:1672
 msgid "Abuse Report"
 msgstr "Zgłoś nadużycie"
 
-#: inc/functions/settings.php:1662
+#: inc/functions/settings.php:1676
 msgid "Abuse form in the advert (message)"
 msgstr "Formularz nadużycia w ogłoszeniu (wiadomość)"
 
-#: inc/functions/settings.php:1665
+#: inc/functions/settings.php:1679
 msgid ""
 "\n"
 "\t<p>Hello,</p>\n"
@@ -3234,23 +3257,23 @@ msgstr ""
 "\t<p>Powód nadużycia:<br />\n"
 "\t[[abuse_message]]</p>"
 
-#: inc/functions/settings.php:1687
+#: inc/functions/settings.php:1701
 msgid "Change status - user notification"
 msgstr "Zmiana statusu - powiadomienie użytkownika"
 
-#: inc/functions/settings.php:1693
+#: inc/functions/settings.php:1707
 msgid "Change status (subject)"
 msgstr "Zmiana statusu (temat)"
 
-#: inc/functions/settings.php:1696
+#: inc/functions/settings.php:1710
 msgid "Advert status change"
 msgstr "Zmiana statusu ogłoszenia"
 
-#: inc/functions/settings.php:1700
+#: inc/functions/settings.php:1714
 msgid "Change status (message)"
 msgstr "Zmiana statusu (wiadomość)"
 
-#: inc/functions/settings.php:1703
+#: inc/functions/settings.php:1717
 msgid ""
 "\n"
 "\t<p>Hello,</p>\n"
@@ -3268,34 +3291,34 @@ msgstr ""
 "\t<p>Nowy status [[advert_status]].</p>\n"
 "\t<p> </p>"
 
-#: inc/functions/settings.php:1716
+#: inc/functions/settings.php:1730
 msgid ""
 "[[advert_title_link]] - Linked advert title (shortcode is available only if "
 "option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart "
 "<strong>Adding advert view</strong>)<br />[[advert_status]] - Advert status"
 msgstr ""
 "[[advert_title_link]] - Klikalny tytuł ogłoszenia  (shortcode jest dostępny "
-"tylko wtedy, gdy opcja <strong> Status reklamy </strong> jest ustawiony na "
-"<strong> Opublikuj </strong> w zakładce<strong> Widok doawania ogłoszenia "
+"tylko wtedy, gdy opcja <strong> Status ogłoszenia </strong> jest ustawiony "
+"na <strong> Opublikuj </strong> w zakładce<strong> Widok doawania ogłoszenia "
 "</strong>)<br />[[advert_status]] - Status ogłoszenia"
 
-#: inc/functions/settings.php:1721
+#: inc/functions/settings.php:1735
 msgid "Expiration - user notification"
 msgstr "Wygaśnięcie - powiadomienie użytkownika"
 
-#: inc/functions/settings.php:1727
+#: inc/functions/settings.php:1741
 msgid "Advert - expiration notification (subject)"
 msgstr "Ogłoszenie - powiadomienie o wygaśnieciu (temat)"
 
-#: inc/functions/settings.php:1730
+#: inc/functions/settings.php:1744
 msgid "Advert expire notification"
 msgstr "Powiadomienie o wygaśnieciu ogłoszenia"
 
-#: inc/functions/settings.php:1734
+#: inc/functions/settings.php:1748
 msgid "Advert - expiration notification (message)"
 msgstr "Ogłoszenie - powiadomienie o wygaśnieciu (wiadomość)"
 
-#: inc/functions/settings.php:1737
+#: inc/functions/settings.php:1751
 msgid ""
 "\n"
 "\t<p>Hello,</p>\n"
@@ -3315,7 +3338,7 @@ msgstr ""
 "\t<p>Możesz je odświeżyć na liście Twoich ogłoszeń.</p>\n"
 "\t<p> </p>"
 
-#: inc/functions/settings.php:1750
+#: inc/functions/settings.php:1764
 msgid ""
 "[[advert_title_link]] - Linked advert title (shortcode is available only if "
 "option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart "
@@ -3327,11 +3350,11 @@ msgstr ""
 "<strong> Opublikuj </strong> w zakładce<strong> Widok doawania ogłoszenia "
 "</strong>)<br />[[advert_expire_days]] - Liczba dni do wygaśnięcia ogłoszenia"
 
-#: inc/functions/settings.php:1754
+#: inc/functions/settings.php:1768
 msgid "E-mail notifications for administrators"
 msgstr "Powiadomienia e-mail dla administratorów"
 
-#: inc/functions/settings.php:1757
+#: inc/functions/settings.php:1771
 msgid ""
 "By default, all notifications are sent to Administration Email Address from "
 "General Settings.<br />You may add additional recipients separating "
@@ -3341,15 +3364,15 @@ msgstr ""
 "z ustawień ogólnych. <br /> Możesz dodać dodatkowych odbiorców, oddzielając "
 "adresy przecinkami. Wiadomość zostanie wysłana jako DW."
 
-#: inc/functions/settings.php:1764
+#: inc/functions/settings.php:1778
 msgid "SEO"
 msgstr "SEO"
 
-#: inc/functions/settings.php:1768
+#: inc/functions/settings.php:1782
 msgid "Pages"
 msgstr "Strony"
 
-#: inc/functions/settings.php:1771
+#: inc/functions/settings.php:1785
 msgid ""
 "TerraClassifieds will use the default built-in pages unless you change them. "
 "If you change the default page for any of the following views, then remember "
@@ -3359,86 +3382,86 @@ msgstr ""
 "zmienisz domyślną stronę dla któregokolwiek z poniższych widoków, pamiętaj o "
 "umieszczeniu w treści odpowiedniego shortcodu."
 
-#: inc/functions/settings.php:1775
+#: inc/functions/settings.php:1789
 msgid "Page for \"Add advert\""
-msgstr "Strona dla „Dodaj ogłoszenie”"
+msgstr "Strona „Dodaj ogłoszenie”"
 
-#: inc/functions/settings.php:1782
+#: inc/functions/settings.php:1796
 msgid "Shortcode for this page: <strong>[terraclassifieds_add_item]</strong>"
 msgstr "Shortcode dla tej strony: <strong>[terraclassifieds_add_item]</strong>"
 
-#: inc/functions/settings.php:1786
+#: inc/functions/settings.php:1800
 msgid "Page for \"Edit advert\""
 msgstr "Strona „Edytuj ogłoszenie”"
 
-#: inc/functions/settings.php:1793
+#: inc/functions/settings.php:1807
 msgid "Shortcode for this page: <strong>[terraclassifieds_edit_item]</strong>"
 msgstr ""
 "Shortcode dla tej strony: <strong>[terraclassifieds_edit_item]</strong>"
 
-#: inc/functions/settings.php:1797
+#: inc/functions/settings.php:1811
 msgid "Page for \"Edit profile\""
-msgstr "Strona dla „Edytuj profil”"
+msgstr "Strona „Edytuj profil”"
 
-#: inc/functions/settings.php:1804
+#: inc/functions/settings.php:1818
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_edit_profile]</strong>"
 msgstr ""
 "Shortcode dla tej strony: <strong>[terraclassifieds_edit_profile]</strong>"
 
-#: inc/functions/settings.php:1808
+#: inc/functions/settings.php:1822
 msgid "Page for \"Favourite ads\""
-msgstr "Strona dla „Ulubione ogłoszenia”"
+msgstr "Strona „Ulubione ogłoszenia”"
 
-#: inc/functions/settings.php:1815
+#: inc/functions/settings.php:1829
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_favourite_ads]</strong>"
 msgstr ""
 "Shortcode dla tej strony: <strong>[terraclassifieds_favourite_ads]</strong>"
 
-#: inc/functions/settings.php:1819
+#: inc/functions/settings.php:1833
 msgid "Page for \"Forgot password\""
-msgstr "Strona dla „Zapomniałem hasła”"
+msgstr "Strona „Zapomniałem hasła”"
 
-#: inc/functions/settings.php:1826
+#: inc/functions/settings.php:1840
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_forgot_password]</strong>"
 msgstr ""
 "Shortcode dla tej strony: <strong>[terraclassifieds_forgot_password]</strong>"
 
-#: inc/functions/settings.php:1830
+#: inc/functions/settings.php:1844
 msgid "Page for \"Login\""
-msgstr "Strona dla „Logowanie”"
+msgstr "Strona „Logowanie”"
 
-#: inc/functions/settings.php:1837
+#: inc/functions/settings.php:1851
 msgid "Shortcode for this page: <strong>[terraclassifieds_login]</strong>"
 msgstr "Shortcode dla tej strony: <strong>[terraclassifieds_login]</strong>"
 
-#: inc/functions/settings.php:1841
+#: inc/functions/settings.php:1855
 msgid "Page for \"Registration\""
-msgstr "Strona dla „Rejestracja”"
+msgstr "Strona „Rejestracja”"
 
-#: inc/functions/settings.php:1848
+#: inc/functions/settings.php:1862
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_registration]</strong>"
 msgstr ""
 "Shortcode dla tej strony: <strong> [terraclassifieds_registration] </strong>"
 
-#: inc/functions/settings.php:1852
+#: inc/functions/settings.php:1866
 msgid "Page for \"My submissions\""
-msgstr "Strona dla „Moje ogłoszenia”"
+msgstr "Strona „Moje ogłoszenia”"
 
-#: inc/functions/settings.php:1859
+#: inc/functions/settings.php:1873
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_my_submissions]</strong>"
 msgstr ""
 "Shortcode dla tej strony: <strong>[terraclassifieds_my_submissions]</strong>"
 
-#: inc/functions/settings.php:1863
+#: inc/functions/settings.php:1877
 msgid "Slugs"
 msgstr "Uproszczone nazwy"
 
-#: inc/functions/settings.php:1866
+#: inc/functions/settings.php:1880
 msgid ""
 "TerraClassifieds will use the default slugs for pages. Remember that slugs "
 "need to be unique.<br />NOTE: You need to select <strong>Post name</strong> "
@@ -3448,83 +3471,83 @@ msgstr ""
 "uproszczone nazwy muszą być unikalne. <br /> UWAGA: Musisz wybrać <strong> "
 "Nazwa wpisu</strong> w Ustawieniach -> Bezpośrednie odnośniki."
 
-#: inc/functions/settings.php:1870
+#: inc/functions/settings.php:1884
 msgid "Slug for \"Add advert\""
 msgstr "Uproszczona nazwa dla \"Dodaj ogłoszenie\""
 
-#: inc/functions/settings.php:1880
+#: inc/functions/settings.php:1894
 msgid "Slug for \"Edit advert\""
-msgstr "Uproszczona nazwa dla \"Edycka ogłoszenia\""
+msgstr "Uproszczona nazwa dla \"Edycja ogłoszenia\""
 
-#: inc/functions/settings.php:1890
+#: inc/functions/settings.php:1904
 msgid "Slug for \"Edit profile\""
 msgstr "Uproszczona nazwa dla \"Edycja profilu\""
 
-#: inc/functions/settings.php:1900
+#: inc/functions/settings.php:1914
 msgid "Slug for \"Favourite ads\""
 msgstr "Uproszczona nazwa dla \"Ulubione ogłoszenia\""
 
-#: inc/functions/settings.php:1910
+#: inc/functions/settings.php:1924
 msgid "Slug for \"Forgot Password\""
 msgstr "Uproszczona nazwa dla \"Zapomniałem hasła\""
 
-#: inc/functions/settings.php:1920
+#: inc/functions/settings.php:1934
 msgid "Slug for \"Login\""
 msgstr "Uproszczona nazwa dla \"Logowanie\""
 
-#: inc/functions/settings.php:1930
+#: inc/functions/settings.php:1944
 msgid "Slug for \"Registration\""
 msgstr "Uproszczona nazwa dla rejestracji"
 
-#: inc/functions/settings.php:1940
+#: inc/functions/settings.php:1954
 msgid "Slug for \"My submissions\""
 msgstr "Uproszczona nazwa dla \"Moje ogłoszenia\""
 
-#: inc/functions/settings.php:1950
+#: inc/functions/settings.php:1964
 msgid "Slug for archive"
 msgstr "Uproszczona nazwa dla widoku \"archive\""
 
-#: inc/functions/settings.php:1957
+#: inc/functions/settings.php:1971
 msgid "Slug for single classified"
 msgstr "Uproszczona nazwa dla jednego ogłoszenia"
 
-#: inc/functions/settings.php:1970
+#: inc/functions/settings.php:1984
 msgid "Meta description text limit"
 msgstr "Limit tekstu opisu meta"
 
-#: inc/functions/settings.php:1974
+#: inc/functions/settings.php:1988
 msgid "Meta description content is taken by default from the ad's description."
 msgstr "Treść opisu meta jest pobierana domyślnie z opisu ogłoszenia."
 
-#: inc/functions/settings.php:1978
+#: inc/functions/settings.php:1992
 msgid "Archived ad"
 msgstr "Zarchiwizowane ogłoszenie"
 
-#: inc/functions/settings.php:1983
+#: inc/functions/settings.php:1997
 msgid "404 page"
 msgstr "Strona 404"
 
-#: inc/functions/settings.php:1984
+#: inc/functions/settings.php:1998
 msgid "redirect to URL"
 msgstr "przekierowanie do adresu URL"
 
-#: inc/functions/settings.php:1985
+#: inc/functions/settings.php:1999
 msgid "deactivate the page"
 msgstr "dezaktywuj stronę"
 
-#: inc/functions/settings.php:1986
+#: inc/functions/settings.php:2000
 msgid "rediret to the parent category ads list"
 msgstr "przekieruj do listy ogłoszeń kategorii nadrzędnej"
 
-#: inc/functions/settings.php:1989
+#: inc/functions/settings.php:2003
 msgid "Select the action once somebody clicks on an expired (archived) ad."
-msgstr "Wybierz akcję, gdy ktoś kliknie wygasłą (zarchiwizowaną) reklamę."
+msgstr "Wybierz akcję, gdy ktoś kliknie wygasłe (zarchiwizowane) ogłoszenie."
 
-#: inc/functions/settings.php:1993
+#: inc/functions/settings.php:2007
 msgid "Archived ad - redirect URL"
 msgstr "Zarchiwizowane ogłoszenie - URL przkierowania"
 
-#: inc/functions/settings.php:2004
+#: inc/functions/settings.php:2018
 msgid "Documentation"
 msgstr "Dokumentacja"
 
@@ -3691,7 +3714,7 @@ msgstr "Kanał dla wszystkich wpisów przesłanych w ramach %s"
 
 #: inc/widgets/terra-latest-ads.php:16
 msgid "Display Latest Ads."
-msgstr "Wyświetlaj najnowsze reklamy."
+msgstr "Wyświetlaj najnowsze ogłoszenia."
 
 #: inc/widgets/terra-latest-ads.php:18
 msgid "TerraClassifieds Latest Ads"
@@ -3785,7 +3808,7 @@ msgstr "Edytuj profil"
 
 #: inc/widgets/terra-menu.php:75
 msgid "Your favorite ads"
-msgstr "Twoje ulubione reklamy"
+msgstr "Twoje ulubione ogłoszenia"
 
 #: inc/widgets/terra-search.php:19
 msgid "Search for Terraclassifieds ads."

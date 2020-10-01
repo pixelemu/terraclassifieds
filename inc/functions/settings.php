@@ -1449,6 +1449,20 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'type' => 'title',
 					'id'   => '_tc_captcha'
 				),
+
+				array(
+					'name'             => __('Google reCaptcha API', 'terraclassifieds'),
+					'id'               => '_tc_recaptcha',
+					'type'             => 'radio_inline',
+					'options'          => array(
+						'0' => __('No', 'terraclassifieds'),
+						'1' => __('Yes', 'terraclassifieds'),
+
+					),
+					'default' => '0',
+					'desc' => __('Enable/disable loading Google reCaptcha API (required for spam protection on the "Registration" page)', 'terraclassifieds'),
+				),
+
 				array(
 					'name'    => __('reCAPTCHA Site key', 'terraclassifieds'),
 					'id'      => '_tc_recaptcha_site_key',
@@ -1772,7 +1786,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name'        => __('Page for "Add advert"'),
+					'name'        => __('Page for "Add advert"', 'terraclassifieds'),
 					'id'          => '_tc_add_advert_page_id',
 					'type'        => 'post_search_text',
 					'post_type'   => array('page'),
@@ -1783,7 +1797,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name'        => __('Page for "Edit advert"'),
+					'name'        => __('Page for "Edit advert"', 'terraclassifieds'),
 					'id'          => '_tc_edit_advert_page_id',
 					'type'        => 'post_search_text',
 					'post_type'   => array('page'),
@@ -1794,7 +1808,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name'        => __('Page for "Edit profile"'),
+					'name'        => __('Page for "Edit profile"', 'terraclassifieds'),
 					'id'          => '_tc_edit_profile_page_id',
 					'type'        => 'post_search_text',
 					'post_type'   => array('page'),
@@ -1805,7 +1819,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name'        => __('Page for "Favourite ads"'),
+					'name'        => __('Page for "Favourite ads"', 'terraclassifieds'),
 					'id'          => '_tc_favourite_ads_page_id',
 					'type'        => 'post_search_text',
 					'post_type'   => array('page'),
@@ -1816,7 +1830,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name'        => __('Page for "Forgot password"'),
+					'name'        => __('Page for "Forgot password"', 'terraclassifieds'),
 					'id'          => '_tc_forgot_password_page_id',
 					'type'        => 'post_search_text',
 					'post_type'   => array('page'),
@@ -1827,7 +1841,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name'        => __('Page for "Login"'),
+					'name'        => __('Page for "Login"', 'terraclassifieds'),
 					'id'          => '_tc_login_page_id',
 					'type'        => 'post_search_text',
 					'post_type'   => array('page'),
@@ -1838,7 +1852,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name'        => __('Page for "Registration"'),
+					'name'        => __('Page for "Registration"', 'terraclassifieds'),
 					'id'          => '_tc_registration_page_id',
 					'type'        => 'post_search_text',
 					'post_type'   => array('page'),
@@ -1849,7 +1863,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name'        => __('Page for "My submissions"'),
+					'name'        => __('Page for "My submissions"', 'terraclassifieds'),
 					'id'          => '_tc_my_submissions_page_id',
 					'type'        => 'post_search_text',
 					'post_type'   => array('page'),
