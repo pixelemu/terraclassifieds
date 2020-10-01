@@ -3685,7 +3685,7 @@ msgstr "Sortuj:"
 
 #: inc/widgets/terra-categories.php:188
 msgid "Ascending"
-msgstr "Rosnąco"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:189
 msgid "Descending"
