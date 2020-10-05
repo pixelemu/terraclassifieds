@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: TerraClassifieds - Simple Classifieds Plugin\n"
 "Report-Msgid-Bugs-To: BUG-EMAIL-ADDR <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: yyyy-mm-dd hh:mm+0000\n"
-"PO-Revision-Date: 2020-10-01 10:07+0000\n"
+"PO-Revision-Date: 2020-10-05 07:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -3459,7 +3459,7 @@ msgstr ""
 
 #: inc/functions/settings.php:1877
 msgid "Slugs"
-msgstr "Uproszczone nazwy"
+msgstr "Uproszczone nazwy do adresu URL"
 
 #: inc/functions/settings.php:1880
 msgid ""
@@ -3467,9 +3467,10 @@ msgid ""
 "need to be unique.<br />NOTE: You need to select <strong>Post name</strong> "
 "in Settings -> Permalinks."
 msgstr ""
-"TerraClassifieds użyje domyślnych uproszczonych nazw dla stron. Pamiętaj, że "
-"uproszczone nazwy muszą być unikalne. <br /> UWAGA: Musisz wybrać <strong> "
-"Nazwa wpisu</strong> w Ustawieniach -> Bezpośrednie odnośniki."
+"TerraClassifieds użyje domyślnych uproszczonych nazw dla adresu URL. "
+"Pamiętaj, że uproszczone nazwy muszą być unikalne. <br /> UWAGA: Musisz "
+"wybrać <strong> Nazwa wpisu</strong> w Ustawieniach -> Bezpośrednie "
+"odnośniki."
 
 #: inc/functions/settings.php:1884
 msgid "Slug for \"Add advert\""
@@ -3685,7 +3686,7 @@ msgstr "Sortuj:"
 
 #: inc/widgets/terra-categories.php:188
 msgid "Ascending"
-msgstr ""
+msgstr "Rosnąco"
 
 #: inc/widgets/terra-categories.php:189
 msgid "Descending"
