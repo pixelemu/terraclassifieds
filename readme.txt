@@ -116,7 +116,7 @@ General
 
 = 2.0 =
 * Added polish translation
-* Added reCaptcha for 'Registration'
+* Added reCaptcha for 'Registration' page
 
 = 1.9.1 =
 * Fixed always shown banner with 'PE Terraclassic' theme in the dashboard on Wordpress 5.5
