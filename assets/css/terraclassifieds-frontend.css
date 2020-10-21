@@ -1528,9 +1528,9 @@ select#_tc_locations.error {
     list-style: none;
 }
 
-.cmb2-id--tc-locations .cmb-td ul li label {
+/*.cmb2-id--tc-locations .cmb-td ul li label {
     pointer-events: none;
-}
+}*/
 
 .cmb2-wrap .tcf-clear-locations {
     margin   : 0 0 15px;
@@ -1552,7 +1552,8 @@ select#_tc_locations.error {
 }
 
 .cmb2-id--tc-locations label {
-    cursor  : pointer;
+	cursor  : pointer;
+	pointer-events: auto;
     position: relative;
     display : block;
     padding : 0 0 0 35px;
@@ -1623,7 +1624,8 @@ select#_tc_locations.error {
 }
 
 .cmb2-id--tc-types label {
-    cursor  : pointer;
+	cursor  : pointer;
+	pointer-events: auto;
     position: relative;
     display : block;
     padding : 0 0 0 35px;

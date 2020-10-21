@@ -476,27 +476,38 @@
 			if($(".cmb2-id--tc-locations").length > 0){
 				// locations show - when click
 				$( ".cmb2-id--tc-locations > .cmb-td" ).prepend( "<span class='tcf-clear-locations'><i class='fas fa-times'></i> <strong>" + php_vars.clearAllLocations + "</strong></span>" );
+				
 				$( ".tcf-clear-locations" ).click(function() {
 					$( ".cmb2-id--tc-locations > .cmb-td li" ).attr('style','');
 					$( ".cmb2-id--tc-locations > .cmb-td .cmb2-indented-hierarchy" ).attr('style','');
 					$( ".cmb2-id--tc-locations > .cmb-td li" ).removeClass("clicked");
 					$(".cmb2-id--tc-locations input").attr('checked', false);
 				});
-				$( ".cmb2-id--tc-locations > .cmb-td ul li" ).click(function() {
-					$( this ).children("input").attr('checked', true);
-					if($( this ).next(".cmb2-indented-hierarchy").length > 0) {
-						if($( this ).hasClass("clicked")){
-							$( this ).siblings().hide(300);
-							$( this ).siblings("li").show(300);
-							$( this ).removeClass("clicked");
+				
+				$( ".cmb2-id--tc-locations > .cmb-td ul li" ).click(function(e) {
+
+					if (e.target.tagName != 'LABEL') return;
+
+					var $this = $( this );
+					$(".cmb2-id--tc-locations input").attr('checked', false); //reset all radios
+					$this.children("input").attr('checked', true);
+
+					if($this.next(".cmb2-indented-hierarchy").length > 0) {
+						if($this.hasClass("clicked")){
+							$this.siblings().hide(300);
+							$this.siblings("li").show(300);
+							$this.removeClass("clicked");
 						} else {
-						  $( this ).addClass("clicked");
-						  $( this ).siblings().hide(300);
-						  $( this ).next(".cmb2-indented-hierarchy").show(300);
+						  $this.addClass("clicked");
+						  $this.siblings().hide(300);
+						  $this.next(".cmb2-indented-hierarchy").show(300);
 						}
 					}
+
 					$('.cmb2-id--tc-locations .cmb-th').removeClass("error");
 				});
+
+
 				
 				// locations show - on load
 				$( ".cmb2-id--tc-locations input[type=radio]:checked").parentsUntil('.cmb2-id--tc-locations .cmb2-list').show();
