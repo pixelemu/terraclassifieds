@@ -3,7 +3,7 @@ Contributors: PixelEmu
 Tags: classifieds, classified ads, classifieds plugin, advertising
 Requires at least: 4.0
 Tested up to: 5.5
-Stable tag: 2.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +32,7 @@ TerraClassifieds is a free classifieds WordPress plugin that allows creating a s
 
 
 == TerraClassifieds Settings ==
-   
+
 = Category view =
 * Show category on the archive page with name, description, image, subcategories
 * Number of items per page
@@ -113,6 +113,9 @@ General
 3. Click Activate to activate the plugin.
 
 == Changelog ==
+
+= 2.0.1 =
+* Fixed the location select field in submitting advert form
 
 = 2.0 =
 * Added polish translation

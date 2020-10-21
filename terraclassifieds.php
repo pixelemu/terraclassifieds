@@ -5,7 +5,7 @@ defined('ABSPATH') or die('No script kiddies please!');
  * Plugin Name: TerraClassifieds - Simple Classifieds Plugin
  * Plugin URI: https://www.pixelemu.com/wordpress-plugins/i/245-terraclassifieds
  * Description: Create a classifieds website with WordPress. To save time use dedicated theme TerraClassic available on <a href="https://www.pixelemu.com/">pixelemu.com</a>
- * Version: 2.0
+ * Version: 2.0.1
  * Author: pixelemu.com
  * Author URI: https://pixelemu.com
  * Text Domain: terraclassifieds
