@@ -119,7 +119,7 @@ if (!class_exists('Terraclassifieds')) {
 		{
 			include self::$path . 'inc/functions/base-functions.php';
 			include self::$path . 'inc/functions/notification-functions.php';
-			if (terraclassifieds_get_option('_tc_use_types', 0)) {
+			if ( terraclassifieds_get_option('_tc_use_types', 0) ) {
 				include self::$path . 'inc/functions/dynamic-styles-func.php';
 			}
 		}
@@ -234,9 +234,8 @@ if (!class_exists('Terraclassifieds')) {
 				));
 
 				$imagesLimit = terraclassifieds_get_option('_tc_add_advert_images_limit', 8);
-				if ($imagesLimit > 8) {
-					$imagesLimit = 8;
-				}
+				if($imagesLimit > 8) $imagesLimit = 8;
+			
 				$expire_time = terraclassifieds_get_option('_tc_advert_expire_time', 30);
 				$add_advert_required_gallery = terraclassifieds_get_option('_tc_add_advert_required_gallery', false);
 				$add_advert_required_location = terraclassifieds_get_option('_tc_add_advert_required_location', false);
