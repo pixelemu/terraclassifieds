@@ -840,6 +840,10 @@ function terraclassifieds_edit_profile($atts)
 		global $current_user, $wp_roles;
 		//get_currentuserinfo(); //deprecated since 3.1
 
+		if ( ! function_exists( 'wp_crop_image' ) ) {
+			include( ABSPATH . 'wp-admin/includes/image.php' );
+		}
+
 		$error = array();
 		/* If profile was saved, update profile. */
 		if ('POST' == $_SERVER['REQUEST_METHOD'] && !empty($_POST['action']) && $_POST['action'] == 'update-user') {
