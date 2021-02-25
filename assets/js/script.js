@@ -1001,7 +1001,7 @@
 	/* -------------------------------------------------------- */
 	/* LOAD state                                               */
 	/* -------------------------------------------------------- */
-	$(window).load(function () {
+	$(window).on("load", function () {
 		
 		// LATEST ADS - widget
 		tcfLatestAds();
