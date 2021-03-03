@@ -580,7 +580,7 @@ if (!function_exists('terraclassifieds_date_ago')) {
 		$lengths = array("60", "60", "24", "7", "4.35", "12", "10");
 		$ago = __('ago', 'terraclassifieds');
 
-		$now = time();
+		$now = current_time('U');
 		$difference     = $now - $time;
 
 		for ($j = 0; $difference >= $lengths[$j] && $j < count($lengths) - 1; $j++) {
@@ -785,25 +785,13 @@ if (!function_exists('terraclassifieds_to_archive')) {
 
 // update ad status - to publish
 if (!function_exists('terraclassifieds_to_publish')) {
-	function terraclassifieds_to_publish($pid)
-	{
+	function terraclassifieds_to_publish($pid) {
 		if (isset($_POST["submit-publish-$pid"])) {
-			$expire_time = intval(terraclassifieds_get_option('_tc_advert_expire_time', 30));
-			$new_date = new DateTime('now');
-			$new_date->modify("+" . $expire_time . " day");
-			$expire_time_field =  $new_date->format('U');
-			$time_now = current_time('mysql'); // current time
 			wp_update_post(array('ID' => $pid, 'post_status'   =>  'publish'));
+			$expire_time_field = terraclassifieds_generate_ads_expired_time();
 			update_post_meta($pid, '_tc_expire_date', $expire_time_field);
 			update_post_meta(get_the_ID(), '_tc_expire_soon_notification_done', false);
-			wp_update_post( // add new publish date - current time
-				array(
-					'ID'            => get_the_ID(), // ID of the post to update
-					'post_date'     => $time_now,
-					'post_date_gmt' => get_gmt_from_date($time_now)
-				)
-			);
-
+			
 			// refresh page after post updating
 			if (isset($_POST['redirect-url'])) {
 				header("Location: " . base64_decode($_POST['redirect-url']));
@@ -812,18 +800,31 @@ if (!function_exists('terraclassifieds_to_publish')) {
 			} else {
 				header("refresh: 0;");
 			}
-		?>
+			?>
 			<script>
-				(function($) {
-					$(document).ready(function() {
-						$('.post-<?php echo esc_attr($pid); ?> .terraclassifieds-status span').closest('.type-classified').removeClass('status-archived');
-						$('.post-<?php echo esc_attr($pid); ?> .terraclassifieds-status span').closest('.type-classified').addClass('status-publish');
-						$('.post-<?php echo esc_attr($pid); ?> .terraclassifieds-status span').html("<?php echo __('Published', 'terraclassifieds'); ?>");
-						$('.post-<?php echo esc_attr($pid); ?> .terraclassifieds-status i').replaceWith('<i class="fa fa-check-circle" aria-hidden="true"></i>');
-					});
-				})(jQuery);
+			(function($) {
+				$(document).ready(function() {
+					$('.post-<?php echo esc_attr($pid); ?> .terraclassifieds-status span').closest('.type-classified').removeClass('status-archived');
+					$('.post-<?php echo esc_attr($pid); ?> .terraclassifieds-status span').closest('.type-classified').addClass('status-publish');
+					$('.post-<?php echo esc_attr($pid); ?> .terraclassifieds-status span').html("<?php echo __('Published', 'terraclassifieds'); ?>");
+					$('.post-<?php echo esc_attr($pid); ?> .terraclassifieds-status i').replaceWith('<i class="fa fa-check-circle" aria-hidden="true"></i>');
+				});
+			})(jQuery);
 			</script>
-		<?php }
+	<?php }
+	}
+}
+
+// Function to generate expired time for ads
+if (!function_exists('terraclassifieds_generate_ads_expired_time')) {
+	function terraclassifieds_generate_ads_expired_time() {
+		$expire_time = intval(terraclassifieds_get_option('_tc_advert_expire_time', 30));
+		$today = current_time('mysql');
+		$expire_date = new DateTime($today);
+		$expire_date->modify('+'.$expire_time.' day');
+		$expire_time_field = $expire_date->format('U');
+		
+		return $expire_time_field;
 	}
 }
 
