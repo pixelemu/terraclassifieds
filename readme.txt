@@ -2,8 +2,8 @@
 Contributors: PixelEmu
 Tags: classifieds, classified ads, classifieds plugin, advertising
 Requires at least: 4.0
-Tested up to: 5.5
-Stable tag: 2.0.1
+Tested up to: 5.7
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,11 @@ General
 3. Click Activate to activate the plugin.
 
 == Changelog ==
+
+= 2.0.2 =
+* Fixed PHP fatal error on users adverts page
+* Fixed an incorrect advert expiry time
+* Improvements related to jQuery 3
 
 = 2.0.1 =
 * Fixed the location select field in submitting advert form

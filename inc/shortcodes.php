@@ -24,6 +24,9 @@ function wds_handle_frontend_new_post_form_submission($cmb, $post_data = array()
 	// Fetch sanitized values
 	$sanitized_values = $cmb->get_sanitized_values($_POST);
 
+	//Add ads expiration time
+	$sanitized_values['_tc_expire_date'] = terraclassifieds_generate_ads_expired_time();
+
 	// Set our post data arguments
 	$post_data['post_title']   = $sanitized_values['_tc_post_title'];
 	//unset( $sanitized_values['_tc_post_title'] );
