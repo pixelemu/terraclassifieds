@@ -2077,6 +2077,314 @@ if (!function_exists('terraclassifieds_register_fields')) {
 
 			)
 		);
+		
+		$tabs_setting['tabs'][] = array(
+			'id'     => 'tc_monetizing',
+			'title'  => __('Monetizing', 'terraclassifieds'),
+			'fields' => array(
+				
+				array(
+					'name' => __('Payment methods', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_monetizing_payment_methods_title',
+					'classes' => '_tc_monetizing_payment_methods_settings_title',
+					'desc' => __('', 'terraclassifieds'),
+				),
+				
+				array(
+					'name' => __('Offline payment', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_monetizing_offline_payment_title',
+					'classes' => '_tc_monetizing_offline_payment_settings_title _tc_monetizing_offline_payment_methods_item',
+					'desc' => __('Select this method to pay with bank transfer or other offline payment methods.', 'terraclassifieds'),
+				),
+				
+				array(
+					'name' => __('Use offline payment', 'terraclassifieds'),
+					'id' => '_tc_monetizing_use_offline_payment',
+					'type' => 'radio_inline',
+					'classes' => '_tc_monetizing_offline_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'show_option_none' => false,
+					'options' => array(
+						'0' => __('No', 'terraclassifieds'),
+						'1' => __('Yes', 'terraclassifieds'),
+					),
+					'default' => '0',
+				),
+				
+				array(
+					'name' => __('Payment information', 'terraclassifieds'),
+					'id' => '_tc_monetizing_use_offline_payment_information',
+					'type' => 'textarea',
+					'classes' => '_tc_monetizing_offline_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'default' => __('Enter details for your bank account or other necessary information 
+required for making a payment.Remember to add your advert id number.', 'terraclassifieds'),
+				),
+				
+				array(
+					'name'    => __('Payment logo', 'terraclassifieds'),
+					'desc' => __('Set the image that will be visible on the payments list.', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_offline_payment_logo',
+					'classes' => '_tc_monetizing_offline_payment_settings_item',
+					'type'    => 'file',
+					// Optional:
+					'options' => array(
+						'url' => false, // Hide the text input for the url
+					),
+					'text'    => array(
+						'add_upload_file_text' => __('Select image', 'terraclassifieds'),
+					),
+					// query_args are passed to wp.media's library query.
+					'query_args' => array(
+						// Or only allow gif, jpg, or png images
+						'type' => array(
+							'image/gif',
+							'image/jpeg',
+							'image/png',
+							'image/webp',
+						),
+					),
+					'preview_size' => 'full',
+				),
+				
+				array(
+					'name' => __('PayPal payment', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_monetizing_paypal_payment_title',
+					'desc' => __('Select this method to pay with PayPal.', 'terraclassifieds'),
+				),
+				
+				array(
+					'name' => __('Use PayPal payment', 'terraclassifieds'),
+					'id' => '_tc_monetizing_use_paypal_payment',
+					'type' => 'radio_inline',
+					'classes' => '_tc_monetizing_paypal_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'show_option_none' => false,
+					'options' => array(
+						'0' => __('No', 'terraclassifieds'),
+						'1' => __('Yes', 'terraclassifieds'),
+					),
+					'default' => '0',
+				),
+				
+				array(
+					'name'    => __('Business email id', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_paypal_payment_business_email_id',
+					'type'    => 'text',
+					'classes' => '_tc_monetizing_paypal_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'default' => 'test@test.pl',
+					'desc' => __('', 'terraclassifieds'),
+				),
+				
+				array(
+					'name' => __('Test Mode', 'terraclassifieds'),
+					'id' => '_tc_monetizing_paypal_payment_test_mode',
+					'type' => 'radio',
+					'classes' => '_tc_monetizing_paypal_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'show_option_none' => false,
+					'options' => array(
+						'0' => __('No', 'terraclassifieds'),
+						'1' => __('Yes', 'terraclassifieds'),
+					),
+					'default' => '1',
+				),
+				
+				array(
+					'name' => __('Currency Code', 'terraclassifieds'),
+					'id' => '_tc_monetizing_paypal_payment_currency_code',
+					'type' => 'select',
+					'classes' => '_tc_monetizing_paypal_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'show_option_none' => false,
+					'options' => array(
+						'AUD' => __('Australian dollar', 'terraclassifieds'),
+						'BRL' => __('Brazilian real', 'terraclassifieds'),
+						'CAD' => __('Canadian dollar', 'terraclassifieds'),
+						'CNY' => __('Chinese Renmenbi', 'terraclassifieds'),
+						'CZK' => __('Czech koruna', 'terraclassifieds'),
+						'DKK' => __('Danish krone', 'terraclassifieds'),
+						'EUR' => __('Euro', 'terraclassifieds'),
+						'HKD' => __('Hong Kong dollar', 'terraclassifieds'),
+						'HUF' => __('Hungarian forint', 'terraclassifieds'),
+						'INR' => __('Indian rupee', 'terraclassifieds'),
+						'ILS' => __('Israeli new shekel', 'terraclassifieds'),
+						'JPY' => __('Japanese yen', 'terraclassifieds'),
+						'MYR' => __('Malaysian ringgit', 'terraclassifieds'),
+						'MXN' => __('Mexican peso', 'terraclassifieds'),
+						'TWD' => __('New Taiwan dollar', 'terraclassifieds'),
+						'NZD' => __('New Zealand dollar', 'terraclassifieds'),
+						'NOK' => __('Norwegian krone', 'terraclassifieds'),
+						'PHP' => __('Philippine peso', 'terraclassifieds'),
+						'PLN' => __('Polish złoty', 'terraclassifieds'),
+						'GBP' => __('Pound sterling', 'terraclassifieds'),
+						'RUB' => __('Russian ruble', 'terraclassifieds'),
+						'SGD' => __('Singapore dollar', 'terraclassifieds'),
+						'SEK' => __('Swedish krona', 'terraclassifieds'),
+						'CHF' => __('Swiss franc', 'terraclassifieds'),
+						'THB' => __('Thai baht', 'terraclassifieds'),
+						'USD' => __('United States dollar', 'terraclassifieds'),
+					),
+					'default' => 'PLN',
+				),
+				
+				array(
+					'name'    => __('Return successful url', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_paypal_payment_return_successful_url',
+					'type'    => 'text',
+					'classes' => '_tc_monetizing_paypal_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'default' => 'paypal-payment-success',
+					'desc' => __('', 'terraclassifieds'),
+				),
+				
+				array(
+					'name'    => __('Return cancel url', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_paypal_payment_return_cancel_url',
+					'type'    => 'text',
+					'classes' => '_tc_monetizing_paypal_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'default' => 'paypal-payment-cancel',
+					'desc' => __('', 'terraclassifieds'),
+				),
+				
+				array(
+					'name'    => __('Notify url', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_paypal_payment_return_notify_url',
+					'type'    => 'text',
+					'classes' => '_tc_monetizing_paypal_payment_settings_item _tc_monetizing_offline_payment_methods_item',
+					'default' => 'paypal-payment-notify',
+					'desc' => __('', 'terraclassifieds'),
+				),
+				
+				array(
+					'name'    => __('Payment logo', 'terraclassifieds'),
+					'desc' => __('Set the image that will be visible on the payments list.', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_paypal_payment_logo',
+					'classes' => '_tc_monetizing_paypal_payment_settings_item',
+					'type'    => 'file',
+					// Optional:
+					'options' => array(
+						'url' => false, // Hide the text input for the url
+					),
+					'text'    => array(
+						'add_upload_file_text' => __('Select image', 'terraclassifieds'),
+					),
+					// query_args are passed to wp.media's library query.
+					'query_args' => array(
+						// Or only allow gif, jpg, or png images
+						'type' => array(
+							'image/gif',
+							'image/jpeg',
+							'image/png',
+							'image/webp',
+						),
+					),
+					'preview_size' => 'full',
+				),
+				
+				array(
+					'name' => __('VAT Rate', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_monetizing_vat_rate_title',
+					'classes' => '_tc_monetizing_offline_payment_methods_item',
+					'desc' => __('', 'terraclassifieds'),
+				),
+				
+				array(
+					'name'    => __('VAT Rate (%)', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_vat_rate',
+					'type'    => 'text',
+					'classes' => '_tc_monetizing_vat_rate_settings_item _tc_monetizing_offline_payment_methods_item',
+					'default' => '0',
+					'attributes' => array(
+						'type' => 'number',
+						'min' => 0,
+					),
+				),
+				
+				array(
+					'name' => __('Charging options', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_monetizing_charging_options_title',
+					'classes' => '_tc_monetizing_charging_options_settings_title',
+					'desc' => __('', 'terraclassifieds'),
+				),
+				
+				array(
+					'name' => __('Charging for adding ads (categories)', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_monetizing_charging_for_adding_ads_title',
+					'desc' => __('Set price without currency. Go to the payment methods section to set currency.', 'terraclassifieds'),
+				),
+				
+				array(
+					'name' => __('Price', 'terraclassifieds'),
+					'id' => '_tc_monetizing_charging_for_adding_ads_price',
+					'type' => 'radio',
+					'show_option_none' => false,
+					'options' => array(
+						'per_category' => __('Per Category', 'terraclassifieds'),
+						'fixed' => __('Fixed for all categories', 'terraclassifieds'),
+						'free' => __('Free', 'terraclassifieds'),
+					),
+					'default' => 'free',
+				),
+				
+				array(
+					'name'    => __('Enter the price', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_charging_for_adding_ads_price_fixed',
+					'type'    => 'text',
+					'classes' => '',
+					'default' => '',
+					'attributes' => array(
+						'type' => 'number',
+						'min' => 0,
+					),
+				),
+			)
+		);
+		
+		$tabs_counts = count($tabs_setting['tabs']);
+		$count_fields = count($tabs_setting['tabs'][$tabs_counts-1]['fields']);
+		$last_field_number = $count_fields-1;
+		
+		$categories = terraclassifieds_taxonomy_children();
+		if (!empty($categories) && is_array($categories)) {
+			$number = $last_field_number;
+			foreach($categories as $key=>$category) {
+				$tabs_setting['tabs'][$tabs_counts-1]['fields'][++$number] =  array(
+					'name' => __(sprintf('Category: %s',$category->category_path), 'terraclassifieds'),
+					'type' => 'title',
+					'classes' => 'tc_monetizing_charging_for_adding_ads_price_per_category tc_monetizing_charging_for_adding_ads_price_per_category_level_'.$category->cat_level,
+					'id'   => '_tc_monetizing_charging_for_adding_ads_price_per_category_'.$category->term_id.'_title',
+					'desc' => __('Leave empty to set the category free of charge.', 'terraclassifieds'),
+					'attributes' => array(
+						'data-id' => $category->term_id,
+						'data-parent' => $category->parent,
+					),
+				);
+				$tabs_setting['tabs'][$tabs_counts-1]['fields'][++$number] = array(
+					'name'    => __('Price', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_charging_for_adding_ads_price_per_category_charging_price_'.$category->term_id,
+					'type'    => 'text',
+					'classes' => 'tc_monetizing_charging_for_adding_ads_price_per_category_input tc_monetizing_charging_for_adding_ads_price_per_category_level_'.$category->cat_level,
+					'default' => '',
+					'attributes' => array(
+						'type' => 'number',
+						'min' => 0,
+					),
+				);
+				
+				$tabs_setting['tabs'][$tabs_counts-1]['fields'][++$number] = array(
+					'name'    => __('Renew price', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_charging_for_adding_ads_price_per_category_renew_price_'.$category->term_id,
+					'type'    => 'text',
+					'classes' => 'tc_monetizing_charging_for_adding_ads_price_per_category_input tc_monetizing_charging_for_adding_ads_price_per_category_level_'.$category->cat_level,
+					'default' => '',
+					'attributes' => array(
+						'type' => 'number',
+						'min' => 0,
+					),
+				);
+			}
+		}
 
 		$tabs_setting['tabs'][] = array(
 			'id'     => 'tc_documentation',
