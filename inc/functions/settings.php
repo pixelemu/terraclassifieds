@@ -66,6 +66,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 		$page_login_slug = terraclassifieds_get_option('_tc_slug_login', 'login');
 		$page_registration_slug = terraclassifieds_get_option('_tc_slug_registration', 'registration');
 		$page_my_submissions_slug = terraclassifieds_get_option('_tc_slug_my_submissions', 'my-submissions');
+		$page_my_payments_slug = terraclassifieds_get_option('_tc_slug_my_payments', 'my-payments');
 
 		// get pages IDs
 		$page_add_advert_id = terraclassifieds_get_option('_tc_add_advert_page_id');
@@ -76,6 +77,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 		$page_login_id = terraclassifieds_get_option('_tc_login_page_id');
 		$page_registration_id = terraclassifieds_get_option('_tc_registration_page_id');
 		$page_my_submissions_id = terraclassifieds_get_option('_tc_my_submissions_page_id');
+		$page_my_payments_id = terraclassifieds_get_option('_tc_my_payments_page_id');
 
 		// default pages IDs
 		$page_add_advert_default_id = url_to_postid(site_url($page_add_advert_slug));
@@ -86,6 +88,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 		$page_login_default_id = url_to_postid(site_url($page_login_slug));
 		$page_registration_default_id = url_to_postid(site_url($page_registration_slug));
 		$page_my_submissions_default_id = url_to_postid(site_url($page_my_submissions_slug));
+		$page_my_payments_default_id = url_to_postid(site_url($page_my_payments_slug));
 
 		// messages
 		$missing_page_description = '<br /><span class="terraclassifieds-post-tile-more-info">' . __('The corresponded page was removed or its slug was changed via editing a page.<br />Do not leave this field empty, assign the correct page for this view.', 'terraclassifieds') . '</span>';
@@ -100,7 +103,8 @@ if (!function_exists('terraclassifieds_register_fields')) {
 		$missing_page_but_conditional_description_login =  $missing_page_but_conditional_description_part1 . get_the_title($page_login_default_id) . $missing_page_but_conditional_description_part2;
 		$missing_page_but_conditional_description_registration =  $missing_page_but_conditional_description_part1 . get_the_title($page_registration_default_id) . $missing_page_but_conditional_description_part2;
 		$missing_page_but_conditional_description_my_submissions =  $missing_page_but_conditional_description_part1 . get_the_title($page_my_submissions_default_id) . $missing_page_but_conditional_description_part2;
-
+		$missing_page_but_conditional_description_my_payments =  $missing_page_but_conditional_description_part1 . get_the_title($page_my_payments_default_id) . $missing_page_but_conditional_description_part2;
+		
 		// check for permalinks structire
 		if (get_option('permalink_structure') == '/%postname%/') {
 			$permalinks_postname = true;
@@ -177,6 +181,15 @@ if (!function_exists('terraclassifieds_register_fields')) {
 			$page_my_submissions_more = $missing_page_description;
 		} else {
 			$page_my_submissions_more = '';
+		}
+		
+		// errors for My payments
+		if ($permalinks_postname && terraclassifieds_post_by_slug($page_my_payments_slug, 'page') && ($page_my_payments_id != $page_my_payments_default_id)) {
+			$page_my_payments_more = $missing_page_but_conditional_description_my_payments;
+		} else if ($permalinks_postname && !terraclassifieds_post_by_slug($page_my_payments_slug, 'page')) {
+			$page_my_payments_more = $missing_page_description;
+		} else {
+			$page_my_payments_more = '';
 		}
 
 		$box_options = array(
@@ -1903,6 +1916,17 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'default' => $page_my_submissions_default_id,
 					'desc' => __('Shortcode for this page: <strong>[terraclassifieds_my_submissions]</strong>', 'terraclassifieds') . $page_my_submissions_more,
 				),
+				
+				array(
+					'name'        => __('Page for "My payments"'),
+					'id'          => '_tc_my_payments_page_id',
+					'type'        => 'post_search_text',
+					'post_type'   => array('page'),
+					'select_type' => 'radio',
+					'select_behavior' => 'replace',
+					'default' => $page_my_payments_default_id,
+					'desc' => __('Shortcode for this page: <strong>[terraclassifieds_my_payments]</strong>', 'terraclassifieds') . $page_my_payments_more,
+				),
 
 				array(
 					'name' => __('Slugs', 'terraclassifieds'),
@@ -1986,6 +2010,16 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'id'      => '_tc_slug_my_submissions',
 					'type'    => 'text',
 					'default' => 'my-submissions',
+					'attributes'  => array(
+						'required'    => 'required',
+					),
+				),
+				
+				array(
+					'name'     => __('Slug for "My payments"', 'terraclassifieds'),
+					'id'      => '_tc_slug_my_payments',
+					'type'    => 'text',
+					'default' => 'my-payments',
 					'attributes'  => array(
 						'required'    => 'required',
 					),
