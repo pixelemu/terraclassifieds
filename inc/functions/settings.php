@@ -21,6 +21,37 @@ if (!function_exists('is_plugin_active')) {
 	}
 }*/
 
+if (!function_exists('terraclassifieds_taxonomy_children')) {
+	function terraclassifieds_taxonomy_children($parent_id = 0,$level = 0,$item_path = null) {
+		$catArray = array();
+		$category_path_separator = ' - ';
+		$terms = get_terms(array('taxonomy' => 'ad_category','hide_empty' => false, 'parent' => $parent_id));
+		if($terms) {
+			foreach($terms as $key=>$term) {
+				$term->cat_level = $level+1;
+				if (empty($item_path)) {
+					$term->category_path = $term->name;
+				}else{
+					$term->category_path = $item_path.$category_path_separator.$term->name;
+				}
+				$catArray[$term->term_id] = $term;
+				if ($term->parent === $parent_id) {
+					$childrens = terraclassifieds_taxonomy_children($term->term_id,$term->cat_level,$term->category_path);
+					if($childrens) {
+						if (is_array($childrens)) {
+							foreach ($childrens as $child_key=>$child) {
+								$catArray[$child->term_id] = $child;
+							}
+						}
+					}
+				}
+				unset($term);
+			}
+		}
+		return $catArray;
+	}
+}
+
 if (!function_exists('terraclassifieds_register_fields')) {
 	add_action('cmb2_admin_init', 'terraclassifieds_register_fields');
 	function terraclassifieds_register_fields()
