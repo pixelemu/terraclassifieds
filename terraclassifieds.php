@@ -45,6 +45,7 @@ if (!class_exists('Terraclassifieds')) {
 			add_action('init', array($this, 'addCustomPosts'));
 			add_action('init', array($this, 'addFunctions'));
 			add_action('init', array($this, 'addFavorites'));
+			add_action('init', array($this, 'addPaymentFunctions'));
 			add_action('init', array($this, 'user'));
 
 			add_action('widgets_init', array($this, 'addWidgets'));
@@ -56,6 +57,7 @@ if (!class_exists('Terraclassifieds')) {
 			add_action('wp_enqueue_scripts', array($this, 'frontendStyles'));
 
 			add_action('admin_enqueue_scripts', array($this, 'adminStyles'));
+			add_action('admin_menu', array($this, 'terraclassifieds_generate_payments_admin_menu_item'));
 
 			include self::$path . 'inc/functions/cron-functions.php';
 
@@ -184,6 +186,8 @@ if (!class_exists('Terraclassifieds')) {
 			$this->addCustomPosts();
 			$this->addCustomPages();
 			$this->userActivation();
+			$this->addPaymentFunctions();
+			$this->createPaymentTables();
 
 			flush_rewrite_rules();
 		}
@@ -318,6 +322,62 @@ if (!class_exists('Terraclassifieds')) {
 		public function loadTextDomain()
 		{
 			load_plugin_textdomain('terraclassifieds', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+		}
+		
+		/**
+		* View of list payments for admin side
+		*/
+		public function addPaymentFunctions() {
+			include self::$path . 'inc/functions/payment-functions.php';
+		}
+		
+		/**
+		* Create database tables for payments data
+		*/
+		public function createPaymentTables() {
+			global $wpdb;
+			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+			
+			$table_payments = $wpdb->prefix.'terraclassifieds_payments';
+			$table_payments_items = $wpdb->prefix.'terraclassifieds_payment_items';
+			$charset_collate = $wpdb->get_charset_collate();
+			
+			$sql_payments = "CREATE TABLE IF NOT EXISTS $table_payments (
+				id int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+				id_item int(10) UNSIGNED NOT NULL,
+				id_user int(10) UNSIGNED NOT NULL,
+				id_transaction int(10) UNSIGNED DEFAULT NULL,
+				transaction_hash varchar(1024) DEFAULT NULL,
+				payment_hash varchar(1024) DEFAULT NULL,
+				datetime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+				status varchar(100) NOT NULL,
+				price float(12,2) NOT NULL,
+				ip_address varchar(100) NOT NULL,
+				type varchar(255) NOT NULL,
+				method varchar(100) NOT NULL,
+				operation varchar(255) DEFAULT NULL,
+				PRIMARY KEY  (id)
+			) $charset_collate;";
+			dbDelta($sql_payments);
+			
+			$sql_payments_items = "CREATE TABLE IF NOT EXISTS $table_payments_items (
+				id int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+				id_payment int(10) UNSIGNED NOT NULL,
+				price float NOT NULL,
+				type varchar(255) NOT NULL,
+				PRIMARY KEY  (id)
+			) $charset_collate;";
+			dbDelta($sql_payments_items);
+		}
+		
+		/* Create admin menu position for view lwith payments list */
+		function terraclassifieds_generate_payments_admin_menu_item() {
+			$parent_slug = 'edit.php?post_type=classified';
+			$menu_title = esc_html__( 'Payments');
+			$capability  = 'manage_options';
+			$menu_slug  = 'payments-list';
+			$function  = 'payments_list';
+			add_submenu_page($parent_slug,$menu_title,$menu_title,$capability, $menu_slug , $function, 0);
 		}
 	}
 }
