@@ -321,6 +321,64 @@
     width  : 100%;
 }
 
+/* Monetizing */
+.cmb2-id--tc-monetizing-vat-rate input, .tc_monetizing_charging_for_adding_ads_price_per_category_input input,
+.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed input {
+	max-width: 50% !important;
+}
+
+.tc_monetizing_charging_for_adding_ads_price_per_category_input {
+}
+
+.tc_monetizing_charging_for_adding_ads_price_per_category, .cmb2-id--tc-monetizing-charging-for-adding-ads-title {
+	cursor: pointer;
+}
+
+.tc_monetizing_charging_for_adding_ads_price_per_category h3 {
+	background-color:  white !important;
+	border-left: none !important;
+}
+
+.tc_monetizing_charging_for_adding_ads_price_per_category_level_2 {
+	margin-left: 50px !important;
+}
+
+.tc_monetizing_charging_for_adding_ads_price_per_category_level_3 {
+	margin-left: 100px !important;
+}
+
+._tc_monetizing_payment_methods_settings_title h3, ._tc_monetizing_charging_options_settings_title h3 {
+	cursor: pointer;
+	background-color: #2ea2cc !important;
+	color: white !important;
+}
+
+._tc_monetizing_payment_methods_settings_chevron, ._tc_monetizing_charging_options_settings_chevron {
+	float: right;
+	margin-right: 10px;
+}
+
+._tc_monetizing_charging_for_adding_ads_price_per_category_settings_chevron {
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+._tc_monetizing_charging_for_adding_ads_price_per_category_settings_chevron i {
+	color: #f15a24;
+}
+
+.tc_monetizing_charging_for_adding_ads_price_per_category {
+	margin-top: 0 !important;
+}
+
+.tc_monetizing_charging_for_adding_ads_price_per_category .cmb2-metabox-title {
+	padding-top: 0px !important;
+	padding-bottom: 2px !important;
+	padding-left: 0px !important;
+}
+
 /*** RWD ***/
 @media(max-width: 767px) {
     .cmb-type-tabs .cmb-td .cmb-td {
