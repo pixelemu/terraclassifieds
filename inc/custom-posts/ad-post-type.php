@@ -84,7 +84,8 @@ if (!function_exists('terra_classified_columns')) {
 			'cb'       => '<input type="checkbox" />', 
 			'title'    => __('Ad', 'terraclassifieds'), 
 			'category' => __('Ad Category', 'terraclassifieds'), 
-			'date'     => __('Date', 'terraclassifieds')
+			'date'     => __('Date', 'terraclassifieds'),
+			'id'     => __('ID', 'terraclassifieds')
 		);
 
 		return $columns;
@@ -92,6 +93,7 @@ if (!function_exists('terra_classified_columns')) {
 
 }
 add_filter('manage_edit-classified_columns', 'terra_ad_columns');
+add_filter('manage_edit-classified_sortable_columns', 'terra_ad_columns');
 
 /* Value for Category Column */
 if (!function_exists('terra_ad_category_column_value')) {
@@ -100,6 +102,9 @@ if (!function_exists('terra_ad_category_column_value')) {
 		switch ($column) {
 			case 'category' :
 				echo get_the_term_list($post -> ID, 'ad_category', '', ', ', '');
+				break;
+			case 'id' :
+				echo $post -> ID;
 				break;
 		}
 	}
@@ -248,6 +253,21 @@ register_taxonomy(
 		'rewrite'           => array( 'slug' => 'type' ),
 	)
 );
+
+if (!function_exists('terra_classified_search_id')) {
+	add_filter('posts_where','terra_classified_search_id');
+	function terra_classified_search_id($where) {
+		global $wpdb;
+		$local_db = $wpdb->prefix."posts";
+		
+		if(is_search() && is_admin() && $_GET['post_type'] == 'classified')
+		{
+			$searchstring = '%' . $wpdb->esc_like( $_GET['s'] ) . '%';
+			$where .= $wpdb->prepare(" OR ($wpdb->posts.ID LIKE %s) ", $searchstring);   
+		}
+		return $where;
+	}
+}
 
 /* Custom fields for ad */
 add_action( 'cmb2_init', 'terra_custom_fields' );
