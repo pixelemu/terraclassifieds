@@ -1526,18 +1526,25 @@ if (!function_exists('terraclassifieds_register_fields')) {
 			'id'     => 'tc_email_templates',
 			'title'  => __('Email templates', 'terraclassifieds'),
 			'fields' => array(
-
+				
 				array(
-					'name' => __('Reply-to e-mail address', 'terraclassifieds'),
+					'name' => __('General', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_reply_to_email_address_title',
 				),
-
+				
 				array(
-					'name'             => __('E-mail address', 'terraclassifieds'),
+					'name'             => __('Reply-to e-mail address', 'terraclassifieds'),
 					'id'               => '_tc_email_template_reply_to_email_address',
 					'type'             => 'text_email',
 					'desc' => __('Add email address that will be used as "reply-to" for all user notification messages (except contact form).<br /><strong>NOTE:</strong> This is not the email address used for sending system messages. If your Wordpress uses PHP mail<br /> (the most common case) emails will be sent from the address: wordpress@yourdomain.', 'terraclassifieds'),
+				),
+				
+				array(
+					'name'             => __('E-mail notifications for administrators', 'terraclassifieds'),
+					'id'               => '_tc_email_notifications_administrators',
+					'type'             => 'textarea_code',
+					'desc' => __('By default, all notifications are sent to Administration Email Address from General Settings.<br />You may add additional recipients separating addresses with comma. The message is sent as CC.', 'terraclassifieds'),
 				),
 
 				// Registration
@@ -1808,12 +1815,6 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_expire_days]] - Number of days to advert expiration', 'terraclassifieds'),
 				),
 
-				array(
-					'name'             => __('E-mail notifications for administrators', 'terraclassifieds'),
-					'id'               => '_tc_email_notifications_administrators',
-					'type'             => 'textarea_code',
-					'desc' => __('By default, all notifications are sent to Administration Email Address from General Settings.<br />You may add additional recipients separating addresses with comma. The message is sent as CC.', 'terraclassifieds'),
-				),
 			)
 		);
 
