@@ -829,21 +829,40 @@ if (!function_exists('terraclassifieds_generate_ads_expired_time')) {
 }
 
 // update ad status - remove
-if (!function_exists('terraclassifieds_remove')) {
-	function terraclassifieds_remove($pid)
-	{
-		if (isset($_POST["submit-remove-$pid"])) {
-			wp_delete_post($pid, true); ?>
+if ( ! function_exists( 'terraclassifieds_remove' ) ) {
+	function terraclassifieds_remove($pid){
+		if (isset($_POST["submit-remove-$pid"])){
+			wp_delete_post($pid, true); 
+			
+			global $wpdb;
+			$table = $wpdb->prefix.'terraclassifieds_payments';
+			
+			$payments_query = "SELECT * FROM `$table` WHERE `id_item` = %d";
+			$payments_list = $wpdb->get_results($wpdb->prepare($payments_query,$pid));
+			if (!empty($payments_list)) {
+				foreach ($payments_list as $key=>$payment) {
+					$payment_id = intval($payment->id);
+					if ($payment_id) {
+						$table_items = $wpdb->prefix.'terraclassifieds_payment_items';
+						$data = array('id_payment' => $payment_id);
+						$format = array('%d');
+						$wpdb->delete($table_items,$data,$format);
+					}
+				}
+			}
+			$data = array('id_item' => $pid);
+			$format = array('%d');
+			$wpdb->delete($table,$data,$format);
 			?>
 			<script>
-				(function($) {
-					$(document).ready(function() {
+				( function($){
+					$(document).ready(function(){
 						//$('.post-<?php echo esc_attr($pid); ?>').remove();
 						location.reload(true);
 					});
-				})(jQuery);
+				})( jQuery );
 			</script>
-<?php }
+		<?php }
 	}
 }
 
