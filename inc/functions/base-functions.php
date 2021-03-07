@@ -1451,6 +1451,7 @@ if (!function_exists('terraclassifiedsAdminNoticePages')) {
 	add_action('admin_notices', 'terraclassifiedsAdminNoticePages', 9999);
 }
 
+// generate unique id
 if (!function_exists('terraclassifieds_generate_uniqid')) {
 	function terraclassifieds_generate_uniqid($length = 32) {
 		$characters = str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
@@ -1463,6 +1464,7 @@ if (!function_exists('terraclassifieds_generate_uniqid')) {
 	}
 }
 
+// save payment data for ads
 if (!function_exists('terraclassifieds_set_ads_payment_type')) {
 	function terraclassifieds_set_ads_payment_type() {
 		global $wpdb;
@@ -1485,7 +1487,6 @@ if (!function_exists('terraclassifieds_set_ads_payment_type')) {
 			$where = array('payment_hash' => $payment_hash);
 			$format_where = array('%s');
 			$wpdb->update($table,$data,$where,$format_data,$format_where);
-			//$payment_id = $wpdb->insert_id;
 			
 			if ($payment_method === 'paypal') {
 				$paypal_item_name = sprintf( __('Payment for ads: %s,Payment id: %s', 'terraclassifieds'),$post->post_title,$payment_id);
@@ -1511,6 +1512,7 @@ if (!function_exists('terraclassifieds_set_ads_payment_type')) {
 	add_action( 'wp_ajax_nopriv_terraclassifieds_set_ads_payment_type', 'terraclassifieds_set_ads_payment_type' );
 }
 
+// calculate ads charging price
 if (!function_exists('terraclassifieds_calculate_ads_price')) {
 	function terraclassifieds_calculate_ads_price($category_id, $add_currency = true,$renew_op = false) {
 		$ads_price = 0;
@@ -1566,6 +1568,7 @@ if (!function_exists('terraclassifieds_calculate_ads_price')) {
 	}
 }
 
+// calculate price
 if (!function_exists('terraclassifieds_calculate_price')) {
 	function terraclassifieds_calculate_price($price, $add_currency = true) {
 		$vat = 0;
@@ -1600,6 +1603,7 @@ if (!function_exists('terraclassifieds_calculate_price')) {
 	}
 }
 
+/* format price with currency */
 if (!function_exists('terraclassifieds_format_price')) {
 	function terraclassifieds_format_price($price, $add_currency = true) {
 		$price_text = '';
