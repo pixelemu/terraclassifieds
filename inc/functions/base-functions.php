@@ -1117,8 +1117,11 @@ if (!function_exists('terraclassifiedsTrackPopularPosts')) {
 
 // format price
 if (!function_exists('terraclassifiedsPriceFormat')) {
-	function terraclassifiedsPriceFormat($price)
-	{
+	function terraclassifiedsPriceFormat($price,$return = false)
+	{	
+		$price_currency = terraclassifieds_get_option( '_tc_advert_currency', '$' );
+		$price_unit_position = terraclassifieds_get_option( '_tc_unit_position', 1 );
+		
 		$price_thousand_separator = terraclassifieds_get_option('_tc_price_thousand_separator', 'none');
 		if ($price_thousand_separator == 'none') {
 			$price_thousand_separator_val = '';
@@ -1140,7 +1143,11 @@ if (!function_exists('terraclassifiedsPriceFormat')) {
 		$price = str_replace(",", ".", $price);
 		$price = (float) $price; // make a float from string
 
-		echo esc_attr(number_format($price, $price_decimal_points, $price_decimal_separator_val, $price_thousand_separator_val));
+		if ($return) {
+			return esc_attr(number_format($price, $price_decimal_points, $price_decimal_separator_val, $price_thousand_separator_val));
+		}else{
+			echo esc_attr(number_format($price, $price_decimal_points, $price_decimal_separator_val, $price_thousand_separator_val));
+		}
 	}
 }
 
