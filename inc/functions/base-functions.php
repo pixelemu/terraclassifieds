@@ -1368,6 +1368,28 @@ if (!function_exists('terraclassifiedsSaveSettingsAction')) {
 			}
 			wp_update_post($my_submissions_page);
 		}
+		
+		// my my-payments
+		$page_my_payments_id = terraclassifieds_get_option('_tc_my_payments_page_id', false);
+		$page_my_payments_slug = terraclassifieds_get_option('_tc_slug_my_payments', 'my-payments');
+		
+		$my_payments_page = array(
+			'ID'           => $page_my_payments_id,
+			'post_name' => $page_my_payments_slug,
+		);
+		
+		if ($page_my_payments_id && $page_my_payments_slug) {
+			$page_my_payments_already_exists = get_page_by_path($page_my_payments_slug);
+			if ($page_my_payments_already_exists) {
+				$page_my_payments_already_exists_id =  $page_my_payments_already_exists->ID;
+				$page_my_payments_already_exists_array = array(
+					'ID'           => $page_my_payments_already_exists_id,
+					'post_name' => $page_my_payments_slug . '-copy',
+				);
+				wp_update_post($page_my_payments_already_exists_array);
+			}
+			wp_update_post($my_payments_page);
+		}
 	}
 }
 
