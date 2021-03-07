@@ -1632,14 +1632,16 @@ if (!function_exists('terraclassifieds_register_fields')) {
 	<p>Category: [[advert_category]]</p>
 	<p>Author login: [[advert_author_login]]</p>
 	<p>Author email: [[advert_author_email]]</p>
-	<p>Description: [[advert_desc]]</p>', 'terraclassifieds'),
+	<p>Description: [[advert_desc]]</p>
+	<p>Price: [[advert_price]]</p>
+	<p>Payment status: [[payment_status]].</p>', 'terraclassifieds'),
 				),
 
 				array(
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_new_advert_administrator_af',
-					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_author_login]] - Advert author login<br />[[advert_author_email]] - Advert author email', 'terraclassifieds'),
+					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_author_login]] - Advert author login<br />[[advert_author_email]] - Advert author email<br />[[advert_price]] - Advert price / free<br />[[payment_status]] - Payment status', 'terraclassifieds'),
 				),
 
 				array(
@@ -1662,16 +1664,19 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'default' => __('
 	<p>Hello,</p>
 	<p>Your new advert is waiting for the administrator review.</p>
+	<p>Advert title: [[advert_title]]</p>
 	<p>Category: [[advert_category]]</p>
 	<p></p><p>Status: [[advert_status]]</p>
-	<p>Description: [[advert_desc]]</p>', 'terraclassifieds'),
+	<p>Description: [[advert_desc]]</p>
+	<p>Price: [[advert_price]]</p>
+	<p>Payment status: [[payment_status]].</p>', 'terraclassifieds'),
 				),
 
 				array(
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_new_advert_user_af',
-					'desc' => __('[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description', 'terraclassifieds'),
+					'desc' => __('[[advert_title]] - Advert title<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_price]] - Advert price / free<br />[[payment_status]] - Payment status', 'terraclassifieds'),
 				),
 
 				// Contact Form in advert view
@@ -1770,7 +1775,9 @@ if (!function_exists('terraclassifieds_register_fields')) {
 	<p> </p>
 	<p>Status change of your advert [[advert_title_link]].</p>
 	<p> </p>
-	<p>New status [[advert_status]].</p>
+	<p>New status: [[advert_status]].</p>
+	<p> </p>
+	<p>Payment status: [[payment_status]].</p>
 	<p> </p>', 'terraclassifieds'),
 				),
 
@@ -1778,7 +1785,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_change_status_af',
-					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_status]] - Advert status', 'terraclassifieds'),
+					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_status]] - Advert status<br />[[payment_status]] - Payment status', 'terraclassifieds'),
 				),
 
 				// Advert - expiration notification
@@ -1804,7 +1811,9 @@ if (!function_exists('terraclassifieds_register_fields')) {
 	<p> </p>
 	<p>Your advert [[advert_title_link]] will expire in [[advert_expire_days]] days.</p>
 	<p> </p>
-	<p>You can renew it on your adverts list.</p>
+	<p>You can renew it on your adverts list</p>
+	<p> </p>
+	<p>Price: [[advert_renew_price]]</p>
 	<p> </p>', 'terraclassifieds'),
 				),
 
@@ -1812,7 +1821,43 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_expiration_notification_af',
-					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_expire_days]] - Number of days to advert expiration', 'terraclassifieds'),
+					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_expire_days]] - Number of days to advert expiration<br />[[advert_renew_price]] - Advert renew price', 'terraclassifieds'),
+				),
+				
+								// Payment - payment completed
+				array(
+					'name' => __('Payment completed - admin notification', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_email_template_payment_completed_admin_title',
+				),
+				
+				array(
+					'name'             => __('Change status (subject)', 'terraclassifieds'),
+					'id'               => '_tc_email_template_payment_completed_admin_notification_subject',
+					'type'             => 'text',
+					'default' => __('Payment completed', 'terraclassifieds'),
+				),
+
+				array(
+					'name'             => __('Change status (message)', 'terraclassifieds'),
+					'id'               => '_tc_email_template_payment_completed_admin_notification_message',
+					'type'             => 'textarea_code',
+					'default' => __('
+<p>Good news,</p>
+<p>Payment received for:</p>
+<p>Status change of your advert [[advert_title_link]].</p>
+<p>Payment amount: [[payment_amount]]</p>
+<p>Payment method: [[payment_method]]</p>
+<p>Payment ID: [[payment_id]]</p>
+<p>Payment date: [[payment_date]]</p>
+<p> </p>', 'terraclassifieds'),
+				),
+				
+				array(
+					'name' => __('Available tags', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_email_template_payment_completed_admin_notificatio_af',
+					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[payment_amount]] - Payment amount<br/ >[[payment_method]] - Payment method<br/ >[[payment_id]] - Payment ID<br />[[payment_date]] - Payment date', 'terraclassifieds'),
 				),
 
 			)
