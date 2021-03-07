@@ -1450,3 +1450,172 @@ if (!function_exists('terraclassifiedsAdminNoticePages')) {
 	}
 	add_action('admin_notices', 'terraclassifiedsAdminNoticePages', 9999);
 }
+
+if (!function_exists('terraclassifieds_generate_uniqid')) {
+	function terraclassifieds_generate_uniqid($length = 32) {
+		$characters = str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+		$charactersLength = strlen($characters);
+		$randomString = '';
+		for ($i = 0; $i < $length; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+		}
+		return $randomString;
+	}
+}
+
+if (!function_exists('terraclassifieds_set_ads_payment_type')) {
+	function terraclassifieds_set_ads_payment_type() {
+		global $wpdb;
+		$payment_method = $_POST['payment_method'];
+		$payment_hash = $_POST['payment_hash'];
+		$ads_id = intval($_POST['ads_id']);
+		$operation = $_POST['operation'];
+		$wpnonce = $_POST['wpnonce'];
+		$paypal_item_name = '';
+		$send_notification = $_POST['send_notification'];
+		if (!wp_verify_nonce($wpnonce)) {
+			$return_data = array('status' => 0, 'message' => '');
+		}else{	
+			$update_data = array('ID' => $ads_id, 'post_status' => 'pending');
+			wp_update_post($update_data);
+			
+			$table = $wpdb->prefix.'terraclassifieds_payments';
+			$data = array('method' => $payment_method);
+			$format_data = array('%s');
+			$where = array('payment_hash' => $payment_hash);
+			$format_where = array('%s');
+			$wpdb->update($table,$data,$where,$format_data,$format_where);
+			//$payment_id = $wpdb->insert_id;
+			
+			if ($payment_method === 'paypal') {
+				$paypal_item_name = sprintf( __('Payment for ads: %s,Payment id: %s', 'terraclassifieds'),$post->post_title,$payment_id);
+			}
+			
+			$post_data['post_author'] = $post->post_author;
+			$post_data['post_title'] = $post->post_title;
+			$post_data['post_price'] = floatval($ads_price['ads_price']);
+			$post_data['post_price_text'] = $ads_price['ads_price_text'];
+			$post_data['post_content'] = $post->post_content;
+			$post_data['payment_method'] = $payment_method;
+			if ($send_notification) {
+				terraclassifieds_new_ad_notification($ads_id,$post_data, $ad_category_term);
+			}
+			
+			$return_data = array('status' => 1, 'message' => '', 'payment_id' => $payment_id,'payment_hash' => $payment_hash,'paypal_item_name' => $paypal_item_name);
+		}
+		wp_send_json_success($return_data);
+		wp_die();
+	}
+	
+	add_action( 'wp_ajax_terraclassifieds_set_ads_payment_type', 'terraclassifieds_set_ads_payment_type' );
+	add_action( 'wp_ajax_nopriv_terraclassifieds_set_ads_payment_type', 'terraclassifieds_set_ads_payment_type' );
+}
+
+if (!function_exists('terraclassifieds_calculate_ads_price')) {
+	function terraclassifieds_calculate_ads_price($category_id, $add_currency = true,$renew_op = false) {
+		$ads_price = 0;
+		$ads_category_price = 0;
+		$vat = 0;
+		$net = 0;
+		$ads_price_text = '';
+		$ads_category_price_text = '';
+		$vat_text = '';
+		$net_text = '';
+		$payment_items = array();
+		$charing_for_add_ads = terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price','free');
+		$vat_rate = intval(terraclassifieds_get_option('_tc_monetizing_vat_rate','0'));
+
+		if ($charing_for_add_ads === 'fixed') {
+			$ads_category_price = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_fixed','0'));
+			$ads_price += floatval($ads_category_price);
+		}elseif($charing_for_add_ads === 'per_category') {
+			if ($renew_op) {
+				$ads_category_price = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_per_category_renew_price_'.$category_id,'0'));
+			}else{
+				$ads_category_price = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_per_category_charging_price_'.$category_id,'0'));
+			}
+			$ads_price += floatval($ads_category_price);
+		}
+		$payment_items = array('category' => $ads_category_price);
+		
+		$vat = floatval(($ads_category_price*$vat_rate)/(100+$vat_rate));
+		$net = floatval($ads_price - $vat);
+		
+		if ($add_currency) {
+			$currency = terraclassifieds_get_option( '_tc_advert_currency', '$' );
+			$unit_position = intval(terraclassifieds_get_option( '_tc_unit_position', 1 ));
+			
+			if (!$unit_position) {
+				$ads_category_price_text = $currency.' '.terraclassifiedsPriceFormat($ads_category_price,1);
+				$ads_price_text = $currency.' '.terraclassifiedsPriceFormat($ads_price,1);
+				$vat_text = $currency.' '.terraclassifiedsPriceFormat($vat,1);
+				$net_text = $currency.' '.terraclassifiedsPriceFormat($net,1);
+			}else{
+				$ads_price_text = terraclassifiedsPriceFormat($ads_price,1).' '.$currency;
+				$ads_category_price_text = terraclassifiedsPriceFormat($ads_category_price,1).' '.$currency;
+				$vat_text = terraclassifiedsPriceFormat($vat,1).' '.$currency;
+				$net_text = terraclassifiedsPriceFormat($net,1).' '.$currency;
+			}
+		}else{
+			$ads_price_text = terraclassifiedsPriceFormat($ads_price,1);
+			$ads_category_price_text = terraclassifiedsPriceFormat($ads_category_price,1);
+			$vat_text = terraclassifiedsPriceFormat($vat,1);
+			$net_text = terraclassifiedsPriceFormat($net,1);
+		}
+		return array('ads_price' => floatval($ads_price),'ads_price_text' => $ads_price_text, 'ads_category_price' => floatval($ads_category_price), 'ads_category_price_text' => $ads_category_price_text, 'vat' => floatval($vat), 'vat_text' => $vat_text, 'net' => floatval($net), 'net_text' => $net_text, 'vat_rate' => $vat_rate, 'payment_items' => $payment_items );
+	}
+}
+
+if (!function_exists('terraclassifieds_calculate_price')) {
+	function terraclassifieds_calculate_price($price, $add_currency = true) {
+		$vat = 0;
+		$net = 0;
+		$price_text = '';
+		$vat_text = '';
+		$net_text = '';
+		$vat_rate = intval(terraclassifieds_get_option('_tc_monetizing_vat_rate','0'));
+		
+		$vat = floatval(($price*$vat_rate)/(100+$vat_rate));
+		$net = floatval($price - $vat);
+		
+		if ($add_currency) {
+			$currency = terraclassifieds_get_option( '_tc_advert_currency', '$' );
+			$unit_position = intval(terraclassifieds_get_option( '_tc_unit_position', 1 ));
+			
+			if (!$unit_position) {
+				$price_text = $currency.' '.terraclassifiedsPriceFormat($price,1);
+				$vat_text = $currency.' '.terraclassifiedsPriceFormat($vat,1);
+				$net_text = $currency.' '.terraclassifiedsPriceFormat($net,1);
+			}else{
+				$price_text = terraclassifiedsPriceFormat($price,1).' '.$currency;
+				$vat_text = terraclassifiedsPriceFormat($vat,1).' '.$currency;
+				$net_text = terraclassifiedsPriceFormat($net,1).' '.$currency;
+			}	
+		}else{
+			$price_text = terraclassifiedsPriceFormat($price,1);
+			$vat_text = terraclassifiedsPriceFormat($vat,1);
+			$net_text = terraclassifiedsPriceFormat($net,1);
+		}
+		return array('price' => floatval($price),'price_text' => $price_text, 'vat' => floatval($vat) , 'vat_text' => $vat_text, 'net' => floatval($net), 'net_text' => $net_text, 'vat_rate' => $vat_rate );
+	}
+}
+
+if (!function_exists('terraclassifieds_format_price')) {
+	function terraclassifieds_format_price($price, $add_currency = true) {
+		$price_text = '';
+		
+		if ($add_currency) {
+			$currency = terraclassifieds_get_option( '_tc_advert_currency', '$' );
+			$unit_position = intval(terraclassifieds_get_option( '_tc_unit_position', 1 ));
+			
+			if (!$unit_position) {
+				$price_text = $currency.' '.terraclassifiedsPriceFormat($price,1);
+			}else{
+				$price_text = terraclassifiedsPriceFormat($price,1).' '.$currency;
+			}
+		}else{
+			$price_text = terraclassifiedsPriceFormat($price,1);
+		}
+		return $price_text;	
+	}
+}
