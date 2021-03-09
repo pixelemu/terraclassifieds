@@ -1180,6 +1180,152 @@ function terraclassifieds_favourite_ads($atts)
 <?php return ob_get_clean();
 }
 
+// PayPal Payment Success
+add_shortcode( 'terraclassifieds_paypal_payment_success', 'terraclassifieds_paypal_payment_success_body' );
+function terraclassifieds_paypal_payment_success_body( $atts ){
+	$my_submissions_url = home_url('/').terraclassifieds_get_option('_tc_slug_my_submissions','my-submissions');
+	?>
+		<p>
+			<?php echo __('Your payment has been successful.','terraclassifieds'); ?>
+		</p>
+		<a class="" href="<?php echo stripslashes_deep($my_submissions_url); ?>" title="<?php echo esc_attr('My submissions','terraclassifieds'); ?>" alt="<?php echo esc_attr('My submissions','terraclassifieds'); ?>"><?php echo esc_attr('Go to the list of your ads.','terraclassifieds'); ?></a>
+	<?php
+}
+
+// PayPal Payment Success
+add_shortcode( 'terraclassifieds_paypal_payment_cancel', 'terraclassifieds_paypal_payment_cancel_body' );
+function terraclassifieds_paypal_payment_cancel_body( $atts ){
+	$my_submissions_url = home_url('/').terraclassifieds_get_option('_tc_slug_my_submissions','my-submissions');
+	?>
+		<p>
+			<?php echo __('Your payment failed.','terraclassifieds'); ?>
+		</p>
+		<a class="" href="<?php echo stripslashes_deep($my_submissions_url); ?>" title="<?php echo esc_attr('My submissions','terraclassifieds'); ?>" alt="<?php echo __('My submissions','terraclassifieds'); ?>"><?php echo esc_attr('Go to the list of your ads and try again.','terraclassifieds'); ?></a>
+	<?php
+}
+
+// PayPal Payment Success
+add_shortcode( 'terraclassifieds_paypal_payment_notify', 'terraclassifieds_paypal_payment_notify_body' );
+function terraclassifieds_paypal_payment_notify_body(){
+	global $wpdb;
+	/** Production Postback URL */
+    $verify_uri = 'https://ipnpb.paypal.com/cgi-bin/webscr';
+    /** Sandbox Postback URL */
+    $sandbox_verify_uri = 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr';
+
+    /** Response from PayPal indicating validation was successful */
+    $valid = 'VERIFIED';
+    /** Response from PayPal indicating validation failed */
+    $invalid = 'INVALID';
+	
+	if (!count($_POST)) {
+		throw new Exception("Missing POST Data");
+	}
+
+	$raw_post_data = file_get_contents('php://input');
+	$raw_post_array = explode('&', $raw_post_data);
+	$myPost = array();
+	foreach ($raw_post_array as $keyval) {
+		$keyval = explode('=', $keyval);
+		if (count($keyval) == 2) {
+			// Since we do not want the plus in the datetime string to be encoded to a space, we manually encode it.
+			if ($keyval[0] === 'payment_date') {
+				if (substr_count($keyval[1], '+') === 1) {
+					$keyval[1] = str_replace('+', '%2B', $keyval[1]);
+				}
+			}
+			$myPost[$keyval[0]] = urldecode($keyval[1]);
+		}
+	}
+
+	// Build the body of the verification post request, adding the _notify-validate command.
+	$req = 'cmd=_notify-validate';
+	$get_magic_quotes_exists = false;
+	if (function_exists('get_magic_quotes_gpc')) {
+		$get_magic_quotes_exists = true;
+	}
+	foreach ($myPost as $key => $value) {
+		if ($get_magic_quotes_exists == true && get_magic_quotes_gpc() == 1) {
+			$value = urlencode(stripslashes($value));
+		} else {
+			$value = urlencode($value);
+		}
+		$req .= "&$key=$value";
+	}
+	
+	// Post the data back to PayPal, using curl. Throw exceptions if errors occur.
+	$paypal_test_mode = terraclassifieds_get_option('_tc_monetizing_paypal_payment_test_mode',1);
+	if ($paypal_test_mode) {
+		$ch = curl_init($sandbox_verify_uri);
+	}
+	else{
+		$ch = curl_init($verify_uri);
+	}
+	curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
+	curl_setopt($ch, CURLOPT_SSLVERSION, 6);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+	curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'User-Agent: PHP-IPN-Verification-Script',
+		'Connection: Close',
+	));
+	$res = curl_exec($ch);
+	if (!($res)) {
+		$errno = curl_errno($ch);
+		$errstr = curl_error($ch);
+		curl_close($ch);
+		throw new Exception("cURL error: [$errno] $errstr");
+	}
+
+	$info = curl_getinfo($ch);
+	$http_code = $info['http_code'];
+	if ($http_code != 200) {
+		throw new Exception("PayPal responded with http code $http_code");
+	}
+
+	curl_close($ch);
+	// Check if PayPal verifies the IPN data, and if so, return true.
+	if ($res == $valid) {
+		$item_number = $_POST['item_number'];
+		$item_name = $_POST['item_name'];
+		$payment_status = $_POST['payment_status'];
+		$payment_type = $_POST['payment_type'];
+		$payment_date = $_POST['payment_date'];
+		$payment_time = current_time('mysql');
+		$custom = $_POST['custom'];
+		$table = $wpdb->prefix.'terraclassifieds_payments';
+		$payment_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table WHERE payment_hash = '%s'",$item_number));
+		if ($payment_status == 'Completed') {
+			$txn_id = $_POST['txn_id'];
+			$wpdb->update('pe_terraclassifieds_payments', array('status' => 'completed','transaction_hash' => $txn_id,'datetime' => $payment_time), array('payment_hash' => $item_number) , array('%s','%s','%s'),array('%s'));
+			$arg = array('ID' => intval($payment_data->id_item), 'post_status' => 'publish');
+			$expire_time_field = terraclassifieds_generate_ads_expired_time();
+			update_post_meta(intval($payment_data->id_item), '_tc_expire_date', $expire_time_field);
+			update_post_meta(intval($payment_data->id_item), '_tc_expire_soon_notification_done', false);
+			wp_update_post($arg);
+			terraclassifieds_sendmail_update_status3(intval($payment_data->id_item),$payment_status);
+			terraclassifieds_sendmail_admin_payment_completed(intval($payment_data->id));
+		}elseif($payment_status == 'Pending'){
+			$wpdb->update('pe_terraclassifieds_payments', array('status' => 'pending','transaction_hash' => null), array('payment_hash' => $item_number), array('%s'));
+			$arg = array('ID' => (int) $item_id, 'post_status' => 'pending');
+			wp_update_post($arg);
+			terraclassifieds_sendmail_update_status3(intval($payment_data->id_item),$payment_status);
+		}else{
+			$wpdb->update('pe_terraclassifieds_payments', array('status' => 'cancelled','transaction_hash' => null), array('payment_hash' => $item_number), array('%s'));
+			$arg = array('ID' => (int) $item_id, 'post_status' => 'rejected');
+			wp_update_post($arg);
+			terraclassifieds_sendmail_update_status3(intval($payment_data->id_item),$payment_status);
+		}
+	} else {
+		
+	}
+}
+
 //Front Payments List
 add_shortcode('terraclassifieds_my_payments', 'terraclassifieds_my_payments_page' );
 function terraclassifieds_my_payments_page() {
