@@ -39,6 +39,8 @@ if ( ! class_exists( 'TerraClassifiedsMenu' ) ) {
 			$page_add_advert = get_page_link( get_page_by_path( $page_add_advert_slug ) );
 			$page_my_submissions_slug = terraclassifieds_get_option( '_tc_slug_my_submissions', 'my-submissions' );
 			$page_my_submissions = get_page_link( get_page_by_path( $page_my_submissions_slug ) );
+			$page_my_payments_slug = terraclassifieds_get_option( '_tc_slug_my_payments', 'my-payments' );
+			$page_my_payments = get_page_link( get_page_by_path( $page_my_payments_slug ) );
 			$page_ed_profile_slug = terraclassifieds_get_option( '_tc_slug_edit_profile', 'edit-profile' );
 			$page_ed_profile = get_page_link( get_page_by_path( $page_ed_profile_slug ) );
 			$page_favourite_ads_slug = terraclassifieds_get_option( '_tc_slug_favourite_ads', 'favourite-ads' );
@@ -63,6 +65,9 @@ if ( ! class_exists( 'TerraClassifiedsMenu' ) ) {
 							</li>
 							<li class="menu-item">
 								<a href="<?php echo esc_url($page_my_submissions); ?>"><?php _e('Your adverts', 'terraclassifieds'); ?></a>
+							</li>
+							<li class="menu-item">
+								<a href="<?php echo esc_url($page_my_payments); ?>"><?php _e('Your payments', 'terraclassifieds'); ?></a>
 							</li>
 							<li class="menu-item menu-separator">
 								<span><?php _e('Settings', 'terraclassifieds'); ?></span>
