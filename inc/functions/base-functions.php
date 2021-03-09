@@ -1428,6 +1428,7 @@ if (!function_exists('terraclassifiedsAdminNoticePages')) {
 		$page_login_slug = terraclassifieds_get_option('_tc_slug_login', 'login');
 		$page_registration_slug = terraclassifieds_get_option('_tc_slug_registration', 'registration');
 		$page_my_submissions_slug = terraclassifieds_get_option('_tc_slug_my_submissions', 'my-submissions');
+		$page_my_payments_slug = terraclassifieds_get_option('_tc_slug_my_payments', 'my-payments');
 
 		if (!terraclassifieds_post_by_slug($page_add_advert_slug, 'page')) {
 			$terraclassifiedsNoticeText .= __('<strong>Add advert</strong> page is missing or its slug was changed via editing a page.', 'terraclassifieds') . '<br />';
@@ -1452,6 +1453,9 @@ if (!function_exists('terraclassifiedsAdminNoticePages')) {
 		}
 		if (!terraclassifieds_post_by_slug($page_my_submissions_slug, 'page')) {
 			$terraclassifiedsNoticeText .= __('<strong>My submissions</strong> page is missing or its slug was changed via editing a page.', 'terraclassifieds') . '<br />';
+		}
+		if (!terraclassifieds_post_by_slug($page_my_payments_slug, 'page')) {
+			$terraclassifiedsNoticeText .= __('<strong>My payments</strong> page is missing or its slug was changed via editing a page.', 'terraclassifieds') . '<br />';
 		}
 
 		if ($terraclassifiedsNoticeText != '') {
