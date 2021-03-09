@@ -98,7 +98,10 @@ function wds_handle_frontend_new_post_form_submission($cmb, $post_data = array()
 		update_post_meta($new_submission_id, $key, $value);
 	}
 
-	terraclassifieds_new_ad_notification($new_submission_id, $post_data, $ad_category_term);
+	if (intval($post_data['post_price']) == 0){
+	// Sending add free ads notofication 
+		terraclassifieds_new_ad_notification($new_submission_id, $post_data, $ad_category_term);
+	}
 
 	return $new_submission_id;
 }
