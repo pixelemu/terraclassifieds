@@ -1176,3 +1176,82 @@ function terraclassifieds_favourite_ads($atts)
 	<?php } ?>
 <?php return ob_get_clean();
 }
+
+//Front Payments List
+add_shortcode('terraclassifieds_my_payments', 'terraclassifieds_my_payments_page' );
+function terraclassifieds_my_payments_page() {
+	$user_id = get_current_user_id();
+	
+	if($user_id != 0){
+		global $wpdb;
+		$table = $wpdb->prefix.'terraclassifieds_payments';
+		
+		$posts_per_page = get_option( 'posts_per_page' );
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$payments_query = "SELECT * FROM $table WHERE id_user = %d ORDER BY id DESC";
+		$payments_count = count($wpdb->get_results($wpdb->prepare($payments_query,$user_id)));
+		$starting_position = (($paged - 1) * $posts_per_page);
+		$limit = ' LIMIT %d,%d';
+		$count_pages = intval(ceil($payments_count/$posts_per_page));
+		
+		$payments_list = $wpdb->get_results($wpdb->prepare($payments_query.$limit,$user_id,$starting_position,$posts_per_page));
+		$payment_type = array('offline'=>__('Offline payment','terraclassifieds'),'paypal'=>__('PayPal payment','terraclassifieds'));
+		$payment_status = array('pending'=>__('Pending','terraclassifieds'),'completed'=>__('Completed','terraclassifieds'),'cancelled'=>__('Cancelled','terraclassifieds'));
+		$currency = terraclassifieds_get_option( '_tc_advert_currency', '$' );
+		$unit_position = (int) terraclassifieds_get_option( '_tc_unit_position', 1 );	
+		
+		if (!empty($payments_list)) {
+			?>
+				<table class="terraclassifieds-my-payments" id="terraclassifieds-my-payments">
+					<tr>
+						<th><?php echo __( 'Ads Name', 'terraclassifieds'); ?></th>
+						<th><?php echo __( 'Price', 'terraclassifieds'); ?></th>
+						<th><?php echo __( 'Payment Type', 'terraclassifieds'); ?></th>
+						<th><?php echo __( 'Date', 'terraclassifieds'); ?></th>
+						<th><?php echo __( 'Status', 'terraclassifieds'); ?></th>
+					</tr>
+					<?php foreach ($payments_list as $k=>$row) : ?>
+						<?php $post = get_post($row->id_item); ?>
+						<tr>
+							<td>
+								<?php echo $post->post_title; ?><br/>
+								ID: <?php echo $post->ID; ?>,PID: <?php  echo $row->id;?>
+							</td>
+							<td>
+								<?php if (!$unit_position): ?>
+									<?php echo $currency; ?>
+									<?php echo terraclassifiedsPriceFormat($row->price); ?>
+								<?php else: ?>
+									<?php echo terraclassifiedsPriceFormat($row->price); ?>
+									<?php echo $currency; ?>
+								<?php endif; ?>
+							</td>
+							<td><?php echo esc_html($payment_type[$row->method]); ?></td>
+							<td><?php echo esc_html($row->datetime); ?></td>
+							<td><?php echo esc_html(ucwords(__($row->status,'terraclassifieds'))); ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</table>
+				
+				<?php terraclassifieds_pagination($count_pages); ?>
+			<?php
+		}else{
+			if ( is_paged() ) {
+				$paged = 1;
+				$redirect_url_prev =  esc_url_raw( get_pagenum_link( $paged ) );
+				wp_safe_redirect( $redirect_url_prev );
+				exit;
+			} else {
+				echo __( 'No payments found.', 'terraclassifieds' );
+			}
+		}
+	}
+	else{
+		$page_login_slug = terraclassifieds_get_option( '_tc_slug_login', 'login' );
+		$page_login = get_page_link( get_page_by_path( $page_login_slug ) );
+		echo '<div class="terraclassifieds-message"><h3><a href="'.$page_login.'">'.__( 'Login', 'terraclassifieds' ).'</a> ' .__( 'to see your submissions.', 'terraclassifieds' ). '</h3></div>';
+	}
+	
+	?>
+	<?php
+}
