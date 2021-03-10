@@ -1180,6 +1180,249 @@ function terraclassifieds_favourite_ads($atts)
 <?php return ob_get_clean();
 }
 
+// List of payments for payment process
+if (!function_exists('terraclassifieds_frontend_payments_list')) {
+	function terraclassifieds_frontend_payments_list($data, $send_notification = 0) {
+		global $wpdb;
+		$post_id = intval($data['post_id']);
+		$user_id = get_current_user_id();
+		$category = get_post_meta($post_id,'_tc_category',true);
+		$ads_id_category = get_post_meta($post_id,'_tc_id_category',true);
+		$post = get_post($post_id);
+		$ads_price = 0;
+		$ads_category = ucfirst($category);
+		$ads_id = $post_id;
+		$task = $data['task'];
+		
+		if ($task === 'set_payment_method') {
+			$payment_id = intval($data['payment_id']);
+			$table = $wpdb->prefix.'terraclassifieds_payments';
+			$payment_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table WHERE id = %d ORDER BY id DESC LIMIT 1",$payment_id));
+			$table_items = $wpdb->prefix.'terraclassifieds_payment_items';
+			$payment_items = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table_items WHERE id_payment = %d ORDER BY id DESC",$payment_id));
+			$payment_hash = $payment_data->payment_hash;
+			$ads_price_data = terraclassifieds_calculate_price($payment_data->price);
+			$ads_price = $ads_price_data['price'];
+			$ads_price_text = $ads_price_data['price_text'];
+		}elseif($task == 'renew'){
+			$ads_price_data = terraclassifieds_calculate_ads_price($ads_id_category,true,true);
+			$ads_price = $ads_price_data['ads_price'];
+			$payment_time = current_time('mysql');
+			$payment_hash = terraclassifieds_generate_uniqid();
+			$table = $wpdb->prefix.'terraclassifieds_payments';
+			$data = array('id_item' => $ads_id, 'id_user' => intval($user_id),'status' => 'pending','price' => $ads_price,'ip_address' => getUserIP(),'type'=>'Ads Category','payment_hash' => $payment_hash,'operation' => $task);
+			$format = array('%d','%d','%s','%f','%s','%s','%s','%s');
+			$wpdb->insert($table,$data,$format);
+			$payment_id = $wpdb->insert_id;
+			
+			$payment_items = $ads_price_data['payment_items'];
+			if (!empty($payment_items) && is_array($payment_items)) {
+				$table_items = $wpdb->prefix.'terraclassifieds_payment_items';
+				foreach ($payment_items as $k=>$item) {
+					$data = array('id_payment' => $payment_id, 'type' => $k, 'price' => $item);
+					$format = array('%d','%s','%f');
+					$wpdb->insert($table_items,$data,$format);
+				}
+			}
+			
+			$payment_items = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table_items WHERE id_payment = %d ORDER BY id DESC",$payment_id));
+			$post = get_post($ads_id);
+			$arg = array('ID' => $ads_id, 'post_status' => 'pending');
+			wp_update_post($arg);
+			
+			$ads_category_price_text = $ads_price_data['ads_category_price_text'];
+			$ads_price = $ads_price_data['ads_price'];
+			$ads_price_text = $ads_price_data['ads_price_text'];
+		}
+		
+		$vat_text = $ads_price_data['vat_text'];
+		$vat_rate = $ads_price_data['vat_rate'];
+		$net_text = $ads_price_data['net_text'];
+		$use_offline_payment = intval(terraclassifieds_get_option('_tc_monetizing_use_offline_payment',0)); 
+		$use_paypal_payment = intval(terraclassifieds_get_option('_tc_monetizing_use_paypal_payment',0));
+		?>
+			<div>
+				<a class="button" onclick="javascript:window.history.back();"><?php echo __('Back To Edit - Button','terraclassifieds'); ?></a>
+			</div>
+			<div class="terraclassifieds-payment-details">
+				<h4 class="terraclassifieds-payment-details-head"><?php echo __('Payment Details','terraclassifieds'); ?></h4>
+				<table>
+					<tbody>
+						<tr>
+							<td><?php echo __('Advert','terraclassifieds'); ?></td>
+							<td><?php echo esc_html($post->post_title); ?></td>
+						</tr>
+						<tr>
+							<td><?php echo __('Advert ID','terraclassifieds'); ?></td>
+							<td><?php echo esc_html($ads_id); ?></td>
+						</tr>
+						<?php if (!empty($payment_items) && is_array($payment_items)) : ?>
+							<?php foreach ($payment_items as $k=>$item) : ?>
+								<tr>
+									<td><?php echo __(ucfirst($item->type),'terraclassifieds'); ?></td>
+									<td><?php echo esc_html(terraclassifieds_format_price($item->price)); ?></td>
+								</tr>
+							<?php endforeach; ?>
+						<?php endif; ?>
+						<tr>
+							<td><?php echo __('Net cost','terraclassifieds'); ?></td>
+							<td><?php echo esc_html($net_text); ?></td>
+						</tr>
+						<tr>
+							<td><?php echo sprintf(__('Tax (%s%%)','terraclassifieds'),esc_html($vat_rate)); ?></td>
+							<td><?php echo esc_html($vat_text); ?></td>
+						</tr>
+						<tr>
+							<td><?php echo __('Total','terraclassifieds'); ?></td>
+							<td><?php echo esc_html($ads_price_text); ?></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="terraclassifieds-payments-method-list">
+				<h4 class="terraclassifieds-payments-method-list-head"><?php echo __('Payment Methods','terraclassifieds'); ?></h4>
+				<table class="terraclassifieds-payments-method-list-table">
+					<tbody>
+						<?php 
+							$offline_payment_image = terraclassifieds_get_option( '_tc_monetizing_offline_payment_logo', '' );
+							$paypal_payment_image = terraclassifieds_get_option( '_tc_monetizing_paypal_payment_logo', '' );
+						?>
+						<?php if($use_offline_payment) : ?>
+							<tr class="terraclassifieds-payments-method-list-item">
+								<td class="terraclassifieds-payments-method-list-item-image">
+									<?php if ($offline_payment_image) : ?>
+										<img src="<?php echo stripslashes_deep($offline_payment_image); ?>" alt="Offline Payment Logo" title="Offline Payment Logo" class="tc_monetizing_offline_payment_logo" />
+									<?php else : ?>
+										&nbsp;
+									<?php endif; ?>
+								</td>
+								<td class="terraclassifieds-payments-method-list-item-info">
+									<p><?php echo __('Offline Payment','terraclassifieds'); ?></p>
+									<p><?php echo __('Select this method to pay with bank transfer or other offline payment methods.','terraclassifieds'); ?></p>
+								</td>
+								<td class="terraclassifieds-payments-method-list-item-button">
+									<form method="post" name="form_payment_offline" id="form-payment-offline">
+										<?php wp_nonce_field(); ?>
+										<input type="hidden" name="ads_id" value="<?php echo esc_attr($post_id); ?>" />
+										<input type="hidden" name="ads_charging_price" value="<?php echo esc_attr($ads_price); ?>" />
+										<input type="hidden" name="ads_id_category" value="<?php echo esc_attr($ads_id_category); ?>" />
+										<input type="hidden" name="ads_user_id" value="<?php echo esc_attr($user_id); ?>" />
+										<input type="hidden" id="payment-id" name="payment_id" value="<?php echo esc_attr($payment_id); ?>" />
+										<input type="hidden" name="task" value="payment" />
+										<input type="hidden" name="payment_method" value="offline" />
+										
+										<button type="button" class="button-secondary terraclassified-payment-method" name="offline_payment" id="offline-payment-button" data-method="offline" data-operation="renew" data-send-notification="<?php echo esc_attr($send_notification); ?>" data-ads-id="<?php echo esc_attr($ads_id); ?>" data-payment-hash="<?php echo esc_attr($payment_hash); ?>" /><span class="offline-payment-button-loader"><i class='fas fa-spinner fa-spin'></i></span><span><?php echo __('Buy Now','terraclassifieds'); ?></span></button>
+									</form>
+								</td>
+							</tr>
+						<?php endif; ?>
+						<?php if($use_paypal_payment) : ?>
+							<tr class="terraclassifieds-payments-method-list-item">
+								<td class="terraclassifieds-payments-method-list-item-image">
+									<?php if ($paypal_payment_image) : ?>
+										<img src="<?php echo stripslashes_deep($paypal_payment_image); ?>" alt="PayPal Payment Logo" title="PayPal Payment Logo" class="tc_monetizing_paypal_payment_logo" />
+									<?php else : ?>
+										&nbsp;
+									<?php endif; ?>
+								</td>
+								<td class="terraclassifieds-payments-method-list-item-info">
+									<p><?php echo __('PayPal','terraclassifieds'); ?></p>
+									<p><?php echo __('One of the most popular online payment methods enables you to pay securely with your PayPal account, VISA, MasterCard. A PayPal account is not required to pay with payment cards. Just click “Create account” on the PayPal payment page to check options.','terraclassifieds'); ?></p>
+								</td>
+								<td class="terraclassifieds-payments-method-list-item-button">
+									<?php 
+										$paypal_test_mode = terraclassifieds_get_option('_tc_monetizing_paypal_payment_test_mode',1);
+										$paypal_email_id = terraclassifieds_get_option('_tc_monetizing_paypal_payment_business_email_id','');
+										$paypal_return_successful_url = home_url('/').terraclassifieds_get_option('_tc_monetizing_paypal_payment_return_successful_url','paypal-payment-success');
+										$paypal_return_cancel_url = home_url('/').terraclassifieds_get_option('_tc_monetizing_paypal_payment_return_cancel_url','paypal-payment-cancel');
+										$paypal_return_notify_url = home_url('/').terraclassifieds_get_option('_tc_monetizing_paypal_payment_return_notify_url','paypal-payment-notify');
+										$paypal_currency_code = terraclassifieds_get_option('_tc_monetizing_paypal_payment_currency_code','PLN');
+										$paypalUrl = $paypal_test_mode ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 'https://www.paypal.com/cgi-bin/webscr';
+									?>
+									
+									<form name="form_payment_paypal" id="form-payment-paypal" action="<?php echo $paypalUrl; ?>" method="post">
+										<input type="hidden" name="business" value="<?php echo esc_attr($paypal_email_id); ?>">                                                                                                
+										<input type="hidden" name="cmd" value="_xclick"> 
+										<input type="hidden" id="paypal-item-name" name="item_name" value="<?php echo sprintf( __('Payment for ads: %s,Payment id: %s', 'terraclassifieds'),$post->post_title,$payment_id);?>">
+										<input type="hidden" id="paypal-item-number" name="item_number" value="<?php echo esc_attr($payment_hash); ?>">
+										<input type="hidden" name="amount" value="<?php echo esc_attr($ads_price); ?>">
+										<input type="hidden" name="currency_code" value="<?php echo esc_attr($paypal_currency_code); ?>">
+										<input type="hidden" name="return" value="<?php echo stripslashes_deep($paypal_return_successful_url); ?>">
+										<input type="hidden" name="notify_url" value="<?php echo stripslashes_deep($paypal_return_notify_url); ?>">
+										<input type="hidden" name="cancel_return" value="<?php echo stripslashes_deep($paypal_return_cancel_url); ?>">
+										
+										<button class="button-secondary terraclassified-payment-method" type="button" name="paypal_payment" id="paypal-payment-button" data-method="paypal" data-operation="renew" data-send-notification="<?php echo esc_attr($send_notification); ?>" data-ads-id="<?php echo esc_attr($ads_id); ?>" data-payment-hash="<?php echo esc_attr($payment_hash); ?>" /><span class="paypal-payment-button-loader"><i class='fas fa-spinner fa-spin'></i></span><span><?php echo __('Buy Now','terraclassifieds'); ?></span></button>
+									</form>
+								</td>
+							</tr>
+						<?php endif; ?>
+					</tbody>
+				</table>
+			</div>
+		<?php
+	}
+}
+
+// Payment details
+if (!function_exists('terraclassifieds_frontend_payment_details')) {
+	function terraclassifieds_frontend_payment_details() {
+		$wpnonce = $_POST['_wpnonce'];
+			if (!wp_verify_nonce($wpnonce)) {
+				die( __( 'Security check', 'textdomain' ) ); 
+			} else {
+				$ads_id = intval($_POST['ads_id']);
+				$ads_charging_price = floatval($_POST['ads_charging_price']);
+				$post = get_post($ads_id);
+				$method = $_POST['payment_method'];
+				echo $payment_id = intval($_POST['payment_id']);
+				
+				if (!$unit_position) {
+						$ads_price_text = $currency.' '.terraclassifiedsPriceFormat($ads_charging_price,1);
+					}else{
+						$ads_price_text = terraclassifiedsPriceFormat($ads_charging_price,1).' '.$currency;
+					}
+				$use_offline_payment_information = terraclassifieds_get_option( '_tc_monetizing_use_offline_payment_information', __('Enter details for your bank account or other necessary information required for making a payment.','terraclassifieds'));
+				if ($payment_id) {
+					if ($method === 'offline') : ?>
+						<div class="terraclassifieds-offline-payment-summary">
+							<h4 class="terraclassifieds-offline-payment-summary-head"><?php echo __('Offline Payment','terraclassifieds'); ?></h4>
+							<table>
+								<tbody>
+									<tr>
+										<td><?php echo __('Advert','terraclassifieds'); ?></td>
+										<td><?php echo esc_html($post->post_title); ?></td>
+									</tr>
+									<tr>
+										<td><?php echo __('Price','terraclassifieds'); ?></td>
+										<td><?php echo esc_html($ads_price_text); ?></td>
+									</tr>
+									<tr>
+										<td><?php echo __('Advert ID','terraclassifieds'); ?></td>
+										<td><?php echo esc_html($ads_id); ?></td>
+									</tr>
+									<tr>
+										<td><?php echo __('Payment ID','terraclassifieds'); ?></td>
+										<td><?php echo esc_html($payment_id); ?></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<p>
+												<?php echo __('Payment Information','terraclassifieds'); ?>
+											</p>
+											<p>
+												<?php echo esc_html($use_offline_payment_information); ?>
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					<?php endif;
+				}
+			}
+	}
+}
+
 // PayPal Payment Success
 add_shortcode( 'terraclassifieds_paypal_payment_success', 'terraclassifieds_paypal_payment_success_body' );
 function terraclassifieds_paypal_payment_success_body( $atts ){
