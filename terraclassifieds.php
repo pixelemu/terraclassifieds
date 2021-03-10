@@ -299,10 +299,10 @@ if (!class_exists('Terraclassifieds')) {
 			wp_dequeue_style('font-awesome');
 			wp_dequeue_style('font-awesome-css');
 			if (!(wp_style_is('all.css'))) {
-				wp_enqueue_style('font-awesome-all',  self::$url . 'assets/css/font-awesome/all.css', '', '5.6.3');
+				wp_enqueue_style('font-awesome-all',  self::$url . 'assets/css/font-awesome/all.css', '', '5.15.2');
 			}
 			if (!(wp_style_is('v4-shims.css'))) {
-				wp_enqueue_style('font-awesome-v4-shims',  self::$url . 'assets/css/font-awesome/v4-shims.css', '', '5.6.3');
+				wp_enqueue_style('font-awesome-v4-shims',  self::$url . 'assets/css/font-awesome/v4-shims.css', '', '5.15.2');
 			}
 			wp_enqueue_style('select2', self::$url . 'assets/css/select2.min.css', array(), true);
 			wp_enqueue_style('terraclassifieds-grid', self::$url . 'assets/css/grid.css', array(), true);
@@ -313,6 +313,14 @@ if (!class_exists('Terraclassifieds')) {
 		 */
 		public function adminStyles()
 		{
+			wp_dequeue_style('font-awesome');
+			wp_dequeue_style('font-awesome-css');
+			if (!(wp_style_is('all.css'))) {
+				wp_enqueue_style('font-awesome-all',  self::$url . 'assets/css/font-awesome/all.css', '', '5.15.2');
+			}
+			if (!(wp_style_is('v4-shims.css'))) {
+				wp_enqueue_style('font-awesome-v4-shims',  self::$url . 'assets/css/font-awesome/v4-shims.css', '', '5.15.2');
+			}
 			wp_enqueue_style('terraclassifieds-admin', self::$url . 'assets/css/terraclassifieds-admin.css', array(), true);
 		}
 
