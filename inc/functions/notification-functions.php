@@ -398,6 +398,7 @@ add_action('post_submitbox_misc_actions', 'terraclassifieds_add_publish_meta_opt
 // send email to author when classified changes status - publish in backend when checkbox is ticked
 if ( ! function_exists( 'terraclassifieds_sendmail_update_status' ) ) {
 	function terraclassifieds_sendmail_update_status($pid = '') {
+		global $wpdb;
 		if(isset($_POST['checkbox_status_change_notification']) && $_POST['checkbox_status_change_notification'] == 1) {
 			
 			/*$advert_status = '';
@@ -412,10 +413,23 @@ if ( ! function_exists( 'terraclassifieds_sendmail_update_status' ) ) {
 	
 			$classified_id = get_the_ID();
 			$advert_status = get_post_status( $classified_id );
+			if ($advert_status == 'publish') {
+				$advert_status_value = 'published';
+			}else{
+				$advert_status_value = $advert_status;
+			}
 			if(!empty(terraclassifieds_get_option( '_tc_email_template_reply_to_email_address', '' ))){
 				$reply_to_email_address = terraclassifieds_get_option( '_tc_email_template_reply_to_email_address', '' );
 			} else {
 				$reply_to_email_address = get_option( 'admin_email' );
+			}
+			if (!$payment_status) {
+				$table = $wpdb->prefix.'terraclassifieds_payments';
+				$payment_status = $wpdb->get_var($wpdb->prepare("SELECT status from $table where id_item = %d ORDER BY id DESC LIMIT 1", get_the_ID()));
+			}
+			
+			if (!$payment_status) {
+				$payment_status = 'completed';
 			}
 			$headers = array("Content-Type: text/html; charset=UTF-8", "Reply-To: " . $reply_to_email_address);
 			$advert_link_subject = get_permalink($classified_id);
@@ -426,11 +440,13 @@ if ( ! function_exists( 'terraclassifieds_sendmail_update_status' ) ) {
 
 		    $subject = $email_template_change_status_subject;
 			$subject = str_replace("[[advert_title_link]]", $advert_link_subject, $subject);
-			$subject = str_replace("[[advert_status]]", $advert_status, $subject);
+			$subject = str_replace("[[advert_status]]", __($advert_status_value,'terraclassifieds'), $subject);
+			$subject = str_replace("[[payment_status]]", __($payment_status,'terraclassifieds'), $subject);
 		
 			$message = $email_template_change_status_message;
 			$message = str_replace("[[advert_title_link]]", $advert_link, $message);
-			$message = str_replace("[[advert_status]]", $advert_status, $message);
+			$message = str_replace("[[advert_status]]", __($advert_status_value,'terraclassifieds'), $message);
+			$message = str_replace("[[payment_status]]", __($payment_status,'terraclassifieds'), $message);
 
 			$sent = wp_mail($author_email, $subject, $message, $headers);
 		}
