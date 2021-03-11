@@ -277,12 +277,24 @@ function terraclassifieds_new_ad_notification($new_submission_id, $post_data, $a
         $user = get_userdata($post_data['post_author']);
         $advert_author_login = $user->user_login;
         $advert_author_email = $user->user_email;
+		$advert_title = $post_data['post_title'];
+		$payment_method = $post_data['payment_method'];
+		$advert_charging_price = (intval($post_data['post_price'])) === 0 ? __('Free', 'terraclassifieds') : $post_data['post_price_text'];
         $advert_status = terraclassifieds_get_option( '_tc_add_advert_ad_status', 0 );
-        if($advert_status == 1){
-            $advert_status_value = __( 'published', 'terraclassifieds' );
-        } else {
-            $advert_status_value = __( 'pending', 'terraclassifieds' );
-        }
+        $my_submissions_url = home_url('/').terraclassifieds_get_option('_tc_slug_my_submissions','my-submissions');
+		$send_my_submissions_url = 0;
+		if (intval($post_data['post_price']) === 0) {
+			$payment_status_value = __( 'Free', 'terraclassifieds' );
+			if($advert_status == 1){
+				$advert_status_value = __( 'Published', 'terraclassifieds' );
+			} else {
+				$advert_status_value = __( 'Pending', 'terraclassifieds' );
+			}
+		}else{
+				$advert_status_value = __( 'Pending', 'terraclassifieds' );
+				$payment_status_value = __( 'Not paid', 'terraclassifieds' );
+				$send_my_submissions_url = 1;
+		}
         $advert_link_subject = get_permalink($new_submission_id);
         $advert_link = '<a href="' . get_permalink($new_submission_id) . '">' . get_permalink($new_submission_id) . '</a>';
         $advert_content = $post_data['post_content'];
@@ -310,6 +322,7 @@ function terraclassifieds_new_ad_notification($new_submission_id, $post_data, $a
         $subject = str_replace("[[advert_desc]]", $advert_content, $subject);
         $subject = str_replace("[[advert_author_login]]", $advert_author_login, $subject);
         $subject = str_replace("[[advert_author_email]]", $advert_author_email, $subject);
+		$subject = str_replace("[[advert_price]]", $advert_charging_price, $subject);
         
         $message = $email_template_new_advert_administrator_message;
         if($advert_status == 1){
@@ -320,6 +333,8 @@ function terraclassifieds_new_ad_notification($new_submission_id, $post_data, $a
         $message = str_replace("[[advert_desc]]", $advert_content, $message);
         $message = str_replace("[[advert_author_login]]", $advert_author_login, $message);
         $message = str_replace("[[advert_author_email]]", $advert_author_email, $message);
+		$message = str_replace("[[advert_price]]", $advert_charging_price, $message);
+        $message = str_replace("[[payment_status]]", $payment_status_value, $message);
         
         @wp_mail(get_option('admin_email'), $subject, $message, $headers);
         
@@ -337,6 +352,7 @@ function terraclassifieds_new_ad_notification($new_submission_id, $post_data, $a
         $subject = str_replace("[[advert_category]]", $advert_category, $subject);
         $subject = str_replace("[[advert_status]]", $advert_status_value, $subject);
         $subject = str_replace("[[advert_desc]]", $advert_content, $subject);
+		$subject = str_replace("[[advert_price]]", $advert_charging_price, $subject);
         
         $message = $email_template_new_advert_user_message;
         if($advert_status == 1){
@@ -345,6 +361,20 @@ function terraclassifieds_new_ad_notification($new_submission_id, $post_data, $a
         $message = str_replace("[[advert_category]]", $advert_category, $message);
         $message = str_replace("[[advert_status]]", $advert_status_value, $message);
         $message = str_replace("[[advert_desc]]", $advert_content, $message);
+		$message = str_replace("[[advert_price]]", $advert_charging_price, $message);
+		$message = str_replace("[[advert_title]]", $advert_title, $message);
+		$message = str_replace("[[payment_status]]", $payment_status_value, $message);
+		if ($payment_method === 'offline') {
+			$use_offline_payment_information = terraclassifieds_get_option( '_tc_monetizing_use_offline_payment_information', __('Enter details for your bank account or other necessary information required for making a payment.','terraclassifieds'));
+			$message .= __( 'You choosed offline payment.', 'terraclassifieds');
+			$message .= '<p>'.__( 'Advert ID:', 'terraclassifieds').$new_submission_id.'</p>';
+			$message .= '<p>'.__( 'Payment information:', 'terraclassifieds').'</p>';
+			$message .= '<p>'.$use_offline_payment_information.'</p>';
+		}elseif($payment_method === 'paypal') {
+			if ($send_my_submissions_url) {
+				$message .= '<a class="" href="'.stripslashes_deep($my_submissions_url).'" title="'.esc_attr('My submissions','terraclassifieds').'" alt="'.__('My submissions','terraclassifieds').'">'.esc_attr('Go to your adverts to pay again or see your ardverts.','terraclassifieds').'</a>';
+			}
+		}
         
         wp_mail($user->user_email, $subject, $message, $headers);
     }
