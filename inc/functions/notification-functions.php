@@ -508,3 +508,90 @@ if ( ! function_exists( 'terraclassifieds_sendmail_update_status2' ) ) {
 	add_action( 'publish_to_archived', 'terraclassifieds_sendmail_update_status2' );
 	add_action( 'archived_to_publish', 'terraclassifieds_sendmail_update_status2' );
 }
+
+// send email to author when payment and classified changes status
+if ( ! function_exists( 'terraclassifieds_sendmail_update_status3' ) ) {
+	function terraclassifieds_sendmail_update_status3($classified_id,$payment_status) {
+			$email_template_change_status_subject = terraclassifieds_get_option_base_functions( '_tc_email_template_change_status_subject', '' );
+			$email_template_change_status_message = terraclassifieds_get_option_base_functions( '_tc_email_template_change_status_message', '' );
+	
+			$advert_status = get_post_status($classified_id);
+			if ($advert_status == 'publish') {
+				$advert_status_value = 'published';
+			}else{
+				$advert_status_value = $advert_status;
+			}
+			if(!empty(terraclassifieds_get_option_base_functions( '_tc_email_template_reply_to_email_address', '' ))){
+				$reply_to_email_address = terraclassifieds_get_option_base_functions( '_tc_email_template_reply_to_email_address', '' );
+			} else {
+				$reply_to_email_address = get_option( 'admin_email' );
+			}
+			$headers = array("Content-Type: text/html; charset=UTF-8", "Reply-To: " . $reply_to_email_address);
+			$advert_link_subject = get_permalink($classified_id);
+			$advert_link = '<a href="' . get_permalink($classified_id) . '">' . get_permalink($classified_id) . '</a>';
+			
+		    $author_id = get_post_field( 'post_author', $classified_id );
+			$author_email = get_the_author_meta( 'user_email', $author_id );
+
+		    $subject = $email_template_change_status_subject;
+			$subject = str_replace("[[advert_title_link]]", $advert_link_subject, $subject);
+			$subject = str_replace("[[advert_status]]", __($advert_status_value, 'terraclassifieds'), $subject);
+			$subject = str_replace("[[payment_status]]", __($payment_status, 'terraclassifieds'), $subject);
+		
+			$message = $email_template_change_status_message;
+			$message = str_replace("[[advert_title_link]]", $advert_link, $message);
+			$message = str_replace("[[advert_status]]", __($advert_status_value, 'terraclassifieds'), $message);
+			$message = str_replace("[[payment_status]]", __($payment_status, 'terraclassifieds'), $message);
+
+			$sent = wp_mail($author_email, $subject, $message, $headers);
+	}
+}
+
+// send email to admin when payment is completed
+if ( ! function_exists( 'terraclassifieds_sendmail_admin_payment_completed' ) ) {
+	function terraclassifieds_sendmail_admin_payment_completed($id_payment) {
+		global $wpdb;
+		if (intval($id_payment)) {
+			$table = $wpdb->prefix.'terraclassifieds_payments';
+			$payment_data = $wpdb->get_row($wpdb->prepare("SELECT * from $table where id = %d", intval($id_payment)));
+			if (!empty($payment_data)) {
+				$payment_type = array('offline'=>__('Offline payment','terraclassifieds'),'paypal'=>__('PayPal payment','terraclassifieds'));
+				$currency = terraclassifieds_get_option( '_tc_advert_currency', '$' );
+				$unit_position = (int) terraclassifieds_get_option( '_tc_unit_position', 1 );
+				if (!$unit_position) {
+					$payment_amount = $currency.' '.terraclassifiedsPriceFormat($payment_data->price,true);
+				}else{
+					$payment_amount = terraclassifiedsPriceFormat($payment_data->price,true).' '.$currency;
+				}
+				
+				$email_template_payment_completed_subject = terraclassifieds_get_option_base_functions( '_tc_email_template_payment_completed_admin_notification_subject', '' );
+				$email_template_payment_completed_message = terraclassifieds_get_option_base_functions( '_tc_email_template_payment_completed_admin_notification_message', '' );
+				
+				if(!empty(terraclassifieds_get_option_base_functions( '_tc_email_template_reply_to_email_address', '' ))){
+					$reply_to_email_address = terraclassifieds_get_option_base_functions( '_tc_email_template_reply_to_email_address', '' );
+				} else {
+					$reply_to_email_address = get_option( 'admin_email' );
+				}
+				$headers = array("Content-Type: text/html; charset=UTF-8", "Reply-To: " . $reply_to_email_address);
+				$advert_link_subject = get_permalink(intval($payment_data->id_item));
+				$advert_link = '<a href="' . get_permalink(intval($payment_data->id_item)) . '">' . get_permalink(intval($payment_data->id_item)) . '</a>';
+				
+				$subject = $email_template_payment_completed_subject;
+				$subject = str_replace("[[advert_title_link]]", $advert_link_subject, $subject);
+				$subject = str_replace("[[payment_amount]]", $payment_amount, $subject);
+				$subject = str_replace("[[payment_method]]", $payment_type[$payment_data->method], $subject);
+				$subject = str_replace("[[payment_id]]", $payment_data->id, $subject);
+				$subject = str_replace("[[payment_date]]", $payment_data->date, $subject);
+			
+				$message = $email_template_payment_completed_message;
+				$message = str_replace("[[advert_title_link]]", $advert_link, $message);
+				$message = str_replace("[[payment_amount]]", $payment_amount, $message);
+				$message = str_replace("[[payment_method]]", $payment_type[$payment_data->method], $message);
+				$message = str_replace("[[payment_id]]", $payment_data->id, $message);
+				$message = str_replace("[[payment_date]]", $payment_data->datetime, $message);
+				
+				$admin_mail_send = wp_mail(get_option('admin_email'), $subject, $message, $headers);
+			}
+		}
+	}
+}
