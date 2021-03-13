@@ -611,11 +611,15 @@ add_shortcode('terraclassifieds_my_submissions', 'terraclassifieds_my_submission
 function terraclassifieds_my_submissions_body($atts)
 {
 	global $wp;
+	global $wpdb;
 	ob_start(); ?>
 
 	<div class="terraclassifieds-container terraclassifieds-archive terraclassifieds-my-submissions">
 		<div class="terraclassifieds-items">
 			<?php
+			$task = !empty($_POST['task']) ? $_POST['task'] : 'form';
+			$pay_now_payment_methods = array('paypal');
+				
 			$page_edit_ad_slug = terraclassifieds_get_option('_tc_slug_edit_advert', 'edit-ad');
 			$page_edit_ad = get_page_link(get_page_by_path($page_edit_ad_slug));
 			$current_user_id = get_current_user_id();
@@ -625,188 +629,271 @@ function terraclassifieds_my_submissions_body($atts)
 				$no_image_id = attachment_url_to_postid($no_image);
 			}
 			if ($current_user_id != 0) {
-				$posts_per_page = get_option('posts_per_page');
-				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$terra_ads_args = array(
-					'post_type'      => 'classified',
-					'post_status' => array('archived', 'rejected', 'publish', 'pending', 'draft'),
-					'author' => $current_user_id,
-					'posts_per_page' => $posts_per_page,
-					'paged' => $paged,
-				);
+				if ($task == 'form') {
+					$posts_per_page = get_option('posts_per_page');
+					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					$terra_ads_args = array(
+						'post_type'      => 'classified',
+						'post_status' => array('archived', 'rejected', 'publish', 'pending', 'draft'),
+						'author' => $current_user_id,
+						'posts_per_page' => $posts_per_page,
+						'paged' => $paged,
+					);
 
-				$terra_ads_query = new WP_Query($terra_ads_args);
-				if ($terra_ads_query->have_posts()) {
-					while ($terra_ads_query->have_posts()) : $terra_ads_query->the_post();
-
-						$price = get_post_meta(get_the_ID(), '_tc_price', true);
-						$sell_type = get_post_meta(get_the_ID(), '_tc_sell_type', 'price');
-						$currency = terraclassifieds_get_option('_tc_advert_currency', '$');
-						$unit_position = terraclassifieds_get_option('_tc_unit_position', 1);
-						$ad_time = get_the_time('U');
-						$hits = get_post_meta(get_the_ID(), '_terraclassifieds_popular_posts_count', true);
-						if (empty($hits)) {
-							$hits = 0;
-						}
-						$status = get_post_status(get_the_ID());
-						$expire_date = get_post_meta(get_the_ID(), '_tc_expire_date', true);
-			?>
-						<article <?php post_class(); ?>>
-							<div class="terraclassifieds-item terraclassifieds-clear">
-								<?php
-								$tcf_image_archive_size_height = terraclassifieds_get_option_base_functions('_tc_image_archive_height', '145');
-								$tcf_image_archive_size_width = terraclassifieds_get_option_base_functions('_tc_image_archive_width', '170');
-								$gallery = get_post_meta(get_the_ID(), '_tc_gallery', true);
-								if (!empty($gallery) || !empty($no_image)) { ?>
-									<div class="terraclassifieds-image" style="width: <?php echo esc_attr($tcf_image_archive_size_width) . 'px;' ?>">
-										<a href="<?php echo get_permalink(get_the_ID()); ?>">
-											<?php if (!empty($gallery)) {
-												cmb2_output_file_list_first_image('_tc_gallery', 'tcf-archive');
-											} else if (!empty($no_image)) {
-												echo '<div class="terraclassifieds-gallery" style="min-height: ' . esc_attr($tcf_image_archive_size_height) . 'px;">';
-												echo '<div class="terraclassifieds-gallery-element">';
-												echo wp_get_attachment_image($no_image_id, 'tcf-archive');
-												echo '</div>';
-												echo '</div>';
-											} ?>
-										</a>
-									</div>
-								<?php } ?>
-
-								<div class="terraclassifieds-content">
-
-									<header class="terraclassifieds-header">
-										<h2 class="terraclassifieds-title">
-											<?php if ($status == 'publish') { ?>
-												<a href="<?php echo get_permalink(get_the_ID()); ?>">
-												<?php } ?>
-												<span><?php the_title(); ?></span>
-												<?php if ($status == 'publish') { ?>
-												</a>
-											<?php } ?>
-										</h2>
-									</header>
-
-									<div class="terraclassifieds-category">
-										<?php the_terms(get_the_ID(), 'ad_category') ?>
-									</div>
-
-									<div class="terraclassifieds-desc">
-										<?php terraclassifieds_excerpt(10, '&hellip;', false, true); ?>
-									</div>
-
-								</div>
-
-								<div class="terraclassifieds-details">
-
-									<?php if (!empty($price) || $sell_type == 'for_free' || $sell_type == 'exchange') { ?>
-										<div class="terraclassifieds-price">
-											<?php if ($sell_type == 'for_free') { ?>
-												<?php echo __('For Free', 'terraclassifieds'); ?>
-											<?php } else if ($sell_type == 'exchange') { ?>
-												<?php echo __('Exchange', 'terraclassifieds'); ?>
-											<?php } else { ?>
-												<?php if (!empty($currency) && $unit_position == 0) { ?>
-													<?php echo esc_attr($currency); ?>
-												<?php } ?>
-												<?php terraclassifiedsPriceFormat($price); ?>
-												<?php if (!empty($currency) && $unit_position == 1) { ?>
-													<?php echo esc_attr($currency); ?>
-												<?php } ?>
-											<?php } ?>
-										</div>
-									<?php } ?>
-
-									<div class="terraclassifieds-date">
-										<?php echo __('Added:', 'terraclassifieds'); ?> <?php echo terraclassifieds_date_ago($ad_time); ?>
-									</div>
-
-									<?php if (!empty($expire_date) && current_time('timestamp') < $expire_date) { ?>
-										<div class="terraclassifieds-expiration">
-											<?php echo __('Expiration:', 'terraclassifieds'); ?> <?php echo terraclassifieds_date_from_now($expire_date); ?>
-										</div>
-									<?php } ?>
-
-									<div class="terraclassifieds-author">
-										<a class="terraclassifieds-author-link" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
-											<?php echo get_the_author_meta('display_name'); ?>
-										</a>
-									</div>
-
-									<?php if ($show_hits) { ?>
-										<div class="terraclassifieds-hits">
-											<i class="fa fa-eye" aria-hidden="true"></i> <?php echo $hits; ?>
-										</div>
-									<?php } ?>
-
-									<div class="terraclassifieds-status">
-										<?php if ($status == 'publish') { ?>
-											<i class="fa fa-check-circle" aria-hidden="true"></i> <span><?php echo __('Published', 'terraclassifieds'); ?></span>
-										<?php } else if ($status == 'rejected') { ?>
-											<i class="fa fa-ban" aria-hidden="true"></i> <span><?php echo __('Rejected', 'terraclassifieds'); ?></span>
-										<?php } else if ($status == 'pending') { ?>
-											<i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span><?php echo __('Pending', 'terraclassifieds'); ?></span>
-										<?php } else if ($status == 'draft') { ?>
-											<i class="fa fa-pencil-ruler" aria-hidden="true"></i> <span><?php echo __('Draft', 'terraclassifieds'); ?></span>
-										<?php } else { ?>
-											<i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span><?php echo __('Archived', 'terraclassifieds'); ?></span>
-										<?php } ?>
-									</div>
-									<div class="terraclassifieds-actions">
-										<div class="terraclassifieds-action remove-ad">
-											<form action="" method="POST" onSubmit="if(!confirm('<?php echo __('Are you sure you want to remove the item?', 'terraclassifieds'); ?>')){return false;}">
-												<input class="terraclassifieds-small-btn" type="submit" name="submit-remove-<?php echo get_the_ID(); ?>" value="<?php echo __('Remove', 'terraclassifieds'); ?>">
-											</form>
-											<?php terraclassifieds_remove(get_the_ID()); ?>
-										</div>
-										<?php if ($status != 'rejected') { ?>
-											<div class="terraclassifieds-action edit-ad">
-												<?php $permalinks_structure = get_option('permalink_structure');
-												if (!empty($permalinks_structure)) {
-													$link_join = '?';
-												} else {
-													$link_join = '&';
+					$terra_ads_query = new WP_Query($terra_ads_args);
+					if ($terra_ads_query->have_posts()) {
+						while ($terra_ads_query->have_posts()) : $terra_ads_query->the_post();
+							$category_id = get_post_meta(get_the_ID(),'_tc_id_category',true);
+							$ads_price = 0;
+							$ads_price_data = terraclassifieds_calculate_ads_price($category_id,true);
+							$ads_price = $ads_price_data['ads_price'];
+							
+							$price = get_post_meta(get_the_ID(), '_tc_price', true);
+							$sell_type = get_post_meta(get_the_ID(), '_tc_sell_type', 'price');
+							$currency = terraclassifieds_get_option('_tc_advert_currency', '$');
+							$unit_position = terraclassifieds_get_option('_tc_unit_position', 1);
+							$ad_time = get_the_time('U');
+							$hits = get_post_meta(get_the_ID(), '_terraclassifieds_popular_posts_count', true);
+							if (empty($hits)) {
+								$hits = 0;
+							}
+							$status = get_post_status(get_the_ID());
+							$expire_date = get_post_meta(get_the_ID(), '_tc_expire_date', true);
+							
+							if($status == 'pending') {
+								$table = $wpdb->prefix.'terraclassifieds_payments';
+								$payment_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table WHERE id_item = %d ORDER BY id DESC LIMIT 1",get_the_ID()));
+							}
+							
+							?>
+							<article <?php post_class(); ?>>
+								<div class="terraclassifieds-item terraclassifieds-clear">
+									<?php
+									$tcf_image_archive_size_height = terraclassifieds_get_option_base_functions('_tc_image_archive_height', '145');
+									$tcf_image_archive_size_width = terraclassifieds_get_option_base_functions('_tc_image_archive_width', '170');
+									$gallery = get_post_meta(get_the_ID(), '_tc_gallery', true);
+									if (!empty($gallery) || !empty($no_image)) { ?>
+										<div class="terraclassifieds-image" style="width: <?php echo esc_attr($tcf_image_archive_size_width) . 'px;' ?>">
+											<a href="<?php echo get_permalink(get_the_ID()); ?>">
+												<?php if (!empty($gallery)) {
+													cmb2_output_file_list_first_image('_tc_gallery', 'tcf-archive');
+												} else if (!empty($no_image)) {
+													echo '<div class="terraclassifieds-gallery" style="min-height: ' . esc_attr($tcf_image_archive_size_height) . 'px;">';
+													echo '<div class="terraclassifieds-gallery-element">';
+													echo wp_get_attachment_image($no_image_id, 'tcf-archive');
+													echo '</div>';
+													echo '</div>';
 												} ?>
-												<a class="button disabled terraclassifieds-edit-ad-button-disabled" title="<?php echo __('Edit is available once the ad is published', 'terraclassifieds'); ?>"><?php echo __('Edit', 'terraclassifieds'); ?></a>
-												<a class="button terraclassifieds-edit-ad-button" href="<?php echo esc_url($page_edit_ad . $link_join); ?>object_id=<?php echo get_the_ID(); ?>"><?php echo __('Edit', 'terraclassifieds'); ?></a>
-											</div>
-											<div class="terraclassifieds-action archive-ad">
-												<form action="" method="POST">
-													<input type="submit" name="submit-archive-<?php echo get_the_ID(); ?>" value="<?php echo __('Archive', 'terraclassifieds'); ?>">
-												</form>
-												<?php
-												terraclassifieds_to_archive(get_the_ID());
-												terraclassifieds_sendmail_update_status(get_the_ID());
-												?>
-											</div>
-											<div class="terraclassifieds-action renew-ad">
-												<form action="" method="POST">
-													<input type="submit" name="submit-publish-<?php echo get_the_ID(); ?>" value="<?php echo __('Renew', 'terraclassifieds'); ?>">
-													<input type="hidden" name="redirect-url" value="<?php echo base64_encode(home_url($wp->request)); ?>" />
-												</form>
-												<?php
-												terraclassifieds_to_publish(get_the_ID());
-												terraclassifieds_sendmail_update_status(get_the_ID());
-												?>
+											</a>
+										</div>
+									<?php } ?>
+
+									<div class="terraclassifieds-content">
+
+										<header class="terraclassifieds-header">
+											<h2 class="terraclassifieds-title">
+												<?php if ($status == 'publish') { ?>
+													<a href="<?php echo get_permalink(get_the_ID()); ?>">
+													<?php } ?>
+													<span><?php the_title(); ?></span>
+													<?php if ($status == 'publish') { ?>
+													</a>
+												<?php } ?>
+											</h2>
+										</header>
+
+										<div class="terraclassifieds-category">
+											<?php the_terms(get_the_ID(), 'ad_category') ?>
+										</div>
+
+										<div class="terraclassifieds-desc">
+											<?php terraclassifieds_excerpt(10, '&hellip;', false, true); ?>
+										</div>
+										<div>
+											ID: <?php echo get_the_ID(); ?>
+										</div>
+									</div>
+
+									<div class="terraclassifieds-details">
+
+										<?php if (!empty($price) || $sell_type == 'for_free' || $sell_type == 'exchange') { ?>
+											<div class="terraclassifieds-price">
+												<?php if ($sell_type == 'for_free') { ?>
+													<?php echo __('For Free', 'terraclassifieds'); ?>
+												<?php } else if ($sell_type == 'exchange') { ?>
+													<?php echo __('Exchange', 'terraclassifieds'); ?>
+												<?php } else { ?>
+													<?php if (!empty($currency) && $unit_position == 0) { ?>
+														<?php echo esc_attr($currency); ?>
+													<?php } ?>
+													<?php terraclassifiedsPriceFormat($price); ?>
+													<?php if (!empty($currency) && $unit_position == 1) { ?>
+														<?php echo esc_attr($currency); ?>
+													<?php } ?>
+												<?php } ?>
 											</div>
 										<?php } ?>
+
+										<div class="terraclassifieds-date">
+											<?php echo __('Added:', 'terraclassifieds'); ?> <?php echo terraclassifieds_date_ago($ad_time); ?>
+										</div>
+
+										<?php if (!empty($expire_date) && current_time('timestamp') < $expire_date) { ?>
+											<div class="terraclassifieds-expiration">
+												<?php echo __('Expiration:', 'terraclassifieds'); ?> <?php echo terraclassifieds_date_from_now($expire_date); ?>
+											</div>
+										<?php } ?>
+
+										<div class="terraclassifieds-author">
+											<a class="terraclassifieds-author-link" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
+												<?php echo get_the_author_meta('display_name'); ?>
+											</a>
+										</div>
+
+										<?php if ($show_hits) { ?>
+											<div class="terraclassifieds-hits">
+												<i class="fa fa-eye" aria-hidden="true"></i> <?php echo $hits; ?>
+											</div>
+										<?php } ?>
+
+										<div class="terraclassifieds-status">
+											<?php if ($status == 'publish') { ?>
+												<i class="fa fa-check-circle" aria-hidden="true"></i> <span><?php echo __('Published', 'terraclassifieds'); ?></span>
+											<?php } else if ($status == 'rejected') { ?>
+												<i class="fa fa-ban" aria-hidden="true"></i> <span><?php echo __('Rejected', 'terraclassifieds'); ?></span>
+											<?php } else if ($status == 'pending') { ?>
+												<i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span><?php echo __('Pending', 'terraclassifieds'); ?></span>
+											<?php } else if ($status == 'draft') { ?>
+												<i class="fa fa-pencil-ruler" aria-hidden="true"></i> <span><?php echo __('Draft', 'terraclassifieds'); ?></span>
+											<?php } else { ?>
+												<i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span><?php echo __('Archived', 'terraclassifieds'); ?></span>
+											<?php } ?>
+										</div>
+										<div class="terraclassifieds-actions">
+											<div class="terraclassifieds-action pay-ad">
+												<?php if($status == 'pending') : ?>
+													<?php if (!empty($payment_data)): ?>
+														<!-- Check if payment method is chosed -->
+														<?php if (!empty($payment_data->method)) : ?>
+															<?php if ($payment_data->method == 'paypal') : ?>
+																<?php 
+																	$post = get_post($payment_data->id_item);
+																	$paypal_test_mode = terraclassifieds_get_option('_tc_monetizing_paypal_payment_test_mode',1);
+																	$paypal_email_id = terraclassifieds_get_option('_tc_monetizing_paypal_payment_business_email_id','');
+																	$paypal_return_successful_url = home_url('/').terraclassifieds_get_option('_tc_monetizing_paypal_payment_return_successful_url','paypal-payment-success');
+																	$paypal_return_cancel_url = home_url('/').terraclassifieds_get_option('_tc_monetizing_paypal_payment_return_cancel_url','paypal-payment-cancel');
+																	$paypal_return_notify_url = home_url('/').terraclassifieds_get_option('_tc_monetizing_paypal_payment_return_notify_url','paypal-payment-notify');
+																	$paypal_currency_code = terraclassifieds_get_option('_tc_monetizing_paypal_payment_currency_code','PLN');
+																	$paypalUrl = $paypal_test_mode ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 'https://www.paypal.com/cgi-bin/webscr';
+																?>
+																
+																<form name="form_payment_paypal" id="form-payment-paypal" action="<?php echo $paypalUrl; ?>" method="post">
+																	<input type="hidden" name="business" value="<?php echo esc_attr($paypal_email_id); ?>">                                                                                                
+																	<input type="hidden" name="cmd" value="_xclick"> 
+																	<input type="hidden" id="paypal-item-name" name="item_name" value="<?php echo sprintf( __('Payment for ads: %s,Payment id: %s', 'terraclassifieds'),$post->post_title,$payment_data->id);?>">
+																	<input type="hidden" id="paypal-item-number" name="item_number" value="<?php echo esc_attr($payment_data->payment_hash); ?>">
+																	<input type="hidden" name="amount" value="<?php echo esc_attr($payment_data->price); ?>">
+																	<input type="hidden" name="currency_code" value="<?php echo esc_attr($paypal_currency_code); ?>">
+																	<input type="hidden" name="return" value="<?php echo stripslashes_deep($paypal_return_successful_url); ?>">
+																	<input type="hidden" name="notify_url" value="<?php echo stripslashes_deep($paypal_return_notify_url); ?>">
+																	<input type="hidden" name="cancel_return" value="<?php echo stripslashes_deep($paypal_return_cancel_url); ?>">
+																	
+																	<input type="submit" name="submit-pay-now-<?php echo get_the_ID(); ?>"  value="<?php echo __( 'Pay Now', 'terraclassifieds' ); ?>">
+																</form>
+															<?php endif; ?>
+															<!-- No payment method wasen't chosed -->
+														<?php else : ?>
+															<form action="" method="POST" >
+																<?php wp_nonce_field(); ?>
+																<input type="submit" name="submit-set-payment-method-<?php echo $payment_data->id; ?>" value="<?php echo __( 'Pay now', 'terraclassifieds' ); ?>">
+																<input type="hidden" name="redirect-url" value="<?php echo base64_encode(home_url($wp->request)); ?>" />
+																<input type="hidden" name="task" value="set_payment_method" />
+																<input type="hidden" name="send_notification" value="0" />
+																<input type="hidden" name="payment_id" value="<?php echo $payment_data->id; ?>" />
+																<input type="hidden" name="ads_id" value="<?php echo get_the_ID(); ?>" />
+															</form>
+														<?php endif; ?>
+													<?php else: ?>
+													<?php endif; ?>
+												<?php endif; ?>
+											</div>
+											<div class="terraclassifieds-action remove-ad">
+												<form action="" method="POST" onSubmit="if(!confirm('<?php echo __('Are you sure you want to remove the item?', 'terraclassifieds'); ?>')){return false;}">
+													<input class="terraclassifieds-small-btn" type="submit" name="submit-remove-<?php echo get_the_ID(); ?>" value="<?php echo __('Remove', 'terraclassifieds'); ?>">
+												</form>
+												<?php terraclassifieds_remove(get_the_ID()); ?>
+											</div>
+											<?php if ($status != 'rejected') { ?>
+												<div class="terraclassifieds-action edit-ad">
+													<?php $permalinks_structure = get_option('permalink_structure');
+													if (!empty($permalinks_structure)) {
+														$link_join = '?';
+													} else {
+														$link_join = '&';
+													} ?>
+													<a class="button disabled terraclassifieds-edit-ad-button-disabled" title="<?php echo __('Edit is available once the ad is published', 'terraclassifieds'); ?>"><?php echo __('Edit', 'terraclassifieds'); ?></a>
+													<a class="button terraclassifieds-edit-ad-button" href="<?php echo esc_url($page_edit_ad . $link_join); ?>object_id=<?php echo get_the_ID(); ?>"><?php echo __('Edit', 'terraclassifieds'); ?></a>
+												</div>
+												<div class="terraclassifieds-action archive-ad">
+													<form action="" method="POST">
+														<input type="submit" name="submit-archive-<?php echo get_the_ID(); ?>" value="<?php echo __('Archive', 'terraclassifieds'); ?>">
+													</form>
+													<?php
+													terraclassifieds_to_archive(get_the_ID());
+													terraclassifieds_sendmail_update_status(get_the_ID());
+													?>
+												</div>
+												<div class="terraclassifieds-action renew-ad">
+													<?php
+														$category_id = get_post_meta(get_the_ID(),'_tc_id_category',true);
+														$ads_price = 0;
+														$ads_price_data = terraclassifieds_calculate_ads_price($category_id,true,true);
+														echo $ads_price = $ads_price_data['ads_price'];
+													?>
+													<form action="" method="POST" >
+														<input type="submit" name="submit-publish-<?php echo get_the_ID(); ?>" value="<?php echo __( 'Renew', 'terraclassifieds' ); ?>">
+														<input type="hidden" name="redirect-url" value="<?php echo base64_encode(home_url($wp->request)); ?>" />
+														<?php if ($ads_price) : ?>
+															<input type="hidden" name="task" value="renew" />
+															<input type="hidden" name="send_notification" value="0" />
+															<input type="hidden" name="ads_id" value="<?php echo get_the_ID(); ?>" />
+															<input type="hidden" name="ads_price" value="<?php echo $ads_price; ?>" />
+														<?php endif; ?>
+													</form>
+													<?php
+														terraclassifieds_to_publish(get_the_ID());
+													?>
+												</div>
+											<?php } ?>
+										</div>
 									</div>
 								</div>
-							</div>
-						</article>
+							</article>
 
-					<?php endwhile; ?>
-					<?php terraclassifieds_pagination($terra_ads_query->max_num_pages); ?>
-					<?php wp_reset_query(); ?>
-			<?php } else {
-					if (is_paged()) {
-						$paged = 1;
-						$redirect_url_prev =  esc_url_raw(get_pagenum_link($paged));
-						wp_safe_redirect($redirect_url_prev);
-						exit;
-					} else {
-						echo __('No posts found.', 'terraclassifieds');
+						<?php endwhile; ?>
+						<?php terraclassifieds_pagination($terra_ads_query->max_num_pages); ?>
+						<?php wp_reset_query(); ?>
+					<?php } else {
+						if (is_paged()) {
+							$paged = 1;
+							$redirect_url_prev =  esc_url_raw(get_pagenum_link($paged));
+							wp_safe_redirect($redirect_url_prev);
+							exit;
+						} else {
+							echo __('No posts found.', 'terraclassifieds');
+						}
 					}
+				}elseif($task == 'renew') {
+					$data['post_id'] = intval($_POST['ads_id']);
+					$data['task'] = $task;
+					terraclassifieds_frontend_payments_list($data);
+				}elseif($task == 'set_payment_method') {
+					$data['post_id'] = intval($_POST['ads_id']);
+					$data['payment_id'] = intval($_POST['payment_id']);
+					$data['task'] = $task;
+					terraclassifieds_frontend_payments_list($data);
+				}elseif($task == 'payment') {
+					terraclassifieds_frontend_payment_details();
 				}
 			} else {
 				$page_login_slug = terraclassifieds_get_option('_tc_slug_login', 'login');
