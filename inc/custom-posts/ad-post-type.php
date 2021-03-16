@@ -562,6 +562,27 @@ if (!function_exists('terra_custom_fields')) {
 		    'id'   => $prefix . 'draft_status',
 		    'type' => 'checkbox',
 		) );
+		
+		$cmb->add_field( array(
+		    'name' => 'charging_for_ads_price',
+		    'id'   =>  '_tc_charging_for_ads_price',
+		    'type' => 'hidden',
+			'default' => 0,
+		) );
+		
+		$cmb->add_field( array(
+		    'name' => '_tc_id_category',
+		    'id'   =>  '_tc_id_category',
+		    'type' => 'hidden',
+			'default' => 0,
+		) );
+		
+		$cmb->add_field( array(
+		    'name' => 'task',
+		    'id'   =>  'task',
+		    'type' => 'hidden',
+			'default' => 'save_ads',
+		) );
 
 		/* CATEGORIES */
 
