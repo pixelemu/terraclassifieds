@@ -200,26 +200,30 @@
 			
 			// categories breadcrumb
 			$('.cmb2-list li span label').on('click', function() {
-			  let $this = $(this),
-		      $bc = $('<div class="tcf-categories-breadcrumb-in"></div>');
+				let $this = $(this),
+				$bc = $('<div class="tcf-categories-breadcrumb-in"></div>');
 			
-			  $this.parents('li').each(function(n, li) {
-			      let $a = $(li).children("span").children("label").children('span').clone();
-			      $bc.prepend('<span class="tcf-categories-breadcrumb-separator"> / </span>', $a);
-			  });
-			  $('.tcf-categories-breadcrumb').html( $bc.prepend('') );
+				$this.parents('li').each(function(n, li) {
+					let $a = '<span>'+$(li).children("span").children("label").children('span').data('category')+'</span>';
+					$bc.prepend('<span class="tcf-categories-breadcrumb-separator"> / </span>', $a);
+				});
+				$('#_tc_charging_for_ads_price').val(parseFloat($this.children('span').data('category-price')));
+				$('#_tc_id_category').val(parseInt($this.children('span').data('id-category')));
+				$('.tcf-categories-breadcrumb').html( $bc.prepend('') );
 			})
 			
 			// categories breadcrumb - show breadcrumb on edited ads
 			if($( ".cmb2-id--tc-category ul.cmb2-list li span input[type=radio]:checked" ).length > 0){
-			  let $this = $( ".cmb2-id--tc-category ul.cmb2-list li span input[type=radio]:checked + label span" ),
-		      $bc = $('<div class="tcf-categories-breadcrumb-in"></div>');
+				let $this = $( ".cmb2-id--tc-category ul.cmb2-list li span input[type=radio]:checked + label span" ),
+				$bc = $('<div class="tcf-categories-breadcrumb-in"></div>');
 			
-			  $this.parents('li').each(function(n, li) {
-			      let $a = $(li).children("span").children("label").children('span').clone();
-			      $bc.prepend('<span class="tcf-categories-breadcrumb-separator"> / </span>', $a);
-			  });
-			  $('.tcf-categories-breadcrumb').html( $bc.prepend('') );
+				$this.parents('li').each(function(n, li) {
+					let $a = '<span>'+$(li).children("span").children("label").children('span').data('category')+'</span>';
+					$bc.prepend('<span class="tcf-categories-breadcrumb-separator"> / </span>', $a);
+				});
+				$('#_tc_charging_for_ads_price').val(parseFloat($this.children('span').data('category-price')));
+				$('#_tc_id_category').val(parseInt($this.children('span').data('id-category')));
+				$('.tcf-categories-breadcrumb').html( $bc.prepend('') );
 			}
 	
 			// move agreements to the form
@@ -991,6 +995,41 @@
 		
 		// SEARCH
 		tcfSearch();
+		
+		//Payment Method Pay Button Action
+		$('.terraclassified-payment-method').on('click', function() {
+			var payment_method = $(this).data('method') || null, payment_hash = $(this).data('payment-hash') || 0, ads_id = $(this).data('ads-id') || 0, send_notification = $(this).data('send-notification') || 0, operation = $(this).data('operation') || 'add_new';
+			var wpnonce = $('#_wpnonce').val();
+			if (payment_method && ads_id && payment_hash) {
+				$('#'+payment_method+'-payment-button').prop('disabled', true);
+				$('.'+payment_method+'-payment-button-loader').show();
+				$.ajax({
+					method: 'POST',
+					url: settings.ajaxurl,
+					data: {
+						action : 'terraclassifieds_set_ads_payment_type',
+						payment_method : payment_method,
+						ads_id : ads_id,
+						payment_hash : payment_hash,
+						send_notification : send_notification,
+						wpnonce : wpnonce,
+						operation : operation,
+					}
+				})
+				.done(function(data) {
+					if (data.data.status) {
+						$('#form-payment-'+payment_method).submit();
+					}else{
+						alert(data.data.message)
+					}
+				})
+				.always(function() {
+					$('#'+payment_method+'-payment-button').prop('disabled', false);
+					$('.'+payment_method+'-payment-button-loader').hide();
+				})
+			}else{
+			}
+		});
 		
 	});
 
