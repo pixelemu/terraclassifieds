@@ -1862,10 +1862,10 @@ function terraclassifieds_paypal_payment_notify_body(){
 			$txn_id = $_POST['txn_id'];
 			$wpdb->update('pe_terraclassifieds_payments', array('status' => 'completed','transaction_hash' => $txn_id,'datetime' => $payment_time), array('payment_hash' => $item_number) , array('%s','%s','%s'),array('%s'));
 			$arg = array('ID' => intval($payment_data->id_item), 'post_status' => 'publish');
+			wp_update_post($arg);
 			$expire_time_field = terraclassifieds_generate_ads_expired_time();
 			update_post_meta(intval($payment_data->id_item), '_tc_expire_date', $expire_time_field);
 			update_post_meta(intval($payment_data->id_item), '_tc_expire_soon_notification_done', false);
-			wp_update_post($arg);
 			terraclassifieds_sendmail_update_status3(intval($payment_data->id_item),$payment_status);
 			terraclassifieds_sendmail_admin_payment_completed(intval($payment_data->id));
 		}elseif($payment_status == 'Pending'){
