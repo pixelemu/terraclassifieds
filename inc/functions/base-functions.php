@@ -1501,6 +1501,7 @@ if (!function_exists('terraclassifieds_set_ads_payment_type')) {
 		$wpnonce = $_POST['wpnonce'];
 		$paypal_item_name = '';
 		$send_notification = $_POST['send_notification'];
+		$post = get_post($ads_id);
 		if (!wp_verify_nonce($wpnonce)) {
 			$return_data = array('status' => 0, 'message' => '');
 		}else{	
