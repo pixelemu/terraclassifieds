@@ -1502,6 +1502,8 @@ if (!function_exists('terraclassifieds_set_ads_payment_type')) {
 		$paypal_item_name = '';
 		$send_notification = $_POST['send_notification'];
 		$post = get_post($ads_id);
+		$ad_category_slug = get_post_meta($ads_id,'_tc_category',true);
+		$ad_category_term = get_term_by('slug', $ad_category_slug, 'ad_category');
 		if (!wp_verify_nonce($wpnonce)) {
 			$return_data = array('status' => 0, 'message' => '');
 		}else{	
