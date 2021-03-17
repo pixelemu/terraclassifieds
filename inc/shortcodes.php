@@ -213,7 +213,7 @@ function wds_do_frontend_form_submission_shortcode( $atts = array() ) {
 					$post = get_post($ads_id);
 					
 					$table = $wpdb->prefix.'terraclassifieds_payments';
-					$data = array('id_item' => $ads_id, 'id_user' => intval($user_id),'status' => 'pending','price' => $ads_price,'ip_address' => getUserIP(),'type'=>'Ads Category','payment_hash' => $payment_hash,'operation' => 'add');
+					$data = array('id_item' => $ads_id, 'id_user' => intval($user_id),'status' => 'pending','price' => $ads_price,'ip_address' => terraclassifieds_get_user_ip(),'type'=>'Ads Category','payment_hash' => $payment_hash,'operation' => 'add');
 					$format = array('%d','%d','%s','%f','%s','%s','%s','%s');
 					$wpdb->insert($table,$data,$format);
 					$payment_id = $wpdb->insert_id;
@@ -1525,7 +1525,7 @@ if (!function_exists('terraclassifieds_frontend_payments_list')) {
 			$payment_time = current_time('mysql');
 			$payment_hash = terraclassifieds_generate_uniqid();
 			$table = $wpdb->prefix.'terraclassifieds_payments';
-			$data = array('id_item' => $ads_id, 'id_user' => intval($user_id),'status' => 'pending','price' => $ads_price,'ip_address' => getUserIP(),'type'=>'Ads Category','payment_hash' => $payment_hash,'operation' => $task);
+			$data = array('id_item' => $ads_id, 'id_user' => intval($user_id),'status' => 'pending','price' => $ads_price,'ip_address' => terraclassifieds_get_user_ip(),'type'=>'Ads Category','payment_hash' => $payment_hash,'operation' => $task);
 			$format = array('%d','%d','%s','%f','%s','%s','%s','%s');
 			$wpdb->insert($table,$data,$format);
 			$payment_id = $wpdb->insert_id;
