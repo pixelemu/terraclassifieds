@@ -3004,6 +3004,27 @@ a.ui-button:active,
     cursor        : default;
 }
 
+/* Renew Ads */
+.terraclassifieds-payments-method-list-item-image, .terraclassifieds-payments-method-list-item-button {
+	text-align: center !important;
+	vertical-align: middle !important;
+}
+
+/* Payments Stuff */
+
+.paypal-payment-button-loader, .offline-payment-button-loader {
+	display: none;
+	padding-right: 5px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	width: 100% !important;
+}
+
+.terraclassifieds-item .terraclassifieds-id {
+	font-style: italic;
+}
+
 /*** RWD ***/
 @media(max-width: 991px) {
 
