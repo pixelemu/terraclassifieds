@@ -1750,7 +1750,7 @@ function terraclassifieds_paypal_payment_success_body( $atts ){
 	<?php
 }
 
-// PayPal Payment Success
+// PayPal Payment Cancel
 add_shortcode( 'terraclassifieds_paypal_payment_cancel', 'terraclassifieds_paypal_payment_cancel_body' );
 function terraclassifieds_paypal_payment_cancel_body( $atts ){
 	$my_submissions_url = home_url('/').terraclassifieds_get_option('_tc_slug_my_submissions','my-submissions');
@@ -1762,7 +1762,7 @@ function terraclassifieds_paypal_payment_cancel_body( $atts ){
 	<?php
 }
 
-// PayPal Payment Success
+// PayPal Payment Notify
 add_shortcode( 'terraclassifieds_paypal_payment_notify', 'terraclassifieds_paypal_payment_notify_body' );
 function terraclassifieds_paypal_payment_notify_body(){
 	global $wpdb;
@@ -1777,7 +1777,7 @@ function terraclassifieds_paypal_payment_notify_body(){
     $invalid = 'INVALID';
 	
 	if (!count($_POST)) {
-		throw new Exception("Missing POST Data");
+		//throw new Exception("Missing POST Data");
 	}
 
 	$raw_post_data = file_get_contents('php://input');
