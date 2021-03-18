@@ -381,7 +381,7 @@ if (!class_exists('Terraclassifieds')) {
 		/* Create admin menu position for view lwith payments list */
 		function terraclassifieds_generate_payments_admin_menu_item() {
 			$parent_slug = 'edit.php?post_type=classified';
-			$menu_title = esc_html__('Payments' 'terraclassifieds');
+			$menu_title = esc_html__('Payments', 'terraclassifieds');
 			$capability  = 'manage_options';
 			$menu_slug  = 'payments-list';
 			$function  = 'payments_list';
