@@ -2396,7 +2396,7 @@ required for making a payment.Remember to add your advert id number.', 'terracla
 			$number = $last_field_number;
 			foreach($categories as $key=>$category) {
 				$tabs_setting['tabs'][$tabs_counts-1]['fields'][++$number] =  array(
-					'name' => __(sprintf('Category: %s',$category->category_path), 'terraclassifieds'),
+					'name' => sprintf(__('Category: %s', 'terraclassifieds'),$category->category_path),
 					'type' => 'title',
 					'classes' => 'tc_monetizing_charging_for_adding_ads_price_per_category tc_monetizing_charging_for_adding_ads_price_per_category_level_'.$category->cat_level,
 					'id'   => '_tc_monetizing_charging_for_adding_ads_price_per_category_'.$category->term_id.'_title',

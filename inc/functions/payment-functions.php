@@ -346,7 +346,7 @@
 												<?php echo esc_html($item->datetime); ?>
 											</td>
 											<td>
-												<?php echo esc_html(ucwords($item->status)); ?>
+												<?php echo esc_html_e(ucwords($item->status),'terraclassifieds'); ?>
 											</td>
 										</tr>
 									<?php endforeach; ?>

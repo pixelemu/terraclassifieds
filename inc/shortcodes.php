@@ -709,7 +709,7 @@ function terraclassifieds_my_submissions_body($atts)
 										<div class="terraclassifieds-desc">
 											<?php terraclassifieds_excerpt(10, '&hellip;', false, true); ?>
 										</div>
-										<div>
+										<div class="terraclassifieds-id">
 											ID: <?php echo get_the_ID(); ?>
 										</div>
 									</div>
@@ -1935,7 +1935,7 @@ function terraclassifieds_my_payments_page() {
 							</td>
 							<td><?php echo esc_html($payment_type[$row->method]); ?></td>
 							<td><?php echo esc_html($row->datetime); ?></td>
-							<td><?php echo esc_html(ucwords(__($row->status,'terraclassifieds'))); ?></td>
+							<td><?php echo esc_html($payment_status[$row->status]); ?></td>
 						</tr>
 					<?php endforeach; ?>
 				</table>
