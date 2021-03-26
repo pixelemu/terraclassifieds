@@ -9,10 +9,10 @@
 				$current_orderby = 'id';
 			}
 
-			if (isset($_GET['order']) && 'desc' === $_GET['order']) {
-				$current_order = 'desc';
-			} else {
+			if (isset($_GET['order']) && 'asc' === $_GET['order']) {
 				$current_order = 'asc';
+			} else {
+				$current_order = 'desc';
 			}
 			?>
 			<td id="cb" class="manage-column column-cb check-column">
@@ -156,10 +156,10 @@
 				$current_orderby = 'id';
 			}
 
-			if (isset($_GET['order']) && 'desc' === $_GET['order']) {
-				$current_order = 'desc';
-			} else {
+			if (isset($_GET['order']) && 'asc' === $_GET['order']) {
 				$current_order = 'asc';
+			} else {
+				$current_order = 'desc';
 			}
 			
 			if (isset($_REQUEST['apply_action']) && !empty($_REQUEST['apply_action'])) {
