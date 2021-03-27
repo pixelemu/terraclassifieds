@@ -117,6 +117,28 @@ if ( ! class_exists( 'CronTerraclassifieds' ) ) {
 			$email_template_expiration_notification_message = terraclassifieds_get_option( '_tc_email_template_expiration_notification_message', '' );
 	
 			$classified_id = get_the_ID();
+			$category_id = intval(get_post_meta($classified_id,'_tc_id_category',true));
+			$ads_price = 0;
+			$charing_for_add_ads = terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price','free');
+			if ($charing_for_add_ads === 'fixed') {
+				$ads_category_price = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_fixed','0'));
+				$ads_price += floatval($ads_category_price);
+			}elseif($charing_for_add_ads === 'per_category') {
+				$ads_category_price = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_per_category_renew_price_'.$category_id,'0'));
+				$ads_price += floatval($ads_category_price);
+			}
+			if ($ads_price) {
+				$currency = terraclassifieds_get_option( '_tc_advert_currency', '$' );
+				$unit_position = intval(terraclassifieds_get_option( '_tc_unit_position', 1 ));
+				if (!$unit_position) {
+					$ads_price_text = $currency.' '.terraclassifiedsPriceFormat($ads_price,1);
+				}else{
+					$ads_price_text = terraclassifiedsPriceFormat($ads_price,1).' '.$currency;
+				}
+			}else{
+				$ads_price_text = __('Free','terraclassifieds');
+			}
+			
 			if(!empty(terraclassifieds_get_option( '_tc_email_template_reply_to_email_address', '' ))){
 				$reply_to_email_address = terraclassifieds_get_option( '_tc_email_template_reply_to_email_address', '' );
 			} else {
@@ -131,10 +153,12 @@ if ( ! class_exists( 'CronTerraclassifieds' ) ) {
 		    $subject = $email_template_expiration_notification_subject;
 			$subject = str_replace("[[advert_title_link]]", $advert_link, $subject);
 			$subject = str_replace("[[advert_expire_days]]", $email_template_expiration_notification_number_of_days, $subject);
+			$subject = str_replace("[[advert_renew_price]]", $ads_price_text, $subject);
 		
 			$message = $email_template_expiration_notification_message;
 			$message = str_replace("[[advert_title_link]]", $advert_link, $message);
 			$message = str_replace("[[advert_expire_days]]", $email_template_expiration_notification_number_of_days, $message);
+			$message = str_replace("[[advert_renew_price]]", $ads_price_text, $message);
 
 			$sent = wp_mail($author_email, $subject, $message, $headers);
 		}
