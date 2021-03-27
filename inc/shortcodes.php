@@ -848,7 +848,7 @@ function terraclassifieds_my_submissions_body($atts)
 														$category_id = get_post_meta(get_the_ID(),'_tc_id_category',true);
 														$ads_price = 0;
 														$ads_price_data = terraclassifieds_calculate_ads_price($category_id,true,true);
-														echo $ads_price = $ads_price_data['ads_price'];
+														$ads_price = $ads_price_data['ads_price'];
 													?>
 													<form action="" method="POST" >
 														<input type="submit" name="submit-publish-<?php echo get_the_ID(); ?>" value="<?php echo __( 'Renew', 'terraclassifieds' ); ?>">
