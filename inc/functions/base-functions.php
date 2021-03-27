@@ -1502,6 +1502,13 @@ if (!function_exists('terraclassifieds_set_ads_payment_type')) {
 		$paypal_item_name = '';
 		$send_notification = $_POST['send_notification'];
 		$post = get_post($ads_id);
+		$post_meta = get_post_meta($post->ID,'',true);
+		$category_id = intval($post_meta['_tc_id_category']['0']);
+		if ($operation == 'renew') {
+			$ads_price = terraclassifieds_calculate_ads_price($category_id, true, true);
+		}else{
+			$ads_price = terraclassifieds_calculate_ads_price($category_id, true, false);
+		}
 		$ad_category_slug = get_post_meta($ads_id,'_tc_category',true);
 		$ad_category_term = get_term_by('slug', $ad_category_slug, 'ad_category');
 		if (!wp_verify_nonce($wpnonce)) {
