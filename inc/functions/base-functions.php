@@ -632,7 +632,7 @@ if (!function_exists('terraclassifieds_date_from_now')) {
 		$lengths = array("60", "60", "24", "7", "4.35", "12", "10");
 		$from_now = __('from now', 'terraclassifieds');
 
-		$now = time();
+		$now = current_time('U');
 		$difference     = $time - $now;
 
 		for ($j = 0; $difference >= $lengths[$j] && $j < count($lengths) - 1; $j++) {
