@@ -497,6 +497,7 @@ if ( ! function_exists( 'terraclassifieds_sendmail_update_status2' ) ) {
 			$subject = str_replace("[[payment_status]]", __($payment_status,'terraclassifieds'), $subject);
 		
 			$message = $email_template_change_status_message;
+			$message = str_replace("[[advert_title_link]]", $advert_link, $message);
 			$message = str_replace("[[advert_status]]", __($advert_status_value, 'terraclassifieds'), $message);
 			$message = str_replace("[[payment_status]]", __($payment_status,'terraclassifieds'), $message);
 
