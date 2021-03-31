@@ -414,7 +414,7 @@ if ( ! function_exists( 'terraclassifieds_sendmail_update_status' ) ) {
 			$classified_id = get_the_ID();
 			$advert_status = get_post_status( $classified_id );
 			if ($advert_status == 'publish') {
-				$advert_status_value = 'published';
+				$advert_status_value = 'Published';
 			}else{
 				$advert_status_value = $advert_status;
 			}
@@ -466,7 +466,7 @@ if ( ! function_exists( 'terraclassifieds_sendmail_update_status2' ) ) {
 			}
 			$advert_status = get_post_status( $classified_id );
 			if ($advert_status == 'publish') {
-				$advert_status_value = 'published';
+				$advert_status_value = 'Published';
 			}else{
 				$advert_status_value = $advert_status;
 			}
@@ -518,7 +518,7 @@ if ( ! function_exists( 'terraclassifieds_sendmail_update_status3' ) ) {
 	
 			$advert_status = get_post_status($classified_id);
 			if ($advert_status == 'publish') {
-				$advert_status_value = 'published';
+				$advert_status_value = 'Published';
 			}else{
 				$advert_status_value = $advert_status;
 			}

@@ -55,7 +55,7 @@ class TCF_Taxonomy_Radio_Hierarchical_Custom extends CMB2_Type_Taxonomy_Radio_Hi
 			if ($charing_for_add_ads === 'fixed') {
 				$price_for_charging_ads = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_fixed','0'));
 				if (intval($price_for_charging_ads) == 0) {
-					$price_for_charging_ads_text = ' (Free)';
+					$price_for_charging_ads_text = ' ('.__('Free', 'terraclassifieds').')';
 				}else{
 					if (!$unit_position) {
 						$price_for_charging_ads_text = ' ('.$currency.' '.terraclassifiedsPriceFormat($price_for_charging_ads,1).')';
@@ -103,7 +103,7 @@ class TCF_Taxonomy_Radio_Hierarchical_Custom extends CMB2_Type_Taxonomy_Radio_Hi
 						if($charing_for_add_ads === 'per_category') {
 							$price_for_charging_ads = $prices_for_charging_ads[$this->term->term_id];
 							if (intval($price_for_charging_ads) == 0) {
-								$price_for_charging_ads_text = ' (Free)';
+								$price_for_charging_ads_text = ' ('.__('Free', 'terraclassifieds').')';
 							}else{
 								if (!$unit_position) {
 									$price_for_charging_ads_text = ' ('.$currency.' '.terraclassifiedsPriceFormat($price_for_charging_ads,1).')';
@@ -121,7 +121,7 @@ class TCF_Taxonomy_Radio_Hierarchical_Custom extends CMB2_Type_Taxonomy_Radio_Hi
 						if($charing_for_add_ads === 'per_category') {
 							$price_for_charging_ads = $prices_for_charging_ads[$this->term->term_id];
 							if (intval($price_for_charging_ads) == 0) {
-								$price_for_charging_ads_text = ' (Free)';
+								$price_for_charging_ads_text = ' ('.__('Free', 'terraclassifieds').')';
 							}else{
 								if (!$unit_position) {
 									$price_for_charging_ads_text = ' ('.$currency.' '.terraclassifiedsPriceFormat($price_for_charging_ads,1).')';
