@@ -102,8 +102,10 @@ if(!empty($permalinks_structure)){
 									<?php
 										// retrieve the total love count for this item
 										$love_count = li_get_love_count($post->ID);
+										$fav_redirect = ( !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : '';
+	
 										if(!tcf_user_has_liked_post($user_ID, get_the_ID())) {
-											echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '">&nbsp;</span>';
+											echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"' . $fav_redirect . '>&nbsp;</span>';
 										} else {
 											echo '<span class="liked" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"></span>';
 										}
@@ -126,8 +128,11 @@ if(!empty($permalinks_structure)){
 									<?php
 										// retrieve the total love count for this item
 										$love_count = li_get_love_count($post->ID);
+										$fav_redirect = ( !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : '';
+	
 										if(!tcf_user_has_liked_post($user_ID, get_the_ID())) {
-											echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '">&nbsp;</span>';
+
+											echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"' . $fav_redirect . '>&nbsp;</span>';
 										} else {
 											echo '<span class="liked" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"></span>';
 										}
@@ -215,8 +220,10 @@ if(!empty($permalinks_structure)){
 					<?php } ?>
 					
 					<?php if($show_contact_form){ ?>
-					<div class="terraclassifieds-contact-form">
-						<button class="terraclassifieds-btn terraclassifieds-contact-advertiser"><?php _e('Contact this advertiser', 'terraclassifieds') ?></button>
+					<div class="terraclassifieds-contact-form contact-form">
+						<?php $contact_redirect = ( $show_contact_form == '2' && !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : ''; ?>
+						<button class="terraclassifieds-btn terraclassifieds-contact-advertiser"<?php echo $contact_redirect; ?>><?php _e('Contact this advertiser', 'terraclassifieds') ?></button>
+						<?php if( $show_contact_form == '1' || $show_contact_form == '2' && is_user_logged_in() ) { ?>
 						<form action="<?php the_permalink(); ?>" id="terraclassifieds-contact-form"  method="post">
 							
 							<?php if ( !is_user_logged_in() ) { ?>
@@ -251,6 +258,7 @@ if(!empty($permalinks_structure)){
 							</p>
 
 						</form>
+						<?php } ?>
 					</div>
 					<?php } ?>
 					
@@ -259,9 +267,18 @@ if(!empty($permalinks_structure)){
 							<div class="terraclassifieds-phone">
 								<span class="terraclassifieds-label"><?php _e('Phone:', 'terraclassifieds'); ?></span>
 								<span class="terraclassifieds-value">
-									<?php echo get_the_author_meta("_tc_phone"); ?>
+									<?php 
+									$phone_number = get_the_author_meta("_tc_phone");
+									if( $show_phone_number == '2' && !is_user_logged_in() ) {
+										echo substr($phone_number, 0, 3) . '&mldr;';
+									} else {
+										echo $phone_number;
+									}
+									?>
 								</span>
-								<span class="terraclassifieds-phone-more"><?php _e('show', 'terraclassifieds'); ?></span>
+								<?php $phone_redirect = ( $show_phone_number == '2' && !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : ''; ?>
+								<a href="#" class="terraclassifieds-phone-more"<?php echo $phone_redirect; ?>><?php _e('show', 'terraclassifieds'); ?></a>
+
 							</div>
 						<?php }
 					?>
@@ -288,7 +305,27 @@ if(!empty($permalinks_structure)){
 					
 					<?php if(!empty(get_the_author_meta("user_url")) && $show_website_url){ ?>
 						<div class="terraclassifieds-website">
-							<span class="terraclassifieds-label"><?php _e('Website:', 'terraclassifieds'); ?></span> <a href="<?php echo get_the_author_meta("user_url"); ?>" target="_blank"><?php echo get_the_author_meta("user_url"); ?></a>
+							
+							<span class="terraclassifieds-label"><?php _e('Website:', 'terraclassifieds'); ?></span>
+
+							<span class="terraclassifieds-value">
+									<?php 
+									$url_address = get_the_author_meta("user_url");
+									if( $show_website_url == '2' && !is_user_logged_in() ) { ?>
+										<span>
+										<?php echo substr($url_address, 0, 3) . '&mldr;'; ?>
+										</span>
+									<?php } else { ?>
+										<a href="<?php echo $url_address; ?>" target="_blank">
+										<?php echo $url_address; ?>
+										</a>
+									<?php }
+									?>
+								</span>
+								<?php if ( $show_website_url == '2' && !is_user_logged_in() ) { ?>
+								<a href="#" class="terraclassifieds-website-more" data-redirect="<?php echo terraclassifieds_get_login_url(); ?>"><?php _e('show', 'terraclassifieds'); ?></a>
+								<?php } ?>
+
 						</div>
 					<?php } ?>
 
@@ -303,20 +340,27 @@ if(!empty($permalinks_structure)){
 									<img class="terraclassifieds-user-avatar" src="<?php echo plugins_url() . '/terraclassifieds/assets/img/default-avatar.jpg'; ?>" alt="user-avatar" />
 								<?php } ?>
 							</div>
-							<a class="terraclassifieds-author-name" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+							
+							<?php $author_redirect = ( $show_ad_author == '2' && !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : ''; 
+								$author_url = ( $show_ad_author == '2' && !is_user_logged_in() ) ? '#' : esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+							?>
+							<a class="terraclassifieds-author-name" href="<?php echo $author_url;?>"<?php echo $author_redirect; ?>>
 								<?php if((get_the_author_meta( 'user_firstname' )) || (get_the_author_meta( 'user_lastname' ))){ ?>
 									<?php _e('See all ads by', 'terraclassifieds'); ?> <?php echo get_the_author_meta( 'user_firstname' ).' '.get_the_author_meta( 'user_lastname' ); ?>
 								<?php } else { ?>
 									<?php _e('No name', 'terraclassifieds'); ?>
 								<?php } ?>
 							</a>
+
 						</div>
 					</div>
 					<?php } ?>
 					
 					<?php if($show_report_abuse){ ?>
 					<div class="terraclassifieds-contact-form abuse-form">
-						<button class="terraclassifieds-btn terraclassifieds-contact-advertiser"><?php _e('Report abuse', 'terraclassifieds') ?></button>
+						<?php $abuse_redirect = ( $show_report_abuse == '2' && !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : ''; ?>
+						<button class="terraclassifieds-btn terraclassifieds-contact-advertiser"<?php echo $abuse_redirect; ?>><?php _e('Report abuse', 'terraclassifieds') ?></button>
+						<?php if( $show_report_abuse == '1' || $show_report_abuse == '2' && is_user_logged_in() ) { ?>
 						<form action="<?php the_permalink(); ?>" id="terraclassifieds-abuse-form"  method="post">
 							
 							<?php if ( !is_user_logged_in() ) { ?>
@@ -350,6 +394,7 @@ if(!empty($permalinks_structure)){
 							</p>
 
 						</form>
+						<?php } ?>
 					</div>
 					<?php } ?>
 				</div>

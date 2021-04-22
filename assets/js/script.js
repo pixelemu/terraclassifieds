@@ -549,6 +549,26 @@
 		    });
 		    
 			// contact form validation
+			$('.contact-form button.terraclassifieds-contact-advertiser').click(function() {
+				var redirect = $(this).attr('data-redirect');
+				if( redirect ) {
+					Swal.fire({
+						title: php_vars.loginPopupText,
+						text: "",
+						icon: 'warning',
+						showCancelButton: true,
+						confirmButtonColor: '#3085d6',
+						cancelButtonColor: '#d33',
+						confirmButtonText: php_vars.loginPopupBtnConfirm,
+						cancelButtonText: php_vars.loginPopupBtnCancel,
+					}).then((result) => {
+						if (result.isConfirmed && redirect) {
+							window.location.href = redirect;
+						}
+					});
+				}
+			});
+
 		    $('#terraclassifieds-contact-form').validate({ // initialize the plugin
 				errorPlacement: function () { },
 				highlight: function(element) {
@@ -587,6 +607,26 @@
 		    });
 		    
 			// contact form validation
+			$('.abuse-form button.terraclassifieds-contact-advertiser').click(function() {
+				var redirect = $(this).attr('data-redirect');
+				if( redirect ) {
+					Swal.fire({
+						title: php_vars.loginPopupText,
+						text: "",
+						icon: 'warning',
+						showCancelButton: true,
+						confirmButtonColor: '#3085d6',
+						cancelButtonColor: '#d33',
+						confirmButtonText: php_vars.loginPopupBtnConfirm,
+						cancelButtonText: php_vars.loginPopupBtnCancel,
+					}).then((result) => {
+						if (result.isConfirmed && redirect) {
+							window.location.href = redirect;
+						}
+					});
+				}
+			});
+
 		    $('#terraclassifieds-abuse-form').validate({ // initialize the plugin
 				errorPlacement: function () { },
 				highlight: function(element) {
@@ -626,10 +666,69 @@
 		    
 		    // whole phone numer after click
 			$( ".terraclassifieds-phone-more" ).click(function() {
-			  $( this ).hide();
-			  $( this ).siblings(".terraclassifieds-value").addClass("expanded");
+				var redirect = $(this).attr('data-redirect');
+				if( redirect ) {
+					Swal.fire({
+						title: php_vars.loginPopupText,
+						text: "",
+						icon: 'warning',
+						showCancelButton: true,
+						confirmButtonColor: '#3085d6',
+						cancelButtonColor: '#d33',
+						confirmButtonText: php_vars.loginPopupBtnConfirm,
+						cancelButtonText: php_vars.loginPopupBtnCancel,
+					}).then((result) => {
+						if (result.isConfirmed && redirect) {
+							window.location.href = redirect;
+						}
+					});
+				} else {
+					$( this ).hide();
+					$( this ).siblings(".terraclassifieds-value").addClass("expanded");
+				}
+
 			});
-			
+
+			$('.terraclassifieds-author-name').click(function() {
+				var redirect = $(this).attr('data-redirect');
+				if( redirect ) {
+					Swal.fire({
+						title: php_vars.loginPopupText,
+						text: "",
+						icon: 'warning',
+						showCancelButton: true,
+						confirmButtonColor: '#3085d6',
+						cancelButtonColor: '#d33',
+						confirmButtonText: php_vars.loginPopupBtnConfirm,
+						cancelButtonText: php_vars.loginPopupBtnCancel,
+					}).then((result) => {
+						if (result.isConfirmed && redirect) {
+							window.location.href = redirect;
+						}
+					});
+				}
+			});
+
+			$('.terraclassifieds-website-more').click(function() {
+				var redirect = $(this).attr('data-redirect');
+				if( redirect ) {
+					Swal.fire({
+						title: php_vars.loginPopupText,
+						text: "",
+						icon: 'warning',
+						showCancelButton: true,
+						confirmButtonColor: '#3085d6',
+						cancelButtonColor: '#d33',
+						confirmButtonText: php_vars.loginPopupBtnConfirm,
+						cancelButtonText: php_vars.loginPopupBtnCancel,
+					}).then((result) => {
+						if (result.isConfirmed && redirect) {
+							window.location.href = redirect;
+						}
+					});
+				}
+			});
+
 		    // terms and conditions modal - contact form
 		    if($( "#terms-and-conditions-modal" ).length > 0){
 		    	var tc_modal = document.getElementById('terms-and-conditions-modal'); // Get the modal
@@ -803,6 +902,7 @@
 				unhighlight: function(element) {
 				    $(element).removeClass("error");
 				    $(element).parent().removeClass("error");
+					editProfilePage.find('.terraclassifieds-message').remove();
 				},
 		    	ignore: [],
 		        rules: {
@@ -814,9 +914,8 @@
 		                email: true,
 		            },
 		            tc_phone: {
-		                required: false,
-		                number: true
-		            	},
+		            	number: true
+		            },
 		        },
 		    });
 		}

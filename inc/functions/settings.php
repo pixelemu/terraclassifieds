@@ -886,7 +886,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'type'    => 'radio_inline',
 					'default' => '0',
 					'options'          => array(
-						'0' => __('Hide', 'terraclassifieds'),
+						'0'   => __('Hide', 'terraclassifieds'),
 						'1'   => __('Show', 'terraclassifieds'),
 					),
 				),
@@ -897,8 +897,9 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'type'    => 'radio_inline',
 					'default' => '1',
 					'options'          => array(
-						'0' => __('Hide', 'terraclassifieds'),
+						'0'   => __('Hide', 'terraclassifieds'),
 						'1'   => __('Show', 'terraclassifieds'),
+						'2'   => __('Enable for logged users', 'terraclassifieds'),
 					),
 				),
 
@@ -910,6 +911,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'options'          => array(
 						'0' => __('Hide', 'terraclassifieds'),
 						'1'   => __('Show', 'terraclassifieds'),
+						'2'   => __('Enable for logged users', 'terraclassifieds'),
 					),
 				),
 
@@ -921,6 +923,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'options'          => array(
 						'0' => __('Hide', 'terraclassifieds'),
 						'1'   => __('Show', 'terraclassifieds'),
+						'2'   => __('Enable for logged users', 'terraclassifieds'),
 					),
 					'desc' => __('Phone number is taken from user profile.', 'terraclassifieds'),
 				),
@@ -933,6 +936,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'options'          => array(
 						'0' => __('Hide', 'terraclassifieds'),
 						'1'   => __('Show', 'terraclassifieds'),
+						'2'   => __('Enable for logged users', 'terraclassifieds'),
 					),
 				),
 
@@ -944,6 +948,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'options'          => array(
 						'0' => __('Hide', 'terraclassifieds'),
 						'1'   => __('Show', 'terraclassifieds'),
+						'2'   => __('Enable for logged users', 'terraclassifieds'),
 					),
 				),
 
@@ -1110,6 +1115,56 @@ if (!function_exists('terraclassifieds_register_fields')) {
 
 			)
 		);
+
+		$tabs_setting['tabs'][] = array(
+			'id'     => 'tc_user_profile',
+			'title'  => __('User profile', 'terraclassifieds'),
+			'fields' => array(
+
+				array(
+					'name' => __('Profile', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_user_profile_author_page',
+				),
+
+				array(
+					'name'             => __('Username', 'terraclassifieds'),
+					'id'               => '_tc_author_page_username',
+					'type'             => 'radio_inline',
+					'show_option_none' => false,
+					'options'          => array(
+						'0' => __('Hide', 'terraclassifieds'),
+						'1' => __('Show', 'terraclassifieds'),
+
+					),
+					'default' => '0',
+				),
+
+				array(
+					'name' => __('Edit profile page', 'terraclassifieds'),
+					'type' => 'title',
+					'id'   => '_tc_user_profile_edit_profile',
+				),
+
+				array(
+					'name'    => __('Set required fields', 'terraclassifieds'),
+					'id'      => '_tc_user_profile_required',
+					'type'    => 'multicheck',
+					'options' => array(
+						'first_name'      => __('First name', 'terraclassifieds'),
+						'last_name'       => __('Last name', 'terraclassifieds'),
+						'url'             => __('Website', 'terraclassifieds'),
+						'tc_phone'        => __('Phone', 'terraclassifieds'),
+						'description'     => __('About me', 'terraclassifieds'),
+						'profilepicture'  => __('Avatar', 'terraclassifieds'),
+					),
+					'select_all_button' => false,
+				),
+
+
+			)
+		);
+
 
 		$tabs_setting['tabs'][] = array(
 			'id'     => 'tc_locations',

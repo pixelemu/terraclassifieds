@@ -110,6 +110,27 @@ function wds_do_frontend_form_submission_shortcode($atts = array())
 	$user_id = get_current_user_id();
 
 	if (is_user_logged_in()) {
+
+		$required_fields = terraclassifieds_get_option('_tc_user_profile_required', '');
+
+		$req_first_name = ( in_array('first_name', $required_fields) ) ? true : false;
+		$req_last_name = ( in_array('last_name', $required_fields) ) ? true : false;
+		$req_url = ( in_array('url', $required_fields) ) ? true : false;
+		$req_tc_phone = ( in_array('tc_phone', $required_fields) ) ? true : false;
+		$req_description = ( in_array('description', $required_fields) ) ? true : false;
+		$req_profilepicture = ( in_array('profilepicture', $required_fields) ) ? true : false;
+
+		if(
+			$req_first_name && empty(get_the_author_meta('first_name')) ||
+			$req_last_name && empty(get_the_author_meta('last_name')) ||
+			$req_url && empty(get_the_author_meta('user_url')) ||
+			$req_tc_phone && empty(get_the_author_meta('_tc_phone')) ||
+			$req_description && empty(get_the_author_meta('description')) ||
+			$req_profilepicture && empty(get_the_author_meta('_tc_avatar'))
+		) {
+			wp_redirect( terraclassifieds_get_edit_profile_url() );
+		}
+
 		// Use ID of metabox in wds_frontend_form_register
 		$metabox_id = 'ad_options';
 
@@ -964,27 +985,70 @@ function terraclassifieds_edit_profile($atts)
 				} else {
 					$phone_meta_value = $phone_meta[0];
 				}
+
+				$avatar_url = get_user_meta($current_user->ID, '_tc_avatar', 1);
+				$required_fields = terraclassifieds_get_option('_tc_user_profile_required', '');
+
+				$req_first_name = ( in_array('first_name', $required_fields) ) ? true : false;
+				$req_last_name = ( in_array('last_name', $required_fields) ) ? true : false;
+				$req_url = ( in_array('url', $required_fields) ) ? true : false;
+				$req_tc_phone = ( in_array('tc_phone', $required_fields) ) ? true : false;
+				$req_description = ( in_array('description', $required_fields) ) ? true : false;
+				$req_profilepicture = ( in_array('profilepicture', $required_fields) ) ? true : false;
+
+				$req_first_name_lbl = ( $req_first_name ) ? ' *' : '';
+				$req_last_name_lbl = ( $req_last_name ) ? ' *' : '';
+				$req_url_lbl = ( $req_url ) ? ' *' : '';
+				$req_tc_phone_lbl = ( $req_tc_phone ) ? ' *' : '';
+				$req_description_lbl = ( $req_description ) ? ' *' : '';
+				$req_profilepicture_lbl = ( $req_profilepicture ) ? ' *' : '';
+
+				$req_first_name_attr = ( $req_first_name ) ? 'required' : '';
+				$req_last_name_attr = ( $req_last_name ) ? 'required' : '';
+				$req_url_attr = ( $req_url ) ? 'required' : '';
+				$req_tc_phone_attr = ( $req_tc_phone ) ? 'required' : '';
+				$req_description_attr = ( $req_description ) ? 'required' : '';
+				$req_profilepicture_attr = ( $req_profilepicture && empty($avatar_url)) ? 'required' : '';
+
+				if(
+					$req_first_name && empty(get_the_author_meta('first_name')) ||
+					$req_last_name && empty(get_the_author_meta('last_name')) ||
+					$req_url && empty(get_the_author_meta('user_url')) ||
+					$req_tc_phone && empty($phone_meta_value) ||
+					$req_description && empty(get_the_author_meta('description')) ||
+					$req_profilepicture && empty($avatar_url)
+				) {
+					$show_required_msg = true;
+				} else {
+					$show_required_msg = false;
+				}
+				if($show_required_msg) {
 				?>
+				<p class="terraclassifieds-message error">
+					<?php _e('Fill in required fields to add ads.', 'terraclassifieds'); ?>
+				</p>
+				<?php } ?>
+
 				<form method="post" id="edituser" action="<?php the_permalink(); ?>" enctype="multipart/form-data">
 					<p class="form-username">
-						<label for="first_name"><?php _e('First name', 'terraclassifieds'); ?></label>
-						<input class="text-input" name="first_name" type="text" id="first_name" value="<?php the_author_meta('first_name', $current_user->ID); ?>" />
+						<label for="first_name"><?php _e('First name', 'terraclassifieds'); echo $req_first_name_lbl; ?></label>
+						<input class="text-input" name="first_name" type="text" id="first_name" value="<?php the_author_meta('first_name', $current_user->ID); ?>" <?php echo $req_first_name_attr; ?> />
 					</p><!-- .form-username -->
 					<p class="form-username">
-						<label for="last_name"><?php _e('Last name', 'terraclassifieds'); ?></label>
-						<input class="text-input" name="last_name" type="text" id="last_name" value="<?php the_author_meta('last_name', $current_user->ID); ?>" />
+						<label for="last_name"><?php _e('Last name', 'terraclassifieds'); echo $req_last_name_lbl; ?></label>
+						<input class="text-input" name="last_name" type="text" id="last_name" value="<?php the_author_meta('last_name', $current_user->ID); ?>" <?php echo $req_last_name_attr; ?> />
 					</p><!-- .form-username -->
 					<p class="form-email">
 						<label for="user_email"><?php _e('E-mail', 'terraclassifieds'); ?></label>
 						<input class="text-input" name="user_email" type="text" id="user_email" value="<?php the_author_meta('user_email', $current_user->ID); ?>" />
 					</p><!-- .form-email -->
 					<p class="form-url">
-						<label for="url"><?php _e('Website', 'terraclassifieds'); ?></label>
-						<input class="text-input" name="url" type="text" id="url" value="<?php the_author_meta('user_url', $current_user->ID); ?>" />
+						<label for="url"><?php _e('Website', 'terraclassifieds'); echo $req_url_lbl; ?></label>
+						<input class="text-input" name="url" type="text" id="url" value="<?php the_author_meta('user_url', $current_user->ID); ?>" <?php echo $req_url_attr; ?> />
 					</p><!-- .form-url -->
 					<p class="form-phone">
-						<label for="tc_phone"><?php _e('Phone', 'terraclassifieds'); ?></label>
-						<input class="text-input" name="tc_phone" type="text" id="tc_phone" value="<?php echo esc_attr($phone_meta_value); ?>" />
+						<label for="tc_phone"><?php _e('Phone', 'terraclassifieds'); echo $req_tc_phone_lbl; ?></label>
+						<input class="text-input" name="tc_phone" type="text" id="tc_phone" value="<?php echo esc_attr($phone_meta_value); ?>" <?php echo $req_tc_phone_attr; ?> />
 					</p><!-- .form-phone -->
 					<p class="form-password">
 						<label for="pass1"><?php _e('Password', 'terraclassifieds'); ?> </label>
@@ -995,16 +1059,15 @@ function terraclassifieds_edit_profile($atts)
 						<input class="text-input" name="pass2" type="password" id="pass2" />
 					</p><!-- .form-password -->
 					<p class="form-textarea">
-						<label for="description"><?php _e('About me', 'terraclassifieds') ?></label>
-						<textarea name="description" id="description" rows="3" cols="50"><?php the_author_meta('description', $current_user->ID); ?></textarea>
+						<label for="description"><?php _e('About me', 'terraclassifieds'); echo $req_description_lbl; ?></label>
+						<textarea name="description" id="description" rows="3" cols="50" <?php echo $req_description_attr; ?>><?php the_author_meta('description', $current_user->ID); ?></textarea>
 					</p><!-- .form-textarea -->
 					<p class="form-avatar">
-						<?php $avatar_url = get_user_meta($current_user->ID, '_tc_avatar', 1); ?>
 						<?php if (!empty($avatar_url)) { ?>
 							<img class="terraclassifieds-user-avatar" src="<?php echo esc_url($avatar_url); ?>" alt="user-avatar" />
 						<?php } ?>
-						<label for="profilepicture"><?php _e('Avatar', 'terraclassifieds') ?></label>
-						<input type="file" id="profilepicture" name="profilepicture">
+						<label for="profilepicture"><?php _e('Avatar', 'terraclassifieds'); echo $req_profilepicture_lbl; ?></label>
+						<input type="file" id="profilepicture" name="profilepicture" <?php echo $req_profilepicture_attr; ?>>
 						<br />
 						<input type="checkbox" name="remove-avatar" id="remove-avatar" value="">
 						<label for="remove-avatar" class="remove-avatar-label"><?php echo __('Remove avatar', 'terraclassifieds'); ?></label>

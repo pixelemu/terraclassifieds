@@ -1424,3 +1424,25 @@ if (!function_exists('terraclassifiedsAdminNoticePages')) {
 	}
 	add_action('admin_notices', 'terraclassifiedsAdminNoticePages', 9999);
 }
+
+function terraclassifieds_get_login_url() {
+	$page_slug = terraclassifieds_get_option('_tc_slug_login');
+	if( !empty($page_slug) ) {
+		$page_url = get_page_link(get_page_by_path($page_slug));
+	} else {
+		$page_url = wp_login_url();
+	}
+	
+	return esc_url($page_url);
+}
+
+function terraclassifieds_get_edit_profile_url() {
+	$page_slug = terraclassifieds_get_option('_tc_slug_edit_profile');
+	if( !empty($page_slug) ) {
+		$page_url = get_page_link(get_page_by_path($page_slug));
+	} else {
+		$page_url = get_edit_user_link();
+	}
+	
+	return esc_url($page_url);
+}

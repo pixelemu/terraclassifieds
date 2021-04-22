@@ -17,6 +17,7 @@ if(!empty($no_image)){
     $no_image_id = attachment_url_to_postid($no_image);
 }
 $use_images = terraclassifieds_get_option( '_tc_image_use_images', 1 );
+
 ?>
 
 <div class="terraclassifieds-container terraclassifieds-archive">
@@ -99,16 +100,16 @@ $use_images = terraclassifieds_get_option( '_tc_image_use_images', 1 );
 		
 	<?php if ( !have_posts() ) : ?>
 		<?php if ( is_search() ) : ?>
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'terraclassifieds' ); ?></p>
+			<p class="terraclassifieds-message"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'terraclassifieds' ); ?></p>
 		<?php else : ?>
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'terraclassifieds' ); ?></p>
+			<p class="terraclassifieds-message"><?php esc_html_e( 'This category is empty', 'terraclassifieds' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 	
 	<?php
 	global $wp_query;
-	$args = array_merge( $wp_query->query_vars, array( 'post_type' => 'classified', 'post_status' => 'publish' ) );
-	query_posts( $args );
+	//$args = array_merge( $wp_query->query_vars, array( 'post_type' => 'classified', 'post_status' => 'publish' ) );
+	//query_posts( $args );
     while ( have_posts() ) : the_post();
 	
 	$price = get_post_meta( get_the_ID(), '_tc_price', true );
@@ -147,8 +148,10 @@ $use_images = terraclassifieds_get_option( '_tc_image_use_images', 1 );
 														<?php
 															// retrieve the total love count for this item
 															$love_count = li_get_love_count($post->ID);
+															$fav_redirect = ( !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : '';
+	
 															if(!tcf_user_has_liked_post($user_ID, get_the_ID())) {
-																echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '">&nbsp;</span>';
+																echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"' . $fav_redirect . '>&nbsp;</span>';
 															} else {
 																echo '<span class="liked" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"></span>';
 															}
@@ -181,8 +184,10 @@ $use_images = terraclassifieds_get_option( '_tc_image_use_images', 1 );
     								<?php
     									// retrieve the total love count for this item
     									$love_count = li_get_love_count($post->ID);
+										$fav_redirect = ( !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : '';
+	
     									if(!tcf_user_has_liked_post($user_ID, get_the_ID())) {
-    										echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '">&nbsp;</span>';
+    										echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"' . $fav_redirect . '>&nbsp;</span>';
     									} else {
     										echo '<span class="liked" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"></span>';
     									}
