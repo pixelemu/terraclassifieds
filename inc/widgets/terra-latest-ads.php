@@ -129,8 +129,9 @@ if ( ! class_exists( 'TerraClassifiedsLatestAds' ) ) {
 														$user_ID = get_current_user_id();
 														// retrieve the total love count for this item
 														$love_count = li_get_love_count(get_the_ID());
+														$fav_redirect = ( !is_user_logged_in() ) ? ' data-redirect="' . terraclassifieds_get_login_url() . '"' : '';
 														if(!tcf_user_has_liked_post($user_ID, get_the_ID())) {
-															echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '">&nbsp;</span>';
+															echo '<span class="fav-it" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"' . $fav_redirect . '>&nbsp;</span>';
 														} else {
 															echo '<span class="liked" data-post-id="' . get_the_ID() . '" data-user-id="' .  esc_attr($user_ID) . '"></span>';
 														}
