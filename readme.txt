@@ -3,7 +3,7 @@ Contributors: PixelEmu
 Tags: classifieds, classified ads, classifieds plugin, advertising
 Requires at least: 4.0
 Tested up to: 5.7
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,11 @@ General
 3. Click Activate to activate the plugin.
 
 == Changelog ==
+
+= 2.0.3 =
+* New options for enabling items from Advert View for logged users only
+* Displaying empty categories and give the message: "This category is empty"
+* New settings for managing required fields for user profile
 
 = 2.0.2 =
 * Fixed PHP fatal error on users adverts page

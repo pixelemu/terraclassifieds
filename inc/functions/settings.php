@@ -263,25 +263,6 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				),
 
 				array(
-					'name' => __('Author page', 'terraclassifieds'),
-					'type' => 'title',
-					'id'   => '_tc_general_author_page',
-				),
-
-				array(
-					'name'             => __('Username', 'terraclassifieds'),
-					'id'               => '_tc_author_page_username',
-					'type'             => 'radio_inline',
-					'show_option_none' => false,
-					'options'          => array(
-						'0' => __('Hide', 'terraclassifieds'),
-						'1' => __('Show', 'terraclassifieds'),
-
-					),
-					'default' => '0',
-				),
-
-				array(
 					'name' => __('Other settings', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_general_other_settings',
@@ -1122,7 +1103,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 			'fields' => array(
 
 				array(
-					'name' => __('Profile', 'terraclassifieds'),
+					'name' => __('Author page', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_user_profile_author_page',
 				),
@@ -1151,6 +1132,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'id'      => '_tc_user_profile_required',
 					'type'    => 'multicheck',
 					'options' => array(
+						'0' => '', //hidden field, necessary to save an empty list
 						'first_name'      => __('First name', 'terraclassifieds'),
 						'last_name'       => __('Last name', 'terraclassifieds'),
 						'url'             => __('Website', 'terraclassifieds'),
@@ -1159,6 +1141,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 						'profilepicture'  => __('Avatar', 'terraclassifieds'),
 					),
 					'select_all_button' => false,
+					'default'=> '0', //required for hidden field
 				),
 
 

@@ -111,23 +111,7 @@ function wds_do_frontend_form_submission_shortcode($atts = array())
 
 	if (is_user_logged_in()) {
 
-		$required_fields = terraclassifieds_get_option('_tc_user_profile_required', '');
-
-		$req_first_name = ( in_array('first_name', $required_fields) ) ? true : false;
-		$req_last_name = ( in_array('last_name', $required_fields) ) ? true : false;
-		$req_url = ( in_array('url', $required_fields) ) ? true : false;
-		$req_tc_phone = ( in_array('tc_phone', $required_fields) ) ? true : false;
-		$req_description = ( in_array('description', $required_fields) ) ? true : false;
-		$req_profilepicture = ( in_array('profilepicture', $required_fields) ) ? true : false;
-
-		if(
-			$req_first_name && empty(get_the_author_meta('first_name')) ||
-			$req_last_name && empty(get_the_author_meta('last_name')) ||
-			$req_url && empty(get_the_author_meta('user_url')) ||
-			$req_tc_phone && empty(get_the_author_meta('_tc_phone')) ||
-			$req_description && empty(get_the_author_meta('description')) ||
-			$req_profilepicture && empty(get_the_author_meta('_tc_avatar'))
-		) {
+		if( terraclassifieds_check_profile_required_fields() ) {
 			wp_redirect( terraclassifieds_get_edit_profile_url() );
 		}
 
@@ -401,6 +385,11 @@ add_shortcode('terraclassifieds_my_submissions', 'terraclassifieds_my_submission
 function terraclassifieds_my_submissions_body($atts)
 {
 	global $wp;
+
+	if( is_user_logged_in() && terraclassifieds_check_profile_required_fields() ) {
+		wp_redirect( terraclassifieds_get_edit_profile_url() );
+	}
+
 	ob_start(); ?>
 
 	<div class="terraclassifieds-container terraclassifieds-archive terraclassifieds-my-submissions">
@@ -794,7 +783,8 @@ function terraclassifieds_login($atts)
 		<?php } ?>
 
 		<div id="terraclassifieds-login">
-			<?php // login form
+			<?php
+
 			$args = array(
 				'redirect'    => $page_my_submissions,
 				'remember'    => true,
@@ -863,6 +853,7 @@ function terraclassifieds_edit_profile($atts)
 		/* Get user info. */
 		global $current_user, $wp_roles;
 		//get_currentuserinfo(); //deprecated since 3.1
+		$user_id = get_current_user_id();
 
 		if ( ! function_exists( 'wp_crop_image' ) ) {
 			include( ABSPATH . 'wp-admin/includes/image.php' );
@@ -987,6 +978,7 @@ function terraclassifieds_edit_profile($atts)
 				}
 
 				$avatar_url = get_user_meta($current_user->ID, '_tc_avatar', 1);
+
 				$required_fields = terraclassifieds_get_option('_tc_user_profile_required', '');
 
 				$req_first_name = ( in_array('first_name', $required_fields) ) ? true : false;
@@ -1010,23 +1002,10 @@ function terraclassifieds_edit_profile($atts)
 				$req_description_attr = ( $req_description ) ? 'required' : '';
 				$req_profilepicture_attr = ( $req_profilepicture && empty($avatar_url)) ? 'required' : '';
 
-				if(
-					$req_first_name && empty(get_the_author_meta('first_name')) ||
-					$req_last_name && empty(get_the_author_meta('last_name')) ||
-					$req_url && empty(get_the_author_meta('user_url')) ||
-					$req_tc_phone && empty($phone_meta_value) ||
-					$req_description && empty(get_the_author_meta('description')) ||
-					$req_profilepicture && empty($avatar_url)
-				) {
-					$show_required_msg = true;
-				} else {
-					$show_required_msg = false;
-				}
-				if($show_required_msg) {
-				?>
-				<p class="terraclassifieds-message error">
-					<?php _e('Fill in required fields to add ads.', 'terraclassifieds'); ?>
-				</p>
+				if( terraclassifieds_check_profile_required_fields() ) { ?>
+					<p class="terraclassifieds-message error">
+						<?php _e('Fill in required fields to add ads.', 'terraclassifieds'); ?>
+					</p>
 				<?php } ?>
 
 				<form method="post" id="edituser" action="<?php the_permalink(); ?>" enctype="multipart/form-data">
@@ -1039,7 +1018,7 @@ function terraclassifieds_edit_profile($atts)
 						<input class="text-input" name="last_name" type="text" id="last_name" value="<?php the_author_meta('last_name', $current_user->ID); ?>" <?php echo $req_last_name_attr; ?> />
 					</p><!-- .form-username -->
 					<p class="form-email">
-						<label for="user_email"><?php _e('E-mail', 'terraclassifieds'); ?></label>
+						<label for="user_email"><?php _e('E-mail', 'terraclassifieds'); ?> *</label>
 						<input class="text-input" name="user_email" type="text" id="user_email" value="<?php the_author_meta('user_email', $current_user->ID); ?>" />
 					</p><!-- .form-email -->
 					<p class="form-url">

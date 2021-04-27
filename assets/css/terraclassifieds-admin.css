@@ -327,3 +327,8 @@
         width: auto;
     }
 }
+
+/* hidden first checkbox */
+.cmb2-id--tc-user-profile-required .cmb2-checkbox-list input[type="checkbox"][value="0"] {
+	display: none;
+}

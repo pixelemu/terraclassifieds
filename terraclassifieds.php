@@ -5,7 +5,7 @@ defined('ABSPATH') or die('No script kiddies please!');
  * Plugin Name: TerraClassifieds - Simple Classifieds Plugin
  * Plugin URI: https://www.pixelemu.com/wordpress-plugins/i/245-terraclassifieds
  * Description: Create a classifieds website with WordPress. To save time use dedicated theme TerraClassic available on <a href="https://www.pixelemu.com/">pixelemu.com</a>
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: pixelemu.com
  * Author URI: https://pixelemu.com
  * Text Domain: terraclassifieds
@@ -26,8 +26,6 @@ if (!class_exists('Terraclassifieds')) {
 			self::$path  = plugin_dir_path(__FILE__);
 			self::$url   = plugin_dir_url(__FILE__);
 			self::$plugin = 'terraclassifieds';
-
-			//$this->addFunctions();
 
 			register_activation_hook(__FILE__, array($this, 'pluginActivation'));
 			register_deactivation_hook(__FILE__, array($this, 'pluginDeactivation'));
