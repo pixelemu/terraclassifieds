@@ -5,7 +5,7 @@ defined('ABSPATH') or die('No script kiddies please!');
  * Plugin Name: TerraClassifieds - Simple Classifieds Plugin
  * Plugin URI: https://www.pixelemu.com/wordpress-plugins/i/245-terraclassifieds
  * Description: Create a classifieds website with WordPress. To save time use dedicated theme TerraClassic available on <a href="https://www.pixelemu.com/">pixelemu.com</a>
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: pixelemu.com
  * Author URI: https://pixelemu.com
  * Text Domain: terraclassifieds
@@ -26,8 +26,6 @@ if (!class_exists('Terraclassifieds')) {
 			self::$path  = plugin_dir_path(__FILE__);
 			self::$url   = plugin_dir_url(__FILE__);
 			self::$plugin = 'terraclassifieds';
-
-			//$this->addFunctions();
 
 			register_activation_hook(__FILE__, array($this, 'pluginActivation'));
 			register_deactivation_hook(__FILE__, array($this, 'pluginDeactivation'));
@@ -60,6 +58,8 @@ if (!class_exists('Terraclassifieds')) {
 			include self::$path . 'inc/functions/cron-functions.php';
 
 			require_once(self::$path . 'captcha/autoload.php'); // recaptcha
+
+			add_action( 'wp_footer', array( $this, 'debug_mode' ) );
 		}
 
 		// get CM2 options
@@ -232,6 +232,7 @@ if (!class_exists('Terraclassifieds')) {
 				wp_localize_script(self::$plugin . '-plugin-js', 'settings', array(
 					'ajaxurl'    => admin_url('admin-ajax.php')
 				));
+				wp_enqueue_script(self::$plugin . '-sweetalert2', self::$url . 'assets/js/sweetalert2.all.min.js', array('jquery'), true);
 
 				$imagesLimit = terraclassifieds_get_option('_tc_add_advert_images_limit', 8);
 				if($imagesLimit > 8) $imagesLimit = 8;
@@ -267,6 +268,10 @@ if (!class_exists('Terraclassifieds')) {
 					'priceFilterInputTo' => esc_html_x("To", "search price", "terraclassifieds"),
 					'registrationPasswordMinimumCharacters1' => __('Enter at least', 'terraclassifieds'),
 					'registrationPasswordMinimumCharacters2' => __('characters', 'terraclassifieds'),
+					'loginPopupText' => __('Must login to continue.', 'terraclassifieds'),
+					'loginPopupBtnConfirm' => __('Log in', 'terraclassifieds'),
+					'loginPopupBtnCancel' => __('Cancel', 'terraclassifieds'),
+
 				);
 				wp_localize_script(self::$plugin . '-plugin-js', 'php_vars', $dataToBePassed);
 			}
@@ -302,6 +307,8 @@ if (!class_exists('Terraclassifieds')) {
 			}
 			wp_enqueue_style('select2', self::$url . 'assets/css/select2.min.css', array(), true);
 			wp_enqueue_style('terraclassifieds-grid', self::$url . 'assets/css/grid.css', array(), true);
+			wp_enqueue_style('sweetalert2', self::$url . 'assets/css/sweetalert2.min.css', array(), true);
+
 		}
 
 		/**
@@ -319,6 +326,34 @@ if (!class_exists('Terraclassifieds')) {
 		{
 			load_plugin_textdomain('terraclassifieds', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 		}
+
+		public function debug_mode() {
+			global $wp, $template, $wp_rewrite, $wp_query;
+	
+			if( !empty($_GET['tcdebug']) ) {
+	
+				echo '<pre>';
+				echo 'Request: ';
+				echo empty($wp->request) ? "None" : esc_html($wp->request) . PHP_EOL;
+				echo 'Matched Rewrite Rule: ';
+				echo empty($wp->matched_rule) ? "None" : esc_html($wp->matched_rule) . PHP_EOL;
+				echo 'Matched Rewrite Query: ';
+				echo empty($wp->matched_query) ? "None" : esc_html($wp->matched_query) . PHP_EOL;
+				echo 'Loaded Template: ';
+				echo basename($template);
+				echo '</pre>' . PHP_EOL;
+	
+				echo '<pre style="color: red;">';
+				print_r( $wp_query );
+				echo '</pre>';
+
+				echo '<pre style="color: blue;">';
+				print_r( $wp_rewrite->rewrite_rules() );
+				echo '</pre>';
+
+			}
+		}
+
 	}
 }
 

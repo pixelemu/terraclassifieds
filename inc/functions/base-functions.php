@@ -1424,3 +1424,58 @@ if (!function_exists('terraclassifiedsAdminNoticePages')) {
 	}
 	add_action('admin_notices', 'terraclassifiedsAdminNoticePages', 9999);
 }
+
+function terraclassifieds_get_login_url() {
+	$page_slug = terraclassifieds_get_option('_tc_slug_login');
+	if( !empty($page_slug) ) {
+		$page_url = get_page_link(get_page_by_path($page_slug));
+	} else {
+		$page_url = wp_login_url();
+	}
+	
+	return esc_url($page_url);
+}
+
+function terraclassifieds_get_edit_profile_url() {
+	$page_slug = terraclassifieds_get_option('_tc_slug_edit_profile');
+	if( !empty($page_slug) ) {
+		$page_url = get_page_link(get_page_by_path($page_slug));
+	} else {
+		$page_url = get_edit_user_link();
+	}
+	
+	return esc_url($page_url);
+}
+
+/**
+ * Check required fields from user profile
+ * returns TRUE if missing required field, otherwise return FALSE
+ * 
+ * @return boolean
+ */
+function terraclassifieds_check_profile_required_fields() {
+
+	$user_id = get_current_user_id();
+
+	$required_fields = terraclassifieds_get_option('_tc_user_profile_required', '');
+
+	$req_first_name = ( in_array('first_name', $required_fields) ) ? true : false;
+	$req_last_name = ( in_array('last_name', $required_fields) ) ? true : false;
+	$req_url = ( in_array('url', $required_fields) ) ? true : false;
+	$req_tc_phone = ( in_array('tc_phone', $required_fields) ) ? true : false;
+	$req_description = ( in_array('description', $required_fields) ) ? true : false;
+	$req_profilepicture = ( in_array('profilepicture', $required_fields) ) ? true : false;
+
+	if(
+		$req_first_name && empty(get_the_author_meta('first_name', $user_id)) ||
+		$req_last_name && empty(get_the_author_meta('last_name', $user_id)) ||
+		$req_url && empty(get_the_author_meta('user_url', $user_id)) ||
+		$req_tc_phone && empty(get_the_author_meta('_tc_phone', $user_id)) ||
+		$req_description && empty(get_the_author_meta('description', $user_id)) ||
+		$req_profilepicture && empty(get_the_author_meta('_tc_avatar', $user_id))
+	) {
+		return true;
+	} else {
+		return false;
+	}
+}
