@@ -1,9 +1,10 @@
 <?php 
 // add own layouts
 if ( ! is_admin() ) {
+	$tc_tax = get_query_var( 'ad_category', false );
 	if( is_singular('classified') ){
 		terraclassifieds_add_own_single_layout();
-	} else if ( is_archive() && (is_post_type_archive('classified') || get_post_type() == 'classified') ) {
+	} else if ( is_archive() && $tc_tax || (is_post_type_archive('classified') || get_post_type() == 'classified') ) {
 		terraclassifieds_add_own_archive_layout();
 	}
 }
