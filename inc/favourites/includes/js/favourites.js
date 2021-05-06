@@ -33,7 +33,7 @@ jQuery(document).ready( function($) {
 						$this.removeClass('fav-it');
 						var count_wrap = $this.next();
 						var count = count_wrap.text();
-						count_wrap.text(parseInt(count) + 1);		
+						count_wrap.text(parseInt(count) + 1);
 					} else {
 						alert(fav_it_vars.error_message);
 					}
@@ -43,7 +43,25 @@ jQuery(document).ready( function($) {
 			
 		} else {
 			
-			alert(fav_it_vars.login_required);
+			//alert(fav_it_vars.login_required);
+			var redirect = $(this).attr('data-redirect');
+			if( redirect ) {
+				Swal.fire({
+					title: php_vars.loginPopupText,
+					text: "",
+					icon: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: php_vars.loginPopupBtnConfirm,
+					cancelButtonText: php_vars.loginPopupBtnCancel,
+				}).then((result) => {
+					if (result.isConfirmed && redirect) {
+						window.location.href = redirect;
+					}
+				});
+			}
+
 			return false;
 		}
 	});	

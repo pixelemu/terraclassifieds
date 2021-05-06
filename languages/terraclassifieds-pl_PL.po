@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TerraClassifieds - Simple Classifieds Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-24 15:06+0100\n"
-"PO-Revision-Date: 2021-03-24 15:34+0100\n"
+"POT-Creation-Date: 2021-04-27 12:52+0200\n"
+"PO-Revision-Date: 2021-04-27 12:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -19,76 +19,89 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "X-Loco-Version: 2.4.0; wp-5.5.1\n"
 
-#: terraclassifieds.php:253
+#: terraclassifieds.php:254
 msgid "You can assign max "
 msgstr "Możesz przypisać maksymalnie "
 
-#: terraclassifieds.php:254
+#: terraclassifieds.php:255
 msgid " images."
 msgstr " obrazków."
 
-#: terraclassifieds.php:255
+#: terraclassifieds.php:256
 msgid " images left"
 msgstr " pozostałych obrazków"
 
-#: terraclassifieds.php:256
+#: terraclassifieds.php:257
 msgid "You have reached the limit."
 msgstr "Osiągnąłeś limit."
 
-#: terraclassifieds.php:257
+#: terraclassifieds.php:258
 msgid " characters left."
 msgstr " pozostałych znaków."
 
-#: terraclassifieds.php:258
+#: terraclassifieds.php:259
 msgid "Enter min"
 msgstr "Wpisz min"
 
-#: terraclassifieds.php:258 terraclassifieds.php:273
+#: terraclassifieds.php:259 terraclassifieds.php:274
 msgid "characters"
 msgstr "znaków"
 
-#: terraclassifieds.php:262
+#: terraclassifieds.php:263
 msgid "Clear all locations"
 msgstr "Wyczyść wszystkie lokalizacje"
 
-#: terraclassifieds.php:263 inc/functions/base-functions.php:225
+#: terraclassifieds.php:264 inc/functions/base-functions.php:225
 msgid "All locations"
 msgstr "Wszystkie lokalizacje"
 
-#: terraclassifieds.php:265
+#: terraclassifieds.php:266 terraclassifieds.php:277
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: terraclassifieds.php:267 inc/shortcodes.php:147 inc/shortcodes.php:181
-#: inc/shortcodes.php:203
+#: terraclassifieds.php:268 inc/shortcodes.php:152 inc/shortcodes.php:186
+#: inc/shortcodes.php:208
 msgid "Add advert"
 msgstr "Dodaj ogłoszenie"
 
-#: terraclassifieds.php:268 inc/shortcodes.php:588
+#: terraclassifieds.php:269 inc/shortcodes.php:593
 msgid "Save changes"
 msgstr "Zapisz zmiany"
 
-#: terraclassifieds.php:269
+#: terraclassifieds.php:270
 msgid "Save as draft"
 msgstr "Zapisz jako szkic"
 
-#: terraclassifieds.php:270 inc/functions/base-functions.php:334
+#: terraclassifieds.php:271 inc/functions/base-functions.php:334
 msgctxt "search price"
 msgid "From"
 msgstr "Od"
 
-#: terraclassifieds.php:271 inc/functions/base-functions.php:338
+#: terraclassifieds.php:272 inc/functions/base-functions.php:338
 msgctxt "search price"
 msgid "To"
 msgstr "Do"
 
-#: terraclassifieds.php:272
+#: terraclassifieds.php:273
 msgid "Enter at least"
 msgstr "Wpisz przynajmniej"
 
-#: terraclassifieds.php:384
+#: terraclassifieds.php:275
+msgid "Must login to continue."
+msgstr "Musisz być zalogowany aby kontynuować"
+
+#: terraclassifieds.php:276
+msgid "Log in"
+msgstr "Zaloguj"
+
+#: terraclassifieds.php:418
 msgid "Payments"
 msgstr "Płatności"
+
+#: inc/cmb2.php:134
+#, php-format
+msgid "%s &mdash; Updated!"
+msgstr ""
 
 #: inc/security-abuse-form.php:12 inc/security-abuse-form.php:41
 #: inc/security.php:12 inc/security.php:41
@@ -113,25 +126,25 @@ msgstr "Regulamin"
 msgid "Privacy Policy"
 msgstr "Polityka prywatności"
 
-#: inc/shortcodes.php:17 inc/shortcodes.php:442
+#: inc/shortcodes.php:17 inc/shortcodes.php:447
 msgid "Security check failed."
 msgstr "Sprawdzenie bezpieczeństwa nieudane."
 
-#: inc/shortcodes.php:21 inc/shortcodes.php:446
+#: inc/shortcodes.php:21 inc/shortcodes.php:451
 msgid "New post requires a title."
 msgstr "Nowy post wymaga tytułu."
 
-#: inc/shortcodes.php:178 inc/shortcodes.php:568
+#: inc/shortcodes.php:183 inc/shortcodes.php:573
 #, php-format
 msgid "There was an error in the submission: %s"
 msgstr "Wystąpił błąd podczas przesyłania: %s"
 
-#: inc/shortcodes.php:193
+#: inc/shortcodes.php:198
 #, php-format
 msgid "Thank you %s, your new post has been submitted and published."
 msgstr "Dziękujemy %s, Twój nowy wpis został przesłany i opublikowany."
 
-#: inc/shortcodes.php:195
+#: inc/shortcodes.php:200
 #, php-format
 msgid ""
 "Thank you %s, your new post has been submitted and is pending review by a "
@@ -140,52 +153,52 @@ msgstr ""
 "Dziękujemy %s, Twój nowy wpis został przesłany i oczekuje na sprawdzenie "
 "przez administratora witryny."
 
-#: inc/shortcodes.php:197
+#: inc/shortcodes.php:202
 #, php-format
 msgid "Thank you %s, your new post has been saved as Draft."
 msgstr "Dziękujemy %s, Twój nowy wpis został zapisany jako szkic."
 
-#: inc/shortcodes.php:234 inc/shortcodes.php:1560
+#: inc/shortcodes.php:239 inc/shortcodes.php:1600
 msgid "Back To Edit - Button"
 msgstr "Powrót do edycji"
 
-#: inc/shortcodes.php:237 inc/shortcodes.php:1563
+#: inc/shortcodes.php:242 inc/shortcodes.php:1603
 msgid "Payment Details"
 msgstr "Szczegóły płatności"
 
-#: inc/shortcodes.php:241 inc/shortcodes.php:378 inc/shortcodes.php:1567
-#: inc/shortcodes.php:1707
+#: inc/shortcodes.php:246 inc/shortcodes.php:383 inc/shortcodes.php:1607
+#: inc/shortcodes.php:1747
 msgid "Advert"
 msgstr "Ogłoszenie"
 
-#: inc/shortcodes.php:245 inc/shortcodes.php:386 inc/shortcodes.php:1571
-#: inc/shortcodes.php:1715
+#: inc/shortcodes.php:250 inc/shortcodes.php:391 inc/shortcodes.php:1611
+#: inc/shortcodes.php:1755
 msgid "Advert ID"
 msgstr "ID ogłoszenia"
 
-#: inc/shortcodes.php:257 inc/shortcodes.php:1583
+#: inc/shortcodes.php:262 inc/shortcodes.php:1623
 msgid "Net cost"
 msgstr "Koszt netto"
 
-#: inc/shortcodes.php:261 inc/shortcodes.php:1587
+#: inc/shortcodes.php:266 inc/shortcodes.php:1627
 #, php-format
 msgid "Tax (%s%%)"
 msgstr "Podatek (%s%%)"
 
-#: inc/shortcodes.php:265 inc/shortcodes.php:1591
+#: inc/shortcodes.php:270 inc/shortcodes.php:1631
 msgid "Total"
 msgstr "Razem"
 
-#: inc/shortcodes.php:272 inc/shortcodes.php:1598
+#: inc/shortcodes.php:277 inc/shortcodes.php:1638
 msgid "Payment Methods"
 msgstr "Metody płatności"
 
-#: inc/shortcodes.php:289 inc/shortcodes.php:374 inc/shortcodes.php:1615
-#: inc/shortcodes.php:1703
+#: inc/shortcodes.php:294 inc/shortcodes.php:379 inc/shortcodes.php:1655
+#: inc/shortcodes.php:1743
 msgid "Offline Payment"
 msgstr "Płatność offline"
 
-#: inc/shortcodes.php:290 inc/shortcodes.php:1616
+#: inc/shortcodes.php:295 inc/shortcodes.php:1656
 #: inc/functions/settings.php:2145
 msgid ""
 "Select this method to pay with bank transfer or other offline payment "
@@ -194,16 +207,16 @@ msgstr ""
 "Wybierz tę metodę, aby zapłacić przelewem bankowym lub inną metodą płatności "
 "offline."
 
-#: inc/shortcodes.php:303 inc/shortcodes.php:343 inc/shortcodes.php:1629
-#: inc/shortcodes.php:1669
+#: inc/shortcodes.php:308 inc/shortcodes.php:348 inc/shortcodes.php:1669
+#: inc/shortcodes.php:1709
 msgid "Buy Now"
 msgstr "Kup teraz"
 
-#: inc/shortcodes.php:318 inc/shortcodes.php:1644
+#: inc/shortcodes.php:323 inc/shortcodes.php:1684
 msgid "PayPal"
 msgstr "PayPal"
 
-#: inc/shortcodes.php:319 inc/shortcodes.php:1645
+#: inc/shortcodes.php:324 inc/shortcodes.php:1685
 msgid ""
 "One of the most popular online payment methods enables you to pay securely "
 "with your PayPal account, VISA, MasterCard. A PayPal account is not required "
@@ -215,17 +228,17 @@ msgstr ""
 "wymagane do płacenia kartami płatniczymi. Wystarczy kliknąć „Utwórz konto” "
 "na stronie płatności PayPal, aby sprawdzić opcje."
 
-#: inc/shortcodes.php:335 inc/shortcodes.php:793 inc/shortcodes.php:1661
-#: inc/functions/base-functions.php:1521
+#: inc/shortcodes.php:340 inc/shortcodes.php:801 inc/shortcodes.php:1701
+#: inc/functions/base-functions.php:1583
 #, php-format
 msgid "Payment for ads: %s,Payment id: %s"
 msgstr "Płatność dla ogłoszeń: %s, ID płatności: %s"
 
-#: inc/shortcodes.php:357 inc/shortcodes.php:1686
+#: inc/shortcodes.php:362 inc/shortcodes.php:1726
 msgid "Security check"
 msgstr "Bezpieczeństwo"
 
-#: inc/shortcodes.php:370 inc/shortcodes.php:1699
+#: inc/shortcodes.php:375 inc/shortcodes.php:1739
 #: inc/functions/notification-functions.php:368
 msgid ""
 "Enter details for your bank account or other necessary information required "
@@ -234,193 +247,193 @@ msgstr ""
 "Wprowadź dane swojego konta bankowego lub inne niezbędne informacje wymagane "
 "do dokonania płatności."
 
-#: inc/shortcodes.php:382 inc/shortcodes.php:1711 inc/shortcodes.php:1915
+#: inc/shortcodes.php:387 inc/shortcodes.php:1751 inc/shortcodes.php:1955
 #: inc/functions/base-functions.php:298 inc/functions/payment-functions.php:4
 #: inc/functions/settings.php:1096 inc/functions/settings.php:2364
 #: inc/functions/settings.php:2410
 msgid "Price"
 msgstr "Cena"
 
-#: inc/shortcodes.php:390 inc/shortcodes.php:1719
+#: inc/shortcodes.php:395 inc/shortcodes.php:1759
 msgid "Payment ID"
 msgstr "ID płatności"
 
-#: inc/shortcodes.php:396 inc/shortcodes.php:1725
+#: inc/shortcodes.php:401 inc/shortcodes.php:1765
 msgid "Payment Information"
 msgstr "Informacje o płatności"
 
-#: inc/shortcodes.php:413 inc/shortcodes.php:592 inc/shortcodes.php:1492
+#: inc/shortcodes.php:418 inc/shortcodes.php:597 inc/shortcodes.php:1532
 msgid "Please login"
 msgstr "Proszę się zalogować"
 
-#: inc/shortcodes.php:577
+#: inc/shortcodes.php:582
 #, php-format
 msgid "Thank you %s, your ad has been updated."
 msgstr "Dziękujemy %s, Twoje ogłoszenie zostało zaktualizowane."
 
-#: inc/shortcodes.php:722 inc/shortcodes.php:1460
+#: inc/shortcodes.php:730 inc/shortcodes.php:1500
 #: inc/custom-posts/ad-post-type.php:326 inc/custom-posts/ad-post-type.php:333
 #: inc/custom-posts/ad-post-type.php:339 inc/custom-posts/ad-post-type.php:350
 #: inc/custom-posts/ad-post-type.php:357 inc/custom-posts/ad-post-type.php:366
 #: inc/custom-posts/ad-post-type.php:371 inc/custom-posts/ad-post-type.php:390
-#: inc/widgets/terra-latest-ads.php:178 templates/archive.php:230
-#: templates/author.php:132 templates/default_post.php:188
-#: templates/single.php:197
+#: inc/widgets/terra-latest-ads.php:179 templates/archive.php:234
+#: templates/author.php:138 templates/default_post.php:191
+#: templates/single.php:202
 msgid "For Free"
 msgstr "Za darmo"
 
-#: inc/shortcodes.php:724 inc/shortcodes.php:1462
+#: inc/shortcodes.php:732 inc/shortcodes.php:1502
 #: inc/custom-posts/ad-post-type.php:327 inc/custom-posts/ad-post-type.php:334
 #: inc/custom-posts/ad-post-type.php:345 inc/custom-posts/ad-post-type.php:351
 #: inc/custom-posts/ad-post-type.php:362 inc/custom-posts/ad-post-type.php:367
 #: inc/custom-posts/ad-post-type.php:381 inc/custom-posts/ad-post-type.php:394
 #: inc/functions/base-functions.php:306 inc/functions/settings.php:1098
-#: inc/widgets/terra-latest-ads.php:180 templates/archive.php:232
-#: templates/author.php:134 templates/default_post.php:190
-#: templates/single.php:199
+#: inc/widgets/terra-latest-ads.php:181 templates/archive.php:236
+#: templates/author.php:140 templates/default_post.php:193
+#: templates/single.php:204
 msgid "Exchange"
 msgstr "Wymiana"
 
-#: inc/shortcodes.php:738
+#: inc/shortcodes.php:746
 msgid "Added:"
 msgstr "Dodane:"
 
-#: inc/shortcodes.php:743
+#: inc/shortcodes.php:751
 msgid "Expiration:"
 msgstr "Wygaśnięcie:"
 
-#: inc/shortcodes.php:761 inc/functions/base-functions.php:809
+#: inc/shortcodes.php:769 inc/functions/base-functions.php:809
 #: inc/functions/notification-functions.php:289 inc/functions/settings.php:1113
 msgid "Published"
 msgstr "Opublikowany"
 
-#: inc/shortcodes.php:763 inc/functions/custom-post-status-rejected.php:108
+#: inc/shortcodes.php:771 inc/functions/custom-post-status-rejected.php:108
 msgid "Rejected"
 msgstr "Odrzucone"
 
-#: inc/shortcodes.php:765 inc/shortcodes.php:1906
+#: inc/shortcodes.php:773 inc/shortcodes.php:1946
 #: inc/functions/notification-functions.php:291
 #: inc/functions/notification-functions.php:294
 #: inc/functions/payment-functions.php:147 inc/functions/settings.php:1112
 msgid "Pending"
 msgstr "Oczekujący"
 
-#: inc/shortcodes.php:767
+#: inc/shortcodes.php:775
 msgid "Draft"
 msgstr "Szkic"
 
-#: inc/shortcodes.php:769 inc/functions/base-functions.php:777
+#: inc/shortcodes.php:777 inc/functions/base-functions.php:777
 #: inc/functions/custom-post-status-archived.php:134
 msgid "Archived"
 msgstr "Zarchiwizowane"
 
-#: inc/shortcodes.php:801
+#: inc/shortcodes.php:809
 msgid "Pay Now"
 msgstr "Zapłać teraz"
 
-#: inc/shortcodes.php:808
+#: inc/shortcodes.php:816
 msgid "Pay now"
 msgstr "Zapłać teraz"
 
-#: inc/shortcodes.php:821
+#: inc/shortcodes.php:829
 msgid "Are you sure you want to remove the item?"
 msgstr "Czy na pewno chcesz usunąć ten element?"
 
-#: inc/shortcodes.php:822
+#: inc/shortcodes.php:830
 msgid "Remove"
 msgstr "Usuń"
 
-#: inc/shortcodes.php:834
+#: inc/shortcodes.php:842
 msgid "Edit is available once the ad is published"
 msgstr "Edycja jest dostępna po opublikowaniu ogłoszenia"
 
-#: inc/shortcodes.php:834 inc/shortcodes.php:835 templates/default_post.php:131
-#: templates/single.php:139
+#: inc/shortcodes.php:842 inc/shortcodes.php:843 templates/default_post.php:134
+#: templates/single.php:144
 msgid "Edit"
 msgstr "Edytuj"
 
-#: inc/shortcodes.php:839
+#: inc/shortcodes.php:847
 msgid "Archive"
 msgstr "Archiwizuj"
 
-#: inc/shortcodes.php:854
+#: inc/shortcodes.php:862
 msgid "Renew"
 msgstr "Odnów"
 
-#: inc/shortcodes.php:883
+#: inc/shortcodes.php:891
 msgid "No posts found."
 msgstr "Nie znaleziono wpisów."
 
-#: inc/shortcodes.php:901 inc/shortcodes.php:1959
+#: inc/shortcodes.php:909 inc/shortcodes.php:1999
 msgid "Login"
 msgstr "Zaloguj sie"
 
-#: inc/shortcodes.php:901 inc/shortcodes.php:1959
+#: inc/shortcodes.php:909 inc/shortcodes.php:1999
 msgid "to see your submissions."
 msgstr "aby zobaczyć swoje zgłoszenia."
 
-#: inc/shortcodes.php:922 inc/shortcodes.php:1080
+#: inc/shortcodes.php:930 inc/shortcodes.php:1088
 msgid "You are already logged in."
 msgstr "Jesteś już zalogowany."
 
-#: inc/shortcodes.php:924 inc/shortcodes.php:1082 inc/widgets/terra-menu.php:85
+#: inc/shortcodes.php:932 inc/shortcodes.php:1090 inc/widgets/terra-menu.php:85
 msgid "Logout"
 msgstr "Wyloguj się"
 
-#: inc/shortcodes.php:932
+#: inc/shortcodes.php:940
 msgid "User registration is disabled."
 msgstr "Rejestracja użytkownika jest wyłączona."
 
-#: inc/shortcodes.php:976
+#: inc/shortcodes.php:984
 msgid "Captcha error."
 msgstr "Błąd Captcha."
 
-#: inc/shortcodes.php:995
+#: inc/shortcodes.php:1003
 msgid "Registration complete. Check Your inbox for username and password to"
 msgstr ""
 "Rejestracja zakończona. Sprawdź swoją skrzynkę odbiorczą i zobacz nazwę "
 "użytkownika i hasła do"
 
-#: inc/shortcodes.php:995
+#: inc/shortcodes.php:1003
 msgid "login"
 msgstr "zaloguj sie"
 
-#: inc/shortcodes.php:1000
+#: inc/shortcodes.php:1008
 msgid "Username or email already exists."
 msgstr "Nazwa użytkownika lub adres e-mail już istnieje."
 
-#: inc/shortcodes.php:1009 inc/shortcodes.php:1101
+#: inc/shortcodes.php:1017 inc/shortcodes.php:1110
 #: inc/functions/settings.php:316
 msgid "Username"
 msgstr "Nazwa użytkownika"
 
-#: inc/shortcodes.php:1014
+#: inc/shortcodes.php:1022
 msgid "Email"
 msgstr "Email"
 
-#: inc/shortcodes.php:1019 inc/shortcodes.php:1308
+#: inc/shortcodes.php:1027 inc/shortcodes.php:1349
 msgid "Password"
 msgstr "Hasło"
 
-#: inc/shortcodes.php:1045
+#: inc/shortcodes.php:1053
 msgid "Register"
 msgstr "Rejestracja"
 
-#: inc/shortcodes.php:1089
+#: inc/shortcodes.php:1097
 msgid "Login failed. Username/password is wrong or empty."
 msgstr ""
 "Logowanie nie powiodło się. Nazwa użytkownika / hasło jest nieprawidłowe lub "
 "puste."
 
-#: inc/shortcodes.php:1107
+#: inc/shortcodes.php:1116
 msgid "Forgot your password?"
 msgstr "Zapomniałeś hasła?"
 
-#: inc/shortcodes.php:1111
+#: inc/shortcodes.php:1120
 msgid "Don't have an account?"
 msgstr "Nie masz konta?"
 
-#: inc/shortcodes.php:1130
+#: inc/shortcodes.php:1139
 msgid ""
 "Please enter your username or email address for your account. A verification "
 "e-mail will be sent to you and you will be able to reset your password."
@@ -428,124 +441,130 @@ msgstr ""
 "Wprowadź swoją nazwę użytkownika lub adres e-mail dla swojego konta. "
 "Otrzymasz e-mail weryfikacyjny i będziesz mógł zresetować hasło."
 
-#: inc/shortcodes.php:1133
+#: inc/shortcodes.php:1142
 msgid "Username or Email"
 msgstr "Nazwa użykownika lub email"
 
-#: inc/shortcodes.php:1138
+#: inc/shortcodes.php:1147
 msgid "Submit"
 msgstr "Wyślij"
 
-#: inc/shortcodes.php:1177
+#: inc/shortcodes.php:1187
 msgid "The passwords you entered do not match.  Your password was not updated."
 msgstr ""
 "Hasła, które wpisałeś nie są zgodne. Twoje hasło nie zostało zaktualizowane."
 
-#: inc/shortcodes.php:1185
+#: inc/shortcodes.php:1195
 msgid "The Email you entered is not valid.  please try again."
 msgstr "Podany adres e-mail jest nieprawidłowy. proszę spróbuj ponownie."
 
-#: inc/shortcodes.php:1187
+#: inc/shortcodes.php:1197
 msgid "This email is already used by another user.  try a different one."
 msgstr ""
 "Ten adres e-mail jest już używany przez innego użytkownika. spróbuj innego."
 
-#: inc/shortcodes.php:1266
+#: inc/shortcodes.php:1276
 msgid "Profile has been updated."
 msgstr "Profil został zaktualizowany."
 
-#: inc/shortcodes.php:1272
+#: inc/shortcodes.php:1282
 msgid "You must be logged in to edit your profile."
 msgstr "Musisz być zalogowany, aby edytować swój profil."
 
-#: inc/shortcodes.php:1288
+#: inc/shortcodes.php:1323
+#, fuzzy
+#| msgid "Fill in all required fields."
+msgid "Fill in required fields to add ads."
+msgstr "Wypełnij wszystkie wymagane pola."
+
+#: inc/shortcodes.php:1329
 msgid "First name"
 msgstr "Imię"
 
-#: inc/shortcodes.php:1292
+#: inc/shortcodes.php:1333
 msgid "Last name"
 msgstr "Nazwisko"
 
-#: inc/shortcodes.php:1296
+#: inc/shortcodes.php:1337
 msgid "E-mail"
 msgstr "E-mail"
 
-#: inc/shortcodes.php:1300
+#: inc/shortcodes.php:1341
 msgid "Website"
 msgstr "Witryna internetowa"
 
-#: inc/shortcodes.php:1304 inc/user/user.php:96 templates/author.php:57
+#: inc/shortcodes.php:1345 inc/user/user.php:96 templates/author.php:63
 msgid "Phone"
 msgstr "Telefon"
 
-#: inc/shortcodes.php:1312
+#: inc/shortcodes.php:1353
 msgid "Repeat password"
 msgstr "Powtórz hasło"
 
-#: inc/shortcodes.php:1316
+#: inc/shortcodes.php:1357
 msgid "About me"
 msgstr "O mnie"
 
-#: inc/shortcodes.php:1324
+#: inc/shortcodes.php:1364
 msgid "Avatar"
 msgstr "Awatara"
 
-#: inc/shortcodes.php:1328
+#: inc/shortcodes.php:1368
 msgid "Remove avatar"
 msgstr "Usuń awatara"
 
-#: inc/shortcodes.php:1331
+#: inc/shortcodes.php:1371
 msgid "Update"
 msgstr "Aktualizuj"
 
-#: inc/shortcodes.php:1747
+#: inc/shortcodes.php:1787
 msgid "Your payment has been successful."
 msgstr "Twoja płatność przebiegła pomyślnie."
 
-#: inc/shortcodes.php:1759
+#: inc/shortcodes.php:1799
 msgid "Your payment failed."
 msgstr "Twoja płatność nie powiodła się."
 
-#: inc/shortcodes.php:1761 inc/functions/notification-functions.php:375
+#: inc/shortcodes.php:1801 inc/functions/notification-functions.php:375
 msgid "My submissions"
 msgstr "Moje ogłoszenia"
 
-#: inc/shortcodes.php:1905 inc/functions/notification-functions.php:558
+#: inc/shortcodes.php:1945 inc/functions/notification-functions.php:559
 #: inc/functions/payment-functions.php:148 inc/functions/settings.php:2141
 msgid "Offline payment"
 msgstr "Płatność offline"
 
-#: inc/shortcodes.php:1905 inc/functions/notification-functions.php:558
+#: inc/shortcodes.php:1945 inc/functions/notification-functions.php:559
 #: inc/functions/payment-functions.php:148 inc/functions/settings.php:2197
 msgid "PayPal payment"
 msgstr "Płatność PayPal"
 
-#: inc/shortcodes.php:1906 inc/functions/payment-functions.php:147
+#: inc/shortcodes.php:1946 inc/functions/payment-functions.php:147
 msgid "Completed"
 msgstr "Zakończone"
 
-#: inc/shortcodes.php:1906 inc/functions/payment-functions.php:147
+#: inc/shortcodes.php:1946 inc/functions/payment-functions.php:147
 msgid "Cancelled"
 msgstr "Anulowany"
 
-#: inc/shortcodes.php:1914
+#: inc/shortcodes.php:1954
 msgid "Ads Name"
 msgstr "Nazwa ogłoszenia"
 
-#: inc/shortcodes.php:1916 inc/functions/payment-functions.php:4
+#: inc/shortcodes.php:1956 inc/functions/payment-functions.php:4
 msgid "Payment Type"
 msgstr "Typ płatności"
 
-#: inc/shortcodes.php:1917 inc/custom-posts/ad-post-type.php:87
+#: inc/shortcodes.php:1957 inc/custom-posts/ad-post-type.php:87
 #: inc/functions/payment-functions.php:4
 msgid "Date"
 msgstr "Data"
 
-#: inc/shortcodes.php:1918 inc/functions/payment-functions.php:4
+#: inc/shortcodes.php:1958 inc/functions/payment-functions.php:4
 msgid "Status"
 msgstr "Status"
 
-#: inc/shortcodes.php:1952
+#: inc/shortcodes.php:1992
 msgid "No payments found."
 msgstr "Nie znaleziono płatności."
 
@@ -862,8 +881,8 @@ msgstr "Wpisz cenę ogłoszenia."
 msgid "Negotiable"
 msgstr "Do negocjacji"
 
-#: inc/custom-posts/ad-post-type.php:497 templates/default_post.php:202
-#: templates/single.php:211
+#: inc/custom-posts/ad-post-type.php:497 templates/default_post.php:205
+#: templates/single.php:216
 msgid "negotiable"
 msgstr "do negocjacji"
 
@@ -1239,6 +1258,12 @@ msgstr "Co 15 sekund"
 msgid "Every 3611 seconds"
 msgstr "Co 3611 sekund"
 
+#: inc/functions/cron-functions.php:139
+#: inc/functions/notification-functions.php:282
+#: inc/functions/notification-functions.php:287 inc/functions/settings.php:2371
+msgid "Free"
+msgstr "Darmowe"
+
 #: inc/functions/custom-post-status-archived.php:93
 #: inc/functions/custom-post-status-rejected.php:67
 #, php-format
@@ -1295,11 +1320,6 @@ msgstr[2] " Rejected <span class=\"count\">(%s)</span>"
 msgid "Expressed consents:"
 msgstr "Wyrażone zgody:"
 
-#: inc/functions/notification-functions.php:282
-#: inc/functions/notification-functions.php:287 inc/functions/settings.php:2371
-msgid "Free"
-msgstr "Darmowe"
-
 #: inc/functions/notification-functions.php:295
 msgid "Not paid"
 msgstr "Niezapłacone"
@@ -1308,8 +1328,8 @@ msgstr "Niezapłacone"
 msgid "You choosed offline payment."
 msgstr "Wybrałeś płatność offline."
 
-#: inc/functions/notification-functions.php:370 templates/default_post.php:150
-#: templates/single.php:158
+#: inc/functions/notification-functions.php:370 templates/default_post.php:153
+#: templates/single.php:163
 msgid "Advert ID:"
 msgstr "ID ogłoszenia:"
 
@@ -1362,32 +1382,32 @@ msgstr "Następna strona"
 msgid "Last page"
 msgstr "Ostatnia strona"
 
-#: inc/functions/payment-functions.php:254
+#: inc/functions/payment-functions.php:257
 msgid "Payments list"
 msgstr "Lista płatności"
 
-#: inc/functions/payment-functions.php:257
-#: inc/functions/payment-functions.php:259
+#: inc/functions/payment-functions.php:260
+#: inc/functions/payment-functions.php:262
 msgid "Search"
 msgstr "Szukaj"
 
-#: inc/functions/payment-functions.php:264
+#: inc/functions/payment-functions.php:267
 msgid " - Change Status - "
 msgstr " - Zmień status - "
 
-#: inc/functions/payment-functions.php:269
+#: inc/functions/payment-functions.php:272
 msgid "Apply"
 msgstr "Zastosuj"
 
-#: inc/functions/payment-functions.php:273
+#: inc/functions/payment-functions.php:276
 msgid " - Select Type - "
 msgstr " - Wybierz typ - "
 
-#: inc/functions/payment-functions.php:279
+#: inc/functions/payment-functions.php:282
 msgid " - Select Status - "
 msgstr " - Wybierz status - "
 
-#: inc/functions/payment-functions.php:289
+#: inc/functions/payment-functions.php:292
 msgid "Filter"
 msgstr "Filtr"
 
@@ -2111,8 +2131,8 @@ msgstr "Widok ogłoszenia"
 msgid "Contact form"
 msgstr "Formularz kontaktowy"
 
-#: inc/functions/settings.php:950 templates/default_post.php:309
-#: templates/single.php:319
+#: inc/functions/settings.php:950 templates/default_post.php:347
+#: templates/single.php:361
 msgid "Report abuse"
 msgstr "Zgłoś nadużycie"
 
@@ -3443,35 +3463,35 @@ msgstr "Pionowo"
 msgid "Columns (only vertical layout):"
 msgstr "Kolumny (tylko układ pionowy):"
 
-#: inc/widgets/terra-categories.php:150 inc/widgets/terra-latest-ads.php:281
+#: inc/widgets/terra-categories.php:150 inc/widgets/terra-latest-ads.php:282
 msgid "1 column"
 msgstr "1 kolumna"
 
-#: inc/widgets/terra-categories.php:151 inc/widgets/terra-latest-ads.php:282
+#: inc/widgets/terra-categories.php:151 inc/widgets/terra-latest-ads.php:283
 msgid "2 columns"
 msgstr "2 kolumny"
 
-#: inc/widgets/terra-categories.php:152 inc/widgets/terra-latest-ads.php:283
+#: inc/widgets/terra-categories.php:152 inc/widgets/terra-latest-ads.php:284
 msgid "3 columns"
 msgstr "3 kolumny"
 
-#: inc/widgets/terra-categories.php:153 inc/widgets/terra-latest-ads.php:284
+#: inc/widgets/terra-categories.php:153 inc/widgets/terra-latest-ads.php:285
 msgid "4 columns"
 msgstr "4 kolumny"
 
-#: inc/widgets/terra-categories.php:154 inc/widgets/terra-latest-ads.php:285
+#: inc/widgets/terra-categories.php:154 inc/widgets/terra-latest-ads.php:286
 msgid "5 columns"
 msgstr "5 kolumn"
 
-#: inc/widgets/terra-categories.php:155 inc/widgets/terra-latest-ads.php:286
+#: inc/widgets/terra-categories.php:155 inc/widgets/terra-latest-ads.php:287
 msgid "6 columns"
 msgstr "6 kolumn"
 
-#: inc/widgets/terra-categories.php:156 inc/widgets/terra-latest-ads.php:287
+#: inc/widgets/terra-categories.php:156 inc/widgets/terra-latest-ads.php:288
 msgid "7 columns"
 msgstr "7 kolumn"
 
-#: inc/widgets/terra-categories.php:157 inc/widgets/terra-latest-ads.php:288
+#: inc/widgets/terra-categories.php:157 inc/widgets/terra-latest-ads.php:289
 msgid "8 columns"
 msgstr "8 kolumn"
 
@@ -3548,61 +3568,61 @@ msgstr "Wyświetlaj najnowsze ogłoszenia."
 msgid "TerraClassifieds Latest Ads"
 msgstr "Najnowsze ogłoszenia TerraClassifieds"
 
-#: inc/widgets/terra-latest-ads.php:176 templates/default_post.php:186
-#: templates/single.php:195
+#: inc/widgets/terra-latest-ads.php:177 templates/default_post.php:189
+#: templates/single.php:200
 msgid "Price:"
 msgstr "Cena:"
 
-#: inc/widgets/terra-latest-ads.php:207
+#: inc/widgets/terra-latest-ads.php:208
 msgid "No ads."
 msgstr "Brak ogłoszeń."
 
-#: inc/widgets/terra-latest-ads.php:241 inc/widgets/terra-menu.php:111
+#: inc/widgets/terra-latest-ads.php:242 inc/widgets/terra-menu.php:111
 #: inc/widgets/terra-search.php:105
 msgid "Widget Title"
 msgstr "Tytul widżetu"
 
-#: inc/widgets/terra-latest-ads.php:246
+#: inc/widgets/terra-latest-ads.php:247
 msgid "Order"
 msgstr "Kolejność"
 
-#: inc/widgets/terra-latest-ads.php:248
+#: inc/widgets/terra-latest-ads.php:249
 msgid "Latest first"
 msgstr "Najnowsze jako pierwsze"
 
-#: inc/widgets/terra-latest-ads.php:249
+#: inc/widgets/terra-latest-ads.php:250
 msgid "Oldest first"
 msgstr "Najpierw najstarsze"
 
-#: inc/widgets/terra-latest-ads.php:250
+#: inc/widgets/terra-latest-ads.php:251
 msgid "Alphabetical"
 msgstr "Alfabetycznie"
 
-#: inc/widgets/terra-latest-ads.php:255
+#: inc/widgets/terra-latest-ads.php:256
 msgid "Number of ads to show"
 msgstr "Liczba ogłoszeń do wyświetlenia"
 
-#: inc/widgets/terra-latest-ads.php:259
+#: inc/widgets/terra-latest-ads.php:260
 msgid "Description limit <small>(in words, 0 to disable)</small>"
 msgstr "Limit opisu <small> (słownie, 0, aby wyłączyć) </small>"
 
-#: inc/widgets/terra-latest-ads.php:264
+#: inc/widgets/terra-latest-ads.php:265
 msgid "Thumbnail Size:"
 msgstr "Wielkość miniaturki:"
 
-#: inc/widgets/terra-latest-ads.php:279
+#: inc/widgets/terra-latest-ads.php:280
 msgid "Columns :"
 msgstr "Kolumny:"
 
-#: inc/widgets/terra-latest-ads.php:294
+#: inc/widgets/terra-latest-ads.php:295
 msgid "Show price"
 msgstr "Pokaż cenę"
 
-#: inc/widgets/terra-latest-ads.php:299
+#: inc/widgets/terra-latest-ads.php:300
 msgid "Show types"
 msgstr "Pokaż typy"
 
-#: inc/widgets/terra-latest-ads.php:304 inc/widgets/terra-menu.php:117
+#: inc/widgets/terra-latest-ads.php:305 inc/widgets/terra-menu.php:117
 msgid "Show add to favourites"
 msgstr "Pokaż dodaj do ulubionych"
 
@@ -3687,14 +3707,12 @@ msgstr ""
 "używając innych słów kluczowych."
 
 #: templates/archive.php:104
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Wygląda na to, że nie możemy znaleźć tego, czego szukasz. Być może "
-"wyszukiwanie pomoże."
+#, fuzzy
+#| msgid "Show category filter"
+msgid "This category is empty"
+msgstr "Pokaż filtr kategorii"
 
-#: templates/author.php:45
+#: templates/author.php:51
 msgid "website"
 msgstr "witryna internetowa"
 
@@ -3706,65 +3724,73 @@ msgstr "Ta pozycja nie jest dostępna. Przeglądaj podobne produkty w kategorii:
 msgid "Your ad has been updated"
 msgstr "Twoje ogłoszenie zostało zaktualizowane"
 
-#: templates/default_post.php:144 templates/single.php:152
+#: templates/default_post.php:147 templates/single.php:157
 msgid "Added"
 msgstr "Dodany"
 
-#: templates/default_post.php:147 templates/single.php:155
+#: templates/default_post.php:150 templates/single.php:160
 msgid "Hits:"
 msgstr "Wyświetlenia:"
 
-#: templates/default_post.php:209 templates/single.php:219
+#: templates/default_post.php:213 templates/single.php:225
 msgid "Contact this advertiser"
 msgstr "Skontaktuj się z tym ogłoszeniodawcą"
 
-#: templates/default_post.php:214 templates/default_post.php:314
-#: templates/single.php:224 templates/single.php:324
+#: templates/default_post.php:219 templates/default_post.php:353
+#: templates/single.php:231 templates/single.php:367
 msgid "Your name"
 msgstr "Twoja nazwa"
 
-#: templates/default_post.php:219 templates/default_post.php:319
-#: templates/single.php:229 templates/single.php:329
+#: templates/default_post.php:224 templates/default_post.php:358
+#: templates/single.php:236 templates/single.php:372
 msgid "Your email"
 msgstr "Twój email"
 
-#: templates/default_post.php:225 templates/default_post.php:325
-#: templates/single.php:235 templates/single.php:335
+#: templates/default_post.php:230 templates/default_post.php:364
+#: templates/single.php:242 templates/single.php:378
 msgid "Message"
 msgstr "Wiadomość"
 
-#: templates/default_post.php:240 templates/default_post.php:339
-#: templates/single.php:250 templates/single.php:349
+#: templates/default_post.php:245 templates/default_post.php:378
+#: templates/single.php:257 templates/single.php:392
 msgid "Send message"
 msgstr "Wyślij wiadomość"
 
-#: templates/default_post.php:249 templates/single.php:260
+#: templates/default_post.php:255 templates/single.php:268
 msgid "Phone:"
 msgstr "Telefon:"
 
-#: templates/default_post.php:253 templates/single.php:264
+#: templates/default_post.php:267 templates/default_post.php:313
+#: templates/single.php:280 templates/single.php:326
 msgid "show"
 msgstr "pokaż"
 
-#: templates/default_post.php:262 templates/single.php:273
+#: templates/default_post.php:277 templates/single.php:290
 msgid "Location:"
 msgstr "Lokalizacja:"
 
-#: templates/default_post.php:280 templates/single.php:291
+#: templates/default_post.php:296 templates/single.php:309
 msgid "Website:"
 msgstr "Strona internetowa:"
 
-#: templates/default_post.php:286 templates/single.php:297
+#: templates/default_post.php:321 templates/single.php:334
 msgid "Created by:"
 msgstr "Stworzone przez:"
 
-#: templates/default_post.php:297 templates/single.php:308
+#: templates/default_post.php:335 templates/single.php:349
 msgid "See all ads by"
 msgstr "Zobacz wszystkie ogłoszenia"
 
-#: templates/default_post.php:299 templates/single.php:310
+#: templates/default_post.php:337 templates/single.php:351
 msgid "No name"
 msgstr "Bez nazwy"
+
+#~ msgid ""
+#~ "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+#~ "searching can help."
+#~ msgstr ""
+#~ "Wygląda na to, że nie możemy znaleźć tego, czego szukasz. Być może "
+#~ "wyszukiwanie pomoże."
 
 #~ msgid ""
 #~ "Create a classifieds website with WordPress. To save time use dedicated "

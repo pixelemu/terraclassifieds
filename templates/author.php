@@ -14,6 +14,12 @@ $no_image = terraclassifieds_get_option( '_tc_image_no_image', 0 );
 if(!empty($no_image)){
     $no_image_id = attachment_url_to_postid($no_image);
 }
+
+$show_ad_author = terraclassifieds_get_option( '_tc_ad_view_ad_author', 1 );
+if( $show_ad_author == '2' && !is_user_logged_in() ) {
+	wp_redirect( terraclassifieds_get_login_url() );
+}
+
 ?>
 
 <div class="terraclassifieds-container terraclassifieds-archive">

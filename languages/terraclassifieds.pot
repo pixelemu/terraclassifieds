@@ -2,93 +2,109 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: inc/functions/settings.php:2137 inc/functions/settings.php:2222
+#: inc/functions/settings.php:2281 inc/functions/settings.php:2290
+#: inc/functions/settings.php:2299 inc/functions/settings.php:2333
+#: inc/functions/settings.php:2353
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: TerraClassifieds - Simple Classifieds Plugin\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-24 15:06+0100\n"
-"PO-Revision-Date: 2021-03-24 15:34+0100\n"
-"Last-Translator: \n"
-"Language-Team: Polski\n"
-"Language: pl_PL\n"
+"POT-Creation-Date: 2021-04-27 12:52+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 &&(n"
-"%100<10||n%100 >= 20)? 1 : 2);\n"
-"X-Generator: Poedit 2.4.2\n"
-"X-Loco-Version: 2.4.0; wp-5.5.1\n"
-
-#: terraclassifieds.php:253
-msgid "You can assign max "
-msgstr "Możesz przypisać maksymalnie "
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: terraclassifieds.php:254
-msgid " images."
-msgstr " obrazków."
+msgid "You can assign max "
+msgstr ""
 
 #: terraclassifieds.php:255
-msgid " images left"
-msgstr " pozostałych obrazków"
+msgid " images."
+msgstr ""
 
 #: terraclassifieds.php:256
-msgid "You have reached the limit."
-msgstr "Osiągnąłeś limit."
+msgid " images left"
+msgstr ""
 
 #: terraclassifieds.php:257
-msgid " characters left."
-msgstr " pozostałych znaków."
+msgid "You have reached the limit."
+msgstr ""
 
 #: terraclassifieds.php:258
+msgid " characters left."
+msgstr ""
+
+#: terraclassifieds.php:259
 msgid "Enter min"
-msgstr "Wpisz min"
+msgstr ""
 
-#: terraclassifieds.php:258 terraclassifieds.php:273
+#: terraclassifieds.php:259 terraclassifieds.php:274
 msgid "characters"
-msgstr "znaków"
+msgstr ""
 
-#: terraclassifieds.php:262
+#: terraclassifieds.php:263
 msgid "Clear all locations"
-msgstr "Wyczyść wszystkie lokalizacje"
+msgstr ""
 
-#: terraclassifieds.php:263 inc/functions/base-functions.php:225
+#: terraclassifieds.php:264 inc/functions/base-functions.php:225
 msgid "All locations"
-msgstr "Wszystkie lokalizacje"
+msgstr ""
 
-#: terraclassifieds.php:265
+#: terraclassifieds.php:266 terraclassifieds.php:277
 msgid "Cancel"
-msgstr "Anuluj"
+msgstr ""
 
-#: terraclassifieds.php:267 inc/shortcodes.php:147 inc/shortcodes.php:181
-#: inc/shortcodes.php:203
+#: terraclassifieds.php:268 inc/shortcodes.php:152 inc/shortcodes.php:186
+#: inc/shortcodes.php:208
 msgid "Add advert"
-msgstr "Dodaj ogłoszenie"
+msgstr ""
 
-#: terraclassifieds.php:268 inc/shortcodes.php:588
+#: terraclassifieds.php:269 inc/shortcodes.php:593
 msgid "Save changes"
-msgstr "Zapisz zmiany"
+msgstr ""
 
-#: terraclassifieds.php:269
+#: terraclassifieds.php:270
 msgid "Save as draft"
-msgstr "Zapisz jako szkic"
+msgstr ""
 
-#: terraclassifieds.php:270 inc/functions/base-functions.php:334
+#: terraclassifieds.php:271 inc/functions/base-functions.php:334
 msgctxt "search price"
 msgid "From"
-msgstr "Od"
+msgstr ""
 
-#: terraclassifieds.php:271 inc/functions/base-functions.php:338
+#: terraclassifieds.php:272 inc/functions/base-functions.php:338
 msgctxt "search price"
 msgid "To"
-msgstr "Do"
+msgstr ""
 
-#: terraclassifieds.php:272
+#: terraclassifieds.php:273
 msgid "Enter at least"
-msgstr "Wpisz przynajmniej"
+msgstr ""
 
-#: terraclassifieds.php:384
+#: terraclassifieds.php:275
+msgid "Must login to continue."
+msgstr ""
+
+#: terraclassifieds.php:276
+msgid "Log in"
+msgstr ""
+
+#: terraclassifieds.php:418
 msgid "Payments"
-msgstr "Płatności"
+msgstr ""
+
+#: inc/cmb2.php:134
+#, php-format
+msgid "%s &mdash; Updated!"
+msgstr ""
 
 #: inc/security-abuse-form.php:12 inc/security-abuse-form.php:41
 #: inc/security.php:12 inc/security.php:41
@@ -97,714 +113,703 @@ msgstr "Płatności"
 #: inc/functions/notification-functions.php:256
 #: inc/functions/notification-functions.php:259
 msgid "I agree to the"
-msgstr "Zgadzam się z"
+msgstr ""
 
 #: inc/security-abuse-form.php:14 inc/security-abuse-form.php:20
 #: inc/security.php:14 inc/security.php:20
 #: inc/functions/notification-functions.php:220
-#: inc/functions/notification-functions.php:256 inc/functions/settings.php:1411
+#: inc/functions/notification-functions.php:256
+#: inc/functions/settings.php:1411
 msgid "Terms and conditions"
-msgstr "Regulamin"
+msgstr ""
 
 #: inc/security-abuse-form.php:43 inc/security-abuse-form.php:49
 #: inc/security.php:43 inc/security.php:49
 #: inc/functions/notification-functions.php:223
 #: inc/functions/notification-functions.php:259
 msgid "Privacy Policy"
-msgstr "Polityka prywatności"
+msgstr ""
 
-#: inc/shortcodes.php:17 inc/shortcodes.php:442
+#: inc/shortcodes.php:17 inc/shortcodes.php:447
 msgid "Security check failed."
-msgstr "Sprawdzenie bezpieczeństwa nieudane."
+msgstr ""
 
-#: inc/shortcodes.php:21 inc/shortcodes.php:446
+#: inc/shortcodes.php:21 inc/shortcodes.php:451
 msgid "New post requires a title."
-msgstr "Nowy post wymaga tytułu."
+msgstr ""
 
-#: inc/shortcodes.php:178 inc/shortcodes.php:568
+#: inc/shortcodes.php:183 inc/shortcodes.php:573
 #, php-format
 msgid "There was an error in the submission: %s"
-msgstr "Wystąpił błąd podczas przesyłania: %s"
+msgstr ""
 
-#: inc/shortcodes.php:193
+#: inc/shortcodes.php:198
 #, php-format
 msgid "Thank you %s, your new post has been submitted and published."
-msgstr "Dziękujemy %s, Twój nowy wpis został przesłany i opublikowany."
+msgstr ""
 
-#: inc/shortcodes.php:195
+#: inc/shortcodes.php:200
 #, php-format
 msgid ""
 "Thank you %s, your new post has been submitted and is pending review by a "
 "site administrator."
 msgstr ""
-"Dziękujemy %s, Twój nowy wpis został przesłany i oczekuje na sprawdzenie "
-"przez administratora witryny."
 
-#: inc/shortcodes.php:197
+#: inc/shortcodes.php:202
 #, php-format
 msgid "Thank you %s, your new post has been saved as Draft."
-msgstr "Dziękujemy %s, Twój nowy wpis został zapisany jako szkic."
+msgstr ""
 
-#: inc/shortcodes.php:234 inc/shortcodes.php:1560
+#: inc/shortcodes.php:239 inc/shortcodes.php:1600
 msgid "Back To Edit - Button"
-msgstr "Powrót do edycji"
+msgstr ""
 
-#: inc/shortcodes.php:237 inc/shortcodes.php:1563
+#: inc/shortcodes.php:242 inc/shortcodes.php:1603
 msgid "Payment Details"
-msgstr "Szczegóły płatności"
+msgstr ""
 
-#: inc/shortcodes.php:241 inc/shortcodes.php:378 inc/shortcodes.php:1567
-#: inc/shortcodes.php:1707
+#: inc/shortcodes.php:246 inc/shortcodes.php:383 inc/shortcodes.php:1607
+#: inc/shortcodes.php:1747
 msgid "Advert"
-msgstr "Ogłoszenie"
+msgstr ""
 
-#: inc/shortcodes.php:245 inc/shortcodes.php:386 inc/shortcodes.php:1571
-#: inc/shortcodes.php:1715
+#: inc/shortcodes.php:250 inc/shortcodes.php:391 inc/shortcodes.php:1611
+#: inc/shortcodes.php:1755
 msgid "Advert ID"
-msgstr "ID ogłoszenia"
+msgstr ""
 
-#: inc/shortcodes.php:257 inc/shortcodes.php:1583
+#: inc/shortcodes.php:262 inc/shortcodes.php:1623
 msgid "Net cost"
-msgstr "Koszt netto"
+msgstr ""
 
-#: inc/shortcodes.php:261 inc/shortcodes.php:1587
+#: inc/shortcodes.php:266 inc/shortcodes.php:1627
 #, php-format
 msgid "Tax (%s%%)"
-msgstr "Podatek (%s%%)"
+msgstr ""
 
-#: inc/shortcodes.php:265 inc/shortcodes.php:1591
+#: inc/shortcodes.php:270 inc/shortcodes.php:1631
 msgid "Total"
-msgstr "Razem"
+msgstr ""
 
-#: inc/shortcodes.php:272 inc/shortcodes.php:1598
+#: inc/shortcodes.php:277 inc/shortcodes.php:1638
 msgid "Payment Methods"
-msgstr "Metody płatności"
+msgstr ""
 
-#: inc/shortcodes.php:289 inc/shortcodes.php:374 inc/shortcodes.php:1615
-#: inc/shortcodes.php:1703
+#: inc/shortcodes.php:294 inc/shortcodes.php:379 inc/shortcodes.php:1655
+#: inc/shortcodes.php:1743
 msgid "Offline Payment"
-msgstr "Płatność offline"
+msgstr ""
 
-#: inc/shortcodes.php:290 inc/shortcodes.php:1616
+#: inc/shortcodes.php:295 inc/shortcodes.php:1656
 #: inc/functions/settings.php:2145
 msgid ""
 "Select this method to pay with bank transfer or other offline payment "
 "methods."
 msgstr ""
-"Wybierz tę metodę, aby zapłacić przelewem bankowym lub inną metodą płatności "
-"offline."
 
-#: inc/shortcodes.php:303 inc/shortcodes.php:343 inc/shortcodes.php:1629
-#: inc/shortcodes.php:1669
+#: inc/shortcodes.php:308 inc/shortcodes.php:348 inc/shortcodes.php:1669
+#: inc/shortcodes.php:1709
 msgid "Buy Now"
-msgstr "Kup teraz"
+msgstr ""
 
-#: inc/shortcodes.php:318 inc/shortcodes.php:1644
+#: inc/shortcodes.php:323 inc/shortcodes.php:1684
 msgid "PayPal"
-msgstr "PayPal"
+msgstr ""
 
-#: inc/shortcodes.php:319 inc/shortcodes.php:1645
+#: inc/shortcodes.php:324 inc/shortcodes.php:1685
 msgid ""
 "One of the most popular online payment methods enables you to pay securely "
 "with your PayPal account, VISA, MasterCard. A PayPal account is not required "
 "to pay with payment cards. Just click “Create account” on the PayPal payment "
 "page to check options."
 msgstr ""
-"Jedna z najpopularniejszych metod płatności online umożliwia bezpieczną "
-"płatność za pomocą konta PayPal, VISA, MasterCard. Konto PayPal nie jest "
-"wymagane do płacenia kartami płatniczymi. Wystarczy kliknąć „Utwórz konto” "
-"na stronie płatności PayPal, aby sprawdzić opcje."
 
-#: inc/shortcodes.php:335 inc/shortcodes.php:793 inc/shortcodes.php:1661
-#: inc/functions/base-functions.php:1521
+#: inc/shortcodes.php:340 inc/shortcodes.php:801 inc/shortcodes.php:1701
+#: inc/functions/base-functions.php:1583
 #, php-format
 msgid "Payment for ads: %s,Payment id: %s"
-msgstr "Płatność dla ogłoszeń: %s, ID płatności: %s"
+msgstr ""
 
-#: inc/shortcodes.php:357 inc/shortcodes.php:1686
+#: inc/shortcodes.php:362 inc/shortcodes.php:1726
 msgid "Security check"
-msgstr "Bezpieczeństwo"
+msgstr ""
 
-#: inc/shortcodes.php:370 inc/shortcodes.php:1699
+#: inc/shortcodes.php:375 inc/shortcodes.php:1739
 #: inc/functions/notification-functions.php:368
 msgid ""
 "Enter details for your bank account or other necessary information required "
 "for making a payment."
 msgstr ""
-"Wprowadź dane swojego konta bankowego lub inne niezbędne informacje wymagane "
-"do dokonania płatności."
 
-#: inc/shortcodes.php:382 inc/shortcodes.php:1711 inc/shortcodes.php:1915
+#: inc/shortcodes.php:387 inc/shortcodes.php:1751 inc/shortcodes.php:1955
 #: inc/functions/base-functions.php:298 inc/functions/payment-functions.php:4
 #: inc/functions/settings.php:1096 inc/functions/settings.php:2364
 #: inc/functions/settings.php:2410
 msgid "Price"
-msgstr "Cena"
+msgstr ""
 
-#: inc/shortcodes.php:390 inc/shortcodes.php:1719
+#: inc/shortcodes.php:395 inc/shortcodes.php:1759
 msgid "Payment ID"
-msgstr "ID płatności"
+msgstr ""
 
-#: inc/shortcodes.php:396 inc/shortcodes.php:1725
+#: inc/shortcodes.php:401 inc/shortcodes.php:1765
 msgid "Payment Information"
-msgstr "Informacje o płatności"
+msgstr ""
 
-#: inc/shortcodes.php:413 inc/shortcodes.php:592 inc/shortcodes.php:1492
+#: inc/shortcodes.php:418 inc/shortcodes.php:597 inc/shortcodes.php:1532
 msgid "Please login"
-msgstr "Proszę się zalogować"
+msgstr ""
 
-#: inc/shortcodes.php:577
+#: inc/shortcodes.php:582
 #, php-format
 msgid "Thank you %s, your ad has been updated."
-msgstr "Dziękujemy %s, Twoje ogłoszenie zostało zaktualizowane."
+msgstr ""
 
-#: inc/shortcodes.php:722 inc/shortcodes.php:1460
+#: inc/shortcodes.php:730 inc/shortcodes.php:1500
 #: inc/custom-posts/ad-post-type.php:326 inc/custom-posts/ad-post-type.php:333
 #: inc/custom-posts/ad-post-type.php:339 inc/custom-posts/ad-post-type.php:350
 #: inc/custom-posts/ad-post-type.php:357 inc/custom-posts/ad-post-type.php:366
 #: inc/custom-posts/ad-post-type.php:371 inc/custom-posts/ad-post-type.php:390
-#: inc/widgets/terra-latest-ads.php:178 templates/archive.php:230
-#: templates/author.php:132 templates/default_post.php:188
-#: templates/single.php:197
+#: inc/widgets/terra-latest-ads.php:179 templates/archive.php:234
+#: templates/author.php:138 templates/default_post.php:191
+#: templates/single.php:202
 msgid "For Free"
-msgstr "Za darmo"
+msgstr ""
 
-#: inc/shortcodes.php:724 inc/shortcodes.php:1462
+#: inc/shortcodes.php:732 inc/shortcodes.php:1502
 #: inc/custom-posts/ad-post-type.php:327 inc/custom-posts/ad-post-type.php:334
 #: inc/custom-posts/ad-post-type.php:345 inc/custom-posts/ad-post-type.php:351
 #: inc/custom-posts/ad-post-type.php:362 inc/custom-posts/ad-post-type.php:367
 #: inc/custom-posts/ad-post-type.php:381 inc/custom-posts/ad-post-type.php:394
 #: inc/functions/base-functions.php:306 inc/functions/settings.php:1098
-#: inc/widgets/terra-latest-ads.php:180 templates/archive.php:232
-#: templates/author.php:134 templates/default_post.php:190
-#: templates/single.php:199
+#: inc/widgets/terra-latest-ads.php:181 templates/archive.php:236
+#: templates/author.php:140 templates/default_post.php:193
+#: templates/single.php:204
 msgid "Exchange"
-msgstr "Wymiana"
+msgstr ""
 
-#: inc/shortcodes.php:738
+#: inc/shortcodes.php:746
 msgid "Added:"
-msgstr "Dodane:"
+msgstr ""
 
-#: inc/shortcodes.php:743
+#: inc/shortcodes.php:751
 msgid "Expiration:"
-msgstr "Wygaśnięcie:"
+msgstr ""
 
-#: inc/shortcodes.php:761 inc/functions/base-functions.php:809
-#: inc/functions/notification-functions.php:289 inc/functions/settings.php:1113
+#: inc/shortcodes.php:769 inc/functions/base-functions.php:809
+#: inc/functions/notification-functions.php:289
+#: inc/functions/settings.php:1113
 msgid "Published"
-msgstr "Opublikowany"
+msgstr ""
 
-#: inc/shortcodes.php:763 inc/functions/custom-post-status-rejected.php:108
+#: inc/shortcodes.php:771 inc/functions/custom-post-status-rejected.php:108
 msgid "Rejected"
-msgstr "Odrzucone"
+msgstr ""
 
-#: inc/shortcodes.php:765 inc/shortcodes.php:1906
+#: inc/shortcodes.php:773 inc/shortcodes.php:1946
 #: inc/functions/notification-functions.php:291
 #: inc/functions/notification-functions.php:294
 #: inc/functions/payment-functions.php:147 inc/functions/settings.php:1112
 msgid "Pending"
-msgstr "Oczekujący"
+msgstr ""
 
-#: inc/shortcodes.php:767
+#: inc/shortcodes.php:775
 msgid "Draft"
-msgstr "Szkic"
+msgstr ""
 
-#: inc/shortcodes.php:769 inc/functions/base-functions.php:777
+#: inc/shortcodes.php:777 inc/functions/base-functions.php:777
 #: inc/functions/custom-post-status-archived.php:134
 msgid "Archived"
-msgstr "Zarchiwizowane"
+msgstr ""
 
-#: inc/shortcodes.php:801
+#: inc/shortcodes.php:809
 msgid "Pay Now"
-msgstr "Zapłać teraz"
+msgstr ""
 
-#: inc/shortcodes.php:808
+#: inc/shortcodes.php:816
 msgid "Pay now"
-msgstr "Zapłać teraz"
+msgstr ""
 
-#: inc/shortcodes.php:821
+#: inc/shortcodes.php:829
 msgid "Are you sure you want to remove the item?"
-msgstr "Czy na pewno chcesz usunąć ten element?"
+msgstr ""
 
-#: inc/shortcodes.php:822
+#: inc/shortcodes.php:830
 msgid "Remove"
-msgstr "Usuń"
+msgstr ""
 
-#: inc/shortcodes.php:834
+#: inc/shortcodes.php:842
 msgid "Edit is available once the ad is published"
-msgstr "Edycja jest dostępna po opublikowaniu ogłoszenia"
+msgstr ""
 
-#: inc/shortcodes.php:834 inc/shortcodes.php:835 templates/default_post.php:131
-#: templates/single.php:139
+#: inc/shortcodes.php:842 inc/shortcodes.php:843
+#: templates/default_post.php:134 templates/single.php:144
 msgid "Edit"
-msgstr "Edytuj"
+msgstr ""
 
-#: inc/shortcodes.php:839
+#: inc/shortcodes.php:847
 msgid "Archive"
-msgstr "Archiwizuj"
+msgstr ""
 
-#: inc/shortcodes.php:854
+#: inc/shortcodes.php:862
 msgid "Renew"
-msgstr "Odnów"
+msgstr ""
 
-#: inc/shortcodes.php:883
+#: inc/shortcodes.php:891
 msgid "No posts found."
-msgstr "Nie znaleziono wpisów."
+msgstr ""
 
-#: inc/shortcodes.php:901 inc/shortcodes.php:1959
+#: inc/shortcodes.php:909 inc/shortcodes.php:1999
 msgid "Login"
-msgstr "Zaloguj sie"
+msgstr ""
 
-#: inc/shortcodes.php:901 inc/shortcodes.php:1959
+#: inc/shortcodes.php:909 inc/shortcodes.php:1999
 msgid "to see your submissions."
-msgstr "aby zobaczyć swoje zgłoszenia."
+msgstr ""
 
-#: inc/shortcodes.php:922 inc/shortcodes.php:1080
+#: inc/shortcodes.php:930 inc/shortcodes.php:1088
 msgid "You are already logged in."
-msgstr "Jesteś już zalogowany."
+msgstr ""
 
-#: inc/shortcodes.php:924 inc/shortcodes.php:1082 inc/widgets/terra-menu.php:85
+#: inc/shortcodes.php:932 inc/shortcodes.php:1090
+#: inc/widgets/terra-menu.php:85
 msgid "Logout"
-msgstr "Wyloguj się"
+msgstr ""
 
-#: inc/shortcodes.php:932
+#: inc/shortcodes.php:940
 msgid "User registration is disabled."
-msgstr "Rejestracja użytkownika jest wyłączona."
+msgstr ""
 
-#: inc/shortcodes.php:976
+#: inc/shortcodes.php:984
 msgid "Captcha error."
-msgstr "Błąd Captcha."
+msgstr ""
 
-#: inc/shortcodes.php:995
+#: inc/shortcodes.php:1003
 msgid "Registration complete. Check Your inbox for username and password to"
 msgstr ""
-"Rejestracja zakończona. Sprawdź swoją skrzynkę odbiorczą i zobacz nazwę "
-"użytkownika i hasła do"
 
-#: inc/shortcodes.php:995
+#: inc/shortcodes.php:1003
 msgid "login"
-msgstr "zaloguj sie"
+msgstr ""
 
-#: inc/shortcodes.php:1000
+#: inc/shortcodes.php:1008
 msgid "Username or email already exists."
-msgstr "Nazwa użytkownika lub adres e-mail już istnieje."
+msgstr ""
 
-#: inc/shortcodes.php:1009 inc/shortcodes.php:1101
+#: inc/shortcodes.php:1017 inc/shortcodes.php:1110
 #: inc/functions/settings.php:316
 msgid "Username"
-msgstr "Nazwa użytkownika"
+msgstr ""
 
-#: inc/shortcodes.php:1014
+#: inc/shortcodes.php:1022
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
-#: inc/shortcodes.php:1019 inc/shortcodes.php:1308
+#: inc/shortcodes.php:1027 inc/shortcodes.php:1349
 msgid "Password"
-msgstr "Hasło"
+msgstr ""
 
-#: inc/shortcodes.php:1045
+#: inc/shortcodes.php:1053
 msgid "Register"
-msgstr "Rejestracja"
+msgstr ""
 
-#: inc/shortcodes.php:1089
+#: inc/shortcodes.php:1097
 msgid "Login failed. Username/password is wrong or empty."
 msgstr ""
-"Logowanie nie powiodło się. Nazwa użytkownika / hasło jest nieprawidłowe lub "
-"puste."
 
-#: inc/shortcodes.php:1107
+#: inc/shortcodes.php:1116
 msgid "Forgot your password?"
-msgstr "Zapomniałeś hasła?"
+msgstr ""
 
-#: inc/shortcodes.php:1111
+#: inc/shortcodes.php:1120
 msgid "Don't have an account?"
-msgstr "Nie masz konta?"
+msgstr ""
 
-#: inc/shortcodes.php:1130
+#: inc/shortcodes.php:1139
 msgid ""
 "Please enter your username or email address for your account. A verification "
 "e-mail will be sent to you and you will be able to reset your password."
 msgstr ""
-"Wprowadź swoją nazwę użytkownika lub adres e-mail dla swojego konta. "
-"Otrzymasz e-mail weryfikacyjny i będziesz mógł zresetować hasło."
 
-#: inc/shortcodes.php:1133
+#: inc/shortcodes.php:1142
 msgid "Username or Email"
-msgstr "Nazwa użykownika lub email"
-
-#: inc/shortcodes.php:1138
-msgid "Submit"
-msgstr "Wyślij"
-
-#: inc/shortcodes.php:1177
-msgid "The passwords you entered do not match.  Your password was not updated."
 msgstr ""
-"Hasła, które wpisałeś nie są zgodne. Twoje hasło nie zostało zaktualizowane."
 
-#: inc/shortcodes.php:1185
-msgid "The Email you entered is not valid.  please try again."
-msgstr "Podany adres e-mail jest nieprawidłowy. proszę spróbuj ponownie."
+#: inc/shortcodes.php:1147
+msgid "Submit"
+msgstr ""
 
 #: inc/shortcodes.php:1187
+msgid "The passwords you entered do not match.  Your password was not updated."
+msgstr ""
+
+#: inc/shortcodes.php:1195
+msgid "The Email you entered is not valid.  please try again."
+msgstr ""
+
+#: inc/shortcodes.php:1197
 msgid "This email is already used by another user.  try a different one."
 msgstr ""
-"Ten adres e-mail jest już używany przez innego użytkownika. spróbuj innego."
 
-#: inc/shortcodes.php:1266
+#: inc/shortcodes.php:1276
 msgid "Profile has been updated."
-msgstr "Profil został zaktualizowany."
+msgstr ""
 
-#: inc/shortcodes.php:1272
+#: inc/shortcodes.php:1282
 msgid "You must be logged in to edit your profile."
-msgstr "Musisz być zalogowany, aby edytować swój profil."
+msgstr ""
 
-#: inc/shortcodes.php:1288
+#: inc/shortcodes.php:1323
+msgid "Fill in required fields to add ads."
+msgstr ""
+
+#: inc/shortcodes.php:1329
 msgid "First name"
-msgstr "Imię"
+msgstr ""
 
-#: inc/shortcodes.php:1292
+#: inc/shortcodes.php:1333
 msgid "Last name"
-msgstr "Nazwisko"
+msgstr ""
 
-#: inc/shortcodes.php:1296
+#: inc/shortcodes.php:1337
 msgid "E-mail"
-msgstr "E-mail"
+msgstr ""
 
-#: inc/shortcodes.php:1300
+#: inc/shortcodes.php:1341
 msgid "Website"
-msgstr "Witryna internetowa"
+msgstr ""
 
-#: inc/shortcodes.php:1304 inc/user/user.php:96 templates/author.php:57
+#: inc/shortcodes.php:1345 inc/user/user.php:96 templates/author.php:63
 msgid "Phone"
-msgstr "Telefon"
+msgstr ""
 
-#: inc/shortcodes.php:1312
+#: inc/shortcodes.php:1353
 msgid "Repeat password"
-msgstr "Powtórz hasło"
+msgstr ""
 
-#: inc/shortcodes.php:1316
+#: inc/shortcodes.php:1357
 msgid "About me"
-msgstr "O mnie"
+msgstr ""
 
-#: inc/shortcodes.php:1324
+#: inc/shortcodes.php:1364
 msgid "Avatar"
-msgstr "Awatara"
+msgstr ""
 
-#: inc/shortcodes.php:1328
+#: inc/shortcodes.php:1368
 msgid "Remove avatar"
-msgstr "Usuń awatara"
+msgstr ""
 
-#: inc/shortcodes.php:1331
+#: inc/shortcodes.php:1371
 msgid "Update"
-msgstr "Aktualizuj"
+msgstr ""
 
-#: inc/shortcodes.php:1747
+#: inc/shortcodes.php:1787
 msgid "Your payment has been successful."
-msgstr "Twoja płatność przebiegła pomyślnie."
+msgstr ""
 
-#: inc/shortcodes.php:1759
+#: inc/shortcodes.php:1799
 msgid "Your payment failed."
-msgstr "Twoja płatność nie powiodła się."
+msgstr ""
 
-#: inc/shortcodes.php:1761 inc/functions/notification-functions.php:375
+#: inc/shortcodes.php:1801 inc/functions/notification-functions.php:375
 msgid "My submissions"
-msgstr "Moje ogłoszenia"
+msgstr ""
 
-#: inc/shortcodes.php:1905 inc/functions/notification-functions.php:558
+#: inc/shortcodes.php:1945 inc/functions/notification-functions.php:559
 #: inc/functions/payment-functions.php:148 inc/functions/settings.php:2141
 msgid "Offline payment"
-msgstr "Płatność offline"
+msgstr ""
 
-#: inc/shortcodes.php:1905 inc/functions/notification-functions.php:558
+#: inc/shortcodes.php:1945 inc/functions/notification-functions.php:559
 #: inc/functions/payment-functions.php:148 inc/functions/settings.php:2197
 msgid "PayPal payment"
-msgstr "Płatność PayPal"
+msgstr ""
 
-#: inc/shortcodes.php:1906 inc/functions/payment-functions.php:147
+#: inc/shortcodes.php:1946 inc/functions/payment-functions.php:147
 msgid "Completed"
-msgstr "Zakończone"
+msgstr ""
 
-#: inc/shortcodes.php:1906 inc/functions/payment-functions.php:147
+#: inc/shortcodes.php:1946 inc/functions/payment-functions.php:147
 msgid "Cancelled"
-msgstr "Anulowany"
+msgstr ""
 
-#: inc/shortcodes.php:1914
+#: inc/shortcodes.php:1954
 msgid "Ads Name"
-msgstr "Nazwa ogłoszenia"
+msgstr ""
 
-#: inc/shortcodes.php:1916 inc/functions/payment-functions.php:4
+#: inc/shortcodes.php:1956 inc/functions/payment-functions.php:4
 msgid "Payment Type"
-msgstr "Typ płatności"
+msgstr ""
 
-#: inc/shortcodes.php:1917 inc/custom-posts/ad-post-type.php:87
+#: inc/shortcodes.php:1957 inc/custom-posts/ad-post-type.php:87
 #: inc/functions/payment-functions.php:4
 msgid "Date"
-msgstr "Data"
+msgstr ""
 
-#: inc/shortcodes.php:1918 inc/functions/payment-functions.php:4
+#: inc/shortcodes.php:1958 inc/functions/payment-functions.php:4
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
-#: inc/shortcodes.php:1952
+#: inc/shortcodes.php:1992
 msgid "No payments found."
-msgstr "Nie znaleziono płatności."
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:11
 msgid "TerraClassifieds"
-msgstr "TerraClassifieds"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:12
 msgid "Ads"
-msgstr "Ogłoszenia"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:13 inc/custom-posts/ad-post-type.php:85
 msgid "Ad"
-msgstr "Ogłoszenie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:14
 msgid "Add New"
-msgstr "Dodaj nowe"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:15
 msgid "Add New Ad"
-msgstr "Dodaj nowe ogłoszenie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:16
 msgid "Edit Ad"
-msgstr "Edytuj ogłoszenie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:17
 msgid "New Ad"
-msgstr "Nowe ogłoszenie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:18
 msgid "View Ad"
-msgstr "Zobacz ogłoszenie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:19
 msgid "Search Ad"
-msgstr "Wyszukaj ogłoszenie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:20
 msgid "No Ad found"
-msgstr "Nie znaleziono ogłoszenia"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:21
 msgid "No Ad found in Trash"
-msgstr "Nie znaleziono ogłoszenia w koszu"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:48
 msgid "Ads Categories"
-msgstr "Kategorie ogłoszeń"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:49
 msgid "Category"
-msgstr "Kategoria"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:50
 msgid "Search Categories"
-msgstr "Wyszukaj kategorie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:51
 msgid "Popular Categories"
-msgstr "Popularne kategorie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:52
 msgid "All Categories"
-msgstr "Wszystkie kategorie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:53
 msgid "Parent Category"
-msgstr "Kategoria nadrzędna"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:54
 msgid "Parent Category:"
-msgstr "Kategoria nadrzędna:"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:55
 msgid "Edit Category"
-msgstr "Edytuj kategorię"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:56
 msgid "Update Category"
-msgstr "Zaktualizuj kategorię"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:57
 msgid "Add New Category"
-msgstr "Dodaj nową kategorię"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:58
 msgid "New Category Name"
-msgstr "Nowa nazwa kategorii"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:59
 msgid "Separate Categories with commas"
-msgstr "Oddziel kategorie przecinkami"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:60
 msgid "Add or remove Categories"
-msgstr "Dodaj lub usuń kategorie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:61
 msgid "Choose from the most used Categories"
-msgstr "Wybierz jedną z najczęściej używanych kategorii"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:62
 msgid "Categories"
-msgstr "Kategorie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:86
 msgid "Ad Category"
-msgstr "Kategoria ogłoszenia"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:88 inc/functions/payment-functions.php:4
 #: inc/widgets/terra-categories.php:181
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:141
 msgid "Upload images and raise your chances for selling."
-msgstr "Prześlij zdjęcia i zwiększ swoje szanse na sprzedaż."
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:178
 msgid "Use selected category"
-msgstr "Użyj wybranej kategorii"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:178
 msgid "Change category"
-msgstr "Zmień kategorię"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:178
 msgid "Choose  category"
-msgstr "Wybierz kategorię"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:203
 msgid "Ads Locations"
-msgstr "Lokalizacje ogłoszeń"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:204 inc/custom-posts/ad-post-type.php:520
 msgid "Location"
-msgstr "Lokalizacja"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:205
 msgid "Search Locations"
-msgstr "Wyszukaj lokalizacje"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:206
 msgid "Popular Locations"
-msgstr "Popularne lokalizacje"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:207
 msgid "All Locations"
-msgstr "Wszystkie lokalizacje"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:208
 msgid "Parent Location"
-msgstr "Lokalizacja nadrzędna"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:209
 msgid "Parent Location:"
-msgstr "Lokalizacja nadrzędna:"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:210
 msgid "Edit Location"
-msgstr "Edytuj lokalizację"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:211
 msgid "Update Location"
-msgstr "Zaktualizuj lokalizację"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:212
 msgid "Add New Location"
-msgstr "Dodaj nową lokację"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:213
 msgid "New Location Name"
-msgstr "Nowa nazwa lokalizacji"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:214
 msgid "Separate Locations with commas"
-msgstr "Oddziel lokalizacje przecinkami"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:215
 msgid "Add or remove Locations"
-msgstr "Dodaj lub usuń lokacje"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:216
 msgid "Choose from the most used Locations"
-msgstr "Wybierz jedną z najczęściej używanych lokalizacji"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:217 inc/functions/settings.php:1160
 msgid "Locations"
-msgstr "Lokalizacje"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:235
 msgid "Ads types"
-msgstr "Typy ogłoszeń"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:236 inc/custom-posts/ad-post-type.php:462
 #: inc/functions/payment-functions.php:4
 msgid "Type"
-msgstr "Typ"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:237
 msgid "Search Types"
-msgstr "Typy wyszukiwania"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:238
 msgid "Popular Types"
-msgstr "Popularne typy"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:239
 msgid "All Types"
-msgstr "Wszystkie typy"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:240
 msgid "Parent Type"
-msgstr "Typ nadrzędny"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:241
 msgid "Parent Type:"
-msgstr "Typ nadrzędny:"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:242
 msgid "Edit Type"
-msgstr "Edytuj typ"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:243
 msgid "Update Type"
-msgstr "Zaktualizuj type"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:244
 msgid "Add New Type"
-msgstr "Dodaj nowy typ"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:245
 msgid "New Type Name"
-msgstr "Nowa nazwa typu"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:246
 msgid "Separate Types with commas"
-msgstr "Oddziel typy przecinkami"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:247
 msgid "Add or remove Types"
-msgstr "Dodaj lub usuń typy"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:248
 msgid "Choose from the most used Types"
-msgstr "Wybierz jeden z najczęściej używanych typów"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:249 inc/functions/settings.php:1223
 msgid "Types"
-msgstr "Typy"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:325 inc/custom-posts/ad-post-type.php:332
 #: inc/custom-posts/ad-post-type.php:338 inc/custom-posts/ad-post-type.php:344
 #: inc/custom-posts/ad-post-type.php:356 inc/custom-posts/ad-post-type.php:361
 #: inc/custom-posts/ad-post-type.php:376 inc/custom-posts/ad-post-type.php:386
 msgid "Price in"
-msgstr "Cena w"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:328 inc/custom-posts/ad-post-type.php:340
 #: inc/custom-posts/ad-post-type.php:346 inc/custom-posts/ad-post-type.php:352
@@ -812,126 +817,124 @@ msgstr "Cena w"
 #: inc/custom-posts/ad-post-type.php:382 inc/custom-posts/ad-post-type.php:398
 #: inc/functions/settings.php:1099
 msgid "Nothing"
-msgstr "Nic"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:407
 msgid "Additional fields"
-msgstr "Dodatkowe pola"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:416
 msgid "Fill in all required fields."
-msgstr "Wypełnij wszystkie wymagane pola."
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:422
 msgid "Description is too short."
-msgstr "Opis jest za krótki."
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:428
 msgid "Title *"
-msgstr "Tytuł*"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:429
 msgid "title - change me"
-msgstr "tytuł - zmień mnie"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:438
 msgid "Description *"
-msgstr "Opis *"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:439
 msgid "desc - change me"
-msgstr "opis"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:453
 msgid "Category *"
-msgstr "Kategoria *"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:474
 msgid "Selling type"
-msgstr "Typ sprzedaży"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:486
 msgid "Price *"
-msgstr "Cena *"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:487
 msgid "Enter price for ad."
-msgstr "Wpisz cenę ogłoszenia."
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:495
 msgid "Negotiable"
-msgstr "Do negocjacji"
+msgstr ""
 
-#: inc/custom-posts/ad-post-type.php:497 templates/default_post.php:202
-#: templates/single.php:211
+#: inc/custom-posts/ad-post-type.php:497 templates/default_post.php:205
+#: templates/single.php:216
 msgid "negotiable"
-msgstr "do negocjacji"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:503
 msgid "Gallery"
-msgstr "Galeria"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:504
 msgid "gallery - change me"
-msgstr "galeria"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:513
 msgid "Add or upload files"
-msgstr "Dodaj lub przekaż pliki"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:531
 msgid "Address"
-msgstr "Adres"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:539
 msgid "Post / ZIP code"
-msgstr "Kod pocztowy"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:546
 msgid "Expire date"
-msgstr "Data wygaśnięcia"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:561
 msgid "<span>Draft</span> (you can save part of your advert before publishing)"
 msgstr ""
-"<span> Szkic </span> (możesz zapisać część swojego ogłoszenia przed "
-"opublikowaniem)"
 
 #: inc/custom-posts/ad-post-type.php:591
 msgid "Category options"
-msgstr "Opcje kategorii"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:597
 msgid "Category image"
-msgstr "Obraz kategorii"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:605
 msgid "Add image"
-msgstr "Dodaj obrazek"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:623
 msgid "Type options"
-msgstr "Opcje typu"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:629
 msgid "Text color"
-msgstr "Kolor tekstu"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:636
 msgid "Background color"
-msgstr "Kolor tła"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:643
 msgid "Border color"
-msgstr "Kolor ramki"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:650
 msgid "Border size (px)"
-msgstr "Rozmiar obramowania (piksele)"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:662
 msgid "Use in search"
-msgstr "Użyj w wyszukiwarce"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:667 inc/functions/settings.php:304
 #: inc/functions/settings.php:441 inc/functions/settings.php:547
@@ -948,7 +951,7 @@ msgstr "Użyj w wyszukiwarce"
 #: inc/functions/settings.php:2233 inc/widgets/terra-search.php:121
 #: inc/widgets/terra-search.php:145
 msgid "Yes"
-msgstr "Tak"
+msgstr ""
 
 #: inc/custom-posts/ad-post-type.php:668 inc/functions/settings.php:303
 #: inc/functions/settings.php:440 inc/functions/settings.php:546
@@ -966,251 +969,229 @@ msgstr "Tak"
 #: inc/functions/settings.php:2232 inc/widgets/terra-search.php:120
 #: inc/widgets/terra-search.php:144
 msgid "No"
-msgstr "Nie"
+msgstr ""
 
 #: inc/favourites/includes/scripts.php:9
 msgid "You have already added this item to favourites."
-msgstr "Już dodałeś tę pozycję do ulubionych."
+msgstr ""
 
 #: inc/favourites/includes/scripts.php:10
 msgid "You have already removed this item from favourites."
-msgstr "Już usunąłeś tę pozycję z ulubionych."
+msgstr ""
 
 #: inc/favourites/includes/scripts.php:11
 msgid "Sorry, there was a problem processing your request."
-msgstr "Przepraszamy, wystąpił problem podczas przetwarzania Twojego żądania."
+msgstr ""
 
 #: inc/favourites/includes/scripts.php:12
 msgid "Log in to your account to add to favourites."
-msgstr "Zaloguj się na swoje konto, aby dodać do ulubionych."
+msgstr ""
 
 #: inc/functions/base-functions.php:173
 msgid "Search for:"
-msgstr "Szukaj:"
+msgstr ""
 
 #: inc/functions/base-functions.php:174
 msgid "Search products&hellip;"
-msgstr "Szukaj ogłoszeń&hellip;"
+msgstr ""
 
 #: inc/functions/base-functions.php:189
 msgid "All categories"
-msgstr "Wszystkie kategorie"
+msgstr ""
 
 #: inc/functions/base-functions.php:213
 msgid "Enter location&hellip;"
-msgstr "Wprowadź lokalizację &hellip;"
+msgstr ""
 
 #: inc/functions/base-functions.php:213
 msgid "Please enter minimum 3 characters."
-msgstr "Wpisz minimum 3 znaki."
+msgstr ""
 
 #: inc/functions/base-functions.php:213
 msgid "Can't find the location."
-msgstr "Nie mogę znaleźć lokalizacji."
+msgstr ""
 
 #: inc/functions/base-functions.php:248
 msgctxt "search more"
 msgid "More"
-msgstr "Więcej"
+msgstr ""
 
 #: inc/functions/base-functions.php:293
 msgid "Selling Type:"
-msgstr "Typ sprzedaży:"
+msgstr ""
 
 #: inc/functions/base-functions.php:295
 msgid "Select"
-msgstr "Wybierz"
+msgstr ""
 
 #: inc/functions/base-functions.php:302 inc/functions/settings.php:1097
 msgid "For free"
-msgstr "Za darmo"
+msgstr ""
 
 #: inc/functions/base-functions.php:332
 msgctxt "search price"
 msgid "Price"
-msgstr "Cena"
+msgstr ""
 
 #: inc/functions/base-functions.php:359
 msgctxt "search more"
 msgid "Clear"
-msgstr "Wyczyść"
+msgstr ""
 
 #: inc/functions/base-functions.php:364
 msgctxt "submit button"
 msgid "Search"
-msgstr "Szukaj"
+msgstr ""
 
 #: inc/functions/base-functions.php:561 inc/functions/base-functions.php:613
 msgid "second"
-msgstr "sekunda"
+msgstr ""
 
 #: inc/functions/base-functions.php:562 inc/functions/base-functions.php:614
 msgid "minute"
-msgstr "minuta"
+msgstr ""
 
 #: inc/functions/base-functions.php:563 inc/functions/base-functions.php:615
 msgid "hour"
-msgstr "godzina"
+msgstr ""
 
 #: inc/functions/base-functions.php:564 inc/functions/base-functions.php:616
 msgid "day"
-msgstr "dzień"
+msgstr ""
 
 #: inc/functions/base-functions.php:565 inc/functions/base-functions.php:617
 msgid "week"
-msgstr "tydzień"
+msgstr ""
 
 #: inc/functions/base-functions.php:566 inc/functions/base-functions.php:618
 msgid "month"
-msgstr "miesiąc"
+msgstr ""
 
 #: inc/functions/base-functions.php:567 inc/functions/base-functions.php:619
 msgid "year"
-msgstr "rok"
+msgstr ""
 
 #: inc/functions/base-functions.php:568 inc/functions/base-functions.php:620
 msgid "decade"
-msgstr "dekada"
+msgstr ""
 
 #: inc/functions/base-functions.php:571 inc/functions/base-functions.php:623
 msgid "seconds"
-msgstr "sekundy"
+msgstr ""
 
 #: inc/functions/base-functions.php:572 inc/functions/base-functions.php:624
 msgid "minutes"
-msgstr "minut"
+msgstr ""
 
 #: inc/functions/base-functions.php:573 inc/functions/base-functions.php:625
 msgid "hours"
-msgstr "godzin"
+msgstr ""
 
 #: inc/functions/base-functions.php:574 inc/functions/base-functions.php:626
 msgid "days"
-msgstr "dni"
+msgstr ""
 
 #: inc/functions/base-functions.php:575 inc/functions/base-functions.php:627
 msgid "weeks"
-msgstr "tygodni"
+msgstr ""
 
 #: inc/functions/base-functions.php:576 inc/functions/base-functions.php:628
 msgid "months"
-msgstr "miesięcy"
+msgstr ""
 
 #: inc/functions/base-functions.php:577 inc/functions/base-functions.php:629
 msgid "years"
-msgstr "lat"
+msgstr ""
 
 #: inc/functions/base-functions.php:578 inc/functions/base-functions.php:630
 msgid "decades"
-msgstr "dekady"
+msgstr ""
 
 #: inc/functions/base-functions.php:581
 msgid "ago"
-msgstr "temu"
+msgstr ""
 
 #: inc/functions/base-functions.php:633
 msgid "from now"
-msgstr "od teraz"
+msgstr ""
 
 #: inc/functions/base-functions.php:679
 msgid "Prev"
-msgstr "Poprzedni"
+msgstr ""
 
 #: inc/functions/base-functions.php:684
 msgid "Next"
-msgstr "Następny"
+msgstr ""
 
 #: inc/functions/base-functions.php:694
 msgid "Message was sent successfully."
-msgstr "Wiadomość została wysłana pomyślnie."
+msgstr ""
 
 #: inc/functions/base-functions.php:700
 msgid "Message could not be sent."
-msgstr "Nie można wysłać wiadomości."
+msgstr ""
 
 #: inc/functions/base-functions.php:888
 msgid "You are here"
-msgstr "Jesteś tutaj"
+msgstr ""
 
 #: inc/functions/base-functions.php:889
 msgid "Home"
-msgstr "Strona główna"
+msgstr ""
 
 #: inc/functions/base-functions.php:1434
 msgid ""
 "<strong>Add advert</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brakuje strony <strong> Dodaj ogłoszenie </strong> lub jej uproszczona nazwa "
-"została zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1437
 msgid ""
 "<strong>Edit advert</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brak strony <strong> Edytuj ogłoszenie </strong> lub jej uproszczona nazwa "
-"została zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1440
 msgid ""
 "<strong>Edit profile</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brak strony <strong> Edytuj profil </strong> lub jej uproszczona nazwa "
-"została zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1443
 msgid ""
 "<strong>Favourite ads</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brak strony <strong> Ulubione ogłoszenia </strong> lub jej uproszczona nazwa "
-"została zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1446
 msgid ""
 "<strong>Forgot password</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brak strony <strong> Nie pamiętam hasła </strong> lub jej uproszczona nazwa "
-"została zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1449
 msgid ""
 "<strong>Login</strong> page is missing or its slug was changed via editing a "
 "page."
 msgstr ""
-"Brak strony <strong> Logowanie </strong> lub jej uproszczona nazwa została "
-"zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1452
 msgid ""
 "<strong>Registration</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brak strony <strong> Rejestracja </strong> lub jej uproszczona nazwa została "
-"zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1455
 msgid ""
 "<strong>My submissions</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brak strony <strong> Moje ogłoszenia </strong> lub jej uproszczona nazwa "
-"została zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1458
-#, fuzzy
-#| msgid ""
-#| "<strong>My submissions</strong> page is missing or its slug was changed "
-#| "via editing a page."
 msgid ""
 "<strong>My payments</strong> page is missing or its slug was changed via "
 "editing a page."
 msgstr ""
-"Brak strony <strong> Moje ogłoszenia </strong> lub jej uproszczona nazwa "
-"została zmieniona przez edycję strony."
 
 #: inc/functions/base-functions.php:1462
 msgid ""
@@ -1218,300 +1199,275 @@ msgid ""
 "Instead, use <strong>Slugs</strong> settings for each page (view) in "
 "<strong>SEO</strong> and assign the correct page for each view."
 msgstr ""
-"Jeśli zmieniłeś uproszczoną nazwę poprzez edycję strony, nie będzie ona "
-"działać poprawnie. Zamiast tego użyj ustawień <strong> Uproszczone nazwy </"
-"strong> dla każdej strony (widoku) w zakłądce <strong> SEO </strong> i "
-"przypisz odpowiednią stronę do każdego widoku."
 
 #: inc/functions/base-functions.php:1463
 msgid ""
 "If you removed the default page, it can be recreated by following steps of "
 "deactivating and activating the TerraClassifieds plugin."
 msgstr ""
-"Jeśli usunąłeś domyślną stronę, możesz ją odtworzyć, wykonując dezaktywację "
-"i aktywację wtyczki TerraClassifieds."
 
 #: inc/functions/cron-functions.php:20
 msgid "Every 15 seconds"
-msgstr "Co 15 sekund"
+msgstr ""
 
 #: inc/functions/cron-functions.php:25
 msgid "Every 3611 seconds"
-msgstr "Co 3611 sekund"
+msgstr ""
+
+#: inc/functions/cron-functions.php:139
+#: inc/functions/notification-functions.php:282
+#: inc/functions/notification-functions.php:287
+#: inc/functions/settings.php:2371
+msgid "Free"
+msgstr ""
 
 #: inc/functions/custom-post-status-archived.php:93
 #: inc/functions/custom-post-status-rejected.php:67
 #, php-format
 msgid " <span class=\"count\">(%s)</span>"
 msgid_plural " <span class=\"count\">(%s)</span>"
-msgstr[0] " <span class=\"count\">(%s)</span>"
-msgstr[1] " <span class=\"count\">(%s)</span>"
-msgstr[2] " <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
 
 #: inc/functions/custom-post-status-archived.php:135
-#, fuzzy
-#| msgid "Archived"
 msgid "Save Archived"
-msgstr "Zarchiwizowane"
+msgstr ""
 
 #: inc/functions/custom-post-status-archived.php:166
-#, fuzzy
-#| msgid "Archived"
 msgctxt "terraclassifieds"
 msgid "Archived"
-msgstr "Zarchiwizowane"
+msgstr ""
 
 #: inc/functions/custom-post-status-archived.php:168
 #, php-format
 msgid " Archived <span class=\"count\">(%s)</span>"
 msgid_plural " Archived <span class=\"count\">(%s)</span>"
-msgstr[0] " Zarchiwizowane <span class=\"count\">(%s)</span>"
-msgstr[1] " Archived <span class=\"count\">(%s)</span>"
-msgstr[2] " Archived <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
 
 #: inc/functions/custom-post-status-rejected.php:109
-#, fuzzy
-#| msgid "Rejected"
 msgid "Save Rejected"
-msgstr "Odrzucone"
+msgstr ""
 
 #: inc/functions/custom-post-status-rejected.php:140
-#, fuzzy
-#| msgid "Rejected"
 msgctxt "terraclassifieds"
 msgid "Rejected"
-msgstr "Odrzucone"
+msgstr ""
 
 #: inc/functions/custom-post-status-rejected.php:142
 #, php-format
 msgid " Rejected <span class=\"count\">(%s)</span>"
 msgid_plural " Rejected <span class=\"count\">(%s)</span>"
-msgstr[0] " Odrzucone <span class=\"count\">(%s)</span>"
-msgstr[1] " Rejected <span class=\"count\">(%s)</span>"
-msgstr[2] " Rejected <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
 
 #: inc/functions/notification-functions.php:217
 #: inc/functions/notification-functions.php:253
 msgid "Expressed consents:"
-msgstr "Wyrażone zgody:"
-
-#: inc/functions/notification-functions.php:282
-#: inc/functions/notification-functions.php:287 inc/functions/settings.php:2371
-msgid "Free"
-msgstr "Darmowe"
+msgstr ""
 
 #: inc/functions/notification-functions.php:295
 msgid "Not paid"
-msgstr "Niezapłacone"
+msgstr ""
 
 #: inc/functions/notification-functions.php:369
 msgid "You choosed offline payment."
-msgstr "Wybrałeś płatność offline."
+msgstr ""
 
-#: inc/functions/notification-functions.php:370 templates/default_post.php:150
-#: templates/single.php:158
+#: inc/functions/notification-functions.php:370 templates/default_post.php:153
+#: templates/single.php:163
 msgid "Advert ID:"
-msgstr "ID ogłoszenia:"
+msgstr ""
 
 #: inc/functions/notification-functions.php:371
 msgid "Payment information:"
-msgstr "Informacje o płatności:"
+msgstr ""
 
 #: inc/functions/payment-functions.php:4 inc/functions/settings.php:385
 #: inc/widgets/terra-categories.php:180
 msgid "Name"
-msgstr "Nazwa"
+msgstr ""
 
 #: inc/functions/payment-functions.php:4
-#, fuzzy
-#| msgid "Username"
 msgid "User"
-msgstr "Nazwa użytkownika"
+msgstr ""
 
 #: inc/functions/payment-functions.php:4
 msgid "IP Address"
-msgstr "Adres IP"
+msgstr ""
 
 #: inc/functions/payment-functions.php:19
 msgid "Select All"
-msgstr "Wybierz wszystkie"
+msgstr ""
 
 #: inc/functions/payment-functions.php:88
 msgid "First page"
-msgstr "Pierwsza strona"
+msgstr ""
 
 #: inc/functions/payment-functions.php:94
 msgid "Previous page"
-msgstr "Poprzednia strona"
+msgstr ""
 
 #: inc/functions/payment-functions.php:101
 #, php-format
 msgctxt "paging"
 msgid "%1$s of %2$s"
-msgstr "%1$s z %2$s"
+msgstr ""
 
 #: inc/functions/payment-functions.php:103
 msgid "Current Page"
-msgstr "Obecna strona"
+msgstr ""
 
 #: inc/functions/payment-functions.php:114
 msgid "Next page"
-msgstr "Następna strona"
+msgstr ""
 
 #: inc/functions/payment-functions.php:120
 msgid "Last page"
-msgstr "Ostatnia strona"
-
-#: inc/functions/payment-functions.php:254
-msgid "Payments list"
-msgstr "Lista płatności"
+msgstr ""
 
 #: inc/functions/payment-functions.php:257
-#: inc/functions/payment-functions.php:259
+msgid "Payments list"
+msgstr ""
+
+#: inc/functions/payment-functions.php:260
+#: inc/functions/payment-functions.php:262
 msgid "Search"
-msgstr "Szukaj"
+msgstr ""
 
-#: inc/functions/payment-functions.php:264
+#: inc/functions/payment-functions.php:267
 msgid " - Change Status - "
-msgstr " - Zmień status - "
+msgstr ""
 
-#: inc/functions/payment-functions.php:269
+#: inc/functions/payment-functions.php:272
 msgid "Apply"
-msgstr "Zastosuj"
+msgstr ""
 
-#: inc/functions/payment-functions.php:273
+#: inc/functions/payment-functions.php:276
 msgid " - Select Type - "
-msgstr " - Wybierz typ - "
+msgstr ""
 
-#: inc/functions/payment-functions.php:279
+#: inc/functions/payment-functions.php:282
 msgid " - Select Status - "
-msgstr " - Wybierz status - "
+msgstr ""
 
-#: inc/functions/payment-functions.php:289
+#: inc/functions/payment-functions.php:292
 msgid "Filter"
-msgstr "Filtr"
+msgstr ""
 
 #: inc/functions/settings.php:94
 msgid ""
 "The corresponded page was removed or its slug was changed via editing a page."
 "<br />Do not leave this field empty, assign the correct page for this view."
 msgstr ""
-"Odpowiednia strona została usunięta lub jej uproszczona nazwa została "
-"zmieniona poprzez edycję strony. <br /> Nie zostawiaj tego pola pustego, "
-"przypisz właściwą stronę dla tego widoku."
 
 #: inc/functions/settings.php:95
 msgid "For security reason, your website uses the following page: "
 msgstr ""
-"Ze względów bezpieczeństwa Twoja witryna korzysta z następującej strony: "
 
 #: inc/functions/settings.php:96
 msgid ""
 "<br />Do not leave this field empty, assign the correct page for this view."
 msgstr ""
-"<br />Nie zostawiaj tego pola pustego, przypisz właściwą stronę dla tego "
-"widoku."
 
 #: inc/functions/settings.php:197 inc/widgets/terra-menu.php:73
 msgid "Settings"
-msgstr "Ustawienia"
+msgstr ""
 
 #: inc/functions/settings.php:209
 msgid "Remember to add consents in GDPR plugin -> Settings."
-msgstr "Pamiętaj, aby dodać zgody we wtyczce RODO -> Ustawienia."
+msgstr ""
 
 #: inc/functions/settings.php:211
-#, fuzzy
-#| msgid "<a href=\"https://wordpress.org/plugins/gdpr/\">GDPR plugin</a>"
 msgid ""
 "You need to install and activate <a href=\"https://wordpress.org/plugins/"
 "gdpr/\">GDPR plugin</a>"
-msgstr "<a href=\"https://wordpress.org/plugins/gdpr/\">Wtyczka GDPR</a>"
+msgstr ""
 
 #: inc/functions/settings.php:227 inc/functions/settings.php:374
 #: inc/functions/settings.php:1531
 msgid "General"
-msgstr "Ogólne"
+msgstr ""
 
 #: inc/functions/settings.php:231
 msgid "Currency / price settings"
-msgstr "Ustawienia waluty / ceny"
+msgstr ""
 
 #: inc/functions/settings.php:237
 msgid "Currency"
-msgstr "Waluta"
+msgstr ""
 
 #: inc/functions/settings.php:244
 msgid "Unit position"
-msgstr "Pozycja jednostki"
+msgstr ""
 
 #: inc/functions/settings.php:249
 msgid "Before price"
-msgstr "Przed ceną"
+msgstr ""
 
 #: inc/functions/settings.php:250
 msgid "After price"
-msgstr "Po cenie"
+msgstr ""
 
 #: inc/functions/settings.php:257
 msgid "Thousand separator"
-msgstr "Separator tysięcy"
+msgstr ""
 
 #: inc/functions/settings.php:262 inc/functions/settings.php:384
 msgid "None"
-msgstr "Żaden"
+msgstr ""
 
 #: inc/functions/settings.php:263
 msgid "Space"
-msgstr "Miejsce"
+msgstr ""
 
 #: inc/functions/settings.php:264 inc/functions/settings.php:276
 msgid "Comma"
-msgstr "Przecinek"
+msgstr ""
 
 #: inc/functions/settings.php:265 inc/functions/settings.php:277
 msgid "Dot"
-msgstr "Kropka"
+msgstr ""
 
 #: inc/functions/settings.php:271
 msgid "Decimal separator"
-msgstr "Separator liczb dziesiętnych"
+msgstr ""
 
 #: inc/functions/settings.php:283
 msgid "Decimal points"
-msgstr "Separatory dziesiętne"
+msgstr ""
 
 #: inc/functions/settings.php:288
 msgid "0"
-msgstr "0"
+msgstr ""
 
 #: inc/functions/settings.php:289 inc/widgets/terra-categories.php:165
 msgid "1"
-msgstr "1"
+msgstr ""
 
 #: inc/functions/settings.php:290 inc/widgets/terra-categories.php:166
 msgid "2"
-msgstr "2"
+msgstr ""
 
 #: inc/functions/settings.php:291 inc/widgets/terra-categories.php:167
 msgid "3"
-msgstr "3"
+msgstr ""
 
 #: inc/functions/settings.php:292 inc/widgets/terra-categories.php:168
 msgid "4"
-msgstr "4"
+msgstr ""
 
 #: inc/functions/settings.php:298
 msgid "Allow \"0\" price"
-msgstr "Pozwalaj na cenę \"0\""
+msgstr ""
 
 #: inc/functions/settings.php:306
 msgid "Select if the user can add price equal zero."
-msgstr "Wybierz, czy użytkownik może dodać cenę równą zero."
+msgstr ""
 
 #: inc/functions/settings.php:310
 msgid "Author page"
-msgstr "Strona autora"
+msgstr ""
 
 #: inc/functions/settings.php:321 inc/functions/settings.php:340
 #: inc/functions/settings.php:413 inc/functions/settings.php:424
@@ -1521,7 +1477,7 @@ msgstr "Strona autora"
 #: inc/widgets/terra-search.php:112 inc/widgets/terra-search.php:128
 #: inc/widgets/terra-search.php:152 inc/widgets/terra-search.php:160
 msgid "Hide"
-msgstr "Ukryj"
+msgstr ""
 
 #: inc/functions/settings.php:322 inc/functions/settings.php:341
 #: inc/functions/settings.php:414 inc/functions/settings.php:425
@@ -1531,111 +1487,107 @@ msgstr "Ukryj"
 #: inc/widgets/terra-search.php:113 inc/widgets/terra-search.php:129
 #: inc/widgets/terra-search.php:153 inc/widgets/terra-search.php:161
 msgid "Show"
-msgstr "Pokaż"
+msgstr ""
 
 #: inc/functions/settings.php:329 inc/functions/settings.php:1313
 #: inc/functions/settings.php:2089
 msgid "Other settings"
-msgstr "Inne ustawienia"
+msgstr ""
 
 #: inc/functions/settings.php:335
 msgid "Hits"
-msgstr "Wyświetlenia"
+msgstr ""
 
 #: inc/functions/settings.php:345
 msgid ""
 "If you set \"Show\", number of ad's hits will be visible on advert list and "
 "advert view"
 msgstr ""
-"Jeśli ustawisz opcję „Pokaż”, liczba wyświetleń ogłoszenia będzie widoczna "
-"na liście ogłoszeń i widoku ogłoszenia"
 
 #: inc/functions/settings.php:349
 msgid "Date order"
-msgstr "Kolejność daty"
+msgstr ""
 
 #: inc/functions/settings.php:354
 msgid "Number - Period - Ago"
-msgstr "Liczba - Okres - Temu"
+msgstr ""
 
 #: inc/functions/settings.php:355
 msgid "Period - Number - Ago"
-msgstr "Okres - Liczba - Temu"
+msgstr ""
 
 #: inc/functions/settings.php:356
 msgid "Ago - Number - Period"
-msgstr "Temu - Liczba - Okres"
+msgstr ""
 
 #: inc/functions/settings.php:357
 msgid "Number - Ago - Period"
-msgstr "Liczba - Temu - Okres"
+msgstr ""
 
 #: inc/functions/settings.php:358
 msgid "Period - Ago - Number"
-msgstr "Okres - Temu - liczba"
+msgstr ""
 
 #: inc/functions/settings.php:359
 msgid "Ago - Period - Number"
-msgstr "Temu - Okres - Liczba"
+msgstr ""
 
 #: inc/functions/settings.php:362
 msgid ""
 "Select the most suitable date ordering for your language. The approximate "
 "time of adding an ad on the ads list."
 msgstr ""
-"Wybierz najbardziej odpowiednią datę dla swojego języka. Przybliżony czas "
-"dodania ogłoszenia do listy ogłoszeń."
 
 #: inc/functions/settings.php:370
 msgid "Category view"
-msgstr "Widok kategorii"
+msgstr ""
 
 #: inc/functions/settings.php:380
 msgid "Show category on the archive page"
-msgstr "Pokaż kategorię w widoku \"archive\""
+msgstr ""
 
 #: inc/functions/settings.php:386
 msgid "Description"
-msgstr "Opis"
+msgstr ""
 
 #: inc/functions/settings.php:387
 msgid "Image"
-msgstr "Obraz"
+msgstr ""
 
 #: inc/functions/settings.php:388
 msgid "Subcategories"
-msgstr "Podkategorie"
+msgstr ""
 
 #: inc/functions/settings.php:394
 msgid "Items per page"
-msgstr "Ilość elemntów na stronie"
+msgstr ""
 
 #: inc/functions/settings.php:401
 msgid "Text limit (number of words)"
-msgstr "Limit tekstu (liczba słów)"
+msgstr ""
 
 #: inc/functions/settings.php:408 inc/functions/settings.php:928
 msgid "Add to favourites"
-msgstr "Dodaj do ulubionych"
+msgstr ""
 
 #: inc/functions/settings.php:419 inc/functions/settings.php:984
 msgid "Ad's author"
-msgstr "Autor ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:430 inc/functions/settings.php:436
 msgid "Search form"
-msgstr "Formularz wyszukiwania"
+msgstr ""
 
 #: inc/functions/settings.php:448
 msgid "Search input size"
-msgstr "Rozmiar pola wyszukiwania"
+msgstr ""
 
 #: inc/functions/settings.php:454 inc/functions/settings.php:584
 #: inc/functions/settings.php:702 inc/functions/settings.php:832
 #: inc/widgets/terra-search.php:168 inc/widgets/terra-search.php:242
 #: inc/widgets/terra-search.php:316 inc/widgets/terra-search.php:390
 msgid "Large Desktop ( ≥ 1200px )"
-msgstr "Duży ekran (≥ 1200 pikseli)"
+msgstr ""
 
 #: inc/functions/settings.php:459 inc/functions/settings.php:589
 #: inc/functions/settings.php:707 inc/functions/settings.php:837
@@ -1643,7 +1595,7 @@ msgstr "Duży ekran (≥ 1200 pikseli)"
 #: inc/widgets/terra-search.php:318 inc/widgets/terra-search.php:392
 #, php-format
 msgid "100% - col-lg-12"
-msgstr "100% - col-lg-12"
+msgstr ""
 
 #: inc/functions/settings.php:460 inc/functions/settings.php:590
 #: inc/functions/settings.php:708 inc/functions/settings.php:838
@@ -1651,7 +1603,7 @@ msgstr "100% - col-lg-12"
 #: inc/widgets/terra-search.php:319 inc/widgets/terra-search.php:393
 #, php-format
 msgid "91% - col-lg-11"
-msgstr "91% - col-lg-11"
+msgstr ""
 
 #: inc/functions/settings.php:461 inc/functions/settings.php:591
 #: inc/functions/settings.php:709 inc/functions/settings.php:839
@@ -1659,7 +1611,7 @@ msgstr "91% - col-lg-11"
 #: inc/widgets/terra-search.php:320 inc/widgets/terra-search.php:394
 #, php-format
 msgid "83% - col-lg-10"
-msgstr "83% - col-lg-10"
+msgstr ""
 
 #: inc/functions/settings.php:462 inc/functions/settings.php:592
 #: inc/functions/settings.php:710 inc/functions/settings.php:840
@@ -1667,7 +1619,7 @@ msgstr "83% - col-lg-10"
 #: inc/widgets/terra-search.php:321 inc/widgets/terra-search.php:395
 #, php-format
 msgid "75% - col-lg-9"
-msgstr "75% - col-lg-9"
+msgstr ""
 
 #: inc/functions/settings.php:463 inc/functions/settings.php:593
 #: inc/functions/settings.php:711 inc/functions/settings.php:841
@@ -1675,7 +1627,7 @@ msgstr "75% - col-lg-9"
 #: inc/widgets/terra-search.php:322 inc/widgets/terra-search.php:396
 #, php-format
 msgid "66% - col-lg-8"
-msgstr "66% - col-lg-8"
+msgstr ""
 
 #: inc/functions/settings.php:464 inc/functions/settings.php:594
 #: inc/functions/settings.php:712 inc/functions/settings.php:842
@@ -1683,7 +1635,7 @@ msgstr "66% - col-lg-8"
 #: inc/widgets/terra-search.php:323 inc/widgets/terra-search.php:397
 #, php-format
 msgid "58% - col-lg-7"
-msgstr "58% - col-lg-7"
+msgstr ""
 
 #: inc/functions/settings.php:465 inc/functions/settings.php:595
 #: inc/functions/settings.php:713 inc/functions/settings.php:843
@@ -1691,7 +1643,7 @@ msgstr "58% - col-lg-7"
 #: inc/widgets/terra-search.php:324 inc/widgets/terra-search.php:398
 #, php-format
 msgid "50% - col-lg-6"
-msgstr "50% - col-lg-6"
+msgstr ""
 
 #: inc/functions/settings.php:466 inc/functions/settings.php:596
 #: inc/functions/settings.php:714 inc/functions/settings.php:844
@@ -1699,7 +1651,7 @@ msgstr "50% - col-lg-6"
 #: inc/widgets/terra-search.php:325 inc/widgets/terra-search.php:399
 #, php-format
 msgid "41% - col-lg-5"
-msgstr "41% - col-lg-5"
+msgstr ""
 
 #: inc/functions/settings.php:467 inc/functions/settings.php:597
 #: inc/functions/settings.php:715 inc/functions/settings.php:845
@@ -1707,7 +1659,7 @@ msgstr "41% - col-lg-5"
 #: inc/widgets/terra-search.php:326 inc/widgets/terra-search.php:400
 #, php-format
 msgid "33% - col-lg-4"
-msgstr "33% - col-lg-4"
+msgstr ""
 
 #: inc/functions/settings.php:468 inc/functions/settings.php:598
 #: inc/functions/settings.php:716 inc/functions/settings.php:846
@@ -1715,7 +1667,7 @@ msgstr "33% - col-lg-4"
 #: inc/widgets/terra-search.php:327 inc/widgets/terra-search.php:401
 #, php-format
 msgid "25% - col-lg-3"
-msgstr "25% - col-lg-3"
+msgstr ""
 
 #: inc/functions/settings.php:469 inc/functions/settings.php:599
 #: inc/functions/settings.php:717 inc/functions/settings.php:847
@@ -1723,7 +1675,7 @@ msgstr "25% - col-lg-3"
 #: inc/widgets/terra-search.php:328 inc/widgets/terra-search.php:402
 #, php-format
 msgid "16% - col-lg-2"
-msgstr "16% - col-lg-2"
+msgstr ""
 
 #: inc/functions/settings.php:470 inc/functions/settings.php:600
 #: inc/functions/settings.php:718 inc/functions/settings.php:848
@@ -1731,14 +1683,14 @@ msgstr "16% - col-lg-2"
 #: inc/widgets/terra-search.php:329 inc/widgets/terra-search.php:403
 #, php-format
 msgid "8% - col-lg-1"
-msgstr "8% - col-lg-1"
+msgstr ""
 
 #: inc/functions/settings.php:476 inc/functions/settings.php:606
 #: inc/functions/settings.php:724 inc/functions/settings.php:854
 #: inc/widgets/terra-search.php:186 inc/widgets/terra-search.php:260
 #: inc/widgets/terra-search.php:334 inc/widgets/terra-search.php:408
 msgid "Desktop ( ≥ 992px )"
-msgstr "Desktop ( ≥ 992px )"
+msgstr ""
 
 #: inc/functions/settings.php:481 inc/functions/settings.php:611
 #: inc/functions/settings.php:729 inc/functions/settings.php:859
@@ -1746,7 +1698,7 @@ msgstr "Desktop ( ≥ 992px )"
 #: inc/widgets/terra-search.php:336 inc/widgets/terra-search.php:410
 #, php-format
 msgid "100% - col-md-12"
-msgstr "100% - col-md-12"
+msgstr ""
 
 #: inc/functions/settings.php:482 inc/functions/settings.php:612
 #: inc/functions/settings.php:730 inc/functions/settings.php:860
@@ -1754,7 +1706,7 @@ msgstr "100% - col-md-12"
 #: inc/widgets/terra-search.php:337 inc/widgets/terra-search.php:411
 #, php-format
 msgid "91% - col-md-11"
-msgstr "91% - col-md-11"
+msgstr ""
 
 #: inc/functions/settings.php:483 inc/functions/settings.php:613
 #: inc/functions/settings.php:731 inc/functions/settings.php:861
@@ -1762,7 +1714,7 @@ msgstr "91% - col-md-11"
 #: inc/widgets/terra-search.php:338 inc/widgets/terra-search.php:412
 #, php-format
 msgid "83% - col-md-10"
-msgstr "83% - col-md-10"
+msgstr ""
 
 #: inc/functions/settings.php:484 inc/functions/settings.php:614
 #: inc/functions/settings.php:732 inc/functions/settings.php:862
@@ -1770,7 +1722,7 @@ msgstr "83% - col-md-10"
 #: inc/widgets/terra-search.php:339 inc/widgets/terra-search.php:413
 #, php-format
 msgid "75% - col-md-9"
-msgstr "75% - col-md-9"
+msgstr ""
 
 #: inc/functions/settings.php:485 inc/functions/settings.php:615
 #: inc/functions/settings.php:733 inc/functions/settings.php:863
@@ -1778,7 +1730,7 @@ msgstr "75% - col-md-9"
 #: inc/widgets/terra-search.php:340 inc/widgets/terra-search.php:414
 #, php-format
 msgid "66% - col-md-8"
-msgstr "66% - col-md-8"
+msgstr ""
 
 #: inc/functions/settings.php:486 inc/functions/settings.php:616
 #: inc/functions/settings.php:734 inc/functions/settings.php:864
@@ -1786,7 +1738,7 @@ msgstr "66% - col-md-8"
 #: inc/widgets/terra-search.php:341 inc/widgets/terra-search.php:415
 #, php-format
 msgid "58% - col-md-7"
-msgstr "58% - col-md-7"
+msgstr ""
 
 #: inc/functions/settings.php:487 inc/functions/settings.php:617
 #: inc/functions/settings.php:735 inc/functions/settings.php:865
@@ -1794,7 +1746,7 @@ msgstr "58% - col-md-7"
 #: inc/widgets/terra-search.php:342 inc/widgets/terra-search.php:416
 #, php-format
 msgid "50% - col-md-6"
-msgstr "50% - col-md-6"
+msgstr ""
 
 #: inc/functions/settings.php:488 inc/functions/settings.php:618
 #: inc/functions/settings.php:736 inc/functions/settings.php:866
@@ -1802,7 +1754,7 @@ msgstr "50% - col-md-6"
 #: inc/widgets/terra-search.php:343 inc/widgets/terra-search.php:417
 #, php-format
 msgid "41% - col-md-5"
-msgstr "41% - col-md-5"
+msgstr ""
 
 #: inc/functions/settings.php:489 inc/functions/settings.php:619
 #: inc/functions/settings.php:737 inc/functions/settings.php:867
@@ -1810,7 +1762,7 @@ msgstr "41% - col-md-5"
 #: inc/widgets/terra-search.php:344 inc/widgets/terra-search.php:418
 #, php-format
 msgid "33% - col-md-4"
-msgstr "33% - col-md-4"
+msgstr ""
 
 #: inc/functions/settings.php:490 inc/functions/settings.php:620
 #: inc/functions/settings.php:738 inc/functions/settings.php:868
@@ -1818,7 +1770,7 @@ msgstr "33% - col-md-4"
 #: inc/widgets/terra-search.php:345 inc/widgets/terra-search.php:419
 #, php-format
 msgid "25% - col-md-3"
-msgstr "25% - col-md-3"
+msgstr ""
 
 #: inc/functions/settings.php:491 inc/functions/settings.php:621
 #: inc/functions/settings.php:739 inc/functions/settings.php:869
@@ -1826,7 +1778,7 @@ msgstr "25% - col-md-3"
 #: inc/widgets/terra-search.php:346 inc/widgets/terra-search.php:420
 #, php-format
 msgid "16% - col-md-2"
-msgstr "16% - col-md-2"
+msgstr ""
 
 #: inc/functions/settings.php:492 inc/functions/settings.php:622
 #: inc/functions/settings.php:740 inc/functions/settings.php:870
@@ -1834,14 +1786,14 @@ msgstr "16% - col-md-2"
 #: inc/widgets/terra-search.php:347 inc/widgets/terra-search.php:421
 #, php-format
 msgid "8% - col-md-1"
-msgstr "8% - col-md-1"
+msgstr ""
 
 #: inc/functions/settings.php:498 inc/functions/settings.php:628
 #: inc/functions/settings.php:746 inc/functions/settings.php:876
 #: inc/widgets/terra-search.php:204 inc/widgets/terra-search.php:278
 #: inc/widgets/terra-search.php:352 inc/widgets/terra-search.php:426
 msgid "Tablet ( ≥ 768px )"
-msgstr "Tablet ( ≥ 768px )"
+msgstr ""
 
 #: inc/functions/settings.php:503 inc/functions/settings.php:633
 #: inc/functions/settings.php:751 inc/functions/settings.php:881
@@ -1849,7 +1801,7 @@ msgstr "Tablet ( ≥ 768px )"
 #: inc/widgets/terra-search.php:354 inc/widgets/terra-search.php:428
 #, php-format
 msgid "100% - col-sm-12"
-msgstr "100% - col-sm-12"
+msgstr ""
 
 #: inc/functions/settings.php:504 inc/functions/settings.php:634
 #: inc/functions/settings.php:752 inc/functions/settings.php:882
@@ -1857,7 +1809,7 @@ msgstr "100% - col-sm-12"
 #: inc/widgets/terra-search.php:355 inc/widgets/terra-search.php:429
 #, php-format
 msgid "91% - col-sm-11"
-msgstr "91% - col-sm-11"
+msgstr ""
 
 #: inc/functions/settings.php:505 inc/functions/settings.php:635
 #: inc/functions/settings.php:753 inc/functions/settings.php:883
@@ -1865,7 +1817,7 @@ msgstr "91% - col-sm-11"
 #: inc/widgets/terra-search.php:356 inc/widgets/terra-search.php:430
 #, php-format
 msgid "83% - col-sm-10"
-msgstr "83% - col-sm-10"
+msgstr ""
 
 #: inc/functions/settings.php:506 inc/functions/settings.php:636
 #: inc/functions/settings.php:754 inc/functions/settings.php:884
@@ -1873,7 +1825,7 @@ msgstr "83% - col-sm-10"
 #: inc/widgets/terra-search.php:357 inc/widgets/terra-search.php:431
 #, php-format
 msgid "75% - col-sm-9"
-msgstr "75% - col-sm-9"
+msgstr ""
 
 #: inc/functions/settings.php:507 inc/functions/settings.php:637
 #: inc/functions/settings.php:755 inc/functions/settings.php:885
@@ -1881,7 +1833,7 @@ msgstr "75% - col-sm-9"
 #: inc/widgets/terra-search.php:358 inc/widgets/terra-search.php:432
 #, php-format
 msgid "66% - col-sm-8"
-msgstr "66% - col-sm-8"
+msgstr ""
 
 #: inc/functions/settings.php:508 inc/functions/settings.php:638
 #: inc/functions/settings.php:756 inc/functions/settings.php:886
@@ -1889,7 +1841,7 @@ msgstr "66% - col-sm-8"
 #: inc/widgets/terra-search.php:359 inc/widgets/terra-search.php:433
 #, php-format
 msgid "58% - col-sm-7"
-msgstr "58% - col-sm-7"
+msgstr ""
 
 #: inc/functions/settings.php:509 inc/functions/settings.php:639
 #: inc/functions/settings.php:757 inc/functions/settings.php:887
@@ -1897,7 +1849,7 @@ msgstr "58% - col-sm-7"
 #: inc/widgets/terra-search.php:360 inc/widgets/terra-search.php:434
 #, php-format
 msgid "50% - col-sm-6"
-msgstr "50% - col-sm-6"
+msgstr ""
 
 #: inc/functions/settings.php:510 inc/functions/settings.php:640
 #: inc/functions/settings.php:758 inc/functions/settings.php:888
@@ -1905,7 +1857,7 @@ msgstr "50% - col-sm-6"
 #: inc/widgets/terra-search.php:361 inc/widgets/terra-search.php:435
 #, php-format
 msgid "41% - col-sm-5"
-msgstr "41% - col-sm-5"
+msgstr ""
 
 #: inc/functions/settings.php:511 inc/functions/settings.php:641
 #: inc/functions/settings.php:759 inc/functions/settings.php:889
@@ -1913,7 +1865,7 @@ msgstr "41% - col-sm-5"
 #: inc/widgets/terra-search.php:362 inc/widgets/terra-search.php:436
 #, php-format
 msgid "33% - col-sm-4"
-msgstr "33% - col-sm-4"
+msgstr ""
 
 #: inc/functions/settings.php:512 inc/functions/settings.php:642
 #: inc/functions/settings.php:760 inc/functions/settings.php:890
@@ -1921,7 +1873,7 @@ msgstr "33% - col-sm-4"
 #: inc/widgets/terra-search.php:363 inc/widgets/terra-search.php:437
 #, php-format
 msgid "25% - col-sm-3"
-msgstr "25% - col-sm-3"
+msgstr ""
 
 #: inc/functions/settings.php:513 inc/functions/settings.php:643
 #: inc/functions/settings.php:761 inc/functions/settings.php:891
@@ -1929,7 +1881,7 @@ msgstr "25% - col-sm-3"
 #: inc/widgets/terra-search.php:364 inc/widgets/terra-search.php:438
 #, php-format
 msgid "16% - col-sm-2"
-msgstr "16% - col-sm-2"
+msgstr ""
 
 #: inc/functions/settings.php:514 inc/functions/settings.php:644
 #: inc/functions/settings.php:762 inc/functions/settings.php:892
@@ -1937,14 +1889,14 @@ msgstr "16% - col-sm-2"
 #: inc/widgets/terra-search.php:365 inc/widgets/terra-search.php:439
 #, php-format
 msgid "8% - col-sm-1"
-msgstr "8% - col-sm-1"
+msgstr ""
 
 #: inc/functions/settings.php:520 inc/functions/settings.php:650
 #: inc/functions/settings.php:768 inc/functions/settings.php:898
 #: inc/widgets/terra-search.php:222 inc/widgets/terra-search.php:296
 #: inc/widgets/terra-search.php:370 inc/widgets/terra-search.php:444
 msgid "Phone ( < 768px )"
-msgstr "Telefon (<768 pikseli)"
+msgstr ""
 
 #: inc/functions/settings.php:525 inc/functions/settings.php:655
 #: inc/functions/settings.php:773 inc/functions/settings.php:903
@@ -1952,7 +1904,7 @@ msgstr "Telefon (<768 pikseli)"
 #: inc/widgets/terra-search.php:372 inc/widgets/terra-search.php:446
 #, php-format
 msgid "100% - col-xs-12"
-msgstr "100% - col-xs-12"
+msgstr ""
 
 #: inc/functions/settings.php:526 inc/functions/settings.php:656
 #: inc/functions/settings.php:774 inc/functions/settings.php:904
@@ -1960,7 +1912,7 @@ msgstr "100% - col-xs-12"
 #: inc/widgets/terra-search.php:373 inc/widgets/terra-search.php:447
 #, php-format
 msgid "91% - col-xs-11"
-msgstr "91% - col-xs-11"
+msgstr ""
 
 #: inc/functions/settings.php:527 inc/functions/settings.php:657
 #: inc/functions/settings.php:775 inc/functions/settings.php:905
@@ -1968,7 +1920,7 @@ msgstr "91% - col-xs-11"
 #: inc/widgets/terra-search.php:374 inc/widgets/terra-search.php:448
 #, php-format
 msgid "83% - col-xs-10"
-msgstr "83% - col-xs-10"
+msgstr ""
 
 #: inc/functions/settings.php:528 inc/functions/settings.php:658
 #: inc/functions/settings.php:776 inc/functions/settings.php:906
@@ -1976,7 +1928,7 @@ msgstr "83% - col-xs-10"
 #: inc/widgets/terra-search.php:375 inc/widgets/terra-search.php:449
 #, php-format
 msgid "75% - col-xs-9"
-msgstr "75% - col-xs-9"
+msgstr ""
 
 #: inc/functions/settings.php:529 inc/functions/settings.php:659
 #: inc/functions/settings.php:777 inc/functions/settings.php:907
@@ -1984,7 +1936,7 @@ msgstr "75% - col-xs-9"
 #: inc/widgets/terra-search.php:376 inc/widgets/terra-search.php:450
 #, php-format
 msgid "66% - col-xs-8"
-msgstr "66% - col-xs-8"
+msgstr ""
 
 #: inc/functions/settings.php:530 inc/functions/settings.php:660
 #: inc/functions/settings.php:778 inc/functions/settings.php:908
@@ -1992,7 +1944,7 @@ msgstr "66% - col-xs-8"
 #: inc/widgets/terra-search.php:377 inc/widgets/terra-search.php:451
 #, php-format
 msgid "58% - col-xs-7"
-msgstr "58% - col-xs-7"
+msgstr ""
 
 #: inc/functions/settings.php:531 inc/functions/settings.php:661
 #: inc/functions/settings.php:779 inc/functions/settings.php:909
@@ -2000,7 +1952,7 @@ msgstr "58% - col-xs-7"
 #: inc/widgets/terra-search.php:378 inc/widgets/terra-search.php:452
 #, php-format
 msgid "50% - col-xs-6"
-msgstr "50% - col-xs-6"
+msgstr ""
 
 #: inc/functions/settings.php:532 inc/functions/settings.php:662
 #: inc/functions/settings.php:780 inc/functions/settings.php:910
@@ -2008,7 +1960,7 @@ msgstr "50% - col-xs-6"
 #: inc/widgets/terra-search.php:379 inc/widgets/terra-search.php:453
 #, php-format
 msgid "41% - col-xs-5"
-msgstr "41% - col-xs-5"
+msgstr ""
 
 #: inc/functions/settings.php:533 inc/functions/settings.php:663
 #: inc/functions/settings.php:781 inc/functions/settings.php:911
@@ -2016,7 +1968,7 @@ msgstr "41% - col-xs-5"
 #: inc/widgets/terra-search.php:380 inc/widgets/terra-search.php:454
 #, php-format
 msgid "33% - col-xs-4"
-msgstr "33% - col-xs-4"
+msgstr ""
 
 #: inc/functions/settings.php:534 inc/functions/settings.php:664
 #: inc/functions/settings.php:782 inc/functions/settings.php:912
@@ -2024,7 +1976,7 @@ msgstr "33% - col-xs-4"
 #: inc/widgets/terra-search.php:381 inc/widgets/terra-search.php:455
 #, php-format
 msgid "25% - col-xs-3"
-msgstr "25% - col-xs-3"
+msgstr ""
 
 #: inc/functions/settings.php:535 inc/functions/settings.php:665
 #: inc/functions/settings.php:783 inc/functions/settings.php:913
@@ -2032,7 +1984,7 @@ msgstr "25% - col-xs-3"
 #: inc/widgets/terra-search.php:382 inc/widgets/terra-search.php:456
 #, php-format
 msgid "16% - col-xs-2"
-msgstr "16% - col-xs-2"
+msgstr ""
 
 #: inc/functions/settings.php:536 inc/functions/settings.php:666
 #: inc/functions/settings.php:784 inc/functions/settings.php:914
@@ -2040,254 +1992,234 @@ msgstr "16% - col-xs-2"
 #: inc/widgets/terra-search.php:383 inc/widgets/terra-search.php:457
 #, php-format
 msgid "8% - col-xs-1"
-msgstr "8% - col-xs-1"
+msgstr ""
 
 #: inc/functions/settings.php:542
 msgid "Show location filter"
-msgstr "Pokaż filtr lokalizacji"
+msgstr ""
 
 #: inc/functions/settings.php:554
 msgid "Location field type"
-msgstr "Typ pola lokalizacji"
+msgstr ""
 
 #: inc/functions/settings.php:558 inc/widgets/terra-search.php:136
 msgid "List"
-msgstr "Lista"
+msgstr ""
 
 #: inc/functions/settings.php:559 inc/widgets/terra-search.php:137
 msgid "Inputbox"
-msgstr "Pole tekstowe"
+msgstr ""
 
 #: inc/functions/settings.php:566
 msgid "Location hierarchical"
-msgstr "Lokalizacja hierarchiczna"
+msgstr ""
 
 #: inc/functions/settings.php:574
 msgid ""
 "Available only for location field type - <strong>list</strong>. Disabling "
 "hierarchical can be useful (quicker) when you have a lot of nested locations."
 msgstr ""
-"Dostępne tylko dla typu pola lokalizacji - <strong> lista </strong>. "
-"Wyłączenie hierarchii może być przydatne (szybsze), gdy masz wiele "
-"zagnieżdżonych lokalizacji."
 
 #: inc/functions/settings.php:578 inc/widgets/terra-search.php:239
 msgid "Location field size"
-msgstr "Rozmiar pola lokalizacji"
+msgstr ""
 
 #: inc/functions/settings.php:672
 msgid "Show category filter"
-msgstr "Pokaż filtr kategorii"
+msgstr ""
 
 #: inc/functions/settings.php:684 inc/widgets/terra-search.php:118
 msgid "Display only first level categories"
-msgstr "Wyświetl tylko kategorie pierwszego poziomu"
+msgstr ""
 
 #: inc/functions/settings.php:696 inc/widgets/terra-search.php:313
 msgid "Category field size"
-msgstr "Rozmiar pola kategorii"
+msgstr ""
 
 #: inc/functions/settings.php:790
 msgid "Use types filter"
-msgstr "Użyj filtra typów"
+msgstr ""
 
 #: inc/functions/settings.php:802
 msgid "Use selling type filter"
-msgstr "Użyj filtra typów"
+msgstr ""
 
 #: inc/functions/settings.php:814
 msgid "Use price filter"
-msgstr "Użyj filtra cen"
+msgstr ""
 
 #: inc/functions/settings.php:826 inc/widgets/terra-search.php:387
 msgid "Price field size"
-msgstr "Rozmiar pola ceny"
+msgstr ""
 
 #: inc/functions/settings.php:924
 msgid "Advert view"
-msgstr "Widok ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:939
 msgid "Contact form"
-msgstr "Formularz kontaktowy"
+msgstr ""
 
-#: inc/functions/settings.php:950 templates/default_post.php:309
-#: templates/single.php:319
+#: inc/functions/settings.php:950 templates/default_post.php:347
+#: templates/single.php:361
 msgid "Report abuse"
-msgstr "Zgłoś nadużycie"
+msgstr ""
 
 #: inc/functions/settings.php:961
 msgid "Phone number"
-msgstr "Numer telefonu"
+msgstr ""
 
 #: inc/functions/settings.php:969
 msgid "Phone number is taken from user profile."
-msgstr "Numer telefonu jest pobierany z profilu użytkownika."
+msgstr ""
 
 #: inc/functions/settings.php:973
 msgid "Website URL"
-msgstr "Adres URL witryny"
+msgstr ""
 
 #: inc/functions/settings.php:999
 msgid "Adding advert view"
-msgstr "Widok dodawania ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:1003
 msgid "Number of images limit (max. 8)"
-msgstr "Limit liczby zdjęć (maks. 8)"
+msgstr ""
 
 #: inc/functions/settings.php:1013
 msgid "Title characters limit (0 for unlimited)"
-msgstr "Limit znaków w tytule (0 oznacza nieograniczoną liczbę)"
+msgstr ""
 
 #: inc/functions/settings.php:1023
 msgid "Description characters limit"
-msgstr "Limit znaków opisu"
+msgstr ""
 
 #: inc/functions/settings.php:1029
 msgid "Min"
-msgstr "Min"
+msgstr ""
 
 #: inc/functions/settings.php:1040
 msgid "Max (0 for unlimited)"
-msgstr "Max (0 dla nieograniczonej liczby)"
+msgstr ""
 
 #: inc/functions/settings.php:1050
 msgid "The number of columns for subcategories list"
-msgstr "Liczba kolumn na liście podkategorii"
+msgstr ""
 
 #: inc/functions/settings.php:1060
 msgid "The number of days after which the ads will be archived."
-msgstr "Liczba dni, po których ogłoszenia będą archiwizowane."
+msgstr ""
 
 #: inc/functions/settings.php:1070
 msgid ""
 "The number of days before sending a notification to classified's author."
-msgstr "Liczba dni przed wysłaniem powiadomienia do autora ogłoszenia."
+msgstr ""
 
 #: inc/functions/settings.php:1080
 msgid "Use selling types"
-msgstr "Użyj typów sprzedaży"
+msgstr ""
 
 #: inc/functions/settings.php:1088
 msgid ""
 "If disabled, all selling types ( including price ) will be not visible on "
 "the single, archive and add advert views."
 msgstr ""
-"Jeśli wyłączone, wszystkie typy sprzedaży (w tym cena) nie będą widoczne w "
-"widoku jednego ogłoszenia, archive i dodawania ogłoszeń."
 
 #: inc/functions/settings.php:1092
 msgid "Selling types"
-msgstr "Typy sprzedaży"
+msgstr ""
 
 #: inc/functions/settings.php:1103
 msgid "At least one option must be selected."
-msgstr "Należy wybrać co najmniej jedną opcję."
+msgstr ""
 
 #: inc/functions/settings.php:1107
 msgid "Ad status"
-msgstr "Status ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:1115
 msgid ""
 "Select if status of newly created ad should be <strong>pending</strong> or "
 "<strong>published</strong>."
 msgstr ""
-"Wybierz, czy status nowo utworzonego ogloszenia ma być <strong> oczekujący </"
-"strong> czy <strong> opublikowany </strong>."
 
 #: inc/functions/settings.php:1119
 msgid "Ad images required"
-msgstr "Wymagane obrazy ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:1127
 msgid "Select if adding at least one ad's image should be required."
 msgstr ""
-"Wybierz, czy użytkownik powinien załączyć co najmniej jeden obraz do "
-"ogłoszenia."
 
 #: inc/functions/settings.php:1131
 msgid "Ad location required"
-msgstr "Wymagana lokalizacja ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:1139
 msgid ""
 "Select if \"Ads location\" should be required. Locations must be enabled "
 "first."
 msgstr ""
-"Wybierz, czy ma być wymagana opcja „Lokalizacja ogłoszeń”. Lokalizacje muszą "
-"być najpierw włączone."
 
 #: inc/functions/settings.php:1143
 msgid "Ad type required"
-msgstr "Wymagany typ ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:1152
 msgid ""
 "Select if \"Ads Types\" should be required. Types must be enabled first."
 msgstr ""
-"Wybierz, czy ma być wymagana opcja „Typy ogłoszeń”. Typy muszą być najpierw "
-"włączone."
 
 #: inc/functions/settings.php:1164
 msgid "Use locations"
-msgstr "Użyj lokalizacji"
+msgstr ""
 
 #: inc/functions/settings.php:1173
 msgid ""
 "Remember to create locations in TerraClassifieds -> Locations.<br />If No, "
 "all location relations will be disabled including Adding advert view."
 msgstr ""
-"Pamiętaj o tworzeniu lokalizacji w TerraClassifieds -> Lokalizacje. <br /> "
-"Jeśli Nie, wszystkie relacje lokalizacji zostaną wyłączone, w tym Widok "
-"dodawania ogłoszenia."
 
 #: inc/functions/settings.php:1177
 msgid "Show location"
-msgstr "Pokaż lokalizację"
+msgstr ""
 
 #: inc/functions/settings.php:1186
 msgid "Show locations on category view and single advert view."
-msgstr "Pokaż lokalizacje w widoku kategorii i widoku pojedynczego ogłoszenia."
+msgstr ""
 
 #: inc/functions/settings.php:1191
 msgid "Address field"
-msgstr "Pole adresu"
+msgstr ""
 
 #: inc/functions/settings.php:1200 inc/functions/settings.php:1214
 msgid "Use the filed on Adding advert view and Advert view."
 msgstr ""
-"Użyj tego pola w zakładce  \"Widok dodawania ogłoszenia\" i \"Widok "
-"ogłoszenia\"."
 
 #: inc/functions/settings.php:1205
 msgid "Post / ZIP code field"
-msgstr "Pole kodu pocztowego / pocztowego"
+msgstr ""
 
 #: inc/functions/settings.php:1227
 msgid "Use \"ads types\""
-msgstr "Użyj „typów ogłoszeń”"
+msgstr ""
 
 #: inc/functions/settings.php:1236
 msgid ""
 "Remember to create types in TerraClassifieds -> Types.<br />If No, all types "
 "relations will be disabled including Adding advert view"
 msgstr ""
-"Pamiętaj, aby utworzyć typy w TerraClassifieds -> Typy. <br /> Jeśli Nie, "
-"wszystkie relacje typów zostaną wyłączone, w tym Widok dodawania ogłoszenia"
 
 #: inc/functions/settings.php:1240
 msgid "\"Types\" display style"
-msgstr "Styl wyświetlania pola „Typy”"
+msgstr ""
 
 #: inc/functions/settings.php:1244
 msgid "Selectlist"
-msgstr "Lista wyboru"
+msgstr ""
 
 #: inc/functions/settings.php:1245
 msgid "Checkboxes"
-msgstr "Pola wyboru"
+msgstr ""
 
 #: inc/functions/settings.php:1249
 msgid ""
@@ -2295,79 +2227,71 @@ msgid ""
 "Selectlist or checkboxes with preview of types<br /><strong>NOTE</strong>: "
 "Selectlist lets you choose only one type per classified."
 msgstr ""
-"Styl wyświetlania \"Typów\" w trybie edycji ogłoszenia i na stronie "
-"dodawania ogłoszenia. Lista wyboru lub pola wyboru z podglądem typów <br /> "
-"<strong> UWAGA </strong>: Lista wyboru pozwala wybrać tylko jeden typ dla "
-"ogłoszenia."
 
 #: inc/functions/settings.php:1257
 msgid "Image processing"
-msgstr "Przetwarzanie obrazu"
+msgstr ""
 
 #: inc/functions/settings.php:1261
 msgid "Use images"
-msgstr "Użyj obrazów"
+msgstr ""
 
 #: inc/functions/settings.php:1269
 msgid ""
 "If No, the option to add advert images is blocked and no advert images "
 "displayed."
 msgstr ""
-"Jeśli nie, opcja dodawania obrazów ogłoszeń jest zablokowana i żadne obrazy "
-"ogłoszeń nie są wyświetlane."
 
 #: inc/functions/settings.php:1273
 msgid "Image sizes for classifieds archive view"
-msgstr "Rozmiary obrazu dla widoku archive ogłoszeń"
+msgstr ""
 
 #: inc/functions/settings.php:1279 inc/functions/settings.php:1299
 msgid "Image width (px)"
-msgstr "Szerokość obrazu (piksele)"
+msgstr ""
 
 #: inc/functions/settings.php:1286 inc/functions/settings.php:1306
 msgid "Image height (px)"
-msgstr "Wysokość obrazu (piksele)"
+msgstr ""
 
 #: inc/functions/settings.php:1293
 msgid "Image sizes for single post view"
-msgstr "Rozmiary obrazów dla widoku pojedynczego ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:1319
 msgid "No image"
-msgstr "Brak obrazka"
+msgstr ""
 
 #: inc/functions/settings.php:1320
 msgid ""
 "Set the image that will be used once the user does not upload any images for "
 "an advert."
 msgstr ""
-"Ustaw obraz, który będzie używany, gdy użytkownik nie załaduje żadnych zdjęć "
-"do ogłoszenia."
 
 #: inc/functions/settings.php:1328 inc/functions/settings.php:2181
 #: inc/functions/settings.php:2313
 msgid "Select image"
-msgstr "Wybierz obraz"
+msgstr ""
 
 #: inc/functions/settings.php:1347
 msgid "Style"
-msgstr "Styl"
+msgstr ""
 
 #: inc/functions/settings.php:1351
 msgid "Layout"
-msgstr "Układ"
+msgstr ""
 
 #: inc/functions/settings.php:1356 inc/functions/settings.php:1369
 msgid "Default"
-msgstr "Domyślny"
+msgstr ""
 
 #: inc/functions/settings.php:1357 inc/functions/settings.php:1370
 msgid "Override from theme"
-msgstr "Nadpisz z motywu"
+msgstr ""
 
 #: inc/functions/settings.php:1364
 msgid "CSS Style"
-msgstr "Styl CSS"
+msgstr ""
 
 #: inc/functions/settings.php:1374
 msgid ""
@@ -2375,105 +2299,100 @@ msgid ""
 "com/settings-and-options/172-style-settings\" target=\"_blank\">layout and "
 "CSS style settings</a>"
 msgstr ""
-"Przeczytaj ważne informacje o <a href=\"https://terraclassifieds.pixelemu."
-"com/settings-and-options/172-style-settings\" target=\"_blank\"> "
-"ustawieniach układu i stylu CSS </a>"
 
 #: inc/functions/settings.php:1382
 msgid "Security"
-msgstr "Bezpieczeństwo"
+msgstr ""
 
 #: inc/functions/settings.php:1386
 msgid "GDPR"
-msgstr "RODO"
+msgstr ""
 
 #: inc/functions/settings.php:1392
 msgid "GDPR method"
-msgstr "Metoda RODO"
+msgstr ""
 
 #: inc/functions/settings.php:1397
 msgid "Simple"
-msgstr "Prosty"
+msgstr ""
 
 #: inc/functions/settings.php:1398
 msgid "Extended"
-msgstr "Rozszerzony"
+msgstr ""
 
 #: inc/functions/settings.php:1417 inc/functions/settings.php:1439
 msgid "Open in new window"
-msgstr "Otworzyć w nowym oknie"
+msgstr ""
 
 #: inc/functions/settings.php:1418 inc/functions/settings.php:1440
 msgid "Open in modal"
-msgstr "Otwórz w oknie modalnym"
+msgstr ""
 
 #: inc/functions/settings.php:1424
 msgid "Terms and conditions page"
-msgstr "Strona z warunkami"
+msgstr ""
 
 #: inc/functions/settings.php:1433
 msgid "Privacy policy"
-msgstr "Polityka prywatności"
+msgstr ""
 
 #: inc/functions/settings.php:1446
 msgid "Privacy policy page"
-msgstr "Strona polityki prywatności"
+msgstr ""
 
 #: inc/functions/settings.php:1455
 msgid "Data protection agreement (GDPR)"
-msgstr "Umowa o ochronie danych (RODO)"
+msgstr ""
 
 #: inc/functions/settings.php:1467
 msgid "Agreement information (GDPR)"
-msgstr "Informacje o umowie (RODO)"
+msgstr ""
 
 #: inc/functions/settings.php:1470
 msgid "GDPR Information"
-msgstr "Informacje RODO"
+msgstr ""
 
 #: inc/functions/settings.php:1474 inc/functions/settings.php:1480
 msgid "Password for registration"
-msgstr "Hasło do rejestracji"
+msgstr ""
 
 #: inc/functions/settings.php:1485
 msgid "Automatically generated password"
-msgstr "Hasło generowane automatycznie"
+msgstr ""
 
 #: inc/functions/settings.php:1486
 msgid "Let the user choose a password during registration"
-msgstr "Pozwól użytkownikowi wybrać hasło podczas rejestracji"
+msgstr ""
 
 #: inc/functions/settings.php:1492
 msgid "Captcha"
-msgstr "Captcha"
+msgstr ""
 
 #: inc/functions/settings.php:1498
 msgid "Google reCaptcha API"
-msgstr "Google reCaptcha API"
+msgstr ""
 
 #: inc/functions/settings.php:1507
 msgid ""
 "Enable/disable loading Google reCaptcha API (required for spam protection on "
 "the \"Registration\" page)"
 msgstr ""
-"Włącz/wyłącz ładowanie Google reCaptcha API (wymagane dla ochrony przed "
-"spamem na stronie Rejestracji)"
 
 #: inc/functions/settings.php:1511
 msgid "reCAPTCHA Site key"
-msgstr "Klucz reCAPTCHA Site"
+msgstr ""
 
 #: inc/functions/settings.php:1517
 msgid "reCAPTCHA Secret key"
-msgstr "Klucz reCAPTCHA Secret"
+msgstr ""
 
 #: inc/functions/settings.php:1527
 msgid "Email templates"
-msgstr "Szablony wiadomości"
+msgstr ""
 
 #: inc/functions/settings.php:1537
 msgid "Reply-to e-mail address"
-msgstr "Adres zwrotny e-mail"
+msgstr ""
 
 #: inc/functions/settings.php:1540
 msgid ""
@@ -2483,16 +2402,10 @@ msgid ""
 "Wordpress uses PHP mail<br /> (the most common case) emails will be sent "
 "from the address: wordpress@yourdomain."
 msgstr ""
-"Dodaj adres e-mail, który będzie używany jako „reply-to” dla wszystkich "
-"wiadomości z powiadomieniami użytkownika (z wyjątkiem formularza "
-"kontaktowego). <br /> <strong> UWAGA: </strong> To nie jest adres e-mail "
-"używany do wysyłania wiadomości systemowych. Jeśli Twój Wordpress korzysta z "
-"PHP Mail <br /> (najczęstszy przypadek), e-maile będą wysyłane z adresu: "
-"wordpress@twoja_domena."
 
 #: inc/functions/settings.php:1544
 msgid "E-mail notifications for administrators"
-msgstr "Powiadomienia e-mail dla administratorów"
+msgstr ""
 
 #: inc/functions/settings.php:1547
 msgid ""
@@ -2500,25 +2413,22 @@ msgid ""
 "General Settings.<br />You may add additional recipients separating "
 "addresses with comma. The message is sent as CC."
 msgstr ""
-"Domyślnie wszystkie powiadomienia są wysyłane na adres e-mail administratora "
-"z ustawień ogólnych. <br /> Możesz dodać dodatkowych odbiorców, oddzielając "
-"adresy przecinkami. Wiadomość zostanie wysłana jako DW."
 
 #: inc/functions/settings.php:1552
 msgid "Registration - administrator notification"
-msgstr "Rejestracja - powiadomienie administratora"
+msgstr ""
 
 #: inc/functions/settings.php:1558
 msgid "Registration - administrator (subject)"
-msgstr "Rejestracja - administrator (temat)"
+msgstr ""
 
 #: inc/functions/settings.php:1561
 msgid "[[[website_name]]] New User Registration"
-msgstr "[[[website_name]]] Nowa rejestracja użytkownika"
+msgstr ""
 
 #: inc/functions/settings.php:1565
 msgid "Registration - administrator (message)"
-msgstr "Rejestracja - administrator (wiadomość)"
+msgstr ""
 
 #: inc/functions/settings.php:1568
 msgid ""
@@ -2527,10 +2437,6 @@ msgid ""
 "\t<p>Username: [[user_login]]</p>\n"
 "\t<p>E-mail: [[user_email]]</p>"
 msgstr ""
-"\n"
-"\t<p>Nowa rejestracja użytkownia na stronie [[website_name]]:</p>\n"
-"\t<p>Nazwa użytkownika: [[user_login]]</p>\n"
-"\t<p>E-mail: [[user_email]]</p>"
 
 #: inc/functions/settings.php:1575 inc/functions/settings.php:1605
 #: inc/functions/settings.php:1641 inc/functions/settings.php:1676
@@ -2538,31 +2444,29 @@ msgstr ""
 #: inc/functions/settings.php:1785 inc/functions/settings.php:1821
 #: inc/functions/settings.php:1857
 msgid "Available tags"
-msgstr "Dostępne tagi"
+msgstr ""
 
 #: inc/functions/settings.php:1578
 msgid ""
 "[[website_name]] - Name of your website<br />[[user_login]] - New user login "
 "name<br />[[user_email]] - New user email"
 msgstr ""
-"[[website_name]] - Nazwa Twojej witryny<br />[[user_login]] - Nazwa nowego "
-"użytkownika<br />[[user_email]] - Adres e-mail nowego użytkownika"
 
 #: inc/functions/settings.php:1582
 msgid "Registration - user notification"
-msgstr "Rejestracja - powiadomienie użytkownika"
+msgstr ""
 
 #: inc/functions/settings.php:1588
 msgid "Registration - user (subject)"
-msgstr "Rejestracja - użytkownik (temat)"
+msgstr ""
 
 #: inc/functions/settings.php:1591
 msgid "[[[website_name]]] Your username and password"
-msgstr "[[[website_name]]] Twoja nazwa użytkownika i hasło"
+msgstr ""
 
 #: inc/functions/settings.php:1595
 msgid "Registration - user (message)"
-msgstr "Rejestracja - użytkownik (wiadomość)"
+msgstr ""
 
 #: inc/functions/settings.php:1598
 msgid ""
@@ -2571,34 +2475,28 @@ msgid ""
 "\t<p>Your username: [[user_login]]</p>\n"
 "\t<p>Your password: [[user_passwordl]]</p>"
 msgstr ""
-"\n"
-"\t<p>WItaj na stronie [[website_name]]:</p>\n"
-"\t<p>Twoja nazwa użytkownika: [[user_login]]</p>\n"
-"\t<p>Twoje hasło: [[user_passwordl]]</p>"
 
 #: inc/functions/settings.php:1608
 msgid ""
 "[[website_name]] - Name of your website<br />[[user_login]] - New user login "
 "name<br />[[user_passwordl]] - New user password"
 msgstr ""
-"[[website_name]] - Nazwa Twojej witryny<br />[[user_login]] - Nazwa nowego "
-"użytkownika<br />[[user_passwordl]] - Nowe hasło użytkownika"
 
 #: inc/functions/settings.php:1613
 msgid "New advert - administrator notification"
-msgstr "Nowe ogłoszenie - powiadomienie administratora"
+msgstr ""
 
 #: inc/functions/settings.php:1619
 msgid "New advert - administrator (subject)"
-msgstr "Nowe ogłoszenie - administrator (temat)"
+msgstr ""
 
 #: inc/functions/settings.php:1622 inc/functions/settings.php:1657
 msgid "New advert"
-msgstr "Dodaj nowe ogłoszenie"
+msgstr ""
 
 #: inc/functions/settings.php:1626
 msgid "New advert - administrator (message)"
-msgstr "Nowe ogłoszenie - administrator (wiadomość)"
+msgstr ""
 
 #: inc/functions/settings.php:1629
 msgid ""
@@ -2612,53 +2510,29 @@ msgid ""
 "\t<p>Price: [[advert_price]]</p>\n"
 "\t<p>Payment status: [[payment_status]].</p>"
 msgstr ""
-"\n"
-"\t<p>Witaj,</p>\n"
-"\t<p>Nowe ogłoszenie: [[advert_title_link]]</p>\n"
-"\t<p>Kategoria: [[advert_category]]</p>\n"
-"\t<p>Nazwa autora: [[advert_author_login]]</p>\n"
-"\t<p>Email autora: [[advert_author_email]]</p>\n"
-"\t<p>Opis: [[advert_desc]]</p>\n"
-"\t<p>Cena: [[advert_price]]</p>\n"
-"\t<p>Status płatności: [[payment_status]].</p>"
 
 #: inc/functions/settings.php:1644
-#, fuzzy
-#| msgid ""
-#| "[[advert_title_link]] - Linked advert title (shortcode is available only "
-#| "if option <strong>Ad status</strong> is set to <strong>Publish</strong> "
-#| "on cart <strong>Adding advert view</strong>)<br />[[advert_category]] - "
-#| "Advert category<br />[[advert_status]] - Advert status<br /"
-#| ">[[advert_desc]] - Advert description<br />[[advert_author_login]] - "
-#| "Advert author login<br />[[advert_author_email]] - Advert author email"
 msgid ""
 "[[advert_title_link]] - Linked advert title (shortcode is available only if "
 "option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart "
 "<strong>Adding advert view</strong>)<br />[[advert_category]] - Advert "
 "category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - "
-"Advert description<br />[[advert_author_login]] - Advert author login<br /"
-">[[advert_author_email]] - Advert author email<br />[[advert_price]] - "
-"Advert price / free<br />[[payment_status]] - Payment status"
+"Advert description<br />[[advert_author_login]] - Advert author login<br />"
+"[[advert_author_email]] - Advert author email<br />[[advert_price]] - Advert "
+"price / free<br />[[payment_status]] - Payment status"
 msgstr ""
-"[[advert_title_link]] - Tytuł linkowanego ogłoszenia (shortcode jest "
-"dostępny tylko wtedy, gdy opcja <strong> Status ogłoszenia</strong> jest "
-"ustawiona na <strong> Opublikuj </strong> w zakładce <strong> Widok "
-"dodawania ogłoszenia </strong>)<br />[[advert_category]] - Kategoria "
-"ogłoszenia<br />[[advert_status]] - Status ogłoszenia<br />[[advert_desc]] - "
-"Opis ogłoszenia<br />[[advert_author_login]] - Login autora ogłoszenia<br /"
-">[[advert_author_email]] - Email autora ogłoszenia"
 
 #: inc/functions/settings.php:1648
 msgid "New advert - user notification"
-msgstr "Nowe ogłoszenie - powiadomienie użytkownika"
+msgstr ""
 
 #: inc/functions/settings.php:1654
 msgid "New advert - user (subject)"
-msgstr "Nowe ogłoszenie - użytkownik (temat)"
+msgstr ""
 
 #: inc/functions/settings.php:1661
 msgid "New advert - user (message)"
-msgstr "Nowe ogłoszenie - użytkownik (wiadomość)"
+msgstr ""
 
 #: inc/functions/settings.php:1664
 msgid ""
@@ -2672,43 +2546,30 @@ msgid ""
 "\t<p>Price: [[advert_price]]</p>\n"
 "\t<p>Payment status: [[payment_status]].</p>"
 msgstr ""
-"\n"
-"\t<p>Witaj,</p>\n"
-"\t<p>Twoje ogłoszenie czeka na akceptację administratora.</p>\n"
-"\t<p>Tytuł ogłoszenia: [[advert_title]]</p>\n"
-"\t<p>Kategoria: [[advert_category]]</p>\n"
-"\t<p></p><p>Status: [[advert_status]]</p>\n"
-"\t<p>Opis: [[advert_desc]]</p>\n"
-"\t<p>Cena: [[advert_price]]</p>\n"
-"\t<p>Status płatności: [[payment_status]].</p>"
 
 #: inc/functions/settings.php:1679
 msgid ""
 "[[advert_title]] - Advert title<br />[[advert_category]] - Advert "
 "category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - "
-"Advert description<br />[[advert_price]] - Advert price / free<br /"
-">[[payment_status]] - Payment status"
+"Advert description<br />[[advert_price]] - Advert price / free<br />"
+"[[payment_status]] - Payment status"
 msgstr ""
-"[[advert_title]] - Tytuł ogłoszenia<br />[[advert_category]] - Kategoria "
-"ogłoszenia<br />[[advert_status]] - Status ogłoszenia<br />[[advert_desc]] - "
-"Opis ogłoszenia<br />[[advert_price]] - Cena ogłoszenia / Darmowe<br /"
-">[[payment_status]] - Status płatności"
 
 #: inc/functions/settings.php:1684
 msgid "Contact form - user notification"
-msgstr "Formularz kontaktowy - powiadomienie użytkownika"
+msgstr ""
 
 #: inc/functions/settings.php:1690
 msgid "Contact form in advert (subject)"
-msgstr "Formularz kontaktowy w ogłoszeniu (temat)"
+msgstr ""
 
 #: inc/functions/settings.php:1693
 msgid "Your advertisement enquiry"
-msgstr "Twoje zapytanie o ogłoszenie"
+msgstr ""
 
 #: inc/functions/settings.php:1697
 msgid "Contact form in advert (message)"
-msgstr "Formularz kontaktowy w ogłoszeniu (wiadomość)"
+msgstr ""
 
 #: inc/functions/settings.php:1700
 msgid ""
@@ -2721,14 +2582,6 @@ msgid ""
 "\t<p></p>\n"
 "\t[[contact_message]]"
 msgstr ""
-"\n"
-"\t<p>Witaj [[user_name]],</p>\n"
-"\t<p>Wiadomość od:</p>\n"
-"\t<p>Nazwa użytkownika: [[contact_author_name]]</p>\n"
-"\t<p>Email użytkownika: [[contact_author_email]]</p>\n"
-"\t<p>Zapytanie ofertowe dla ogłoszenia [[advert_title_link]] :</p>\n"
-"\t<p></p>\n"
-"\t[[contact_message]]"
 
 #: inc/functions/settings.php:1714 inc/functions/settings.php:1752
 msgid ""
@@ -2738,28 +2591,22 @@ msgid ""
 "status</strong> is set to <strong>Publish</strong> on cart <strong>Adding "
 "advert view</strong>)<br />[[contact_message]] - Author message"
 msgstr ""
-"[[user_name]] - Login autora ogłoszenia<br />[[contact_author_name]] - Nazwa "
-"autora<br />[[contact_author_email]] - Email autora<br /"
-">[[advert_title_link]] - Klikalny tytuł ogłoszenia  (shortcode jest dostępny "
-"tylko wtedy, gdy opcja <strong> Status ogłoszenia</strong> jest ustawiony na "
-"<strong> Opublikuj </strong> w zakładce<strong> Widok doawania ogłoszenia </"
-"strong>)<br />[[contact_message]] - Wiadomość autora"
 
 #: inc/functions/settings.php:1719
 msgid "Abuse form - user notification"
-msgstr "Formularz nadużycia - powiadomienie użytkownika"
+msgstr ""
 
 #: inc/functions/settings.php:1725
 msgid "Abuse form in theadvert (subject)"
-msgstr "Formularz nadużycia w ogłoszeniu (temat)"
+msgstr ""
 
 #: inc/functions/settings.php:1728
 msgid "Abuse Report"
-msgstr "Zgłoś nadużycie"
+msgstr ""
 
 #: inc/functions/settings.php:1732
 msgid "Abuse form in the advert (message)"
-msgstr "Formularz nadużycia w ogłoszeniu (wiadomość)"
+msgstr ""
 
 #: inc/functions/settings.php:1735
 msgid ""
@@ -2775,33 +2622,22 @@ msgid ""
 "\t<p>Abuse reason:<br />\n"
 "\t[[abuse_message]]</p>"
 msgstr ""
-"\n"
-"\t<p>Witaj,</p>\n"
-"\t<p> </p>\n"
-"\t<p>Wiadomość od:</p>\n"
-"\t<p>Nazwa użytkownika: [[abuse_author_name]]</p>\n"
-"\t<p>Email użytkownika: [[abuse_author_email]]</p>\n"
-"\t<p></p>\n"
-"\t<p>Ogłoszenie: [[advert_title_link]]</p>\n"
-"\t<p></p>\n"
-"\t<p>Powód nadużycia:<br />\n"
-"\t[[abuse_message]]</p>"
 
 #: inc/functions/settings.php:1757
 msgid "Change status - user notification"
-msgstr "Zmiana statusu - powiadomienie użytkownika"
+msgstr ""
 
 #: inc/functions/settings.php:1763 inc/functions/settings.php:1835
 msgid "Change status (subject)"
-msgstr "Zmiana statusu (temat)"
+msgstr ""
 
 #: inc/functions/settings.php:1766
 msgid "Advert status change"
-msgstr "Zmiana statusu ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:1770 inc/functions/settings.php:1842
 msgid "Change status (message)"
-msgstr "Zmiana statusu (wiadomość)"
+msgstr ""
 
 #: inc/functions/settings.php:1773
 msgid ""
@@ -2815,49 +2651,30 @@ msgid ""
 "\t<p>Payment status: [[payment_status]].</p>\n"
 "\t<p> </p>"
 msgstr ""
-"\n"
-"\t<p>Witaj,</p>\n"
-"\t<p> </p>\n"
-"\t<p>Zmiana statusu twojego ogłoszenia [[advert_title_link]].</p>\n"
-"\t<p> </p>\n"
-"\t<p>Nowy status: [[advert_status]].</p>\n"
-"\t<p> </p>\n"
-"\t<p>Status płatności: [[payment_status]].</p>\n"
-"\t<p> </p>"
 
 #: inc/functions/settings.php:1788
-#, fuzzy
-#| msgid ""
-#| "[[advert_title_link]] - Linked advert title (shortcode is available only "
-#| "if option <strong>Ad status</strong> is set to <strong>Publish</strong> "
-#| "on cart <strong>Adding advert view</strong>)<br />[[advert_status]] - "
-#| "Advert status"
 msgid ""
 "[[advert_title_link]] - Linked advert title (shortcode is available only if "
 "option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart "
 "<strong>Adding advert view</strong>)<br />[[advert_status]] - Advert "
 "status<br />[[payment_status]] - Payment status"
 msgstr ""
-"[[advert_title_link]] - Klikalny tytuł ogłoszenia  (shortcode jest dostępny "
-"tylko wtedy, gdy opcja <strong> Status ogłoszenia </strong> jest ustawiony "
-"na <strong> Opublikuj </strong> w zakładce<strong> Widok doawania ogłoszenia "
-"</strong>)<br />[[advert_status]] - Status ogłoszenia"
 
 #: inc/functions/settings.php:1793
 msgid "Expiration - user notification"
-msgstr "Wygaśnięcie - powiadomienie użytkownika"
+msgstr ""
 
 #: inc/functions/settings.php:1799
 msgid "Advert - expiration notification (subject)"
-msgstr "Ogłoszenie - powiadomienie o wygaśnieciu (temat)"
+msgstr ""
 
 #: inc/functions/settings.php:1802
 msgid "Advert expire notification"
-msgstr "Powiadomienie o wygaśnieciu ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:1806
 msgid "Advert - expiration notification (message)"
-msgstr "Ogłoszenie - powiadomienie o wygaśnieciu (wiadomość)"
+msgstr ""
 
 #: inc/functions/settings.php:1809
 msgid ""
@@ -2872,42 +2689,22 @@ msgid ""
 "\t<p>Price: [[advert_renew_price]]</p>\n"
 "\t<p> </p>"
 msgstr ""
-"\n"
-"\t<p>Witaj,</p>\n"
-"\t<p> </p>\n"
-"\t<p>Twoje ogłoszenie [[advert_title_link]] wygaśnie za "
-"[[advert_expire_days]] dni.</p>\n"
-"\t<p> </p>\n"
-"\t<p>Możesz je odnowić na liście ogłoszeń</p>\n"
-"\t<p> </p>\n"
-"\t<p>Cena: [[advert_renew_price]]</p>\n"
-"\t<p> </p>"
 
 #: inc/functions/settings.php:1824
-#, fuzzy
-#| msgid ""
-#| "[[advert_title_link]] - Linked advert title (shortcode is available only "
-#| "if option <strong>Ad status</strong> is set to <strong>Publish</strong> "
-#| "on cart <strong>Adding advert view</strong>)<br />[[advert_expire_days]] "
-#| "- Number of days to advert expiration"
 msgid ""
 "[[advert_title_link]] - Linked advert title (shortcode is available only if "
 "option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart "
 "<strong>Adding advert view</strong>)<br />[[advert_expire_days]] - Number of "
 "days to advert expiration<br />[[advert_renew_price]] - Advert renew price"
 msgstr ""
-"[[advert_title_link]] - Klikalny tytuł ogłoszenia  (shortcode jest dostępny "
-"tylko wtedy, gdy opcja <strong> Status ogłoszenia</strong> jest ustawiony na "
-"<strong> Opublikuj </strong> w zakładce<strong> Widok doawania ogłoszenia </"
-"strong>)<br />[[advert_expire_days]] - Liczba dni do wygaśnięcia ogłoszenia"
 
 #: inc/functions/settings.php:1829
 msgid "Payment completed - admin notification"
-msgstr "Płatność zakończona - powiadomienie administratora"
+msgstr ""
 
 #: inc/functions/settings.php:1838
 msgid "Payment completed"
-msgstr "Płatność zakończona"
+msgstr ""
 
 #: inc/functions/settings.php:1845
 msgid ""
@@ -2921,15 +2718,6 @@ msgid ""
 "<p>Payment date: [[payment_date]]</p>\n"
 "<p> </p>"
 msgstr ""
-"\n"
-"<p>Dobra wiadomość,</p>\n"
-"<p>Otrzymano płatność za:</p>\n"
-"<p>Zmiana statusu twojego ogłoszenia [[advert_title_link]].</p>\n"
-"<p>Kwota płatności: [[payment_amount]]</p>\n"
-"<p>Metoda płatności: [[payment_method]]</p>\n"
-"<p>ID płatności: [[payment_id]]</p>\n"
-"<p>Data płatności: [[payment_date]]</p>\n"
-"<p> </p>"
 
 #: inc/functions/settings.php:1860
 msgid ""
@@ -2939,20 +2727,14 @@ msgid ""
 "amount<br/ >[[payment_method]] - Payment method<br/ >[[payment_id]] - "
 "Payment ID<br />[[payment_date]] - Payment date"
 msgstr ""
-"[[advert_title_link]] - Podlinkowany tytuł ogłoszenia (shortcode jest "
-"dostępny jeśli opcja <strong>Status ogłoszenia</strong> jest ustawiona na "
-"<strong>Opublikowane</strong> dla widoku <strong>Dodawanie ogłoszenia</"
-"strong>)<br />[[payment_amount]] - Kwota płatności<br/ >[[payment_method]] - "
-"Metoda płatności<br/ >[[payment_id]] - ID płatności<br />[[payment_date]] - "
-"Data płatności"
 
 #: inc/functions/settings.php:1868
 msgid "SEO"
-msgstr "SEO"
+msgstr ""
 
 #: inc/functions/settings.php:1872
 msgid "Pages"
-msgstr "Strony"
+msgstr ""
 
 #: inc/functions/settings.php:1875
 msgid ""
@@ -2960,116 +2742,88 @@ msgid ""
 "If you change the default page for any of the following views, then remember "
 "to place a related shortcode in the content."
 msgstr ""
-"TerraClassifieds użyje domyślnych stron, chyba że je zmienisz. Jeśli "
-"zmienisz domyślną stronę dla któregokolwiek z poniższych widoków, pamiętaj o "
-"umieszczeniu w treści odpowiedniego shortcodu."
 
 #: inc/functions/settings.php:1879
-#, fuzzy
-#| msgid "Slug for \"Add advert\""
 msgid "Page for \"Add advert\""
-msgstr "Uproszczona nazwa dla \"Dodaj ogłoszenie\""
+msgstr ""
 
 #: inc/functions/settings.php:1886
 msgid "Shortcode for this page: <strong>[terraclassifieds_add_item]</strong>"
-msgstr "Shortcode dla tej strony: <strong>[terraclassifieds_add_item]</strong>"
+msgstr ""
 
 #: inc/functions/settings.php:1890
-#, fuzzy
-#| msgid "Slug for \"Edit advert\""
 msgid "Page for \"Edit advert\""
-msgstr "Uproszczona nazwa dla \"Edycja ogłoszenia\""
+msgstr ""
 
 #: inc/functions/settings.php:1897
 msgid "Shortcode for this page: <strong>[terraclassifieds_edit_item]</strong>"
 msgstr ""
-"Shortcode dla tej strony: <strong>[terraclassifieds_edit_item]</strong>"
 
 #: inc/functions/settings.php:1901
-#, fuzzy
-#| msgid "Slug for \"Edit profile\""
 msgid "Page for \"Edit profile\""
-msgstr "Uproszczona nazwa dla \"Edycja profilu\""
+msgstr ""
 
 #: inc/functions/settings.php:1908
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_edit_profile]</strong>"
 msgstr ""
-"Shortcode dla tej strony: <strong>[terraclassifieds_edit_profile]</strong>"
 
 #: inc/functions/settings.php:1912
-#, fuzzy
-#| msgid "Slug for \"Favourite ads\""
 msgid "Page for \"Favourite ads\""
-msgstr "Uproszczona nazwa dla \"Ulubione ogłoszenia\""
+msgstr ""
 
 #: inc/functions/settings.php:1919
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_favourite_ads]</strong>"
 msgstr ""
-"Shortcode dla tej strony: <strong>[terraclassifieds_favourite_ads]</strong>"
 
 #: inc/functions/settings.php:1923
-#, fuzzy
-#| msgid "Slug for \"Forgot Password\""
 msgid "Page for \"Forgot password\""
-msgstr "Uproszczona nazwa dla \"Zapomniałem hasła\""
+msgstr ""
 
 #: inc/functions/settings.php:1930
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_forgot_password]</strong>"
 msgstr ""
-"Shortcode dla tej strony: <strong>[terraclassifieds_forgot_password]</strong>"
 
 #: inc/functions/settings.php:1934
-#, fuzzy
-#| msgid "Slug for \"Login\""
 msgid "Page for \"Login\""
-msgstr "Uproszczona nazwa dla \"Logowanie\""
+msgstr ""
 
 #: inc/functions/settings.php:1941
 msgid "Shortcode for this page: <strong>[terraclassifieds_login]</strong>"
-msgstr "Shortcode dla tej strony: <strong>[terraclassifieds_login]</strong>"
+msgstr ""
 
 #: inc/functions/settings.php:1945
-#, fuzzy
-#| msgid "Slug for \"Registration\""
 msgid "Page for \"Registration\""
-msgstr "Uproszczona nazwa dla rejestracji"
+msgstr ""
 
 #: inc/functions/settings.php:1952
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_registration]</strong>"
 msgstr ""
-"Shortcode dla tej strony: <strong> [terraclassifieds_registration] </strong>"
 
 #: inc/functions/settings.php:1956
-#, fuzzy
-#| msgid "Slug for \"My submissions\""
 msgid "Page for \"My submissions\""
-msgstr "Uproszczona nazwa dla \"Moje ogłoszenia\""
+msgstr ""
 
 #: inc/functions/settings.php:1963
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_my_submissions]</strong>"
 msgstr ""
-"Shortcode dla tej strony: <strong>[terraclassifieds_my_submissions]</strong>"
 
 #: inc/functions/settings.php:1967
-#, fuzzy
-#| msgid "Slug for \"My payments\""
 msgid "Page for \"My payments\""
-msgstr "Uproszczona nazwa dla \"Moje płatności\""
+msgstr ""
 
 #: inc/functions/settings.php:1974
 msgid ""
 "Shortcode for this page: <strong>[terraclassifieds_my_payments]</strong>"
 msgstr ""
-"Shortcode dla tej strony: <strong> [terraclassifieds_my_payments] </strong>"
 
 #: inc/functions/settings.php:1978
 msgid "Slugs"
-msgstr "Uproszczone nazwy do adresu URL"
+msgstr ""
 
 #: inc/functions/settings.php:1981
 msgid ""
@@ -3077,710 +2831,678 @@ msgid ""
 "need to be unique.<br />NOTE: You need to select <strong>Post name</strong> "
 "in Settings -> Permalinks."
 msgstr ""
-"TerraClassifieds użyje domyślnych uproszczonych nazw do adresu URL. "
-"Pamiętaj, że uproszczone nazwy muszą być unikalne. <br /> UWAGA: Musisz "
-"wybrać <strong> Nazwa wpisu</strong> w Ustawieniach -> Bezpośrednie "
-"odnośniki."
 
 #: inc/functions/settings.php:1985
 msgid "Slug for \"Add advert\""
-msgstr "Uproszczona nazwa dla \"Dodaj ogłoszenie\""
+msgstr ""
 
 #: inc/functions/settings.php:1995
 msgid "Slug for \"Edit advert\""
-msgstr "Uproszczona nazwa dla \"Edycja ogłoszenia\""
+msgstr ""
 
 #: inc/functions/settings.php:2005
 msgid "Slug for \"Edit profile\""
-msgstr "Uproszczona nazwa dla \"Edycja profilu\""
+msgstr ""
 
 #: inc/functions/settings.php:2015
 msgid "Slug for \"Favourite ads\""
-msgstr "Uproszczona nazwa dla \"Ulubione ogłoszenia\""
+msgstr ""
 
 #: inc/functions/settings.php:2025
 msgid "Slug for \"Forgot Password\""
-msgstr "Uproszczona nazwa dla \"Zapomniałem hasła\""
+msgstr ""
 
 #: inc/functions/settings.php:2035
 msgid "Slug for \"Login\""
-msgstr "Uproszczona nazwa dla \"Logowanie\""
+msgstr ""
 
 #: inc/functions/settings.php:2045
 msgid "Slug for \"Registration\""
-msgstr "Uproszczona nazwa dla rejestracji"
+msgstr ""
 
 #: inc/functions/settings.php:2055
 msgid "Slug for \"My submissions\""
-msgstr "Uproszczona nazwa dla \"Moje ogłoszenia\""
+msgstr ""
 
 #: inc/functions/settings.php:2065
 msgid "Slug for \"My payments\""
-msgstr "Uproszczona nazwa dla \"Moje płatności\""
+msgstr ""
 
 #: inc/functions/settings.php:2075
 msgid "Slug for archive"
-msgstr "Uproszczona nazwa dla widoku \"archive\""
+msgstr ""
 
 #: inc/functions/settings.php:2082
 msgid "Slug for single classified"
-msgstr "Uproszczona nazwa dla jednego ogłoszenia"
+msgstr ""
 
 #: inc/functions/settings.php:2095
 msgid "Meta description text limit"
-msgstr "Limit tekstu opisu meta"
+msgstr ""
 
 #: inc/functions/settings.php:2099
 msgid "Meta description content is taken by default from the ad's description."
-msgstr "Treść opisu meta jest pobierana domyślnie z opisu ogłoszenia."
+msgstr ""
 
 #: inc/functions/settings.php:2103
 msgid "Archived ad"
-msgstr "Zarchiwizowane ogłoszenie"
+msgstr ""
 
 #: inc/functions/settings.php:2108
 msgid "404 page"
-msgstr "Strona 404"
+msgstr ""
 
 #: inc/functions/settings.php:2109
 msgid "redirect to URL"
-msgstr "przekierowanie do adresu URL"
+msgstr ""
 
 #: inc/functions/settings.php:2110
 msgid "deactivate the page"
-msgstr "dezaktywuj stronę"
+msgstr ""
 
 #: inc/functions/settings.php:2111
 msgid "rediret to the parent category ads list"
-msgstr "przekieruj do listy ogłoszeń kategorii nadrzędnej"
+msgstr ""
 
 #: inc/functions/settings.php:2114
 msgid "Select the action once somebody clicks on an expired (archived) ad."
-msgstr "Wybierz akcję, gdy ktoś kliknie wygasłe (zarchiwizowane) ogłoszenie."
+msgstr ""
 
 #: inc/functions/settings.php:2118
 msgid "Archived ad - redirect URL"
-msgstr "Zarchiwizowane ogłoszenie - URL przkierowania"
+msgstr ""
 
 #: inc/functions/settings.php:2129
 msgid "Monetizing"
-msgstr "Zarabianie"
+msgstr ""
 
 #: inc/functions/settings.php:2133
 msgid "Payment methods"
-msgstr "Metody płatności"
+msgstr ""
 
 #: inc/functions/settings.php:2149
 msgid "Use offline payment"
-msgstr "Skorzystaj z płatności offline"
+msgstr ""
 
 #: inc/functions/settings.php:2162
 msgid "Payment information"
-msgstr "Informacje o płatności"
+msgstr ""
 
 #: inc/functions/settings.php:2166
 msgid ""
 "Enter details for your bank account or other necessary information \n"
 "required for making a payment.Remember to add your advert id number."
 msgstr ""
-"Wprowadź dane swojego konta bankowego lub inne niezbędne informacje\n"
-"wymagane do dokonania płatności. Pamiętaj, aby dodać numer identyfikacyjny "
-"ogłoszenia."
 
 #: inc/functions/settings.php:2171 inc/functions/settings.php:2303
 msgid "Payment logo"
-msgstr "Logo płatności"
+msgstr ""
 
 #: inc/functions/settings.php:2172 inc/functions/settings.php:2304
 msgid "Set the image that will be visible on the payments list."
-msgstr "Ustaw obraz, który będzie widoczny na liście płatności."
+msgstr ""
 
 #: inc/functions/settings.php:2200
 msgid "Select this method to pay with PayPal."
-msgstr "Wybierz tę metodę płatności w systemie PayPal."
+msgstr ""
 
 #: inc/functions/settings.php:2204
 msgid "Use PayPal payment"
-msgstr "Skorzystaj z płatności PayPal"
+msgstr ""
 
 #: inc/functions/settings.php:2217
 msgid "Business email id"
-msgstr "Identyfikator firmowego adresu e-mail"
+msgstr ""
 
 #: inc/functions/settings.php:2226
 msgid "Test Mode"
-msgstr "Tryb testowy"
+msgstr ""
 
 #: inc/functions/settings.php:2239
 msgid "Currency Code"
-msgstr "Kod waluty"
+msgstr ""
 
 #: inc/functions/settings.php:2245
 msgid "Australian dollar"
-msgstr "Dolar australijski"
+msgstr ""
 
 #: inc/functions/settings.php:2246
 msgid "Brazilian real"
-msgstr "Real brazylijski"
+msgstr ""
 
 #: inc/functions/settings.php:2247
 msgid "Canadian dollar"
-msgstr "Dolar kanadyjski"
+msgstr ""
 
 #: inc/functions/settings.php:2248
 msgid "Chinese Renmenbi"
-msgstr "Chiński renminbi"
+msgstr ""
 
 #: inc/functions/settings.php:2249
 msgid "Czech koruna"
-msgstr "Korona czeska"
+msgstr ""
 
 #: inc/functions/settings.php:2250
 msgid "Danish krone"
-msgstr "Korona duńska"
+msgstr ""
 
 #: inc/functions/settings.php:2251
 msgid "Euro"
-msgstr "Euro"
+msgstr ""
 
 #: inc/functions/settings.php:2252
 msgid "Hong Kong dollar"
-msgstr "Dolar hongkoński"
+msgstr ""
 
 #: inc/functions/settings.php:2253
 msgid "Hungarian forint"
-msgstr "Forint węgierski"
+msgstr ""
 
 #: inc/functions/settings.php:2254
 msgid "Indian rupee"
-msgstr "Rupia indyjska"
+msgstr ""
 
 #: inc/functions/settings.php:2255
 msgid "Israeli new shekel"
-msgstr "Nowy izraelski szekel"
+msgstr ""
 
 #: inc/functions/settings.php:2256
 msgid "Japanese yen"
-msgstr "Japoński jen"
+msgstr ""
 
 #: inc/functions/settings.php:2257
 msgid "Malaysian ringgit"
-msgstr "Ringgit malezyjski"
+msgstr ""
 
 #: inc/functions/settings.php:2258
 msgid "Mexican peso"
-msgstr "Peso meksykańskie"
+msgstr ""
 
 #: inc/functions/settings.php:2259
 msgid "New Taiwan dollar"
-msgstr "Nowy dolar tajwański"
+msgstr ""
 
 #: inc/functions/settings.php:2260
 msgid "New Zealand dollar"
-msgstr "Dolar nowozelandzki"
+msgstr ""
 
 #: inc/functions/settings.php:2261
 msgid "Norwegian krone"
-msgstr "Korona norweska"
+msgstr ""
 
 #: inc/functions/settings.php:2262
 msgid "Philippine peso"
-msgstr "Peso filipińskie"
+msgstr ""
 
 #: inc/functions/settings.php:2263
 msgid "Polish złoty"
-msgstr "Polski złoty"
+msgstr ""
 
 #: inc/functions/settings.php:2264
 msgid "Pound sterling"
-msgstr "Funt szterling"
+msgstr ""
 
 #: inc/functions/settings.php:2265
 msgid "Russian ruble"
-msgstr "Rubel rosyjski"
+msgstr ""
 
 #: inc/functions/settings.php:2266
 msgid "Singapore dollar"
-msgstr "Dolar singapurski"
+msgstr ""
 
 #: inc/functions/settings.php:2267
 msgid "Swedish krona"
-msgstr "Korona szwedzka"
+msgstr ""
 
 #: inc/functions/settings.php:2268
 msgid "Swiss franc"
-msgstr "Frank szwajcarski"
+msgstr ""
 
 #: inc/functions/settings.php:2269
 msgid "Thai baht"
-msgstr "Bat tajlandzki"
+msgstr ""
 
 #: inc/functions/settings.php:2270
 msgid "United States dollar"
-msgstr "Dolar amerykański"
+msgstr ""
 
 #: inc/functions/settings.php:2276
 msgid "Return successful url"
-msgstr "Adres URL dla sukcesu"
+msgstr ""
 
 #: inc/functions/settings.php:2285
 msgid "Return cancel url"
-msgstr "Adres URL dla błędu"
+msgstr ""
 
 #: inc/functions/settings.php:2294
 msgid "Notify url"
-msgstr "Adres URL powiadomienia"
+msgstr ""
 
 #: inc/functions/settings.php:2329
 msgid "VAT Rate"
-msgstr "Stawka VAT"
+msgstr ""
 
 #: inc/functions/settings.php:2337
 msgid "VAT Rate (%)"
-msgstr "Stawka VAT (%)"
+msgstr ""
 
 #: inc/functions/settings.php:2349
 msgid "Charging options"
-msgstr "Opcje płatności"
+msgstr ""
 
 #: inc/functions/settings.php:2357
 msgid "Charging for adding ads (categories)"
-msgstr "Opłaty za dodawanie ogłoszeń (kategorie)"
+msgstr ""
 
 #: inc/functions/settings.php:2360
 msgid ""
 "Set price without currency. Go to the payment methods section to set "
 "currency."
 msgstr ""
-"Ustaw cenę bez waluty. Przejdź do sekcji metod płatności, aby ustawić walutę."
 
 #: inc/functions/settings.php:2369
 msgid "Per Category"
-msgstr "Dla kategorii"
+msgstr ""
 
 #: inc/functions/settings.php:2370
 msgid "Fixed for all categories"
-msgstr "Stałe dla wszystkich kategorii"
+msgstr ""
 
 #: inc/functions/settings.php:2377
 msgid "Enter the price"
-msgstr "Podaj cenę"
+msgstr ""
 
 #: inc/functions/settings.php:2399
 #, php-format
 msgid "Category: %s"
-msgstr "Kategoria: %s"
+msgstr ""
 
 #: inc/functions/settings.php:2403
 msgid "Leave empty to set the category free of charge."
-msgstr "Pozostaw puste, aby ustawić bezpłatną kategorię."
+msgstr ""
 
 #: inc/functions/settings.php:2422
 msgid "Renew price"
-msgstr "Cena odnowienia"
+msgstr ""
 
 #: inc/functions/settings.php:2437
 msgid "Documentation"
-msgstr "Dokumentacja"
+msgstr ""
 
 #: inc/user/user.php:66
 msgid "Please enter a valid username or email"
-msgstr "Wprowadź prawidłową nazwę użytkownika lub adres e-mail"
+msgstr ""
 
 #: inc/user/user.php:67
 msgid "Please enter a valid password"
-msgstr "Proszę wprowadzić poprawne hasło"
+msgstr ""
 
 #: inc/user/user.php:68
 msgid "Please enter a valid username"
-msgstr "Proszę podać poprawną nazwę użytkownika"
+msgstr ""
 
 #: inc/user/user.php:69
 msgid "Please enter valid email address"
-msgstr "Proszę wprowadzić poprawny adres email"
+msgstr ""
 
 #: inc/user/user.php:70
 msgid "Please enter valid phone numer"
-msgstr "Proszę podać poprawny numer telefonu"
+msgstr ""
 
 #: inc/user/user.php:71
 msgid "Please enter valid URL"
-msgstr "Wprowadź prawidłowy adres URL"
+msgstr ""
 
 #: inc/user/user.php:89
 msgid "User Profile"
-msgstr "Profil użytkownika"
+msgstr ""
 
 #: inc/user/user.php:102
 msgid "Terraclassifieds Avatar"
-msgstr "Awatar TerraClassifieds"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:18
 msgid "A list or dropdown of ad categories."
-msgstr "Lista lub rozwijana lista kategorii ogłoszeń."
+msgstr ""
 
 #: inc/widgets/terra-categories.php:21
 msgid "TerraClassifieds Categories"
-msgstr "Kategorie TerraClassifieds"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:135
 msgid "Title:"
-msgstr "Tytuł:"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:140
 msgid "Layout:"
-msgstr "Układ:"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:142
 msgid "Horizontal"
-msgstr "Poziomo"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:143
 msgid "Vertical"
-msgstr "Pionowo"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:148
 msgid "Columns (only vertical layout):"
-msgstr "Kolumny (tylko układ pionowy):"
+msgstr ""
 
-#: inc/widgets/terra-categories.php:150 inc/widgets/terra-latest-ads.php:281
+#: inc/widgets/terra-categories.php:150 inc/widgets/terra-latest-ads.php:282
 msgid "1 column"
-msgstr "1 kolumna"
+msgstr ""
 
-#: inc/widgets/terra-categories.php:151 inc/widgets/terra-latest-ads.php:282
+#: inc/widgets/terra-categories.php:151 inc/widgets/terra-latest-ads.php:283
 msgid "2 columns"
-msgstr "2 kolumny"
+msgstr ""
 
-#: inc/widgets/terra-categories.php:152 inc/widgets/terra-latest-ads.php:283
+#: inc/widgets/terra-categories.php:152 inc/widgets/terra-latest-ads.php:284
 msgid "3 columns"
-msgstr "3 kolumny"
+msgstr ""
 
-#: inc/widgets/terra-categories.php:153 inc/widgets/terra-latest-ads.php:284
+#: inc/widgets/terra-categories.php:153 inc/widgets/terra-latest-ads.php:285
 msgid "4 columns"
-msgstr "4 kolumny"
+msgstr ""
 
-#: inc/widgets/terra-categories.php:154 inc/widgets/terra-latest-ads.php:285
+#: inc/widgets/terra-categories.php:154 inc/widgets/terra-latest-ads.php:286
 msgid "5 columns"
-msgstr "5 kolumn"
+msgstr ""
 
-#: inc/widgets/terra-categories.php:155 inc/widgets/terra-latest-ads.php:286
+#: inc/widgets/terra-categories.php:155 inc/widgets/terra-latest-ads.php:287
 msgid "6 columns"
-msgstr "6 kolumn"
+msgstr ""
 
-#: inc/widgets/terra-categories.php:156 inc/widgets/terra-latest-ads.php:287
+#: inc/widgets/terra-categories.php:156 inc/widgets/terra-latest-ads.php:288
 msgid "7 columns"
-msgstr "7 kolumn"
+msgstr ""
 
-#: inc/widgets/terra-categories.php:157 inc/widgets/terra-latest-ads.php:288
+#: inc/widgets/terra-categories.php:157 inc/widgets/terra-latest-ads.php:289
 msgid "8 columns"
-msgstr "8 kolumn"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:162
 msgid "Depth:"
-msgstr "Głębokość:"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:164
 msgid "All"
-msgstr "Wszystkie"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:169
 msgid "5"
-msgstr "5"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:170
 msgid "6"
-msgstr "6"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:171
 msgid "7"
-msgstr "7"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:172
 msgid "8"
-msgstr "8"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:173
 msgid "9"
-msgstr "9"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:178
 msgid "Order by:"
-msgstr "Sortuj według:"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:186
 msgid "Order:"
-msgstr "Sortuj:"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:188
 msgid "Ascending"
-msgstr "Rosnąco"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:189
 msgid "Descending"
-msgstr "Malejąco"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:195
 msgid "Show post counts"
-msgstr "Pokaż liczbę wpisów"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:197
 msgid "Show hierarchy"
-msgstr "Pokaż hierarchię"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:199
 msgid "Show images"
-msgstr "Pokaż zdjęcia"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:201
 msgid "Show empty categories"
-msgstr "Pokaż puste kategorie"
+msgstr ""
 
 #: inc/widgets/terra-categories.php:361
 #, php-format
 msgid "Feed for all posts filed under %s"
-msgstr "Kanał dla wszystkich postów przesłanych w ramach % s"
+msgstr ""
 
 #: inc/widgets/terra-latest-ads.php:16
 msgid "Display Latest Ads."
-msgstr "Wyświetlaj najnowsze ogłoszenia."
+msgstr ""
 
 #: inc/widgets/terra-latest-ads.php:18
 msgid "TerraClassifieds Latest Ads"
-msgstr "Najnowsze ogłoszenia TerraClassifieds"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:176 templates/default_post.php:186
-#: templates/single.php:195
+#: inc/widgets/terra-latest-ads.php:177 templates/default_post.php:189
+#: templates/single.php:200
 msgid "Price:"
-msgstr "Cena:"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:207
+#: inc/widgets/terra-latest-ads.php:208
 msgid "No ads."
-msgstr "Brak ogłoszeń."
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:241 inc/widgets/terra-menu.php:111
+#: inc/widgets/terra-latest-ads.php:242 inc/widgets/terra-menu.php:111
 #: inc/widgets/terra-search.php:105
 msgid "Widget Title"
-msgstr "Tytul widżetu"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:246
+#: inc/widgets/terra-latest-ads.php:247
 msgid "Order"
-msgstr "Kolejność"
-
-#: inc/widgets/terra-latest-ads.php:248
-msgid "Latest first"
-msgstr "Najnowsze jako pierwsze"
+msgstr ""
 
 #: inc/widgets/terra-latest-ads.php:249
-msgid "Oldest first"
-msgstr "Najpierw najstarsze"
+msgid "Latest first"
+msgstr ""
 
 #: inc/widgets/terra-latest-ads.php:250
+msgid "Oldest first"
+msgstr ""
+
+#: inc/widgets/terra-latest-ads.php:251
 msgid "Alphabetical"
-msgstr "Alfabetycznie"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:255
+#: inc/widgets/terra-latest-ads.php:256
 msgid "Number of ads to show"
-msgstr "Liczba ogłoszeń do wyświetlenia"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:259
+#: inc/widgets/terra-latest-ads.php:260
 msgid "Description limit <small>(in words, 0 to disable)</small>"
-msgstr "Limit opisu <small> (słownie, 0, aby wyłączyć) </small>"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:264
+#: inc/widgets/terra-latest-ads.php:265
 msgid "Thumbnail Size:"
-msgstr "Wielkość miniaturki:"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:279
+#: inc/widgets/terra-latest-ads.php:280
 msgid "Columns :"
-msgstr "Kolumny:"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:294
+#: inc/widgets/terra-latest-ads.php:295
 msgid "Show price"
-msgstr "Pokaż cenę"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:299
+#: inc/widgets/terra-latest-ads.php:300
 msgid "Show types"
-msgstr "Pokaż typy"
+msgstr ""
 
-#: inc/widgets/terra-latest-ads.php:304 inc/widgets/terra-menu.php:117
+#: inc/widgets/terra-latest-ads.php:305 inc/widgets/terra-menu.php:117
 msgid "Show add to favourites"
-msgstr "Pokaż dodaj do ulubionych"
+msgstr ""
 
 #: inc/widgets/terra-menu.php:16
 msgid "Show Terraclassifieds menu."
-msgstr "Pokaż menu Terraclassifieds."
+msgstr ""
 
 #: inc/widgets/terra-menu.php:18
 msgid "TerraClassifieds Menu"
-msgstr "Menu TerraClassifieds"
+msgstr ""
 
 #: inc/widgets/terra-menu.php:56
 msgid "My account"
-msgstr "Moje konto"
+msgstr ""
 
 #: inc/widgets/terra-menu.php:61
 msgid "Classifieds"
-msgstr "Ogłoszenia"
+msgstr ""
 
 #: inc/widgets/terra-menu.php:64
 msgid "Add new ad"
-msgstr "Dodaj nowe ogłoszenie"
+msgstr ""
 
 #: inc/widgets/terra-menu.php:67
 msgid "Your adverts"
-msgstr "Twoje ogłoszenia"
+msgstr ""
 
 #: inc/widgets/terra-menu.php:70
 msgid "Your payments"
-msgstr "Twoje płatności"
+msgstr ""
 
 #: inc/widgets/terra-menu.php:76
 msgid "Edit profile"
-msgstr "Edytuj profil"
+msgstr ""
 
 #: inc/widgets/terra-menu.php:80
 msgid "Your favorite ads"
-msgstr "Twoje ulubione ogłoszenia"
+msgstr ""
 
 #: inc/widgets/terra-search.php:19
 msgid "Search for Terraclassifieds ads."
-msgstr "Szukaj ogłoszeń Terraclassifieds."
+msgstr ""
 
 #: inc/widgets/terra-search.php:21
 msgid "TerraClassifieds Search"
-msgstr "Wyszukiwarka TerraClassifieds"
+msgstr ""
 
 #: inc/widgets/terra-search.php:110
 msgid "Category filter"
-msgstr "Filtr kategorii"
+msgstr ""
 
 #: inc/widgets/terra-search.php:126
 msgid "Location filter"
-msgstr "Filtr lokalizacji"
+msgstr ""
 
 #: inc/widgets/terra-search.php:134
 msgid "Location option"
-msgstr "Opcje lokalizacji"
+msgstr ""
 
 #: inc/widgets/terra-search.php:142
 msgid "Location hierarchical (for list option only)"
-msgstr "Lokalizacja hierarchiczna (tylko dla opcji listy)"
+msgstr ""
 
 #: inc/widgets/terra-search.php:150
 msgid "Type filter"
-msgstr "Filtr typu"
+msgstr ""
 
 #: inc/widgets/terra-search.php:158
 msgid "Price filter"
-msgstr "Filtr ceny"
+msgstr ""
 
 #: inc/widgets/terra-search.php:165
 msgid "Search field size"
-msgstr "Rozmiar pola wyszukiwania"
+msgstr ""
 
 #: templates/archive.php:102
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Przepraszamy, ale nic nie pasuje do wyszukiwanych haseł. Spróbuj ponownie, "
-"używając innych słów kluczowych."
 
 #: templates/archive.php:104
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "This category is empty"
 msgstr ""
-"Wygląda na to, że nie możemy znaleźć tego, czego szukasz. Być może "
-"wyszukiwanie pomoże."
 
-#: templates/author.php:45
+#: templates/author.php:51
 msgid "website"
-msgstr "witryna internetowa"
+msgstr ""
 
 #: templates/default_post.php:81 templates/single.php:87
 msgid "This item is not available. Browse the similar products in category:"
-msgstr "Ta pozycja nie jest dostępna. Przeglądaj podobne produkty w kategorii:"
+msgstr ""
 
 #: templates/default_post.php:86 templates/single.php:92
 msgid "Your ad has been updated"
-msgstr "Twoje ogłoszenie zostało zaktualizowane"
+msgstr ""
 
-#: templates/default_post.php:144 templates/single.php:152
+#: templates/default_post.php:147 templates/single.php:157
 msgid "Added"
-msgstr "Dodany"
+msgstr ""
 
-#: templates/default_post.php:147 templates/single.php:155
+#: templates/default_post.php:150 templates/single.php:160
 msgid "Hits:"
-msgstr "Wyświetlenia:"
+msgstr ""
 
-#: templates/default_post.php:209 templates/single.php:219
+#: templates/default_post.php:213 templates/single.php:225
 msgid "Contact this advertiser"
-msgstr "Skontaktuj się z tym ogłoszeniodawcą"
+msgstr ""
 
-#: templates/default_post.php:214 templates/default_post.php:314
-#: templates/single.php:224 templates/single.php:324
+#: templates/default_post.php:219 templates/default_post.php:353
+#: templates/single.php:231 templates/single.php:367
 msgid "Your name"
-msgstr "Twoja nazwa"
+msgstr ""
 
-#: templates/default_post.php:219 templates/default_post.php:319
-#: templates/single.php:229 templates/single.php:329
+#: templates/default_post.php:224 templates/default_post.php:358
+#: templates/single.php:236 templates/single.php:372
 msgid "Your email"
-msgstr "Twój email"
+msgstr ""
 
-#: templates/default_post.php:225 templates/default_post.php:325
-#: templates/single.php:235 templates/single.php:335
+#: templates/default_post.php:230 templates/default_post.php:364
+#: templates/single.php:242 templates/single.php:378
 msgid "Message"
-msgstr "Wiadomość"
+msgstr ""
 
-#: templates/default_post.php:240 templates/default_post.php:339
-#: templates/single.php:250 templates/single.php:349
+#: templates/default_post.php:245 templates/default_post.php:378
+#: templates/single.php:257 templates/single.php:392
 msgid "Send message"
-msgstr "Wyślij wiadomość"
+msgstr ""
 
-#: templates/default_post.php:249 templates/single.php:260
+#: templates/default_post.php:255 templates/single.php:268
 msgid "Phone:"
-msgstr "Telefon:"
+msgstr ""
 
-#: templates/default_post.php:253 templates/single.php:264
+#: templates/default_post.php:267 templates/default_post.php:313
+#: templates/single.php:280 templates/single.php:326
 msgid "show"
-msgstr "pokaż"
+msgstr ""
 
-#: templates/default_post.php:262 templates/single.php:273
+#: templates/default_post.php:277 templates/single.php:290
 msgid "Location:"
-msgstr "Lokalizacja:"
+msgstr ""
 
-#: templates/default_post.php:280 templates/single.php:291
+#: templates/default_post.php:296 templates/single.php:309
 msgid "Website:"
-msgstr "Strona internetowa:"
+msgstr ""
 
-#: templates/default_post.php:286 templates/single.php:297
+#: templates/default_post.php:321 templates/single.php:334
 msgid "Created by:"
-msgstr "Stworzone przez:"
+msgstr ""
 
-#: templates/default_post.php:297 templates/single.php:308
+#: templates/default_post.php:335 templates/single.php:349
 msgid "See all ads by"
-msgstr "Zobacz wszystkie ogłoszenia"
+msgstr ""
 
-#: templates/default_post.php:299 templates/single.php:310
+#: templates/default_post.php:337 templates/single.php:351
 msgid "No name"
-msgstr "Bez nazwy"
-
-#~ msgid ""
-#~ "Create a classifieds website with WordPress. To save time use dedicated "
-#~ "theme TerraClassic available on <a href=\"https://www.pixelemu.com/"
-#~ "\">pixelemu.com</a>"
-#~ msgstr ""
-#~ "Utwórz witrynę z ogłoszeniami za pomocą WordPress. Aby zaoszczędzić czas, "
-#~ "użyj dedykowanego motywu TerraClassic dostępnego na <a href=\"https://www."
-#~ "pixelemu.com/\"> pixelemu.com </a>"
-
-#~ msgid "Paypal payment"
-#~ msgstr "Płatność PayPal"
-
-#~ msgid ""
-#~ "Select this method to pay with bank transfer or other offline payment "
-#~ "methods"
-#~ msgstr ""
-#~ "Wybierz tę metodę, aby zapłacić przelewem bankowym lub inną metodą "
-#~ "płatności offline"
+msgstr ""
