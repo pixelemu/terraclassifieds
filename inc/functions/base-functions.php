@@ -1619,7 +1619,11 @@ if (!function_exists('terraclassifieds_calculate_ads_price')) {
 		$vat_rate = intval(terraclassifieds_get_option('_tc_monetizing_vat_rate','0'));
 
 		if ($charing_for_add_ads === 'fixed') {
-			$ads_category_price = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_fixed','0'));
+			if ($renew_op) {
+				$ads_category_price = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_fixed_renew_price','0'));
+			}else{
+				$ads_category_price = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_fixed_price','0'));
+			}
 			$ads_price += floatval($ads_category_price);
 		}elseif($charing_for_add_ads === 'per_category') {
 			if ($renew_op) {

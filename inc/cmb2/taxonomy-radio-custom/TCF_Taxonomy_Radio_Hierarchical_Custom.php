@@ -53,7 +53,7 @@ class TCF_Taxonomy_Radio_Hierarchical_Custom extends CMB2_Type_Taxonomy_Radio_Hi
 			$currency = terraclassifieds_get_option( '_tc_advert_currency', '$' );
 			$unit_position = (int) terraclassifieds_get_option( '_tc_unit_position', 1 );
 			if ($charing_for_add_ads === 'fixed') {
-				$price_for_charging_ads = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_fixed','0'));
+				$price_for_charging_ads = floatval(terraclassifieds_get_option('_tc_monetizing_charging_for_adding_ads_price_fixed_price','0'));
 				if (intval($price_for_charging_ads) == 0) {
 					$price_for_charging_ads_text = ' ('.__('Free', 'terraclassifieds').')';
 				}else{
