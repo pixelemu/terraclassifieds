@@ -112,29 +112,59 @@
 		//Monetizing - show/hide additional fields - Start
 		$('.cmb2-id--tc-monetizing-payment-methods-title div h3').append('<span class="_tc_monetizing_payment_methods_settings_chevron"><i class="fas fa-chevron-down"></i></span>');
 		$('.cmb2-id--tc-monetizing-charging-options-title div h3').append('<span class="_tc_monetizing_charging_options_settings_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_monetizing_offline_payment_settings_title div h3').append('<span class="_tc_monetizing_offline_payment_settings_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_monetizing_paypal_payment_settings_title div h3').append('<span class="_tc_monetizing_paypal_payment_settings_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_monetizing_vat_rate_settings_title div h3').append('<span class="_tc_monetizing_vat_rate_settings_chevron"><i class="fas fa-chevron-down"></i></span>');
 		$('.tc_monetizing_charging_for_adding_ads_price_per_category div h3').prepend('<span class="_tc_monetizing_charging_for_adding_ads_price_per_category_settings_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title div h3').append('<span class="_tc_monetizing_charging_for_adding_ads_title_chevron"><i class="fas fa-chevron-down"></i></span>');
 		
+		var offline_payment_methods_close = true;
 		$('.cmb2-id--tc-monetizing-offline-payment-title').click(function(){
-			$('.cmb2-id--tc-monetizing-offline-payment-title p').toggle();
-			if( $('#_tc_monetizing_use_offline_payment2').is(':checked')) {
-				$('._tc_monetizing_offline_payment_settings_item').toggle();
+			offline_payment_methods_close = !offline_payment_methods_close;
+			if (offline_payment_methods_close) {
+				$('span._tc_monetizing_offline_payment_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('.cmb2-id--tc-monetizing-offline-payment-title p').hide();
+				$('.cmb2-id--tc-monetizing-use-offline-payment').hide();
+				$('._tc_monetizing_offline_payment_settings_item').hide();
 			}else{
-				$('.cmb2-id--tc-monetizing-use-offline-payment').toggle();
+				$('span._tc_monetizing_offline_payment_settings_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('.cmb2-id--tc-monetizing-offline-payment-title p').show();
+				$('.cmb2-id--tc-monetizing-use-offline-payment').show();
+				if( $('#_tc_monetizing_use_offline_payment2').is(':checked')) {
+					$('._tc_monetizing_offline_payment_settings_item').show();
+				}
 			}
 			
 		});
 		
+		var paypal_payment_methods_close = true;
 		$('.cmb2-id--tc-monetizing-paypal-payment-title').click(function(){
-			$('.cmb2-id--tc-monetizing-paypal-payment-title p').toggle();
-			if( $('#_tc_monetizing_use_paypal_payment2').is(':checked')) {
-				$('._tc_monetizing_paypal_payment_settings_item').toggle();
+			paypal_payment_methods_close = !paypal_payment_methods_close;
+			if (paypal_payment_methods_close) {
+				$('span._tc_monetizing_paypal_payment_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('.cmb2-id--tc-monetizing-paypal-payment-title p').hide();
+				$('._tc_monetizing_paypal_payment_settings_item').hide();
+				$('.cmb2-id--tc-monetizing-use-paypal-payment').hide();
 			}else{
-				$('.cmb2-id--tc-monetizing-use-paypal-payment').toggle();
+				$('span._tc_monetizing_paypal_payment_settings_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('.cmb2-id--tc-monetizing-paypal-payment-title p').show();
+				$('.cmb2-id--tc-monetizing-use-paypal-payment').show();
+				if( $('#_tc_monetizing_use_paypal_payment2').is(':checked')) {
+					$('._tc_monetizing_paypal_payment_settings_item').show();
+				}
 			}
 		});
 		
+		var vat_rate_close = true;
 		$('.cmb2-id--tc-monetizing-vat-rate-title').click(function(){
-			$('._tc_monetizing_vat_rate_settings_item').toggle();
+			vat_rate_close = !vat_rate_close;
+			if (vat_rate_close) {
+				$('span._tc_monetizing_vat_rate_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_monetizing_vat_rate_settings_item').hide();
+			}else{
+				$('span._tc_monetizing_vat_rate_settings_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_monetizing_vat_rate_settings_item').show();
+			}
 		});
 		
 		if( $('#_tc_monetizing_use_offline_payment2').is(':checked')) {
@@ -199,7 +229,8 @@
 		
 		if ($(".cmb2-id--tc-monetizing-charging-for-adding-ads-price input").click(function() {
 			if($(this).attr('id') == '_tc_monetizing_charging_for_adding_ads_price2') {
-				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").show();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").show();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").show();
 				$('.tc_monetizing_charging_for_adding_ads_price_category_div').hide();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category').hide();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').hide();
@@ -209,7 +240,8 @@
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category_input input').each(function() {
 					$(this).val('');
 				});
-				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").hide();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").hide();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").hide();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').hide();
 				$('span._tc_monetizing_charging_for_adding_ads_price_per_category_settings_chevron').each(function() {
 					$(this).html('<i class="fas fa-chevron-down"></i>')
@@ -219,7 +251,8 @@
 				});
 			}else{
 				$('#_tc_monetizing_charging_for_adding_ads_price_fixed').val(0);
-				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").hide();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").hide();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").hide();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category').hide();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').hide();
 			}
@@ -227,20 +260,23 @@
 			
 		if( $('#_tc_monetizing_charging_for_adding_ads_price1').is(':checked')) {
 			$('.tc_monetizing_charging_for_adding_ads_price_category_div').show();
-			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").hide();
+			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").hide();
+			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").hide();
 			$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').show();
 			$('.tc_monetizing_charging_for_adding_ads_price_per_category').show();
 		}
 		
 		if( $('#_tc_monetizing_charging_for_adding_ads_price2').is(':checked')) {
-			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").show();
+			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").show();
+			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").show();
 			$('.tc_monetizing_charging_for_adding_ads_price_category_div').hide();
 			$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').hide();
 			$('.tc_monetizing_charging_for_adding_ads_price_per_category').hide();
 		}
 		
 		if( $('#_tc_monetizing_charging_for_adding_ads_price3').is(':checked')) {
-			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").hide();
+			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").hide();
+			$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").hide();
 			$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').hide();
 			$('.tc_monetizing_charging_for_adding_ads_price_per_category').hide();
 		}
@@ -262,27 +298,27 @@
 		$('#-tc-monetizing-payment-methods-title').on('click', function() {
 			payment_methods_close = !payment_methods_close;
 			if (payment_methods_close) {
+				offline_payment_methods_close = true;
+				paypal_payment_methods_close = true;
+				vat_rate_close = true;
 				$('span._tc_monetizing_payment_methods_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('span._tc_monetizing_offline_payment_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('span._tc_monetizing_paypal_payment_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('span._tc_monetizing_vat_rate_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('.cmb2-id--tc-monetizing-offline-payment-title').hide();
+				$('.cmb2-id--tc-monetizing-paypal-payment-title').hide();
+				$('.cmb2-id--tc-monetizing-vat-rate-title').hide();
+				$('._tc_monetizing_vat_rate_settings_item').hide();
+				$('.cmb2-id--tc-monetizing-offline-payment-title p').hide();
+				$('.cmb2-id--tc-monetizing-paypal-payment-title p').hide();
 			}else{
 				$('span._tc_monetizing_payment_methods_settings_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('.cmb2-id--tc-monetizing-offline-payment-title').show();
+				$('.cmb2-id--tc-monetizing-paypal-payment-title').show();
+				$('.cmb2-id--tc-monetizing-vat-rate-title').show();
 			}
-			$('.cmb2-id--tc-monetizing-offline-payment-title').toggle();
-			$('.cmb2-id--tc-monetizing-paypal-payment-title').toggle();
-			$('.cmb2-id--tc-monetizing-vat-rate-title').toggle();
-			
-			if( $('#_tc_monetizing_use_offline_payment2').is(':checked')) {
-				$('._tc_monetizing_offline_payment_settings_item').toggle();
-			}else{
-				$('.cmb2-id--tc-monetizing-use-offline-payment').toggle();
-			}
-			
-			if( $('#_tc_monetizing_use_paypal_payment2').is(':checked')) {
-				$('._tc_monetizing_paypal_payment_settings_item').toggle();
-			}else{
-				$('.cmb2-id--tc-monetizing-use-paypal-payment').toggle();
-			}
-			
-			$('._tc_monetizing_vat_rate_settings_item').toggle();
+			$('._tc_monetizing_offline_payment_settings_item').hide();
+			$('._tc_monetizing_paypal_payment_settings_item').hide();
 		});
 		
 		var charging_options_close = true;
@@ -328,10 +364,11 @@
 			
 		});
 		
-		var charging_for_adding_ads_title_close = false;
+		var charging_for_adding_ads_title_close = true;
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title').on('click', function() {
 			charging_for_adding_ads_title_close = !charging_for_adding_ads_title_close;
 			if (charging_for_adding_ads_title_close) {
+				$('span._tc_monetizing_charging_for_adding_ads_title_chevron').html('<i class="fas fa-chevron-down"></i>');
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category').hide();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category').each(function() {
 					var id = $(this).find('h3').data('id');
@@ -340,13 +377,15 @@
 				});
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').hide();
 				$(this).find('p').hide();
-				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").hide();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").hide();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").hide();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').hide();
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').hide();
 				$(this).find('p').hide();
-				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").hide();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").hide();
+				$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").hide();
 			}else{
-				
+				$('span._tc_monetizing_charging_for_adding_ads_title_chevron').html('<i class="fas fa-chevron-up"></i>');
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').show();
 				$(this).find('p').show();
 				if( $('#_tc_monetizing_charging_for_adding_ads_price1').is(':checked')) {
@@ -354,7 +393,8 @@
 				}
 				
 				if( $('#_tc_monetizing_charging_for_adding_ads_price2').is(':checked')) {
-					$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").show();
+					$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price").show();
+					$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price").show();
 				}
 			}
 		});
@@ -373,7 +413,8 @@
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title').hide();
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title p').hide();
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').hide();
-		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed').hide();
+		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price').hide();
+		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price').hide();
 		
 	    // only for advert edit view
 		if($("body").hasClass("post-type-classified")){

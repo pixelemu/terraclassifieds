@@ -2197,6 +2197,7 @@ required for making a payment.Remember to add your advert id number.', 'terracla
 					'name' => __('PayPal payment', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_monetizing_paypal_payment_title',
+					'classes' => '_tc_monetizing_paypal_payment_settings_title _tc_monetizing_offline_payment_methods_item',
 					'desc' => __('Select this method to pay with PayPal.', 'terraclassifieds'),
 				),
 				
@@ -2329,7 +2330,7 @@ required for making a payment.Remember to add your advert id number.', 'terracla
 					'name' => __('VAT Rate', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_monetizing_vat_rate_title',
-					'classes' => '_tc_monetizing_offline_payment_methods_item',
+					'classes' => '_tc_monetizing_vat_rate_settings_title _tc_monetizing_offline_payment_methods_item',
 					'desc' => __('', 'terraclassifieds'),
 				),
 				
@@ -2374,8 +2375,20 @@ required for making a payment.Remember to add your advert id number.', 'terracla
 				),
 				
 				array(
-					'name'    => __('Enter the price', 'terraclassifieds'),
-					'id'      => '_tc_monetizing_charging_for_adding_ads_price_fixed',
+					'name'    => __('Price', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_charging_for_adding_ads_price_fixed_price',
+					'type'    => 'text',
+					'classes' => '',
+					'default' => '',
+					'attributes' => array(
+						'type' => 'number',
+						'min' => 0,
+					),
+				),
+				
+				array(
+					'name'    => __('Renew price', 'terraclassifieds'),
+					'id'      => '_tc_monetizing_charging_for_adding_ads_price_fixed_renew_price',
 					'type'    => 'text',
 					'classes' => '',
 					'default' => '',
