@@ -339,14 +339,10 @@
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title').hide();
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').hide();
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title p').hide();
-				charging_for_adding_ads_title_close = false;
 			}else{
 				$('span._tc_monetizing_charging_options_settings_chevron').html('<i class="fas fa-chevron-up"></i>');
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title').show();
-				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').show();
-				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title p').show();
 			}
-			
 			if( $('#_tc_monetizing_charging_for_adding_ads_price1').is(':checked')) {
 				if (charging_options_close) {
 					$('.tc_monetizing_charging_for_adding_ads_price_per_category').hide();
@@ -363,15 +359,12 @@
 					$('.tc_monetizing_charging_for_adding_ads_price_per_category').show();
 				}
 			}
-		
 			if( $('#_tc_monetizing_charging_for_adding_ads_price2').is(':checked')) {
 				if (charging_options_close) {
-					$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed').hide();
-				}else{
-					$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed').show();
+					$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price').hide();
+					$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price').hide();
 				}
 			}
-			
 		});
 		
 		var charging_for_adding_ads_title_close = true;
