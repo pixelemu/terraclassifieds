@@ -182,6 +182,7 @@
 									update_post_meta($item_id, '_tc_expire_date', $expire_time_field);
 									update_post_meta($item_id, '_tc_expire_soon_notification_done', false);
 									terraclassifieds_sendmail_update_status3($item_id,$payment_status[$change_status]);
+									terraclassifieds_sendmail_admin_payment_completed($item_val);
 								}else{
 									$arg = array('ID' => $item_id, 'post_status' => 'rejected');
 									wp_update_post($arg);
