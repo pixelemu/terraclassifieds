@@ -117,6 +117,16 @@
 		$('._tc_monetizing_vat_rate_settings_title div h3').append('<span class="_tc_monetizing_vat_rate_settings_chevron"><i class="fas fa-chevron-down"></i></span>');
 		$('.tc_monetizing_charging_for_adding_ads_price_per_category div h3').prepend('<span class="_tc_monetizing_charging_for_adding_ads_price_per_category_settings_chevron"><i class="fas fa-chevron-down"></i></span>');
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title div h3').append('<span class="_tc_monetizing_charging_for_adding_ads_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_general_title div h3').append('<span class="_tc_email_template_general_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_registration_administrator_title div h3').append('<span class="_tc_email_template_registration_administrator_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_registration_user_title div h3').append('<span class="_tc_email_template_registration_user_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_new_advert_administrator_title div h3').append('<span class="_tc_email_template_new_advert_administrator_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_new_advert_user_title div h3').append('<span class="_tc_email_template_new_advert_user_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_contact_form_user_title div h3').append('<span class="_tc_email_template_contact_form_user_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_abuse_form_user_title div h3').append('<span class="_tc_email_template_abuse_form_user_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_change_status_user_title div h3').append('<span class="_tc_email_template_change_status_user_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_expiration_user_title div h3').append('<span class="_tc_email_template_expiration_user_title_chevron"><i class="fas fa-chevron-down"></i></span>');
+		$('._tc_email_template_payment_completed_admin_title div h3').append('<span class="_tc_email_template_payment_completed_admin_title_chevron"><i class="fas fa-chevron-down"></i></span>');
 		
 		var offline_payment_methods_close = true;
 		$('.cmb2-id--tc-monetizing-offline-payment-title').click(function(){
@@ -399,6 +409,152 @@
 			}
 		});
 		
+		//Email Templates - General
+		var email_template_general_title_close = true;
+		$('._tc_email_template_general_title').on('click', function() {
+			email_template_general_title_close = !email_template_general_title_close;
+			if (email_template_general_title_close) {
+				$('span._tc_email_template_general_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_general_item').hide();
+			}else{
+				$('span._tc_email_template_general_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_general_item').show();
+			}
+		});
+		
+		//Email Templates - Registration - Admin
+		var email_template_registration_administrator_close = true;
+		$('._tc_email_template_registration_administrator_title').on('click', function() {
+			$('._tc_email_template_registration_administrator_message .CodeMirror').remove();
+			email_template_registration_administrator_close = !email_template_registration_administrator_close;
+			if (email_template_registration_administrator_close) {
+				$('span._tc_email_template_registration_administrator_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_registration_administrator_item').hide();
+			}else{
+				$('span._tc_email_template_registration_administrator_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_registration_administrator_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_registration_administrator_message'));
+			}
+		});
+		//Email Templates - Registration - User
+		var email_template_registration_user_close = true;
+		$('._tc_email_template_registration_user_title').on('click', function() {
+			$('._tc_email_template_registration_user_message .CodeMirror').remove();
+			email_template_registration_user_close = !email_template_registration_user_close;
+			if (email_template_registration_user_close) {
+				$('span._tc_email_template_registration_user_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_registration_user_item').hide();
+			}else{
+				$('span._tc_email_template_registration_user_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_registration_user_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_registration_user_message'));
+			}
+		});
+		
+		//Email Templates - New advert - Admin
+		var email_template_new_advert_administrator_close = true;
+		$('._tc_email_template_new_advert_administrator_title').on('click', function() {
+			$('._tc_email_template_new_advert_administrator_message .CodeMirror').remove();
+			email_template_new_advert_administrator_close = !email_template_new_advert_administrator_close;
+			if (email_template_new_advert_administrator_close) {
+				$('span._tc_email_template_new_advert_administrator_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_new_advert_administrator_item').hide();
+			}else{
+				$('span._tc_email_template_new_advert_administrator_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_new_advert_administrator_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_new_advert_administrator_message'));
+			}
+		});
+		//Email Templates - New advert - User
+		var email_template_new_advert_user_close = true;
+		$('._tc_email_template_new_advert_user_title').on('click', function() {
+			$('._tc_email_template_new_advert_user_message .CodeMirror').remove();
+			email_template_new_advert_user_close = !email_template_new_advert_user_close;
+			if (email_template_new_advert_user_close) {
+				$('span._tc_email_template_new_advert_administrator_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_new_advert_user_item').hide();
+			}else{
+				$('span._tc_email_template_new_advert_administrator_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_new_advert_user_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_new_advert_user_message'));
+			}
+		});
+		
+		//Email Templates - Contact Form
+		var email_template_contact_form_user_close = true;
+		$('._tc_email_template_contact_form_user_title').on('click', function() {
+			$('._tc_email_template_contact_form_message .CodeMirror').remove();
+			email_template_contact_form_user_close = !email_template_contact_form_user_close;
+			if (email_template_contact_form_user_close) {
+				$('span._tc_email_template_contact_form_user_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_contact_form_user_item').hide();
+			}else{
+				$('span._tc_email_template_contact_form_user_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_contact_form_user_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_contact_form_message'));
+			}
+		});
+		
+		//Email Templates - Abuse Form
+		var email_template_abuse_form_user_close = true;
+		$('._tc_email_template_abuse_form_user_title').on('click', function() {
+			$('._tc_email_template_abuse_form_message .CodeMirror').remove();
+			email_template_abuse_form_user_close = !email_template_abuse_form_user_close;
+			if (email_template_abuse_form_user_close) {
+				$('span._tc_email_template_abuse_form_user_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_abuse_form_user_item').hide();
+			}else{
+				$('span._tc_email_template_abuse_form_user_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_abuse_form_user_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_abuse_form_message'));
+			}
+		});
+		
+		//Email Templates - Change Status of Advert
+		var email_template_change_status_user_close = true;
+		$('._tc_email_template_change_status_user_title').on('click', function() {
+			$('._tc_email_template_change_status_message .CodeMirror').remove();
+			email_template_change_status_user_close = !email_template_change_status_user_close;
+			if (email_template_change_status_user_close) {
+				$('span._tc_email_template_change_status_user_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_change_status_user_item').hide();
+			}else{
+				$('span._tc_email_template_change_status_user_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_change_status_user_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_change_status_message'));
+			}
+		});
+		
+		//Email Templates - Advert Expiration - Notification
+		var email_template_expiration_user_close = true;
+		$('._tc_email_template_expiration_user_title').on('click', function() {
+			$('._tc_email_template_expiration_notification_message .CodeMirror').remove();
+			email_template_expiration_user_close = !email_template_expiration_user_close;
+			if (email_template_expiration_user_close) {
+				$('span._tc_email_template_expiration_user_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_expiration_user_item').hide();
+			}else{
+				$('span._tc_email_template_expiration_user_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_expiration_user_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_expiration_notification_message'));
+			}
+		});
+		
+		//Email Templates - Advert Expiration - Notification
+		var email_template_expiration_user_close = true;
+		$('._tc_email_template_payment_completed_admin_title').on('click', function() {
+			$('._tc_email_template_payment_completed_admin_notification_message .CodeMirror').remove();
+			email_template_expiration_user_close = !email_template_expiration_user_close;
+			if (email_template_expiration_user_close) {
+				$('span._tc_email_template_payment_completed_admin_title_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('._tc_email_template_payment_completed_admin_item').hide();
+			}else{
+				$('span._tc_email_template_payment_completed_admin_title_chevron').html('<i class="fas fa-chevron-up"></i>');
+				$('._tc_email_template_payment_completed_admin_item').show();
+				wp.codeEditor.initialize($('#_tc_email_template_payment_completed_admin_notification_message'));
+			}
+		});
+		
 		$('#-tc-monetizing-payment-methods-title').trigger('click');
 		
 		$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').each(function() {
@@ -415,6 +571,16 @@
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').hide();
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price').hide();
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price').hide();
+		$('._tc_email_template_general_item').hide();
+		$('._tc_email_template_registration_administrator_item').hide();
+		$('._tc_email_template_registration_user_item').hide();
+		$('._tc_email_template_new_advert_administrator_item').hide();
+		$('._tc_email_template_new_advert_user_item').hide();
+		$('._tc_email_template_contact_form_user_item').hide();
+		$('._tc_email_template_abuse_form_user_item').hide();
+		$('._tc_email_template_change_status_user_item').hide();
+		$('._tc_email_template_expiration_user_item').hide();
+		$('._tc_email_template_payment_completed_admin_item').hide();
 		
 	    // only for advert edit view
 		if($("body").hasClass("post-type-classified")){

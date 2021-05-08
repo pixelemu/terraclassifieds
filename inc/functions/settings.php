@@ -1567,11 +1567,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('General', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_reply_to_email_address_title',
+					'classes' => '_tc_email_template_general_title',
 				),
 				
 				array(
 					'name'             => __('Reply-to e-mail address', 'terraclassifieds'),
 					'id'               => '_tc_email_template_reply_to_email_address',
+					'classes'		   => '_tc_email_template_general_item',
 					'type'             => 'text_email',
 					'desc' => __('Add email address that will be used as "reply-to" for all user notification messages (except contact form).<br /><strong>NOTE:</strong> This is not the email address used for sending system messages. If your Wordpress uses PHP mail<br /> (the most common case) emails will be sent from the address: wordpress@yourdomain.', 'terraclassifieds'),
 				),
@@ -1579,6 +1581,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('E-mail notifications for administrators', 'terraclassifieds'),
 					'id'               => '_tc_email_notifications_administrators',
+					'classes'		   => '_tc_email_template_general_item',
 					'type'             => 'textarea_code',
 					'desc' => __('By default, all notifications are sent to Administration Email Address from General Settings.<br />You may add additional recipients separating addresses with comma. The message is sent as CC.', 'terraclassifieds'),
 				),
@@ -1588,11 +1591,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Registration - administrator notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_registration_administrator_title',
+					'classes'   => '_tc_email_template_registration_administrator_title',
 				),
 
 				array(
 					'name'             => __('Registration - administrator (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_registration_administrator_subject',
+					'classes'   	   => '_tc_email_template_registration_administrator_item',
 					'type'             => 'text',
 					'default' => __('[[[website_name]]] New User Registration', 'terraclassifieds'),
 				),
@@ -1600,6 +1605,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('Registration - administrator (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_registration_administrator_message',
+					'classes'   	   => '_tc_email_template_registration_administrator_message _tc_email_template_registration_administrator_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 	<p>New user registration on your site [[website_name]]:</p>
@@ -1611,6 +1617,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_registration_administrator_af',
+					'classes'	=> '_tc_email_template_registration_administrator_item',
 					'desc' => __('[[website_name]] - Name of your website<br />[[user_login]] - New user login name<br />[[user_email]] - New user email', 'terraclassifieds'),
 				),
 
@@ -1618,11 +1625,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Registration - user notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_registration_user_title',
+					'classes'   => '_tc_email_template_registration_user_title',
 				),
 
 				array(
 					'name'             => __('Registration - user (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_registration_user_subject',
+					'classes'   	   => '_tc_email_template_registration_user_item',
 					'type'             => 'text',
 					'default' => __('[[[website_name]]] Your username and password', 'terraclassifieds'),
 				),
@@ -1630,6 +1639,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('Registration - user (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_registration_user_message',
+					'classes'   	   => '_tc_email_template_registration_user_message _tc_email_template_registration_user_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 	<p>Welcome on site [[website_name]]:</p>
@@ -1641,6 +1651,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_registration_user_af',
+					'classes'	=> '_tc_email_template_registration_user_item',
 					'desc' => __('[[website_name]] - Name of your website<br />[[user_login]] - New user login name<br />[[user_passwordl]] - New user password', 'terraclassifieds'),
 				),
 
@@ -1649,11 +1660,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('New advert - administrator notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_new_advert_administrator_title',
+					'classes'   => '_tc_email_template_new_advert_administrator_title',
 				),
 
 				array(
 					'name'             => __('New advert - administrator (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_new_advert_administrator_subject',
+					'classes'   	   => '_tc_email_template_new_advert_administrator_item',
 					'type'             => 'text',
 					'default' => __('New advert', 'terraclassifieds'),
 				),
@@ -1661,6 +1674,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('New advert - administrator (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_new_advert_administrator_message',
+					'classes'   	   => '_tc_email_template_new_advert_administrator_message _tc_email_template_new_advert_administrator_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 	<p>Hello,</p>
@@ -1677,6 +1691,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_new_advert_administrator_af',
+					'classes' => '_tc_email_template_new_advert_administrator_item',
 					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_author_login]] - Advert author login<br />[[advert_author_email]] - Advert author email<br />[[advert_price]] - Advert price / free<br />[[payment_status]] - Payment status', 'terraclassifieds'),
 				),
 
@@ -1684,11 +1699,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('New advert - user notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_new_advert_user_title',
+					'classes'   => '_tc_email_template_new_advert_user_title',
 				),
 
 				array(
 					'name'             => __('New advert - user (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_new_advert_user_subject',
+					'classes'   	   => '_tc_email_template_new_advert_user_item',
 					'type'             => 'text',
 					'default' => __('New advert', 'terraclassifieds'),
 				),
@@ -1696,6 +1713,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('New advert - user (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_new_advert_user_message',
+					'classes'   	   => '_tc_email_template_new_advert_user_message _tc_email_template_new_advert_user_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 	<p>Hello,</p>
@@ -1712,6 +1730,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_new_advert_user_af',
+					'classes' => '_tc_email_template_new_advert_user_item',
 					'desc' => __('[[advert_title]] - Advert title<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_price]] - Advert price / free<br />[[payment_status]] - Payment status', 'terraclassifieds'),
 				),
 
@@ -1720,11 +1739,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Contact form - user notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_contact_form_user_title',
+					'classes'   => '_tc_email_template_contact_form_user_title',
 				),
 
 				array(
 					'name'             => __('Contact form in advert (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_contact_form_subject',
+					'classes'   	   => '_tc_email_template_contact_form_user_item',
 					'type'             => 'text',
 					'default' => __('Your advertisement enquiry', 'terraclassifieds'),
 				),
@@ -1732,6 +1753,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('Contact form in advert (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_contact_form_message',
+					'classes'   	   => '_tc_email_template_contact_form_message _tc_email_template_contact_form_user_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 	<p>Hello [[user_name]],</p>
@@ -1747,6 +1769,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_contact_form_af',
+					'classes' => '_tc_email_template_contact_form_user_item',
 					'desc' => __('[[user_name]] - Advert author login<br />[[contact_author_name]] - Author name<br />[[contact_author_email]] - Author email<br />[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[contact_message]] - Author message', 'terraclassifieds'),
 				),
 
@@ -1755,11 +1778,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Abuse form - user notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_abuse_form_user_title',
+					'classes'   => '_tc_email_template_abuse_form_user_title',
 				),
 
 				array(
 					'name'             => __('Abuse form in theadvert (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_abuse_form_subject',
+					'classes'   	   => '_tc_email_template_abuse_form_user_item',
 					'type'             => 'text',
 					'default' => __('Abuse Report', 'terraclassifieds'),
 				),
@@ -1767,6 +1792,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('Abuse form in the advert (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_abuse_form_message',
+					'classes'   	   => '_tc_email_template_abuse_form_message _tc_email_template_abuse_form_user_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 	<p>Hello,</p>
@@ -1785,6 +1811,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_abuse_form_af',
+					'classes' => '_tc_email_template_abuse_form_user_item',
 					'desc' => __('[[user_name]] - Advert author login<br />[[contact_author_name]] - Author name<br />[[contact_author_email]] - Author email<br />[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[contact_message]] - Author message', 'terraclassifieds'),
 				),
 
@@ -1793,11 +1820,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Change status - user notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_change_status_user_title',
+					'classes'   => '_tc_email_template_change_status_user_title',
 				),
 
 				array(
 					'name'             => __('Change status (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_change_status_subject',
+					'classes'	       => '_tc_email_template_change_status_user_item',
 					'type'             => 'text',
 					'default' => __('Advert status change', 'terraclassifieds'),
 				),
@@ -1805,6 +1834,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('Change status (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_change_status_message',
+					'classes'	       => '_tc_email_template_change_status_message _tc_email_template_change_status_user_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 	<p>Hello,</p>
@@ -1821,6 +1851,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_change_status_af',
+					'classes' => '_tc_email_template_change_status_user_item',
 					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_status]] - Advert status<br />[[payment_status]] - Payment status', 'terraclassifieds'),
 				),
 
@@ -1829,11 +1860,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Expiration - user notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_expiration_user_title',
+					'classes'   => '_tc_email_template_expiration_user_title',
 				),
 
 				array(
 					'name'             => __('Advert - expiration notification (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_expiration_notification_subject',
+					'classes'	       => '_tc_email_template_expiration_user_item',
 					'type'             => 'text',
 					'default' => __('Advert expire notification', 'terraclassifieds'),
 				),
@@ -1841,6 +1874,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('Advert - expiration notification (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_expiration_notification_message',
+					'classes'	       => '_tc_email_template_expiration_notification_message _tc_email_template_expiration_user_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 	<p>Hello,</p>
@@ -1857,6 +1891,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_expiration_notification_af',
+					'classes' => '_tc_email_template_expiration_user_item',
 					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_expire_days]] - Number of days to advert expiration<br />[[advert_renew_price]] - Advert renew price', 'terraclassifieds'),
 				),
 				
@@ -1865,11 +1900,13 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Payment completed - admin notification', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_payment_completed_admin_title',
+					'classes'   => '_tc_email_template_payment_completed_admin_title',
 				),
 				
 				array(
 					'name'             => __('Change status (subject)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_payment_completed_admin_notification_subject',
+					'classes'	       => '_tc_email_template_payment_completed_admin_item',
 					'type'             => 'text',
 					'default' => __('Payment completed', 'terraclassifieds'),
 				),
@@ -1877,6 +1914,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 				array(
 					'name'             => __('Change status (message)', 'terraclassifieds'),
 					'id'               => '_tc_email_template_payment_completed_admin_notification_message',
+					'classes'	       => '_tc_email_template_payment_completed_admin_notification_message _tc_email_template_payment_completed_admin_item',
 					'type'             => 'textarea_code',
 					'default' => __('
 <p>Good news,</p>
@@ -1893,6 +1931,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'name' => __('Available tags', 'terraclassifieds'),
 					'type' => 'title',
 					'id'   => '_tc_email_template_payment_completed_admin_notificatio_af',
+					'classes' => '_tc_email_template_payment_completed_admin_item',
 					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[payment_amount]] - Payment amount<br/ >[[payment_method]] - Payment method<br/ >[[payment_id]] - Payment ID<br />[[payment_date]] - Payment date', 'terraclassifieds'),
 				),
 
