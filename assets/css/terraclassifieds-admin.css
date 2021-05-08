@@ -354,13 +354,23 @@
 
 ._tc_monetizing_payment_methods_settings_title h3, ._tc_monetizing_charging_options_settings_title h3,
 ._tc_monetizing_offline_payment_settings_title h3, ._tc_monetizing_paypal_payment_settings_title h3,
-._tc_monetizing_vat_rate_settings_title h3 {
+._tc_monetizing_vat_rate_settings_title h3, ._tc_email_template_general_title h3,
+._tc_email_template_registration_administrator_title h3, ._tc_email_template_registration_user_title h3, 
+._tc_email_template_new_advert_administrator_title h3, ._tc_email_template_new_advert_user_title h3, 
+._tc_email_template_contact_form_user_title h3, ._tc_email_template_abuse_form_user_title h3, 
+._tc_email_template_change_status_user_title h3, ._tc_email_template_expiration_user_title h3,
+._tc_email_template_payment_completed_admin_title h3 {
 	cursor: pointer;
 }
 
 ._tc_monetizing_payment_methods_settings_chevron, ._tc_monetizing_charging_options_settings_chevron,
 ._tc_monetizing_offline_payment_settings_chevron, ._tc_monetizing_paypal_payment_settings_chevron,
-._tc_monetizing_vat_rate_settings_chevron, ._tc_monetizing_charging_for_adding_ads_title_chevron {
+._tc_monetizing_vat_rate_settings_chevron, ._tc_monetizing_charging_for_adding_ads_title_chevron,
+._tc_email_template_general_title_chevron, ._tc_email_template_registration_administrator_title_chevron,
+._tc_email_template_registration_user_title_chevron, ._tc_email_template_new_advert_administrator_title_chevron,
+._tc_email_template_new_advert_user_title_chevron, ._tc_email_template_contact_form_user_title_chevron, 
+._tc_email_template_abuse_form_user_title_chevron, ._tc_email_template_change_status_user_title_chevron,
+._tc_email_template_expiration_user_title_chevron, ._tc_email_template_payment_completed_admin_title_chevron {
 	float: right;
 	margin-right: 10px;
 }
