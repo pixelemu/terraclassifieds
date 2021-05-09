@@ -1684,6 +1684,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 	<p>Author email: [[advert_author_email]]</p>
 	<p>Description: [[advert_desc]]</p>
 	<p>Price: [[advert_price]]</p>
+	<p>Payment method: [[payment_method]]</p>
 	<p>Payment status: [[payment_status]].</p>', 'terraclassifieds'),
 				),
 
@@ -1692,7 +1693,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'type' => 'title',
 					'id'   => '_tc_email_template_new_advert_administrator_af',
 					'classes' => '_tc_email_template_new_advert_administrator_item',
-					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_author_login]] - Advert author login<br />[[advert_author_email]] - Advert author email<br />[[advert_price]] - Advert price / free<br />[[payment_status]] - Payment status', 'terraclassifieds'),
+					'desc' => __('[[advert_title_link]] - Linked advert title (shortcode is available only if option <strong>Ad status</strong> is set to <strong>Publish</strong> on cart <strong>Adding advert view</strong>)<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_author_login]] - Advert author login<br />[[advert_author_email]] - Advert author email<br />[[advert_price]] - Advert price / free<br />[[payment_method]] - Payment method<br />[[payment_status]] - Payment status', 'terraclassifieds'),
 				),
 
 				array(
@@ -1723,6 +1724,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 	<p></p><p>Status: [[advert_status]]</p>
 	<p>Description: [[advert_desc]]</p>
 	<p>Price: [[advert_price]]</p>
+	<p>Payment method: [[payment_method]]</p>
 	<p>Payment status: [[payment_status]].</p>', 'terraclassifieds'),
 				),
 
@@ -1731,7 +1733,7 @@ if (!function_exists('terraclassifieds_register_fields')) {
 					'type' => 'title',
 					'id'   => '_tc_email_template_new_advert_user_af',
 					'classes' => '_tc_email_template_new_advert_user_item',
-					'desc' => __('[[advert_title]] - Advert title<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_price]] - Advert price / free<br />[[payment_status]] - Payment status', 'terraclassifieds'),
+					'desc' => __('[[advert_title]] - Advert title<br />[[advert_category]] - Advert category<br />[[advert_status]] - Advert status<br />[[advert_desc]] - Advert description<br />[[advert_price]] - Advert price / free<br />[[payment_method]] - Payment method<br />[[payment_status]] - Payment status', 'terraclassifieds'),
 				),
 
 				// Contact Form in advert view
