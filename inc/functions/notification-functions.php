@@ -374,7 +374,7 @@ function terraclassifieds_new_ad_notification($new_submission_id, $post_data, $a
 		$message = str_replace("[[payment_status]]", $payment_status_value, $message);
 		
 		if ($payment_method === 'offline') {
-			$use_offline_payment_information = terraclassifieds_get_option( '_tc_monetizing_use_offline_payment_information', __('Enter details for your bank account or other necessary information required for making a payment.','terraclassifieds'));
+			$use_offline_payment_information = terraclassifieds_get_option( '_tc_monetizing_use_offline_payment_information', 'Enter details for your bank account or other necessary information required for making a payment.');
 			$message .= __( 'You choosed offline payment.', 'terraclassifieds');
 			$message .= '<p>'.__( 'Advert ID:', 'terraclassifieds').$new_submission_id.'</p>';
 			$message .= '<p>'.__( 'Payment information:', 'terraclassifieds').'</p>';
