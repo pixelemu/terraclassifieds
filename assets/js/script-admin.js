@@ -347,8 +347,11 @@
 					$(this).find('p').hide();
 					$(this).hide();
 				});
+<<<<<<< HEAD
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price').hide();
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price').hide();
+=======
+>>>>>>> refs/remotes/origin/maciej
 			}else{
 				$('span._tc_monetizing_charging_options_settings_chevron').html('<i class="fas fa-chevron-up"></i>');
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title').show();
