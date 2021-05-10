@@ -335,35 +335,21 @@
 		$('#-tc-monetizing-charging-options-title').on('click', function() {
 			charging_options_close = !charging_options_close;
 			if (charging_options_close) {
+				charging_for_adding_ads_title_close = true;
 				$('span._tc_monetizing_charging_options_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+				$('span._tc_monetizing_charging_for_adding_ads_title_chevron').html('<i class="fas fa-chevron-down"></i>');
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title').hide();
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').hide();
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title p').hide();
+				$('.tc_monetizing_charging_for_adding_ads_price_per_category').each(function() {
+					var id = $(this).find('h3').data('id');
+					$('#-tc-monetizing-charging-for-adding-ads-price-per-category-'+id+'-title span._tc_monetizing_charging_for_adding_ads_price_per_category_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
+					$(this).find('p').hide();
+					$(this).hide();
+				});
 			}else{
 				$('span._tc_monetizing_charging_options_settings_chevron').html('<i class="fas fa-chevron-up"></i>');
 				$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title').show();
-			}
-			if( $('#_tc_monetizing_charging_for_adding_ads_price1').is(':checked')) {
-				if (charging_options_close) {
-					$('.tc_monetizing_charging_for_adding_ads_price_per_category').hide();
-					$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').each(function() {
-						$(this).hide();
-					});
-					
-					$('.tc_monetizing_charging_for_adding_ads_price_per_category').each(function() {
-						var id = $(this).find('h3').data('id');
-						$('#-tc-monetizing-charging-for-adding-ads-price-per-category-'+id+'-title span._tc_monetizing_charging_for_adding_ads_price_per_category_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
-						$(this).find('p').hide();
-					});
-				}else{
-					$('.tc_monetizing_charging_for_adding_ads_price_per_category').show();
-				}
-			}
-			if( $('#_tc_monetizing_charging_for_adding_ads_price2').is(':checked')) {
-				if (charging_options_close) {
-					$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-price').hide();
-					$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed-renew-price').hide();
-				}
 			}
 		});
 		
