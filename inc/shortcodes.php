@@ -372,7 +372,7 @@ function wds_do_frontend_form_submission_shortcode( $atts = array() ) {
 					}else{
 						$ads_price_text = terraclassifiedsPriceFormat($ads_charging_price,1).' '.$currency;
 					}
-				$use_offline_payment_information = terraclassifieds_get_option( '_tc_monetizing_use_offline_payment_information', __('Enter details for your bank account or other necessary information required for making a payment.','terraclassifieds'));
+				$use_offline_payment_information = terraclassifieds_get_option( '_tc_monetizing_use_offline_payment_information', 'Enter details for your bank account or other necessary information required for making a payment.');
 				if ($payment_id) {
 					if ($method === 'offline') : ?>
 						<div class="terraclassifieds-offline-payment-summary">
@@ -1736,7 +1736,7 @@ if (!function_exists('terraclassifieds_frontend_payment_details')) {
 					}else{
 						$ads_price_text = terraclassifiedsPriceFormat($ads_charging_price,1).' '.$currency;
 					}
-				$use_offline_payment_information = terraclassifieds_get_option( '_tc_monetizing_use_offline_payment_information', __('Enter details for your bank account or other necessary information required for making a payment.','terraclassifieds'));
+				$use_offline_payment_information = terraclassifieds_get_option( '_tc_monetizing_use_offline_payment_information', 'Enter details for your bank account or other necessary information required for making a payment.');
 				if ($payment_id) {
 					if ($method === 'offline') : ?>
 						<div class="terraclassifieds-offline-payment-summary">
